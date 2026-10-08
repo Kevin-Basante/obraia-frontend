@@ -1,0 +1,9 @@
+.error-state {
+  border-color: var(--bad);
+}
+
+.error-state__message {
+  margin: 0;
+  font-weight: 600;
+  color: var(--bad);
+}
