@@ -1,0 +1,78 @@
+/* Design tokens: every color comes from here, with a light and a dark theme. */
+:root {
+  --bg: #f3f5f7;
+  --card: #ffffff;
+  --ink: #18263a;
+  --muted: #5a6878;
+  --line: #d5dce4;
+  --accent: #1f5fa8;
+  --ok: #1d7a46;
+  --bad: #b3261e;
+  --radius: 10px;
+  color-scheme: light;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f151d;
+    --card: #17202b;
+    --ink: #e4eaf1;
+    --muted: #97a5b5;
+    --line: #2a3644;
+    --accent: #7fb2ec;
+    --ok: #6fcf97;
+    --bad: #f28b82;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+h1 { margin: 0; font-size: 1.9rem; }
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: center;
+}
+
+.muted { margin: 0; color: var(--muted); }
+
+button {
+  align-self: center;
+  font: inherit;
+  font-weight: 600;
+  padding: 8px 18px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--card);
+  cursor: pointer;
+}
+
+button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
