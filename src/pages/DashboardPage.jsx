@@ -2,10 +2,11 @@ import { Link } from 'react-router'
 import { FormAlert } from '../components/FormAlert.jsx'
 import { GuestBanner } from '../components/GuestBanner.jsx'
 import { ProfileCard } from '../components/ProfileCard.jsx'
+import { RecentProjects } from '../components/projects/RecentProjects.jsx'
 import { useCurrentUser } from '../hooks/useCurrentUser.js'
 import './DashboardPage.css'
 
-/** Start page after signing in. Projects and quotations will be added here. */
+/** Start page after signing in: profile, newest projects and the catalog. */
 export function DashboardPage() {
   const { user, error } = useCurrentUser()
 
@@ -21,10 +22,14 @@ export function DashboardPage() {
       )}
       <FormAlert>{error && `We could not refresh your profile: ${error.message}`}</FormAlert>
       {user && <ProfileCard user={user} />}
-      <section className="card dashboard__empty">
-        <h2>Your projects</h2>
-        <p className="muted">You have no projects yet. Soon you will create one here and upload its blueprints.</p>
-      </section>
+      {user ? (
+        <RecentProjects />
+      ) : (
+        <section className="card dashboard__empty">
+          <h2>Your projects</h2>
+          <p className="muted">Projects are saved in your account. Create one to plan and quote your work.</p>
+        </section>
+      )}
       <section className="card dashboard__empty">
         <h2>Catalog</h2>
         <p className="muted">See the materials with their reference prices, the phases of each project type and the cities.</p>
