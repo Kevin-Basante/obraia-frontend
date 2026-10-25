@@ -118,6 +118,12 @@ button:disabled { opacity: 0.6; cursor: wait; }
   .auth-form__row { grid-template-columns: 1fr; }
 }
 
+/* Action that deletes or closes something for good. */
+.button-danger {
+  background: var(--bad);
+  color: var(--card);
+}
+
 /* Pages of the signed-in area (projects, site managers): full width, from the top. */
 .workspace {
   width: 100%;
@@ -164,4 +170,15 @@ button:disabled { opacity: 0.6; cursor: wait; }
 
 .inline-form button {
   align-self: flex-end;
+}
+
+/* Checkbox with its text on the right. */
+.checkbox-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.checkbox-field input {
+  margin-top: 3px;
 }
