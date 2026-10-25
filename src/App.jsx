@@ -1,19 +1,15 @@
-import { AppHeader } from './components/AppHeader.jsx'
-import { ErrorState } from './components/ErrorState.jsx'
-import { HelloCard } from './components/HelloCard.jsx'
-import { LoadingState } from './components/LoadingState.jsx'
-import { useHello } from './hooks/useHello.js'
+import { BrowserRouter } from 'react-router'
+import { AuthProvider } from './context/AuthProvider.jsx'
+import { AppRoutes } from './routes/AppRoutes.jsx'
 
+/** Root of the app: the router and the session wrap every page. */
 function App() {
-  const { status, data, error, retry } = useHello()
-
   return (
-    <main className="page">
-      <AppHeader />
-      {status === 'loading' && <LoadingState />}
-      {status === 'error' && <ErrorState error={error} onRetry={retry} />}
-      {status === 'success' && <HelloCard data={data} />}
-    </main>
+    <BrowserRouter>
+      <AuthProvider>
+        <AppRoutes />
+      </AuthProvider>
+    </BrowserRouter>
   )
 }
 
