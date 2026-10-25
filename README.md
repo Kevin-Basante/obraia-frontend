@@ -82,6 +82,14 @@ Una ruta desconocida muestra "Page not found". Un invitado que abre una página 
 - Los precios se muestran en pesos colombianos (`$ 33.000`) y las cantidades con coma decimal (`12,5`).
 - En el detalle de un tipo de obra, el área construida decide el tamaño: hasta 120 m² es pequeña y más de 120 m² es grande.
 
+## Obras
+
+- Una obra nueva empieza en borrador. La página de la obra muestra solo los cambios de estado que permite el backend (`nextStatuses`); terminar o cancelar pide confirmación, porque después la obra ya no se puede editar.
+- El área acepta coma o punto decimal (`120,5`). El formulario revisa los mismos límites que el backend antes de enviarlo: nombre de 3 a 150 caracteres, área de 1 a 2000 m², 1 o 2 pisos y la fecha de fin no antes que la de inicio.
+- Cada usuario guarda sus maestros de obra en `/site-managers` y los asigna desde la página de la obra.
+- Cualquier miembro puede agregar a otra persona con cuenta verificada escribiendo su correo. Al creador no se le puede quitar.
+- Eliminar tiene dos pasos: la página muestra lo que se va a perder y envía un correo; la obra se elimina solo cuando el creador abre el enlace (`/confirm-deletion`), que vence en 30 minutos.
+
 ## Sesión
 
 - Al iniciar sesión, el backend entrega un **access token** (dura 15 minutos) y un **refresh token** (dura 7 días).
@@ -97,15 +105,15 @@ Flujo de una petición: página → hook → servicio → cliente de la API → 
 ```
 public/                Archivos estáticos (ícono)
 src/
-├── components/        Componentes visuales, cada uno con su CSS (los del catálogo en components/catalog/)
+├── components/        Componentes visuales, cada uno con su CSS (por sección en catalog/, projects/ y siteManagers/)
 ├── config/            Configuración (URL del backend)
 ├── context/           Estado de la sesión compartido por toda la app
 ├── hooks/             Lógica reutilizable: sesión, formularios y carga de datos
 ├── layouts/           Marcos comunes: la app completa y la sección de catálogo
-├── pages/             Una página por ruta (las del catálogo en pages/catalog/)
+├── pages/             Una página por ruta (las del catálogo en pages/catalog/ y las de obras en pages/projects/)
 ├── routes/            Rutas y protección de páginas según la sesión
 ├── services/          Llamadas a la API del backend y manejo de tokens
-├── utils/             Validaciones, formato de precios y fechas, y filtros de búsqueda
+├── utils/             Validaciones, formularios de obras, formato de precios y fechas, y filtros
 ├── App.jsx            Enrutador y proveedor de sesión
 ├── index.css          Colores y estilos generales (tema claro y oscuro)
 └── main.jsx           Punto de entrada
