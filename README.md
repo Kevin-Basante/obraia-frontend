@@ -82,6 +82,13 @@ Flujo de una petición: página → hook → servicio → cliente de la API → 
 
 Después de desplegar, la URL de Vercel debe agregarse a `FRONTEND_URL` en Render para que el backend acepte sus peticiones (CORS).
 
+## Equipo y responsabilidades
+
+| Integrante    | Responsabilidad                                   |
+| ------------- | ------------------------------------------------- |
+| Kevin Basante | Backend (`obraia-backend`) y servicio de IA (`obraia-ia`) |
+| Arley Riascos | Frontend (`obraia-frontend`)                      |
+
 ## Convenciones
 
 - Código, comentarios y textos de la interfaz en inglés; documentación en español.
