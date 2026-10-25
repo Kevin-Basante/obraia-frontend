@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router'
 import { AppLayout } from '../layouts/AppLayout.jsx'
 import { CheckEmailPage } from '../pages/CheckEmailPage.jsx'
+import { ForgotPasswordPage } from '../pages/ForgotPasswordPage.jsx'
 import { HomePage } from '../pages/HomePage.jsx'
 import { LoginPage } from '../pages/LoginPage.jsx'
 import { NotFoundPage } from '../pages/NotFoundPage.jsx'
@@ -18,6 +19,7 @@ export function AppRoutes() {
         <Route element={<GuestOnly />}>
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
+          <Route path="forgot-password" element={<ForgotPasswordPage />} />
         </Route>
 
         {/* Opened from the links sent by email. */}
