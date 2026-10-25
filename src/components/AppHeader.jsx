@@ -16,6 +16,7 @@ export function AppHeader() {
         {status === 'signedIn' && (
           <>
             <NavLink to="/dashboard">Dashboard</NavLink>
+            <NavLink to="/projects">Projects</NavLink>
             <span className="app-header__user">{user.firstName}</span>
             <button type="button" className="app-header__button" onClick={signOut}>
               Sign out
