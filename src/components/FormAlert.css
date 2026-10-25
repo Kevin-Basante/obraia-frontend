@@ -1,0 +1,18 @@
+.form-alert {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.form-alert--error {
+  color: var(--bad);
+  border-color: var(--bad);
+}
+
+.form-alert--success {
+  color: var(--ok);
+  border-color: var(--ok);
+}
