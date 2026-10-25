@@ -12,6 +12,7 @@ import { ResetPasswordPage } from '../pages/ResetPasswordPage.jsx'
 import { VerifyEmailPage } from '../pages/VerifyEmailPage.jsx'
 import { CitiesPage } from '../pages/catalog/CitiesPage.jsx'
 import { MaterialsPage } from '../pages/catalog/MaterialsPage.jsx'
+import { ProjectTypeDetailPage } from '../pages/catalog/ProjectTypeDetailPage.jsx'
 import { ProjectTypesPage } from '../pages/catalog/ProjectTypesPage.jsx'
 import { GuestOnly } from './GuestOnly.jsx'
 import { RequireSession } from './RequireSession.jsx'
@@ -39,6 +40,7 @@ export function AppRoutes() {
           <Route index element={<Navigate to="materials" replace />} />
           <Route path="materials" element={<MaterialsPage />} />
           <Route path="project-types" element={<ProjectTypesPage />} />
+          <Route path="project-types/:id" element={<ProjectTypeDetailPage />} />
           <Route path="cities" element={<CitiesPage />} />
         </Route>
 

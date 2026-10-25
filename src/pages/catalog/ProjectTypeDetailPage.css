@@ -1,0 +1,25 @@
+.project-type {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-type > a {
+  align-self: flex-start;
+}
+
+.project-type h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.project-type__controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: start;
+  gap: 16px;
+}
+
+.project-type__note {
+  margin: 0;
+}
