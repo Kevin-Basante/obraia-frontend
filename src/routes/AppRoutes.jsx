@@ -5,6 +5,7 @@ import { HomePage } from '../pages/HomePage.jsx'
 import { LoginPage } from '../pages/LoginPage.jsx'
 import { NotFoundPage } from '../pages/NotFoundPage.jsx'
 import { RegisterPage } from '../pages/RegisterPage.jsx'
+import { VerifyEmailPage } from '../pages/VerifyEmailPage.jsx'
 import { GuestOnly } from './GuestOnly.jsx'
 
 /** Every page of the app and its URL. */
@@ -21,6 +22,7 @@ export function AppRoutes() {
 
         {/* Opened from the links sent by email. */}
         <Route path="check-email" element={<CheckEmailPage />} />
+        <Route path="verify-email" element={<VerifyEmailPage />} />
 
         <Route path="*" element={<NotFoundPage />} />
       </Route>
