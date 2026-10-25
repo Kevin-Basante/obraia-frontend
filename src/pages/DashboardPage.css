@@ -1,0 +1,18 @@
+.dashboard {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* Starts at the top of the page instead of the middle. */
+  margin-bottom: auto;
+}
+
+.dashboard .card {
+  max-width: none;
+}
+
+.dashboard__empty h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
