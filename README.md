@@ -85,6 +85,27 @@ Una ruta desconocida muestra "Page not found". Si alguien sin sesión abre `/das
 
 Flujo de una petición: página → hook → servicio → cliente de la API → backend.
 
+## Estructura
+
+```
+public/                Archivos estáticos (ícono)
+src/
+├── components/        Componentes visuales, cada uno con su CSS (los del catálogo en components/catalog/)
+├── config/            Configuración (URL del backend)
+├── context/           Estado de la sesión compartido por toda la app
+├── hooks/             Lógica reutilizable: sesión, formularios y carga de datos
+├── layouts/           Marcos comunes: la app completa y la sección de catálogo
+├── pages/             Una página por ruta (las del catálogo en pages/catalog/)
+├── routes/            Rutas y protección de páginas según la sesión
+├── services/          Llamadas a la API del backend y manejo de tokens
+├── utils/             Validaciones, formato de precios y fechas, y filtros de búsqueda
+├── App.jsx            Enrutador y proveedor de sesión
+├── index.css          Colores y estilos generales (tema claro y oscuro)
+└── main.jsx           Punto de entrada
+```
+
+Las pruebas están junto al archivo que prueban (`*.test.js`).
+
 ## Despliegue en Vercel
 
 1. Importar el repositorio en Vercel; detecta Vite automáticamente.
