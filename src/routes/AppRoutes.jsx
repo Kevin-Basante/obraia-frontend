@@ -14,6 +14,7 @@ import { CitiesPage } from '../pages/catalog/CitiesPage.jsx'
 import { MaterialsPage } from '../pages/catalog/MaterialsPage.jsx'
 import { ProjectTypeDetailPage } from '../pages/catalog/ProjectTypeDetailPage.jsx'
 import { ProjectTypesPage } from '../pages/catalog/ProjectTypesPage.jsx'
+import { EditProjectPage } from '../pages/projects/EditProjectPage.jsx'
 import { NewProjectPage } from '../pages/projects/NewProjectPage.jsx'
 import { ProjectDetailPage } from '../pages/projects/ProjectDetailPage.jsx'
 import { ProjectsPage } from '../pages/projects/ProjectsPage.jsx'
@@ -55,6 +56,7 @@ export function AppRoutes() {
             <Route path="projects" element={<ProjectsPage />} />
             <Route path="projects/new" element={<NewProjectPage />} />
             <Route path="projects/:id" element={<ProjectDetailPage />} />
+            <Route path="projects/:id/edit" element={<EditProjectPage />} />
           </Route>
         </Route>
 

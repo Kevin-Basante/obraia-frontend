@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { useParams } from 'react-router'
+import { Link, useParams } from 'react-router'
 import { ErrorState } from '../../components/ErrorState.jsx'
 import { LoadingState } from '../../components/LoadingState.jsx'
 import { PageHeader } from '../../components/PageHeader.jsx'
@@ -7,9 +7,10 @@ import { ProjectSummary } from '../../components/projects/ProjectSummary.jsx'
 import { StatusActions } from '../../components/projects/StatusActions.jsx'
 import { useApiData } from '../../hooks/useApiData.js'
 import { getProject } from '../../services/projectService.js'
+import { isClosed } from '../../utils/projectStatus.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
 
-/** One project: its data and status. */
+/** One project: its data, status, site manager and members. */
 export function ProjectDetailPage() {
   const { id } = useParams()
   const project = useApiData((signal) => getProject(id, { signal }), [id])
@@ -22,10 +23,21 @@ export function ProjectDetailPage() {
   if (!project.data) return <LoadingState title="Loading the project…" />
 
   const data = project.data
+  const closed = isClosed(data)
 
   return (
     <div className="workspace">
-      <PageHeader title={data.name} back={{ to: '/projects', label: 'My projects' }} />
+      <PageHeader
+        title={data.name}
+        back={{ to: '/projects', label: 'My projects' }}
+        actions={
+          !closed && (
+            <Link to={`/projects/${data.id}/edit`} className="button-link">
+              Edit
+            </Link>
+          )
+        }
+      />
       <StatusActions project={data} onChanged={reload} />
       <ProjectSummary project={data} />
     </div>
