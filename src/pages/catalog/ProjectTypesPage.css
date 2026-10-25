@@ -1,0 +1,18 @@
+.project-types {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.project-types__item h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.project-types__item .button-link {
+  align-self: flex-start;
+  margin-top: auto;
+}
