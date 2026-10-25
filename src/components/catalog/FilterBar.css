@@ -1,0 +1,10 @@
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.filter-bar > * {
+  flex: 1 1 200px;
+}
