@@ -1,0 +1,29 @@
+.profile-card {
+  text-align: left;
+}
+
+.profile-card h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.profile-card__facts {
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.profile-card__facts div {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 8px;
+}
+
+.profile-card__facts dt {
+  color: var(--muted);
+}
+
+.profile-card__facts dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
