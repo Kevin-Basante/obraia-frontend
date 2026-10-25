@@ -15,6 +15,7 @@ import { MaterialsPage } from '../pages/catalog/MaterialsPage.jsx'
 import { ProjectTypeDetailPage } from '../pages/catalog/ProjectTypeDetailPage.jsx'
 import { ProjectTypesPage } from '../pages/catalog/ProjectTypesPage.jsx'
 import { ProjectDetailPage } from '../pages/projects/ProjectDetailPage.jsx'
+import { ProjectsPage } from '../pages/projects/ProjectsPage.jsx'
 import { GuestOnly } from './GuestOnly.jsx'
 import { RequireAccount } from './RequireAccount.jsx'
 import { RequireSession } from './RequireSession.jsx'
@@ -50,6 +51,7 @@ export function AppRoutes() {
           <Route path="dashboard" element={<DashboardPage />} />
           {/* Projects are saved in the account, so guests see an invitation to register. */}
           <Route element={<RequireAccount />}>
+            <Route path="projects" element={<ProjectsPage />} />
             <Route path="projects/:id" element={<ProjectDetailPage />} />
           </Route>
         </Route>
