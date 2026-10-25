@@ -1,17 +1,55 @@
 .app-header {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 20px;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
 }
 
 .app-header__brand {
-  margin: 0;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
+  text-decoration: none;
 }
 
-.app-header__tagline {
-  margin: 4px 0 0;
-  font-size: 0.9rem;
+.app-header__nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.95rem;
+}
+
+.app-header__nav a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.app-header__nav a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.app-header__user {
   color: var(--muted);
+}
+
+.app-header__button {
+  padding: 6px 12px;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--line);
+}
+
+.app-header__nav a.app-header__cta {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--card);
+  font-weight: 600;
 }
