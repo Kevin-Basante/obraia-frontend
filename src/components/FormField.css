@@ -28,7 +28,8 @@
   outline-offset: 1px;
 }
 
-.form-field input[aria-invalid='true'] {
+.form-field input[aria-invalid='true'],
+.form-field select[aria-invalid='true'] {
   border-color: var(--bad);
 }
 
