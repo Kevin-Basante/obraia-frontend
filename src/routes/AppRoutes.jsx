@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router'
 import { AppLayout } from '../layouts/AppLayout.jsx'
 import { CatalogLayout } from '../layouts/CatalogLayout.jsx'
 import { CheckEmailPage } from '../pages/CheckEmailPage.jsx'
+import { ConfirmDeletionPage } from '../pages/ConfirmDeletionPage.jsx'
 import { DashboardPage } from '../pages/DashboardPage.jsx'
 import { ForgotPasswordPage } from '../pages/ForgotPasswordPage.jsx'
 import { HomePage } from '../pages/HomePage.jsx'
@@ -41,6 +42,7 @@ export function AppRoutes() {
         <Route path="check-email" element={<CheckEmailPage />} />
         <Route path="verify-email" element={<VerifyEmailPage />} />
         <Route path="reset-password" element={<ResetPasswordPage />} />
+        <Route path="confirm-deletion" element={<ConfirmDeletionPage />} />
 
         {/* Public: guests and signed-out visitors can browse the catalog. */}
         <Route path="catalog" element={<CatalogLayout />}>
