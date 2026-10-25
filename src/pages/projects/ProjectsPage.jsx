@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router'
 import { ErrorState } from '../../components/ErrorState.jsx'
 import { FormField } from '../../components/FormField.jsx'
 import { LoadingState } from '../../components/LoadingState.jsx'
@@ -29,6 +30,11 @@ export function ProjectsPage() {
       <PageHeader
         title="My projects"
         description="Projects you created or that others shared with you."
+        actions={
+          <Link to="/projects/new" className="button-link">
+            New project
+          </Link>
+        }
       />
       <FilterBar>
         <FormField
