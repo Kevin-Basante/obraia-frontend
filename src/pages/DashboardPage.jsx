@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import { FormAlert } from '../components/FormAlert.jsx'
 import { GuestBanner } from '../components/GuestBanner.jsx'
 import { ProfileCard } from '../components/ProfileCard.jsx'
@@ -23,6 +24,13 @@ export function DashboardPage() {
       <section className="card dashboard__empty">
         <h2>Your projects</h2>
         <p className="muted">You have no projects yet. Soon you will create one here and upload its blueprints.</p>
+      </section>
+      <section className="card dashboard__empty">
+        <h2>Catalog</h2>
+        <p className="muted">See the materials with their reference prices, the phases of each project type and the cities.</p>
+        <Link to="/catalog" className="button-link">
+          Explore the catalog
+        </Link>
       </section>
     </div>
   )
