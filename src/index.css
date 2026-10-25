@@ -137,3 +137,15 @@ button:disabled { opacity: 0.6; cursor: wait; }
   margin: 0;
   font-size: 1.2rem;
 }
+
+/* Several buttons side by side, aligned to the left. */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-row button {
+  align-self: auto;
+}
