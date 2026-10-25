@@ -64,8 +64,15 @@ Esta variable solo guarda la URL pública del backend. Las claves (base de datos
 | `/catalog/project-types` | Tipos de obra                                              | Todos                   |
 | `/catalog/project-types/:id` | Fases estándar según el tamaño o el área, y materiales por elemento | Todos      |
 | `/catalog/cities`  | Ciudades, filtro por departamento y búsqueda                   | Todos                   |
+| `/projects`        | Mis obras, con filtro por estado y búsqueda por nombre o ciudad | Con cuenta             |
+| `/projects/new`    | Crear una obra                                                 | Con cuenta              |
+| `/projects/:id`    | Detalle de la obra: estado, datos, maestro de obra y miembros  | Con cuenta (miembros)   |
+| `/projects/:id/edit` | Editar una obra que no esté terminada ni cancelada           | Con cuenta (miembros)   |
+| `/projects/:id/delete` | Advertencias y envío del correo para eliminar la obra      | Con cuenta (creador)    |
+| `/site-managers`   | Mis maestros de obra: agregar, editar y borrar                 | Con cuenta              |
+| `/confirm-deletion` | Confirma la eliminación con el enlace recibido (`?token=`)    | Todos                   |
 
-Una ruta desconocida muestra "Page not found". Si alguien sin sesión abre `/dashboard`, se le envía a `/login` y, al entrar, vuelve a la página que pidió.
+Una ruta desconocida muestra "Page not found". Un invitado que abre una página de obras ve una invitación a crear su cuenta, porque las obras se guardan en la cuenta. Si alguien sin sesión abre `/dashboard`, se le envía a `/login` y, al entrar, vuelve a la página que pidió.
 
 ## Catálogo
 
