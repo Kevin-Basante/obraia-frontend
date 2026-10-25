@@ -60,8 +60,20 @@ Esta variable solo guarda la URL pública del backend. Las claves (base de datos
 | `/forgot-password` | Pedir el enlace para cambiar la contraseña                     | Sin sesión              |
 | `/reset-password`  | Elegir una contraseña nueva con el enlace recibido (`?token=`) | Todos                   |
 | `/dashboard`       | Panel del usuario con sus datos                                | Con sesión o invitado   |
+| `/catalog/materials` | Materiales con precio de referencia, filtro por categoría y búsqueda | Todos           |
+| `/catalog/project-types` | Tipos de obra                                              | Todos                   |
+| `/catalog/project-types/:id` | Fases estándar según el tamaño o el área, y materiales por elemento | Todos      |
+| `/catalog/cities`  | Ciudades, filtro por departamento y búsqueda                   | Todos                   |
 
 Una ruta desconocida muestra "Page not found". Si alguien sin sesión abre `/dashboard`, se le envía a `/login` y, al entrar, vuelve a la página que pidió.
+
+## Catálogo
+
+- Lee los catálogos públicos del backend (`/api/catalogs/...`), así que funciona con sesión, como invitado o sin sesión.
+- Las búsquedas esperan a que el usuario deje de escribir (300 ms) antes de llamar al backend, para no enviar una petición por cada tecla.
+- Mientras llega una respuesta nueva, la lista anterior sigue visible y atenuada; si llega una respuesta vieja, se ignora.
+- Los precios se muestran en pesos colombianos (`$ 33.000`) y las cantidades con coma decimal (`12,5`).
+- En el detalle de un tipo de obra, el área construida decide el tamaño: hasta 120 m² es pequeña y más de 120 m² es grande.
 
 ## Sesión
 
