@@ -14,7 +14,9 @@ import { CitiesPage } from '../pages/catalog/CitiesPage.jsx'
 import { MaterialsPage } from '../pages/catalog/MaterialsPage.jsx'
 import { ProjectTypeDetailPage } from '../pages/catalog/ProjectTypeDetailPage.jsx'
 import { ProjectTypesPage } from '../pages/catalog/ProjectTypesPage.jsx'
+import { ProjectDetailPage } from '../pages/projects/ProjectDetailPage.jsx'
 import { GuestOnly } from './GuestOnly.jsx'
+import { RequireAccount } from './RequireAccount.jsx'
 import { RequireSession } from './RequireSession.jsx'
 
 /** Every page of the app and its URL. */
@@ -46,6 +48,10 @@ export function AppRoutes() {
 
         <Route element={<RequireSession />}>
           <Route path="dashboard" element={<DashboardPage />} />
+          {/* Projects are saved in the account, so guests see an invitation to register. */}
+          <Route element={<RequireAccount />}>
+            <Route path="projects/:id" element={<ProjectDetailPage />} />
+          </Route>
         </Route>
 
         <Route path="*" element={<NotFoundPage />} />
