@@ -58,3 +58,18 @@
     text-align: right;
   }
 }
+
+.formula-table + .formula-table {
+  margin-top: 20px;
+}
+
+.formula-table caption {
+  padding-bottom: 6px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.formula-table caption .muted {
+  display: inline;
+  font-weight: 400;
+}
