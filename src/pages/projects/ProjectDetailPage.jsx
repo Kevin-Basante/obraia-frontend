@@ -35,11 +35,16 @@ export function ProjectDetailPage() {
         title={data.name}
         back={{ to: '/projects', label: 'My projects' }}
         actions={
-          !closed && (
-            <Link to={`/projects/${data.id}/edit`} className="button-link">
-              Edit
+          <>
+            {!closed && (
+              <Link to={`/projects/${data.id}/edit`} className="button-link">
+                Edit
+              </Link>
+            )}
+            <Link to={`/projects/${data.id}/delete`} className="button-link button-secondary">
+              Delete
             </Link>
-          )
+          </>
         }
       />
       <StatusActions project={data} onChanged={reload} />
