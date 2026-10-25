@@ -1,0 +1,17 @@
+.site-manager-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.site-manager-form__fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .site-manager-form__fields {
+    grid-template-columns: 1fr;
+  }
+}
