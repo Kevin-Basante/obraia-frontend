@@ -3,11 +3,13 @@ import { Link, useParams } from 'react-router'
 import { ErrorState } from '../../components/ErrorState.jsx'
 import { FormField } from '../../components/FormField.jsx'
 import { LoadingState } from '../../components/LoadingState.jsx'
+import { SelectField } from '../../components/SelectField.jsx'
+import { FormulaTable } from '../../components/catalog/FormulaTable.jsx'
 import { PhaseTimeline } from '../../components/catalog/PhaseTimeline.jsx'
 import { SizePicker } from '../../components/catalog/SizePicker.jsx'
 import { useApiData } from '../../hooks/useApiData.js'
 import { useDebouncedValue } from '../../hooks/useDebouncedValue.js'
-import { getPhasePlan, getProjectType } from '../../services/catalogService.js'
+import { getMaterialFormulas, getPhasePlan, getProjectType } from '../../services/catalogService.js'
 import './ProjectTypeDetailPage.css'
 
 /** Reads the area field: a positive number, or null when it is empty or invalid. */
@@ -16,19 +18,26 @@ function parseArea(text) {
   return text.trim() && area > 0 ? area : null
 }
 
-/** One project type and its standard phases by size. */
+/** One project type: its standard phases by size and the materials per building element. */
 export function ProjectTypeDetailPage() {
   const { id } = useParams()
   const [size, setSize] = useState('small')
   const [areaText, setAreaText] = useState('')
+  const [element, setElement] = useState('')
   const area = useDebouncedValue(parseArea(areaText))
   const areaError = areaText.trim() && parseArea(areaText) === null ? 'Enter an area greater than 0' : undefined
 
   const type = useApiData((signal) => getProjectType(id, { signal }), [id])
   const plan = useApiData((signal) => getPhasePlan(id, { size, area }, { signal }), [id, size, area])
+  const formulas = useApiData((signal) => getMaterialFormulas(id, {}, { signal }), [id])
 
   if (type.status === 'error') return <ErrorState error={type.error} onRetry={type.retry} />
   if (!type.data) return <LoadingState title="Loading project type…" />
+
+  const elementOptions = [...new Map((formulas.data ?? []).map((f) => [f.elementType, f.elementLabel]))].map(
+    ([value, label]) => ({ value, label }),
+  )
+  const shownFormulas = (formulas.data ?? []).filter((f) => !element || f.elementType === element)
 
   return (
     <div className="project-type">
@@ -62,6 +71,25 @@ export function ProjectTypeDetailPage() {
               </p>
             )}
             <PhaseTimeline plan={plan.data} updating={plan.status === 'loading'} />
+          </>
+        )}
+      </section>
+
+      <section className="card" aria-labelledby="materials-title">
+        <h2 id="materials-title">Materials per building element</h2>
+        <p className="muted">How much of each material one unit of the element needs, plus the share bought for waste.</p>
+        {formulas.status === 'error' && <ErrorState error={formulas.error} onRetry={formulas.retry} />}
+        {!formulas.data && formulas.status === 'loading' && <LoadingState title="Loading materials…" message="" />}
+        {formulas.data && (
+          <>
+            <SelectField
+              label="Building element"
+              placeholder="All elements"
+              options={elementOptions}
+              value={element}
+              onChange={(e) => setElement(e.target.value)}
+            />
+            <FormulaTable formulas={shownFormulas} />
           </>
         )}
       </section>
