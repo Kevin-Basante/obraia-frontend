@@ -4,6 +4,7 @@ import { ErrorState } from '../../components/ErrorState.jsx'
 import { LoadingState } from '../../components/LoadingState.jsx'
 import { PageHeader } from '../../components/PageHeader.jsx'
 import { ProjectSummary } from '../../components/projects/ProjectSummary.jsx'
+import { SiteManagerPanel } from '../../components/projects/SiteManagerPanel.jsx'
 import { StatusActions } from '../../components/projects/StatusActions.jsx'
 import { useApiData } from '../../hooks/useApiData.js'
 import { getProject } from '../../services/projectService.js'
@@ -40,6 +41,7 @@ export function ProjectDetailPage() {
       />
       <StatusActions project={data} onChanged={reload} />
       <ProjectSummary project={data} />
+      <SiteManagerPanel project={data} readOnly={closed} onChanged={reload} />
     </div>
   )
 }
