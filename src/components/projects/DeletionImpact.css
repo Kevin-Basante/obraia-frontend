@@ -1,0 +1,11 @@
+.deletion-impact {
+  border-color: var(--bad);
+}
+
+.deletion-impact ul {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
