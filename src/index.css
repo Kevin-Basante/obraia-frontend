@@ -149,3 +149,19 @@ button:disabled { opacity: 0.6; cursor: wait; }
 .button-row button {
   align-self: auto;
 }
+
+/* A field and its button on the same line. */
+.inline-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.inline-form .form-field {
+  flex: 1 1 220px;
+}
+
+.inline-form button {
+  align-self: flex-end;
+}
