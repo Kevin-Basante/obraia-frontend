@@ -1,0 +1,22 @@
+.site-manager-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-manager-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-manager-list__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.site-manager-list__row button {
+  padding: 4px 12px;
+}
