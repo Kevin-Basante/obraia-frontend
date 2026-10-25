@@ -12,6 +12,7 @@ export function AppHeader() {
         ObraIA
       </Link>
       <nav className="app-header__nav" aria-label="Main">
+        <NavLink to="/catalog">Catalog</NavLink>
         {status === 'signedIn' && (
           <>
             <NavLink to="/dashboard">Dashboard</NavLink>
