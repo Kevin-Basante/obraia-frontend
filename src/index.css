@@ -117,3 +117,23 @@ button:disabled { opacity: 0.6; cursor: wait; }
 @media (max-width: 480px) {
   .auth-form__row { grid-template-columns: 1fr; }
 }
+
+/* Pages of the signed-in area (projects, site managers): full width, from the top. */
+.workspace {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: auto;
+}
+
+.workspace .card {
+  max-width: none;
+  text-align: left;
+}
+
+.workspace h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
