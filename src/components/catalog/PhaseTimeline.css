@@ -1,0 +1,61 @@
+.phase-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.phase-timeline--updating {
+  opacity: 0.6;
+}
+
+.phase-timeline__total {
+  margin: 0;
+}
+
+.phase-timeline__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.phase-timeline__item {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr) 70px;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.phase-timeline__bar {
+  height: 10px;
+  border-radius: 5px;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.phase-timeline__bar span {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  background: var(--accent);
+}
+
+.phase-timeline__days {
+  text-align: right;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* On phones the name goes on its own line above the bar. */
+@media (max-width: 640px) {
+  .phase-timeline__item {
+    grid-template-columns: minmax(0, 1fr) 70px;
+  }
+
+  .phase-timeline__name {
+    grid-column: 1 / -1;
+  }
+}
