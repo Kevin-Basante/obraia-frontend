@@ -1,0 +1,35 @@
+.size-picker {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  text-align: left;
+}
+
+.size-picker legend {
+  padding: 0;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.size-picker__option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.size-picker:disabled {
+  opacity: 0.6;
+}
+
+.size-picker:disabled .size-picker__option {
+  cursor: not-allowed;
+}
+
+.size-picker .muted {
+  display: inline;
+}
