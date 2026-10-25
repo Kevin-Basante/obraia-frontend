@@ -1,0 +1,41 @@
+.catalog {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* Starts at the top of the page instead of the middle. */
+  margin-bottom: auto;
+}
+
+.catalog__header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.catalog__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+.catalog__tabs a {
+  padding: 8px 14px;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.catalog__tabs a.active {
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Cards inside the catalog use the full width. */
+.catalog .card {
+  max-width: none;
+  text-align: left;
+}
