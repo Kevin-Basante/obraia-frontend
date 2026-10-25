@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router'
 import { AppLayout } from '../layouts/AppLayout.jsx'
+import { CheckEmailPage } from '../pages/CheckEmailPage.jsx'
 import { HomePage } from '../pages/HomePage.jsx'
 import { LoginPage } from '../pages/LoginPage.jsx'
 import { NotFoundPage } from '../pages/NotFoundPage.jsx'
@@ -17,6 +18,9 @@ export function AppRoutes() {
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
         </Route>
+
+        {/* Opened from the links sent by email. */}
+        <Route path="check-email" element={<CheckEmailPage />} />
 
         <Route path="*" element={<NotFoundPage />} />
       </Route>
