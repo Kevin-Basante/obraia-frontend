@@ -10,6 +10,7 @@ import { NotFoundPage } from '../pages/NotFoundPage.jsx'
 import { RegisterPage } from '../pages/RegisterPage.jsx'
 import { ResetPasswordPage } from '../pages/ResetPasswordPage.jsx'
 import { VerifyEmailPage } from '../pages/VerifyEmailPage.jsx'
+import { CitiesPage } from '../pages/catalog/CitiesPage.jsx'
 import { MaterialsPage } from '../pages/catalog/MaterialsPage.jsx'
 import { GuestOnly } from './GuestOnly.jsx'
 import { RequireSession } from './RequireSession.jsx'
@@ -36,6 +37,7 @@ export function AppRoutes() {
         <Route path="catalog" element={<CatalogLayout />}>
           <Route index element={<Navigate to="materials" replace />} />
           <Route path="materials" element={<MaterialsPage />} />
+          <Route path="cities" element={<CitiesPage />} />
         </Route>
 
         <Route element={<RequireSession />}>
