@@ -94,6 +94,15 @@ Una ruta desconocida muestra "Page not found". Un invitado que abre una página 
 - Cualquier miembro puede agregar a otra persona con cuenta verificada escribiendo su correo. Al creador no se le puede quitar.
 - Eliminar tiene dos pasos: la página muestra lo que se va a perder y envía un correo; la obra se elimina solo cuando el creador abre el enlace (`/confirm-deletion`), que vence en 30 minutos.
 
+## Planos y medidas
+
+- Cada obra acepta hasta 10 planos: PDF o imagen (PNG, JPG o WEBP) de máximo 10 MB. El navegador revisa la extensión y el tamaño antes de subir; el backend revisa además el tipo real del archivo.
+- El archivo se sube como `multipart/form-data` (campo `file`). Para verlo, el frontend lo descarga con el token y lo muestra desde una dirección temporal del navegador (`URL.createObjectURL`), que se libera al salir de la página.
+- El formulario de medidas pide solo las dimensiones del elemento elegido, según `/api/catalogs/element-types`: largo, ancho y alto para cimentación, columnas, vigas y losas (m³); largo y alto para muros, y largo y ancho para piso y cubierta (m²). Mientras se escribe, muestra la cantidad que calculará el backend.
+- Las medidas aceptan coma decimal (`3,5`) y el piso no puede ser mayor que los pisos de la obra.
+- Las medidas leídas por la IA no tienen botones para editar ni borrar. Mientras la IA no lea planos, la comparación muestra solo los totales manuales.
+- En una obra terminada o cancelada, los planos y las medidas se pueden ver pero no cambiar.
+
 ## Sesión
 
 - Al iniciar sesión, el backend entrega un **access token** (dura 15 minutos) y un **refresh token** (dura 7 días).
@@ -109,7 +118,7 @@ Flujo de una petición: página → hook → servicio → cliente de la API → 
 ```
 public/                Archivos estáticos (ícono)
 src/
-├── components/        Componentes visuales, cada uno con su CSS (por sección en catalog/, projects/ y siteManagers/)
+├── components/        Componentes visuales, cada uno con su CSS (por sección en blueprints/, catalog/, measurements/, projects/ y siteManagers/)
 ├── config/            Configuración (URL del backend)
 ├── context/           Estado de la sesión compartido por toda la app
 ├── hooks/             Lógica reutilizable: sesión, formularios y carga de datos
@@ -117,7 +126,7 @@ src/
 ├── pages/             Una página por ruta (las del catálogo en pages/catalog/ y las de obras en pages/projects/)
 ├── routes/            Rutas y protección de páginas según la sesión
 ├── services/          Llamadas a la API del backend y manejo de tokens
-├── utils/             Validaciones, formularios de obras, formato de precios y fechas, y filtros
+├── utils/             Validaciones, formularios de obras y medidas, formato de precios, fechas y tamaños, y filtros
 ├── App.jsx            Enrutador y proveedor de sesión
 ├── index.css          Colores y estilos generales (tema claro y oscuro)
 └── main.jsx           Punto de entrada
