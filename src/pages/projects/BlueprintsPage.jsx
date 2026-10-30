@@ -1,18 +1,20 @@
 import { useCallback } from 'react'
 import { useParams } from 'react-router'
 import { ErrorState } from '../../components/ErrorState.jsx'
+import { FormAlert } from '../../components/FormAlert.jsx'
 import { LoadingState } from '../../components/LoadingState.jsx'
 import { PageHeader } from '../../components/PageHeader.jsx'
 import { BlueprintList } from '../../components/blueprints/BlueprintList.jsx'
 import { BlueprintUploadForm } from '../../components/blueprints/BlueprintUploadForm.jsx'
 import { useApiData } from '../../hooks/useApiData.js'
-import { listBlueprints, uploadBlueprint } from '../../services/blueprintService.js'
+import { useFormSubmit } from '../../hooks/useFormSubmit.js'
+import { deleteBlueprint, listBlueprints, uploadBlueprint } from '../../services/blueprintService.js'
 import { getProject } from '../../services/projectService.js'
 import { MAX_BLUEPRINTS } from '../../utils/blueprintFile.js'
 import { isClosed } from '../../utils/projectStatus.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
 
-/** Blueprints of a project: upload photos or PDFs and open them. */
+/** Blueprints of a project: upload photos or PDFs, open them and delete them. */
 export function BlueprintsPage() {
   const { id } = useParams()
   const project = useApiData((signal) => getProject(id, { signal }), [id])
@@ -27,6 +29,8 @@ export function BlueprintsPage() {
     },
     [id, retry],
   )
+  const remove = useCallback((blueprintId) => deleteBlueprint(id, blueprintId).then(retry), [id, retry])
+  const removing = useFormSubmit(remove)
 
   if (project.error?.status === 404) return <NotFoundPage />
   const error = project.error ?? blueprints.error
@@ -37,6 +41,11 @@ export function BlueprintsPage() {
 
   const closed = isClosed(project.data)
   const full = blueprints.data.length >= MAX_BLUEPRINTS
+
+  function handleDelete(blueprint) {
+    const question = `Delete ${blueprint.originalFilename}? Its measurements stay, without the link to the blueprint.`
+    if (window.confirm(question)) removing.submit(blueprint.id)
+  }
 
   return (
     <div className="workspace">
@@ -64,8 +73,14 @@ export function BlueprintsPage() {
         {blueprints.data.length === 0 ? (
           <p className="muted">There are no blueprints yet.</p>
         ) : (
-          <BlueprintList projectId={id} blueprints={blueprints.data} />
+          <BlueprintList
+            projectId={id}
+            blueprints={blueprints.data}
+            onDelete={closed ? undefined : handleDelete}
+            deleting={removing.pending}
+          />
         )}
+        <FormAlert>{removing.error?.message}</FormAlert>
       </section>
     </div>
   )
