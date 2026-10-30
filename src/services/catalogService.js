@@ -38,3 +38,8 @@ export function getMaterialCategories(options) {
 export function getMaterials({ category, search } = {}, options) {
   return apiGet(`/api/catalogs/materials${buildQuery({ category, search })}`, options)
 }
+
+/** Building elements that can be measured, with their unit (m3 or m2) and the dimensions they need. */
+export function getElementTypes(options) {
+  return apiGet('/api/catalogs/element-types', options)
+}
