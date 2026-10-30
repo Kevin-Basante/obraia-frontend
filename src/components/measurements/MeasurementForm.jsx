@@ -27,7 +27,16 @@ export function MeasurementForm({ initialForm, elementTypes, blueprints, floors,
   const blueprintOptions = blueprints.map((blueprint) => ({ value: blueprint.id, label: blueprint.originalFilename }))
 
   function update(field) {
-    return (event) => setForm((current) => ({ ...current, [field]: event.target.value }))
+    return (event) => {
+      setForm((current) => ({ ...current, [field]: event.target.value }))
+      // The message of a field goes away as soon as the user changes it.
+      setFieldErrors((current) => {
+        if (!current[field]) return current
+        const rest = { ...current }
+        delete rest[field]
+        return rest
+      })
+    }
   }
 
   async function handleSubmit(event) {
