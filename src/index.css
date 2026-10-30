@@ -198,3 +198,9 @@ button:disabled { opacity: 0.6; cursor: wait; }
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+/* Title of a section with a filter on its right. */
+.measurements-header {
+  justify-content: space-between;
+  align-items: flex-end;
+}
