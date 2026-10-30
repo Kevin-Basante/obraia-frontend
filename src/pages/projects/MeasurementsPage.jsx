@@ -4,6 +4,7 @@ import { ErrorState } from '../../components/ErrorState.jsx'
 import { FormAlert } from '../../components/FormAlert.jsx'
 import { LoadingState } from '../../components/LoadingState.jsx'
 import { PageHeader } from '../../components/PageHeader.jsx'
+import { SelectField } from '../../components/SelectField.jsx'
 import { MeasurementForm } from '../../components/measurements/MeasurementForm.jsx'
 import { MeasurementTable } from '../../components/measurements/MeasurementTable.jsx'
 import { useApiData } from '../../hooks/useApiData.js'
@@ -21,9 +22,10 @@ import { EMPTY_MEASUREMENT_FORM, toMeasurementForm } from '../../utils/measureme
 import { isClosed } from '../../utils/projectStatus.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
 
-/** Manual measurements of a project: add, edit and delete them. */
+/** Manual measurements of a project: add, edit, delete and filter them by floor. */
 export function MeasurementsPage() {
   const { id } = useParams()
+  const [floor, setFloor] = useState('')
   // The measurement being edited, or null to add a new one.
   const [editing, setEditing] = useState(null)
   // Changes after each save, so the form starts empty again.
@@ -32,7 +34,7 @@ export function MeasurementsPage() {
   const project = useApiData((signal) => getProject(id, { signal }), [id])
   const elementTypes = useApiData((signal) => getElementTypes({ signal }), [])
   const blueprints = useApiData((signal) => listBlueprints(id, { signal }), [id])
-  const measurements = useApiData((signal) => listMeasurements(id, {}, { signal }), [id])
+  const measurements = useApiData((signal) => listMeasurements(id, { floor }, { signal }), [id, floor])
   const { retry } = measurements
 
   const save = useCallback(
@@ -57,6 +59,10 @@ export function MeasurementsPage() {
 
   const closed = isClosed(project.data)
   const floors = project.data.floors
+  const floorOptions = Array.from({ length: floors }, (_, index) => ({
+    value: String(index + 1),
+    label: `Floor ${index + 1}`,
+  }))
 
   function handleEdit(measurement) {
     setEditing(measurement)
@@ -102,10 +108,21 @@ export function MeasurementsPage() {
         </section>
       )}
       <section className="card">
-        <h2>Measured elements</h2>
+        <div className="button-row measurements-header">
+          <h2>Measured elements</h2>
+          {floors > 1 && (
+            <SelectField
+              label="Floor"
+              placeholder="All floors"
+              options={floorOptions}
+              value={floor}
+              onChange={(event) => setFloor(event.target.value)}
+            />
+          )}
+        </div>
         {closed && <p className="muted">The project is closed: the measurements can be read but not changed.</p>}
         {measurements.data.length === 0 ? (
-          <p className="muted">There are no measurements yet.</p>
+          <p className="muted">{floor ? 'There are no measurements on this floor.' : 'There are no measurements yet.'}</p>
         ) : (
           <MeasurementTable
             measurements={measurements.data}
