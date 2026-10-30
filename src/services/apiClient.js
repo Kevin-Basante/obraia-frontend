@@ -18,9 +18,10 @@ export class ApiError extends Error {
 /**
  * Sends a request to the backend and returns the JSON body (or null when
  * the answer has no body, like 204). Throws ApiError if the request fails.
- * A FormData body is sent as it is (the browser sets the multipart header).
+ * A FormData body is sent as it is (the browser sets the multipart header),
+ * and `responseType: 'blob'` returns the bytes of a file instead of JSON.
  */
-export async function apiRequest(path, { method = 'GET', body, token, signal } = {}) {
+export async function apiRequest(path, { method = 'GET', body, token, signal, responseType = 'json' } = {}) {
   const isForm = body instanceof FormData
   const headers = { Accept: 'application/json' }
   if (body !== undefined && !isForm) headers['Content-Type'] = 'application/json'
@@ -38,6 +39,8 @@ export async function apiRequest(path, { method = 'GET', body, token, signal } =
     if (error.name === 'AbortError') throw error
     throw new ApiError('Could not connect to the server', { code: 'NETWORK_ERROR' })
   }
+
+  if (response.ok && responseType === 'blob') return response.blob()
 
   const data = await response.json().catch(() => null)
 

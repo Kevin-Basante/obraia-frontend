@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { ApiError, apiGet, apiPost } from './apiClient.js'
+import { ApiError, apiGet, apiPost, apiRequest } from './apiClient.js'
 
 /** Fake fetch answer with the given status and JSON body. */
 function jsonResponse(status, body) {
@@ -69,5 +69,15 @@ describe('apiRequest', () => {
     const [, options] = fetchMock.mock.calls[0]
     expect(options.body).toBe(form)
     expect(options.headers['Content-Type']).toBeUndefined()
+  })
+
+  it('returns the bytes of a file when asked for a blob', async () => {
+    const file = new Response('%PDF-', { status: 200, headers: { 'Content-Type': 'application/pdf' } })
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(file))
+
+    const blob = await apiRequest('/api/projects/p1/blueprints/b1/file', { responseType: 'blob' })
+
+    expect(blob.type).toBe('application/pdf')
+    expect(await blob.text()).toBe('%PDF-')
   })
 })
