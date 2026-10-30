@@ -1,0 +1,12 @@
+.comparison-status {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.comparison-status--match {
+  color: var(--ok);
+}
+
+.comparison-status--review {
+  color: var(--bad);
+}
