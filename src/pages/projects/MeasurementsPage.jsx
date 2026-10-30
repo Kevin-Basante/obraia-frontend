@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import { useParams } from 'react-router'
+import { Link, useParams } from 'react-router'
 import { ErrorState } from '../../components/ErrorState.jsx'
 import { FormAlert } from '../../components/FormAlert.jsx'
 import { LoadingState } from '../../components/LoadingState.jsx'
@@ -87,6 +87,11 @@ export function MeasurementsPage() {
         title="Measurements"
         description={`${project.data.name} · ${floors === 1 ? '1 floor' : `${floors} floors`}`}
         back={{ to: `/projects/${id}`, label: project.data.name }}
+        actions={
+          <Link to={`/projects/${id}/measurements/comparison`} className="button-link button-secondary">
+            Compare with AI
+          </Link>
+        }
       />
       {!closed && (
         <section className="card">
