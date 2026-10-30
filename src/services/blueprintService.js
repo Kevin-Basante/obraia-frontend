@@ -24,3 +24,7 @@ export function getBlueprintFile(projectId, blueprintId, options) {
     responseType: 'blob',
   })
 }
+
+export function deleteBlueprint(projectId, blueprintId) {
+  return authorizedRequest(blueprintsPath(projectId, `/${encodeURIComponent(blueprintId)}`), { method: 'DELETE' })
+}
