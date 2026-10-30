@@ -23,3 +23,21 @@ export function formatDate(isoDate) {
   const [year, month, day] = isoDate.split('-').map(Number)
   return new Date(year, month - 1, day).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
 }
+
+/** "2026-10-30T04:47:34Z" -> "Oct 30, 2026, 11:47 PM", in the time zone of the browser. */
+export function formatDateTime(isoInstant) {
+  return new Date(isoInstant).toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+  })
+}
+
+/** 49441 -> "48,3 KB" */
+export function formatFileSize(bytes) {
+  if (bytes < 1024) return `${bytes} B`
+  if (bytes < 1024 * 1024) return `${decimal.format(Math.round((bytes / 1024) * 10) / 10)} KB`
+  return `${decimal.format(Math.round((bytes / (1024 * 1024)) * 10) / 10)} MB`
+}

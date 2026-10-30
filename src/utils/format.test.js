@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { formatCurrency, formatDate, formatPercent, formatQuantity } from './format.js'
+import { formatCurrency, formatDate, formatFileSize, formatPercent, formatQuantity } from './format.js'
 
 // Intl puts a non-breaking space after the currency symbol; tests compare with a normal space.
 const plain = (text) => text.replace(/\s/g, ' ')
@@ -21,5 +21,11 @@ describe('format', () => {
 
   it('formats a date without moving it to another day', () => {
     expect(formatDate('2026-10-04')).toBe('Oct 4, 2026')
+  })
+
+  it('formats file sizes in B, KB and MB', () => {
+    expect(formatFileSize(800)).toBe('800 B')
+    expect(formatFileSize(49441)).toBe('48,3 KB')
+    expect(formatFileSize(10 * 1024 * 1024)).toBe('10 MB')
   })
 })
