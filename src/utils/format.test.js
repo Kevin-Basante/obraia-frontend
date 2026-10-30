@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { formatCurrency, formatDate, formatFileSize, formatPercent, formatQuantity } from './format.js'
+import { formatAmount, formatCurrency, formatDate, formatFileSize, formatPercent, formatQuantity } from './format.js'
 
 // Intl puts a non-breaking space after the currency symbol; tests compare with a normal space.
 const plain = (text) => text.replace(/\s/g, ' ')
@@ -27,5 +27,10 @@ describe('format', () => {
     expect(formatFileSize(800)).toBe('800 B')
     expect(formatFileSize(49441)).toBe('48,3 KB')
     expect(formatFileSize(10 * 1024 * 1024)).toBe('10 MB')
+  })
+
+  it('writes the unit of an amount with its exponent', () => {
+    expect(formatAmount(33.6, 'm2')).toBe('33,6 m²')
+    expect(formatAmount('0.92', 'm3')).toBe('0,92 m³')
   })
 })

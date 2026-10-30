@@ -41,3 +41,8 @@ export function formatFileSize(bytes) {
   if (bytes < 1024 * 1024) return `${decimal.format(Math.round((bytes / 1024) * 10) / 10)} KB`
   return `${decimal.format(Math.round((bytes / (1024 * 1024)) * 10) / 10)} MB`
 }
+
+/** 33.6 and "m2" -> "33,6 m²" */
+export function formatAmount(value, unit) {
+  return `${formatQuantity(value)} ${unit === 'm3' ? 'm³' : 'm²'}`
+}
