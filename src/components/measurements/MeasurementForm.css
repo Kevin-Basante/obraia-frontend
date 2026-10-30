@@ -1,0 +1,16 @@
+.measurement-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.measurement-form__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.measurement-form__amount {
+  margin: 0;
+  font-weight: 600;
+}
