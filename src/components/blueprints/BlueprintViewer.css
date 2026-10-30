@@ -1,0 +1,14 @@
+.blueprint-viewer img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+}
+
+.blueprint-viewer iframe {
+  width: 100%;
+  height: 75vh;
+  border: 1px solid var(--line);
+  background: var(--card);
+}
