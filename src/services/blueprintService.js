@@ -16,3 +16,11 @@ export function uploadBlueprint(projectId, file) {
   body.append('file', file)
   return authorizedRequest(blueprintsPath(projectId), { method: 'POST', body })
 }
+
+/** The bytes of the blueprint as a Blob, to show or save it. */
+export function getBlueprintFile(projectId, blueprintId, options) {
+  return authorizedRequest(blueprintsPath(projectId, `/${encodeURIComponent(blueprintId)}/file`), {
+    ...options,
+    responseType: 'blob',
+  })
+}
