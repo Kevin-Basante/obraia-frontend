@@ -18,10 +18,12 @@ export class ApiError extends Error {
 /**
  * Sends a request to the backend and returns the JSON body (or null when
  * the answer has no body, like 204). Throws ApiError if the request fails.
+ * A FormData body is sent as it is (the browser sets the multipart header).
  */
 export async function apiRequest(path, { method = 'GET', body, token, signal } = {}) {
+  const isForm = body instanceof FormData
   const headers = { Accept: 'application/json' }
-  if (body !== undefined) headers['Content-Type'] = 'application/json'
+  if (body !== undefined && !isForm) headers['Content-Type'] = 'application/json'
   if (token) headers.Authorization = `Bearer ${token}`
 
   let response
@@ -29,7 +31,7 @@ export async function apiRequest(path, { method = 'GET', body, token, signal } =
     response = await fetch(`${API_URL}${path}`, {
       method,
       headers,
-      body: body === undefined ? undefined : JSON.stringify(body),
+      body: body === undefined || isForm ? body : JSON.stringify(body),
       signal,
     })
   } catch (error) {

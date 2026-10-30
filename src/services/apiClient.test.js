@@ -57,4 +57,17 @@ describe('apiRequest', () => {
 
     await expect(apiGet('/api/hello')).rejects.toMatchObject({ code: 'NETWORK_ERROR' })
   })
+
+  it('sends a FormData body as it is, without the JSON header', async () => {
+    const fetchMock = vi.fn().mockResolvedValue(jsonResponse(201, { id: 'b1' }))
+    vi.stubGlobal('fetch', fetchMock)
+    const form = new FormData()
+    form.append('file', new Blob(['%PDF-']), 'plano.pdf')
+
+    await apiPost('/api/projects/p1/blueprints', form)
+
+    const [, options] = fetchMock.mock.calls[0]
+    expect(options.body).toBe(form)
+    expect(options.headers['Content-Type']).toBeUndefined()
+  })
 })
