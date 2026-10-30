@@ -69,6 +69,10 @@ Esta variable solo guarda la URL pública del backend. Las claves (base de datos
 | `/projects/:id`    | Detalle de la obra: estado, datos, maestro de obra y miembros  | Con cuenta (miembros)   |
 | `/projects/:id/edit` | Editar una obra que no esté terminada ni cancelada           | Con cuenta (miembros)   |
 | `/projects/:id/delete` | Advertencias y envío del correo para eliminar la obra      | Con cuenta (creador)    |
+| `/projects/:id/blueprints` | Planos de la obra: subir fotos o PDF y borrarlos        | Con cuenta (miembros)   |
+| `/projects/:id/blueprints/:blueprintId` | Ver un plano dentro de la página y descargarlo | Con cuenta (miembros) |
+| `/projects/:id/measurements` | Medidas manuales: agregar, editar, borrar y filtrar por piso | Con cuenta (miembros) |
+| `/projects/:id/measurements/comparison` | Totales manuales contra los de la IA       | Con cuenta (miembros)   |
 | `/site-managers`   | Mis maestros de obra: agregar, editar y borrar                 | Con cuenta              |
 | `/confirm-deletion` | Confirma la eliminación con el enlace recibido (`?token=`)    | Todos                   |
 
