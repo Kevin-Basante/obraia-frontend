@@ -20,6 +20,7 @@ import { BlueprintViewPage } from '../pages/projects/BlueprintViewPage.jsx'
 import { BlueprintsPage } from '../pages/projects/BlueprintsPage.jsx'
 import { DeleteProjectPage } from '../pages/projects/DeleteProjectPage.jsx'
 import { EditProjectPage } from '../pages/projects/EditProjectPage.jsx'
+import { MeasurementsPage } from '../pages/projects/MeasurementsPage.jsx'
 import { NewProjectPage } from '../pages/projects/NewProjectPage.jsx'
 import { ProjectDetailPage } from '../pages/projects/ProjectDetailPage.jsx'
 import { ProjectsPage } from '../pages/projects/ProjectsPage.jsx'
@@ -66,6 +67,7 @@ export function AppRoutes() {
             <Route path="projects/:id/delete" element={<DeleteProjectPage />} />
             <Route path="projects/:id/blueprints" element={<BlueprintsPage />} />
             <Route path="projects/:id/blueprints/:blueprintId" element={<BlueprintViewPage />} />
+            <Route path="projects/:id/measurements" element={<MeasurementsPage />} />
             <Route path="site-managers" element={<SiteManagersPage />} />
           </Route>
         </Route>
