@@ -20,7 +20,9 @@ export function AnalysisResult({ projectId, filename, result }) {
           </ul>
         </>
       )}
-      {result.measurements.length > 0 && <MeasurementTable measurements={result.measurements} />}
+      {result.measurements.length > 0 && (
+        <MeasurementTable measurements={result.measurements} showBlueprint={false} />
+      )}
       <div className="button-row">
         <Link to={`/projects/${projectId}/measurements/comparison`} className="button-link">
           Compare with the manual measurements
