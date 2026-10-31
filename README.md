@@ -130,7 +130,7 @@ Flujo de una petición: página → hook → servicio → cliente de la API → 
 ```
 public/                Archivos estáticos (ícono)
 src/
-├── components/        Componentes visuales, cada uno con su CSS (por sección en blueprints/, catalog/, measurements/, projects/ y siteManagers/)
+├── components/        Componentes visuales, cada uno con su CSS (por sección en blueprints/, catalog/, measurements/, phases/, projects/ y siteManagers/)
 ├── config/            Configuración (URL del backend)
 ├── context/           Estado de la sesión compartido por toda la app
 ├── hooks/             Lógica reutilizable: sesión, formularios y carga de datos
@@ -138,7 +138,7 @@ src/
 ├── pages/             Una página por ruta (las del catálogo en pages/catalog/ y las de obras en pages/projects/)
 ├── routes/            Rutas y protección de páginas según la sesión
 ├── services/          Llamadas a la API del backend y manejo de tokens
-├── utils/             Validaciones, formularios de obras y medidas, formato de precios, fechas y tamaños, y filtros
+├── utils/             Validaciones, formularios de obras, medidas, tareas y avance, estados de trabajo, formato de precios, fechas y tamaños, y filtros
 ├── App.jsx            Enrutador y proveedor de sesión
 ├── index.css          Colores y estilos generales (tema claro y oscuro)
 └── main.jsx           Punto de entrada
