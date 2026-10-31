@@ -1,0 +1,11 @@
+.work-item-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.work-item-form__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
