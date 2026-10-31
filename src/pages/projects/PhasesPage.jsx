@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useParams } from 'react-router'
 import { ErrorState } from '../../components/ErrorState.jsx'
 import { FormAlert } from '../../components/FormAlert.jsx'
@@ -9,10 +9,19 @@ import { PlanPreview } from '../../components/phases/PlanPreview.jsx'
 import { ProgressBar } from '../../components/phases/ProgressBar.jsx'
 import { useApiData } from '../../hooks/useApiData.js'
 import { useFormSubmit } from '../../hooks/useFormSubmit.js'
-import { generatePlan, getPlanPreview, getWorkPlan } from '../../services/phaseService.js'
+import {
+  changePhaseStatus,
+  deletePlan,
+  generatePlan,
+  getPlanPreview,
+  getWorkPlan,
+  updatePhase,
+} from '../../services/phaseService.js'
 import { getProject } from '../../services/projectService.js'
+import { changeTaskStatus, deleteTask } from '../../services/taskService.js'
 import { formatDate } from '../../utils/format.js'
 import { isClosed } from '../../utils/projectStatus.js'
+import { countReports } from '../../utils/workStatus.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
 
 /** Shown while the project has no plan: the phases it would get and the button to create them. */
@@ -49,6 +58,24 @@ export function PhasesPage() {
   const { retry } = plan
   const reload = useCallback(() => retry(), [retry])
 
+  const run = useCallback((action) => action().then(reload), [reload])
+  const working = useFormSubmit(run)
+  const { submit } = working
+
+  const actions = useMemo(
+    () => ({
+      savePhase: (phase, request) => updatePhase(id, phase.id, request).then(reload),
+      changePhaseStatus: (phase, code) => submit(() => changePhaseStatus(id, phase.id, code)),
+      changeTaskStatus: (task, code) => submit(() => changeTaskStatus(id, task.id, code)),
+      deleteTask: (task) => {
+        if (window.confirm(`Delete the task "${task.name}" and its progress reports?`)) {
+          submit(() => deleteTask(id, task.id))
+        }
+      },
+    }),
+    [id, reload, submit],
+  )
+
   if (project.error?.status === 404) return <NotFoundPage />
   const failed = [project, plan].find((request) => request.status === 'error')
   if (failed) return <ErrorState error={failed.error} onRetry={failed.retry} />
@@ -67,9 +94,28 @@ export function PhasesPage() {
     )
   }
 
+  const canDeletePlan = !closed && countReports(plan.data) === 0
+
+  function handleDeletePlan() {
+    if (window.confirm('Delete the whole plan? Its phases and tasks are removed so it can be created again.')) {
+      submit(() => deletePlan(id))
+    }
+  }
+
   return (
     <div className="workspace">
-      <PageHeader title="Phases and tasks" description={project.data.name} back={back} />
+      <PageHeader
+        title="Phases and tasks"
+        description={project.data.name}
+        back={back}
+        actions={
+          canDeletePlan && (
+            <button type="button" className="button-secondary" disabled={working.pending} onClick={handleDeletePlan}>
+              Delete plan
+            </button>
+          )
+        }
+      />
       <section className="card">
         <h2>Progress of the project</h2>
         <ProgressBar value={plan.data.progressPct} label="Progress of the project" />
@@ -79,9 +125,16 @@ export function PhasesPage() {
             ` Planned from ${formatDate(plan.data.plannedStartDate)} to ${formatDate(plan.data.plannedEndDate)}.`}
         </p>
         {closed && <p className="muted">The project is closed: the plan can be read but not changed.</p>}
+        <FormAlert>{working.error?.message}</FormAlert>
       </section>
       {phases.map((phase) => (
-        <PhaseCard key={phase.id} projectId={id} phase={phase} />
+        <PhaseCard
+          key={phase.id}
+          projectId={id}
+          phase={phase}
+          actions={closed ? undefined : actions}
+          busy={working.pending}
+        />
       ))}
     </div>
   )
