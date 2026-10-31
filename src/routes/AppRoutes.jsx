@@ -8,6 +8,7 @@ import { ForgotPasswordPage } from '../pages/ForgotPasswordPage.jsx'
 import { HomePage } from '../pages/HomePage.jsx'
 import { LoginPage } from '../pages/LoginPage.jsx'
 import { NotFoundPage } from '../pages/NotFoundPage.jsx'
+import { NotificationsPage } from '../pages/NotificationsPage.jsx'
 import { RegisterPage } from '../pages/RegisterPage.jsx'
 import { ResetPasswordPage } from '../pages/ResetPasswordPage.jsx'
 import { SiteManagersPage } from '../pages/SiteManagersPage.jsx'
@@ -83,6 +84,7 @@ export function AppRoutes() {
             <Route path="projects/:id/materials" element={<ProjectMaterialsPage />} />
             <Route path="projects/:id/expenses" element={<ExpensesPage />} />
             <Route path="site-managers" element={<SiteManagersPage />} />
+            <Route path="notifications" element={<NotificationsPage />} />
           </Route>
         </Route>
 
