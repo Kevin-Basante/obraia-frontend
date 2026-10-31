@@ -47,7 +47,8 @@ function CurrentQuotation({ projectId, closed }) {
       {preview.data && (
         <>
           <p className="muted">
-            From the manual measurements and today&apos;s reference prices. Nothing is saved until you save a version.
+            From the {preview.data.measurementSource === 'ocr' ? 'measurements read by the AI' : 'manual measurements'} and
+            today&apos;s reference prices. Nothing is saved until you save a version.
           </p>
           <QuotationFacts quotation={preview.data} />
           <CostBreakdown items={preview.data.items} total={preview.data.projectedAmount} />
