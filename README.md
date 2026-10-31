@@ -124,7 +124,7 @@ Una ruta desconocida muestra "Page not found". Un invitado que abre una página 
 ## Presupuesto
 
 - La página de presupuesto muestra la cotización actual (`/budgets/preview`) sin guardar nada: ciudad, % de transporte, días hábiles y una fila por cada capa de costo (materiales, desperdicio, transporte, mano de obra e IVA), con su tasa, su monto y su parte del total. Las capas las arma el backend con el patrón Decorator.
-- Si la obra no tiene medidas manuales, la página lo explica y lleva a la página de medidas.
+- Si la obra no tiene medidas manuales, el backend cotiza con las que leyó la IA (o le pide que lea el plano más nuevo) y la página dice de dónde salieron las medidas. Si no hay ni medidas ni planos, la página lo explica y lleva a medidas o a planos.
 - **Save as a new version** guarda la cotización como un borrador y abre esa versión. Ahí, **Approve** la aprueba (pide confirmación); la versión aprobada antes pasa a **Superseded**.
 - Los días hábiles salen de las fechas de las fases si el plan las tiene; si no, de las fases estándar del tipo de obra. La página dice cuál de los dos usó.
 - **Materials to buy** lista las cantidades de la última versión guardada, con desperdicio, precio y subtotal.
