@@ -105,7 +105,10 @@ Una ruta desconocida muestra "Page not found". Un invitado que abre una página 
 - El archivo se sube como `multipart/form-data` (campo `file`). Para verlo, el frontend lo descarga con el token y lo muestra desde una dirección temporal del navegador (`URL.createObjectURL`), que se libera al salir de la página.
 - El formulario de medidas pide solo las dimensiones del elemento elegido, según `/api/catalogs/element-types`: largo, ancho y alto para cimentación, columnas, vigas y losas (m³); largo y alto para muros, y largo y ancho para piso y cubierta (m²). Mientras se escribe, muestra la cantidad que calculará el backend.
 - Las medidas aceptan coma decimal (`3,5`) y el piso no puede ser mayor que los pisos de la obra.
-- Las medidas leídas por la IA no tienen botones para editar ni borrar. Mientras la IA no lea planos, la comparación muestra solo los totales manuales.
+- **Analyze with AI** envía el plano al backend (`POST /blueprints/{id}/analyze`), que lo pasa al servicio de IA. Mientras lee, el botón dice **Reading…** y la página avisa que la primera lectura del día puede tardar cerca de un minuto. Al terminar se ven las medidas que guardó, las que descartó y las advertencias de la IA, con un enlace a la comparación.
+- La columna **AI reading** muestra el estado del plano: `Pending`, `Completed` o `Failed`. Un plano leído se puede volver a leer (**Analyze again**); si el archivo es el mismo, el backend responde desde su caché sin llamar a la IA.
+- Los errores de la IA se explican en la página: servicio sin configurar (503), límite de lecturas por hora de la obra (429) o fallo de la IA (502).
+- Las medidas leídas por la IA no tienen botones para editar ni borrar, y muestran cuánto se alejan del total manual de su elemento y piso. Mientras la IA no lea planos, la comparación muestra solo los totales manuales.
 - En una obra terminada o cancelada, los planos y las medidas se pueden ver pero no cambiar.
 
 ## Fases y tareas
