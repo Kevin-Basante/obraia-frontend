@@ -35,11 +35,13 @@ export function ExpenseSummary({ summary }) {
       </dl>
       {hasBudget && (
         <div className="expense-summary__bar">
-          <ProgressBar value={summary.spentPct} label="Approved budget spent" />
-          {over && (
+          {/* The bar stops at 100%, so a passed budget is told in words. */}
+          {over ? (
             <p className="expense-summary__over">
               {formatPercent(Number(summary.spentPct) / 100)} of the approved budget is spent.
             </p>
+          ) : (
+            <ProgressBar value={summary.spentPct} label="Approved budget spent" />
           )}
         </div>
       )}
