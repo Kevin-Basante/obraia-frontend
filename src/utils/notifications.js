@@ -2,6 +2,14 @@ import { formatDate } from './format.js'
 
 // Helpers for the notifications of the user.
 
+// The bell listens to this event to read the unread count again.
+export const NOTIFICATIONS_CHANGED = 'obraia:notifications-changed'
+
+/** Tells the bell that notifications were read. */
+export function announceNotificationsChanged() {
+  window.dispatchEvent(new Event(NOTIFICATIONS_CHANGED))
+}
+
 /** Number shown on the bell: nothing at 0 and "99+" above 99. */
 export function unreadBadge(count) {
   if (!count) return null
