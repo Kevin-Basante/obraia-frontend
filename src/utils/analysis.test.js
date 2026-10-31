@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { analysisErrorMessage, analysisSummary, analyzeLabel } from './analysis.js'
+import { analysisErrorMessage, analysisSummary, analyzeLabel, measurementSourceText } from './analysis.js'
 
 describe('analysis helpers', () => {
   it('explains the errors of the AI', () => {
@@ -24,4 +24,8 @@ describe('analysis helpers', () => {
     )
   })
 
+  it('says where the quoted measurements come from', () => {
+    expect(measurementSourceText('ocr')).toMatch(/AI/)
+    expect(measurementSourceText('manual')).toBe('typed by hand')
+  })
 })
