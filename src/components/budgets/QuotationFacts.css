@@ -1,0 +1,22 @@
+.quotation-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 0 0 12px;
+}
+
+.quotation-facts dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.quotation-facts dd {
+  margin: 2px 0 0;
+}
+
+.quotation-facts dd .muted {
+  display: block;
+  font-size: 0.85rem;
+}
