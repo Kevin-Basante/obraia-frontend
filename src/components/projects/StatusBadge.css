@@ -31,3 +31,12 @@
 .status-badge--approved {
   color: var(--ok);
 }
+
+/* Blueprints read by the AI. */
+.status-badge--processing {
+  color: var(--accent);
+}
+
+.status-badge--failed {
+  color: var(--bad);
+}
