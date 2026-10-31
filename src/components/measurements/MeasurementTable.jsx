@@ -12,8 +12,9 @@ function dimensions(measurement) {
 /**
  * Measurements of a project. Only manual ones can be changed, and only
  * while the project is open: `onEdit` and `onDelete` are left out otherwise.
+ * `showBlueprint` is false when every row comes from the same blueprint.
  */
-export function MeasurementTable({ measurements, onEdit, onDelete, busy }) {
+export function MeasurementTable({ measurements, onEdit, onDelete, busy, showBlueprint = true }) {
   return (
     <table className="data-table">
       <thead>
@@ -35,7 +36,9 @@ export function MeasurementTable({ measurements, onEdit, onDelete, busy }) {
             <td data-label="Element">
               {measurement.elementLabel}
               {measurement.notes && <span className="muted"> · {measurement.notes}</span>}
-              {measurement.blueprintFilename && <span className="muted"> · {measurement.blueprintFilename}</span>}
+              {showBlueprint && measurement.blueprintFilename && (
+                <span className="muted"> · {measurement.blueprintFilename}</span>
+              )}
             </td>
             <td data-label="Floor">{measurement.floorNumber}</td>
             <td data-label="Dimensions (m)">{dimensions(measurement)}</td>
