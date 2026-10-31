@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { deleteBlueprint, getBlueprintFile, uploadBlueprint } from './blueprintService.js'
+import { analyzeBlueprint, deleteBlueprint, getBlueprintFile, uploadBlueprint } from './blueprintService.js'
 import { getMeasurementComparison, listMeasurements, updateMeasurement } from './measurementService.js'
 
 let fetchMock
@@ -47,6 +47,12 @@ describe('blueprint services', () => {
     await deleteBlueprint('p1', 'b1')
 
     expect(sentRequest()).toMatchObject({ path: '/api/projects/p1/blueprints/b1', method: 'DELETE' })
+  })
+
+  it('asks the AI to read a blueprint with POST', async () => {
+    await analyzeBlueprint('p1', 'b1')
+
+    expect(sentRequest()).toMatchObject({ path: '/api/projects/p1/blueprints/b1/analyze', method: 'POST' })
   })
 })
 
