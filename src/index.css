@@ -8,6 +8,7 @@
   --accent: #1f5fa8;
   --ok: #1d7a46;
   --bad: #b3261e;
+  --warn: #9a5b00;
   --radius: 10px;
   color-scheme: light;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -23,6 +24,7 @@
     --accent: #7fb2ec;
     --ok: #6fcf97;
     --bad: #f28b82;
+    --warn: #f2b25c;
     color-scheme: dark;
   }
 }
