@@ -1,0 +1,17 @@
+.cost-breakdown__total th,
+.cost-breakdown__total td {
+  border-bottom: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: inherit;
+}
+
+/* On phones the total row keeps only the amount. */
+@media (max-width: 640px) {
+  .cost-breakdown__total th,
+  .cost-breakdown__total td:last-child {
+    display: none;
+  }
+}
