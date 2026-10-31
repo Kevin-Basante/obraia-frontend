@@ -28,3 +28,10 @@ export function analysisSummary(result) {
   if (result.cached) text += ' This file was already read, so the AI was not called again.'
   return text
 }
+
+/** Where the measurements of the quotation come from, in words. */
+export function measurementSourceText(source) {
+  return source === 'ocr'
+    ? 'read by the AI, because there are no manual measurements'
+    : 'typed by hand'
+}
