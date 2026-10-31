@@ -1,0 +1,38 @@
+.notification-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.notification-list__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.notification-list__item:last-child {
+  border-bottom: 0;
+}
+
+.notification-list__body {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.notification-list__body p {
+  margin: 0;
+}
+
+.notification-list__item--unread .notification-list__body p:first-child {
+  font-weight: 600;
+}
+
+.notification-list__meta {
+  font-size: 0.85rem;
+}
