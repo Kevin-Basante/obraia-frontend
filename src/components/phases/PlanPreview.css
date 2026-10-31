@@ -1,0 +1,19 @@
+.plan-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plan-preview__list {
+  margin: 0;
+  padding-left: 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.plan-preview__tasks {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
