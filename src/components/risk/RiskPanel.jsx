@@ -5,7 +5,7 @@ import { useApiData } from '../../hooks/useApiData.js'
 import { useFormSubmit } from '../../hooks/useFormSubmit.js'
 import { assessRisk, getRiskOverview } from '../../services/riskService.js'
 import { formatDateTime } from '../../utils/format.js'
-import { delayText, formatScore, sortFactors } from '../../utils/risk.js'
+import { delayText, formatScore, sortFactors, triggerText } from '../../utils/risk.js'
 import { RiskChart } from './RiskChart.jsx'
 import { RiskFactorTable } from './RiskFactorTable.jsx'
 import './RiskPanel.css'
@@ -44,8 +44,8 @@ export function RiskPanel({ projectId }) {
             <span>{delayText(latest.predictedDelayDays)}</span>
           </div>
           <p className="muted">
-            {sortFactors(latest.factors)[0]?.detail}. Assessed {formatDateTime(latest.assessedAt)} ·{' '}
-            {latest.trigger.label.toLowerCase()}.
+            {sortFactors(latest.factors)[0]?.detail}. Assessed {formatDateTime(latest.assessedAt)},{' '}
+            {triggerText(latest.trigger.code).toLowerCase()}.
           </p>
           <RiskFactorTable factors={latest.factors} />
           {history.length > 1 && (
