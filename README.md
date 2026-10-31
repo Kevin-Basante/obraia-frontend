@@ -118,6 +118,15 @@ Una ruta desconocida muestra "Page not found". Un invitado que abre una página 
 - El avance de una tarea es su último reporte; el de la fase y el de la obra son promedios que calcula el backend.
 - El plan se puede borrar para crearlo de nuevo solo mientras ninguna tarea tenga reportes. En una obra terminada o cancelada todo se puede ver pero no cambiar.
 
+## Presupuesto
+
+- La página de presupuesto muestra la cotización actual (`/budgets/preview`) sin guardar nada: ciudad, % de transporte, días hábiles y una fila por cada capa de costo (materiales, desperdicio, transporte, mano de obra e IVA), con su tasa, su monto y su parte del total. Las capas las arma el backend con el patrón Decorator.
+- Si la obra no tiene medidas manuales, la página lo explica y lleva a la página de medidas.
+- **Save as a new version** guarda la cotización como un borrador y abre esa versión. Ahí, **Approve** la aprueba (pide confirmación); la versión aprobada antes pasa a **Superseded**.
+- Los días hábiles salen de las fechas de las fases si el plan las tiene; si no, de las fases estándar del tipo de obra. La página dice cuál de los dos usó.
+- **Materials to buy** lista las cantidades de la última versión guardada, con desperdicio, precio y subtotal.
+- En una obra terminada o cancelada, el presupuesto se puede ver pero no se pueden guardar ni aprobar versiones.
+
 ## Sesión
 
 - Al iniciar sesión, el backend entrega un **access token** (dura 15 minutos) y un **refresh token** (dura 7 días).
