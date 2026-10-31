@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { delayText, formatScore, sortFactors, triggerText } from './risk.js'
+import { chartPoints, delayText, formatScore, sortFactors, triggerText } from './risk.js'
 
 describe('risk helpers', () => {
   it('rounds the score to one decimal with a comma', () => {
@@ -18,6 +18,20 @@ describe('risk helpers', () => {
     expect(triggerText('progress_report')).toBe('After a progress report')
     expect(triggerText('manual')).toBe('Requested by a member')
     expect(triggerText('unknown')).toBe('unknown')
+  })
+
+  it('spreads the history over the width of the chart', () => {
+    const points = chartPoints([{ score: 0 }, { score: '50.00' }, { score: 100 }], 200, 100)
+
+    expect(points.map(({ x, y }) => [x, y])).toEqual([
+      [0, 100],
+      [100, 50],
+      [200, 0],
+    ])
+  })
+
+  it('puts a single point in the middle', () => {
+    expect(chartPoints([{ score: 25 }], 200, 100)).toEqual([{ score: 25, x: 100, y: 75 }])
   })
 
   it('puts the factor with the highest score first', () => {
