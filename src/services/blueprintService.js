@@ -28,3 +28,14 @@ export function getBlueprintFile(projectId, blueprintId, options) {
 export function deleteBlueprint(projectId, blueprintId) {
   return authorizedRequest(blueprintsPath(projectId, `/${encodeURIComponent(blueprintId)}`), { method: 'DELETE' })
 }
+
+/**
+ * Asks the backend to read the blueprint with the AI. It saves the
+ * measurements it finds and answers them. The first call can take about a
+ * minute while the AI service wakes up.
+ */
+export function analyzeBlueprint(projectId, blueprintId) {
+  return authorizedRequest(blueprintsPath(projectId, `/${encodeURIComponent(blueprintId)}/analyze`), {
+    method: 'POST',
+  })
+}
