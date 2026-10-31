@@ -25,6 +25,20 @@ export function triggerText(code) {
   return TRIGGER_TEXT[code] ?? code
 }
 
+/**
+ * Places each point of the history in a chart of `width` × `height`: the
+ * oldest on the left, score 100 at the top and 0 at the bottom. A single
+ * point goes in the middle.
+ */
+export function chartPoints(history, width, height) {
+  const step = history.length > 1 ? width / (history.length - 1) : 0
+  return history.map((point, index) => ({
+    ...point,
+    x: history.length > 1 ? Math.round(index * step * 10) / 10 : width / 2,
+    y: Math.round((height - (Number(point.score) / 100) * height) * 10) / 10,
+  }))
+}
+
 /** The factors from the highest score to the lowest, so the main reason comes first. */
 export function sortFactors(factors) {
   return [...factors].sort((a, b) => Number(b.score) - Number(a.score))
