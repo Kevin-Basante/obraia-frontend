@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { useParams } from 'react-router'
 import { ErrorState } from '../../components/ErrorState.jsx'
 import { FormAlert } from '../../components/FormAlert.jsx'
@@ -7,6 +7,7 @@ import { PageHeader } from '../../components/PageHeader.jsx'
 import { PhaseCard } from '../../components/phases/PhaseCard.jsx'
 import { PlanPreview } from '../../components/phases/PlanPreview.jsx'
 import { ProgressBar } from '../../components/phases/ProgressBar.jsx'
+import { WorkItemForm } from '../../components/phases/WorkItemForm.jsx'
 import { useApiData } from '../../hooks/useApiData.js'
 import { useFormSubmit } from '../../hooks/useFormSubmit.js'
 import {
@@ -18,9 +19,10 @@ import {
   updatePhase,
 } from '../../services/phaseService.js'
 import { getProject } from '../../services/projectService.js'
-import { changeTaskStatus, deleteTask } from '../../services/taskService.js'
+import { changeTaskStatus, createTask, deleteTask, updateTask } from '../../services/taskService.js'
 import { formatDate } from '../../utils/format.js'
 import { isClosed } from '../../utils/projectStatus.js'
+import { EMPTY_TASK_FORM, toTaskRequest, toWorkForm, validateTask } from '../../utils/workForm.js'
 import { countReports } from '../../utils/workStatus.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
 
@@ -53,6 +55,11 @@ function NoPlan({ projectId, closed, onCreated }) {
 /** Phases and tasks of a project, with their status and progress. */
 export function PhasesPage() {
   const { id } = useParams()
+  // The task being edited, or null to add a new one.
+  const [editing, setEditing] = useState(null)
+  // Changes after each save, so the task form starts empty again.
+  const [formKey, setFormKey] = useState(0)
+
   const project = useApiData((signal) => getProject(id, { signal }), [id])
   const plan = useApiData((signal) => getWorkPlan(id, { signal }), [id])
   const { retry } = plan
@@ -67,13 +74,30 @@ export function PhasesPage() {
       savePhase: (phase, request) => updatePhase(id, phase.id, request).then(reload),
       changePhaseStatus: (phase, code) => submit(() => changePhaseStatus(id, phase.id, code)),
       changeTaskStatus: (task, code) => submit(() => changeTaskStatus(id, task.id, code)),
+      editTask: (task) => {
+        setEditing(task)
+        setFormKey((key) => key + 1)
+      },
       deleteTask: (task) => {
         if (window.confirm(`Delete the task "${task.name}" and its progress reports?`)) {
+          setEditing((current) => (current?.id === task.id ? null : current))
           submit(() => deleteTask(id, task.id))
         }
       },
     }),
     [id, reload, submit],
+  )
+
+  const saveTask = useCallback(
+    async (form) => {
+      const request = toTaskRequest(form)
+      const saved = editing ? await updateTask(id, editing.id, request) : await createTask(id, request)
+      setEditing(null)
+      setFormKey((key) => key + 1)
+      reload()
+      return saved
+    },
+    [id, editing, reload],
   )
 
   if (project.error?.status === 404) return <NotFoundPage />
@@ -102,6 +126,11 @@ export function PhasesPage() {
     }
   }
 
+  function handleCancel() {
+    setEditing(null)
+    setFormKey((key) => key + 1)
+  }
+
   return (
     <div className="workspace">
       <PageHeader
@@ -127,6 +156,20 @@ export function PhasesPage() {
         {closed && <p className="muted">The project is closed: the plan can be read but not changed.</p>}
         <FormAlert>{working.error?.message}</FormAlert>
       </section>
+      {!closed && (
+        <section className="card">
+          <h2>{editing ? `Edit task "${editing.name}"` : 'Add a task'}</h2>
+          <WorkItemForm
+            key={formKey}
+            initialForm={editing ? toWorkForm(editing) : EMPTY_TASK_FORM}
+            phases={phases}
+            validate={validateTask}
+            onSave={saveTask}
+            onCancel={editing ? handleCancel : undefined}
+            submitText={editing ? 'Save task' : 'Add task'}
+          />
+        </section>
+      )}
       {phases.map((phase) => (
         <PhaseCard
           key={phase.id}
