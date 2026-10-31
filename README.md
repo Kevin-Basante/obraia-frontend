@@ -73,6 +73,8 @@ Esta variable solo guarda la URL pública del backend. Las claves (base de datos
 | `/projects/:id/blueprints/:blueprintId` | Ver un plano dentro de la página y descargarlo | Con cuenta (miembros) |
 | `/projects/:id/measurements` | Medidas manuales: agregar, editar, borrar y filtrar por piso | Con cuenta (miembros) |
 | `/projects/:id/measurements/comparison` | Totales manuales contra los de la IA       | Con cuenta (miembros)   |
+| `/projects/:id/phases` | Plan de trabajo: crear las fases, tareas, estados y avance | Con cuenta (miembros)   |
+| `/projects/:id/tasks/:taskId` | Avance de una tarea: reportar y ver los reportes       | Con cuenta (miembros)   |
 | `/site-managers`   | Mis maestros de obra: agregar, editar y borrar                 | Con cuenta              |
 | `/confirm-deletion` | Confirma la eliminación con el enlace recibido (`?token=`)    | Todos                   |
 
