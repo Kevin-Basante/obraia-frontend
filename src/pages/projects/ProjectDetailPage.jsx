@@ -8,13 +8,14 @@ import { ProjectSummary } from '../../components/projects/ProjectSummary.jsx'
 import { ProjectWorkLinks } from '../../components/projects/ProjectWorkLinks.jsx'
 import { SiteManagerPanel } from '../../components/projects/SiteManagerPanel.jsx'
 import { StatusActions } from '../../components/projects/StatusActions.jsx'
+import { RiskPanel } from '../../components/risk/RiskPanel.jsx'
 import { useApiData } from '../../hooks/useApiData.js'
 import { useAuth } from '../../hooks/useAuth.js'
 import { getProject } from '../../services/projectService.js'
 import { isClosed } from '../../utils/projectStatus.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
 
-/** One project: its data, status, blueprints and measurements, site manager and members. */
+/** One project: its data, status, links to its work, risk, site manager and members. */
 export function ProjectDetailPage() {
   const { id } = useParams()
   const { user } = useAuth()
@@ -51,6 +52,7 @@ export function ProjectDetailPage() {
       <StatusActions project={data} onChanged={reload} />
       <ProjectSummary project={data} />
       <ProjectWorkLinks projectId={data.id} />
+      <RiskPanel projectId={data.id} />
       <SiteManagerPanel project={data} readOnly={closed} onChanged={reload} />
       <MembersPanel projectId={data.id} currentUserId={user?.id} />
     </div>
