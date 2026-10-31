@@ -66,7 +66,7 @@ Esta variable solo guarda la URL pública del backend. Las claves (base de datos
 | `/catalog/cities`  | Ciudades con su % de transporte, filtro por departamento y búsqueda | Todos              |
 | `/projects`        | Mis obras, con filtro por estado y búsqueda por nombre o ciudad | Con cuenta             |
 | `/projects/new`    | Crear una obra                                                 | Con cuenta              |
-| `/projects/:id`    | Detalle de la obra: estado, datos, maestro de obra y miembros  | Con cuenta (miembros)   |
+| `/projects/:id`    | Detalle de la obra: estado, datos, riesgo, maestro de obra y miembros | Con cuenta (miembros) |
 | `/projects/:id/edit` | Editar una obra que no esté terminada ni cancelada           | Con cuenta (miembros)   |
 | `/projects/:id/delete` | Advertencias y envío del correo para eliminar la obra      | Con cuenta (creador)    |
 | `/projects/:id/blueprints` | Planos de la obra: subir fotos o PDF y borrarlos        | Con cuenta (miembros)   |
@@ -78,6 +78,8 @@ Esta variable solo guarda la URL pública del backend. Las claves (base de datos
 | `/projects/:id/budgets` | Cotización actual de la obra y versiones guardadas del presupuesto | Con cuenta (miembros) |
 | `/projects/:id/budgets/:budgetId` | Una versión del presupuesto con sus capas de costo y el botón para aprobarla | Con cuenta (miembros) |
 | `/projects/:id/materials` | Materiales a comprar según la última versión guardada | Con cuenta (miembros)   |
+| `/projects/:id/expenses` | Gastos de la obra: registrar, borrar y comparar con el presupuesto aprobado | Con cuenta (miembros) |
+| `/notifications`   | Mis notificaciones: abrirlas y marcarlas como leídas           | Con cuenta              |
 | `/site-managers`   | Mis maestros de obra: agregar, editar y borrar                 | Con cuenta              |
 | `/confirm-deletion` | Confirma la eliminación con el enlace recibido (`?token=`)    | Todos                   |
 
