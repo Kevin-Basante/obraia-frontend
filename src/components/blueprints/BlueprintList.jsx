@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import { formatDateTime, formatFileSize } from '../../utils/format.js'
+import { StatusBadge } from '../projects/StatusBadge.jsx'
 import '../catalog/DataTable.css'
 
 /** Blueprints of a project as a table. Each one opens its viewer; `onDelete` is left out when the project is closed. */
@@ -29,7 +30,9 @@ export function BlueprintList({ projectId, blueprints, onDelete, deleting }) {
               {formatFileSize(blueprint.sizeBytes)}
             </td>
             <td data-label="Uploaded">{formatDateTime(blueprint.uploadedAt)}</td>
-            <td data-label="AI reading">{blueprint.processingStatus.label}</td>
+            <td data-label="AI reading">
+              <StatusBadge status={blueprint.processingStatus} />
+            </td>
             <td data-label="Actions">
               {onDelete && (
                 <button
