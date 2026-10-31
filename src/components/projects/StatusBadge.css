@@ -26,3 +26,8 @@
 .status-badge--delayed {
   color: var(--bad);
 }
+
+/* Budget versions: the approved one stands out; drafts and superseded ones stay muted. */
+.status-badge--approved {
+  color: var(--ok);
+}
