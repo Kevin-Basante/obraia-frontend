@@ -3,7 +3,7 @@ import { formatCurrency, formatDateTime } from '../../utils/format.js'
 import { StatusBadge } from '../projects/StatusBadge.jsx'
 import '../catalog/DataTable.css'
 
-/** Saved versions of the budget, newest first, each one with a link to its rows. */
+/** Saved versions of the budget, newest first, each one with a link to its rows. Only the approved one has spending. */
 export function BudgetVersionTable({ projectId, versions }) {
   return (
     <table className="data-table">
@@ -13,6 +13,9 @@ export function BudgetVersionTable({ projectId, versions }) {
           <th scope="col">Status</th>
           <th scope="col" className="data-table__number">
             Projected amount
+          </th>
+          <th scope="col" className="data-table__number">
+            Spent
           </th>
           <th scope="col">Saved</th>
           <th scope="col">Approved</th>
@@ -29,6 +32,9 @@ export function BudgetVersionTable({ projectId, versions }) {
             </td>
             <td data-label="Projected amount" className="data-table__number">
               {formatCurrency(version.projectedAmount)}
+            </td>
+            <td data-label="Spent" className="data-table__number">
+              {version.status.code === 'approved' ? formatCurrency(version.actualAmount) : '—'}
             </td>
             <td data-label="Saved">{formatDateTime(version.createdAt)}</td>
             <td data-label="Approved">{version.approvedAt ? formatDateTime(version.approvedAt) : '—'}</td>
