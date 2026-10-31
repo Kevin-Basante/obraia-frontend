@@ -95,11 +95,16 @@ export function BudgetsPage() {
         description={project.data.name}
         back={{ to: `/projects/${id}`, label: project.data.name }}
         actions={
-          versions.data.length > 0 && (
-            <Link to={`/projects/${id}/materials`} className="button-link button-secondary">
-              Materials to buy
+          <>
+            {versions.data.length > 0 && (
+              <Link to={`/projects/${id}/materials`} className="button-link button-secondary">
+                Materials to buy
+              </Link>
+            )}
+            <Link to={`/projects/${id}/expenses`} className="button-link button-secondary">
+              Expenses
             </Link>
-          )
+          </>
         }
       />
       <CurrentQuotation projectId={id} closed={isClosed(project.data)} />
