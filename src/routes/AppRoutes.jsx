@@ -23,6 +23,7 @@ import { BudgetsPage } from '../pages/projects/BudgetsPage.jsx'
 import { ComparisonPage } from '../pages/projects/ComparisonPage.jsx'
 import { DeleteProjectPage } from '../pages/projects/DeleteProjectPage.jsx'
 import { EditProjectPage } from '../pages/projects/EditProjectPage.jsx'
+import { ExpensesPage } from '../pages/projects/ExpensesPage.jsx'
 import { MeasurementsPage } from '../pages/projects/MeasurementsPage.jsx'
 import { PhasesPage } from '../pages/projects/PhasesPage.jsx'
 import { NewProjectPage } from '../pages/projects/NewProjectPage.jsx'
@@ -80,6 +81,7 @@ export function AppRoutes() {
             <Route path="projects/:id/budgets" element={<BudgetsPage />} />
             <Route path="projects/:id/budgets/:budgetId" element={<BudgetDetailPage />} />
             <Route path="projects/:id/materials" element={<ProjectMaterialsPage />} />
+            <Route path="projects/:id/expenses" element={<ExpensesPage />} />
             <Route path="site-managers" element={<SiteManagersPage />} />
           </Route>
         </Route>
