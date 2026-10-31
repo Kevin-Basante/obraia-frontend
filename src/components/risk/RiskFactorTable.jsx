@@ -24,8 +24,11 @@ export function RiskFactorTable({ factors }) {
         {sortFactors(factors).map((factor) => (
           <tr key={factor.code}>
             <td data-label="Rule">
-              {factor.label}
-              <span className="muted"> · {factor.detail}</span>
+              {/* One element, so on phones the rule and its detail stay together. */}
+              <span>
+                {factor.label}
+                <span className="muted"> · {factor.detail}</span>
+              </span>
             </td>
             <td data-label="Weight" className="data-table__number">
               {formatPercent(factor.weight)}

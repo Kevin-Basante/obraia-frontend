@@ -2,8 +2,9 @@ import { formatDateTime } from '../../utils/format.js'
 import { chartPoints, formatScore, triggerText } from '../../utils/risk.js'
 import './RiskChart.css'
 
-const WIDTH = 600
-const HEIGHT = 140
+// Small drawing, scaled up to at most 640 px, so the labels can still be read on phones.
+const WIDTH = 420
+const HEIGHT = 120
 const LEFT = 28
 // Lines at the limits of the levels: low under 25, medium under 50, high under 75.
 const LEVEL_LINES = [25, 50, 75]
