@@ -1,0 +1,16 @@
+.notification-bell {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.notification-bell__count {
+  min-width: 1.5em;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--bad);
+  color: var(--card);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+}
