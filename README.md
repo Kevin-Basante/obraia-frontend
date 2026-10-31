@@ -132,6 +132,20 @@ Una ruta desconocida muestra "Page not found". Un invitado que abre una página 
 - **Materials to buy** lista las cantidades de la última versión guardada, con desperdicio, precio y subtotal.
 - En una obra terminada o cancelada, el presupuesto se puede ver pero no se pueden guardar ni aprobar versiones.
 
+## Gastos y riesgo
+
+- En **Expenses** se registra el dinero que ya se gastó: categoría (materiales, mano de obra, equipos, impuestos u otros), valor, descripción, fecha opcional (no puede ser futura; vacía es hoy) y fase opcional. El valor acepta el formato colombiano (`1.250.000` o `650.000,50`).
+- Arriba, la página compara lo gastado con el presupuesto aprobado: cuánto queda o cuánto se pasó, una barra con el % gastado y el total de cada categoría. La versión aprobada también muestra lo gastado en la página de presupuesto.
+- La página de la obra muestra el **riesgo** que calcula el backend con cuatro reglas (patrón Strategy): nivel (`Low`, `Medium`, `High` o `Critical`, con su color), puntaje de 0 a 100, días de atraso esperados y una fila por regla con su peso, su puntaje y la frase que lo explica, de la más alta a la más baja.
+- El backend evalúa el riesgo solo después de cada gasto y de cada reporte de avance; **Assess now** pide una evaluación en el momento. Con dos o más evaluaciones aparece una gráfica (SVG, sin librerías) con la historia del puntaje y líneas en 25, 50 y 75, los límites de los niveles; cada punto dice cuándo y por qué se evaluó.
+- En una obra terminada o cancelada, los gastos se pueden ver pero no cambiar.
+
+## Notificaciones
+
+- El backend crea notificaciones para todos los miembros de la obra cuando se aprueba un presupuesto, cuando los gastos pasan el presupuesto aprobado y cuando el riesgo sube a alto o crítico (patrón Observer).
+- El encabezado muestra **Notifications** con el número de no leídas. El número se vuelve a pedir al cambiar de página, cada minuto y cuando la página de notificaciones marca alguna como leída (evento del navegador `obraia:notifications-changed`).
+- En `/notifications` las no leídas aparecen en negrita; **Open** lleva a la página que explica cada una (gastos, presupuesto o la obra), **Mark as read** marca una y **Mark all as read**, todas.
+
 ## Sesión
 
 - Al iniciar sesión, el backend entrega un **access token** (dura 15 minutos) y un **refresh token** (dura 7 días).
