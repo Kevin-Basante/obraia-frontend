@@ -26,6 +26,7 @@ import { PhasesPage } from '../pages/projects/PhasesPage.jsx'
 import { NewProjectPage } from '../pages/projects/NewProjectPage.jsx'
 import { ProjectDetailPage } from '../pages/projects/ProjectDetailPage.jsx'
 import { ProjectsPage } from '../pages/projects/ProjectsPage.jsx'
+import { TaskProgressPage } from '../pages/projects/TaskProgressPage.jsx'
 import { GuestOnly } from './GuestOnly.jsx'
 import { RequireAccount } from './RequireAccount.jsx'
 import { RequireSession } from './RequireSession.jsx'
@@ -72,6 +73,7 @@ export function AppRoutes() {
             <Route path="projects/:id/measurements" element={<MeasurementsPage />} />
             <Route path="projects/:id/measurements/comparison" element={<ComparisonPage />} />
             <Route path="projects/:id/phases" element={<PhasesPage />} />
+            <Route path="projects/:id/tasks/:taskId" element={<TaskProgressPage />} />
             <Route path="site-managers" element={<SiteManagersPage />} />
           </Route>
         </Route>
