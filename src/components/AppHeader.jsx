@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router'
 import { useAuth } from '../hooks/useAuth.js'
+import { NotificationBell } from './notifications/NotificationBell.jsx'
 import './AppHeader.css'
 
 /** Top bar: brand and the links that match the session state. */
@@ -17,6 +18,7 @@ export function AppHeader() {
           <>
             <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/projects">Projects</NavLink>
+            <NotificationBell />
             <span className="app-header__user">{user.firstName}</span>
             <button type="button" className="app-header__button" onClick={signOut}>
               Sign out
