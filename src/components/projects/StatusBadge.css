@@ -40,3 +40,22 @@
 .status-badge--failed {
   color: var(--bad);
 }
+
+/* Risk levels: low is fine, medium needs attention, high and critical are a problem. */
+.status-badge--low {
+  color: var(--ok);
+}
+
+.status-badge--medium {
+  color: var(--warn);
+}
+
+.status-badge--high {
+  color: var(--bad);
+}
+
+.status-badge--critical {
+  border-color: var(--bad);
+  background: var(--bad);
+  color: var(--card);
+}
