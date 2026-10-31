@@ -19,3 +19,20 @@ export function workActionLabel(current, next) {
 export function formatProgress(value) {
   return formatPercent(Number(value) / 100)
 }
+
+/** Number of progress reports in the whole plan: while there are none, the plan can be deleted. */
+export function countReports(plan) {
+  return plan.phases.reduce(
+    (total, phase) => total + phase.tasks.reduce((sum, task) => sum + task.reportCount, 0),
+    0,
+  )
+}
+
+/** The task with that id and its phase, or null if it is not in the plan. */
+export function findTask(plan, taskId) {
+  for (const phase of plan.phases) {
+    const task = phase.tasks.find((item) => item.id === taskId)
+    if (task) return { phase, task }
+  }
+  return null
+}
