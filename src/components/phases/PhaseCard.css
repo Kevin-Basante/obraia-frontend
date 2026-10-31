@@ -1,0 +1,14 @@
+.phase-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Small red label next to the status of a phase or task that passed its planned end. */
+.late-tag {
+  margin-left: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--bad);
+}
