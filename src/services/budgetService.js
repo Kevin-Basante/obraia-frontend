@@ -25,3 +25,13 @@ export function createBudget(projectId) {
 export function getBudget(projectId, budgetId, options) {
   return authorizedRequest(budgetsPath(projectId, `/${encodeURIComponent(budgetId)}`), options)
 }
+
+/** Approves a draft; the version approved before becomes superseded. */
+export function approveBudget(projectId, budgetId) {
+  return authorizedRequest(budgetsPath(projectId, `/${encodeURIComponent(budgetId)}/approve`), { method: 'POST' })
+}
+
+/** Materials of the last saved quotation, waste included. */
+export function listProjectMaterials(projectId, options) {
+  return authorizedRequest(`/api/projects/${encodeURIComponent(projectId)}/materials`, options)
+}
