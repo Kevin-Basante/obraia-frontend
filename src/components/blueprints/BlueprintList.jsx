@@ -1,10 +1,15 @@
 import { Link } from 'react-router'
+import { analyzeLabel } from '../../utils/analysis.js'
 import { formatDateTime, formatFileSize } from '../../utils/format.js'
 import { StatusBadge } from '../projects/StatusBadge.jsx'
 import '../catalog/DataTable.css'
 
-/** Blueprints of a project as a table. Each one opens its viewer; `onDelete` is left out when the project is closed. */
-export function BlueprintList({ projectId, blueprints, onDelete, deleting }) {
+/**
+ * Blueprints of a project as a table. Each one opens its viewer. `onAnalyze`
+ * and `onDelete` are left out when the project is closed; `analyzingId` is
+ * the blueprint the AI is reading now.
+ */
+export function BlueprintList({ projectId, blueprints, onAnalyze, analyzingId, onDelete, deleting }) {
   return (
     <table className="data-table">
       <thead>
@@ -34,16 +39,28 @@ export function BlueprintList({ projectId, blueprints, onDelete, deleting }) {
               <StatusBadge status={blueprint.processingStatus} />
             </td>
             <td data-label="Actions">
-              {onDelete && (
-                <button
-                  type="button"
-                  className="button-secondary button-small"
-                  disabled={deleting}
-                  onClick={() => onDelete(blueprint)}
-                >
-                  Delete
-                </button>
-              )}
+              <div className="button-row">
+                {onAnalyze && (
+                  <button
+                    type="button"
+                    className="button-small"
+                    disabled={Boolean(analyzingId) || deleting}
+                    onClick={() => onAnalyze(blueprint)}
+                  >
+                    {analyzingId === blueprint.id ? 'Reading…' : analyzeLabel(blueprint)}
+                  </button>
+                )}
+                {onDelete && (
+                  <button
+                    type="button"
+                    className="button-secondary button-small"
+                    disabled={deleting || Boolean(analyzingId)}
+                    onClick={() => onDelete(blueprint)}
+                  >
+                    Delete
+                  </button>
+                )}
+              </div>
             </td>
           </tr>
         ))}
