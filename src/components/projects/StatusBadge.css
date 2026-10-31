@@ -22,3 +22,7 @@
 .status-badge--cancelled {
   color: var(--bad);
 }
+
+.status-badge--delayed {
+  color: var(--bad);
+}
