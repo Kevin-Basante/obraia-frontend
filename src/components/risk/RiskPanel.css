@@ -1,0 +1,23 @@
+.risk-panel__headline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 16px;
+}
+
+.risk-panel__score {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.risk-panel__score small {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.workspace h3 {
+  margin: 0;
+  font-size: 1rem;
+}
