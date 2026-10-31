@@ -1,7 +1,8 @@
+import { measurementSourceText } from '../../utils/analysis.js'
 import { daysSourceText, formatRate } from '../../utils/budget.js'
 import './QuotationFacts.css'
 
-/** The data the backend used for the quotation: city, transport rate and working days. */
+/** The data the backend used for the quotation: city, transport rate, working days and measurements. */
 export function QuotationFacts({ quotation }) {
   return (
     <dl className="quotation-facts">
@@ -19,6 +20,12 @@ export function QuotationFacts({ quotation }) {
           {quotation.workingDays} <span className="muted">{daysSourceText(quotation.workingDaysSource)}</span>
         </dd>
       </div>
+      {quotation.measurementSource && (
+        <div>
+          <dt>Measurements</dt>
+          <dd>{measurementSourceText(quotation.measurementSource)}</dd>
+        </div>
+      )}
     </dl>
   )
 }
