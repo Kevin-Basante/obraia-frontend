@@ -63,7 +63,7 @@ Esta variable solo guarda la URL pública del backend. Las claves (base de datos
 | `/catalog/materials` | Materiales con precio de referencia, filtro por categoría y búsqueda | Todos           |
 | `/catalog/project-types` | Tipos de obra                                              | Todos                   |
 | `/catalog/project-types/:id` | Fases estándar según el tamaño o el área, y materiales por elemento | Todos      |
-| `/catalog/cities`  | Ciudades, filtro por departamento y búsqueda                   | Todos                   |
+| `/catalog/cities`  | Ciudades con su % de transporte, filtro por departamento y búsqueda | Todos              |
 | `/projects`        | Mis obras, con filtro por estado y búsqueda por nombre o ciudad | Con cuenta             |
 | `/projects/new`    | Crear una obra                                                 | Con cuenta              |
 | `/projects/:id`    | Detalle de la obra: estado, datos, maestro de obra y miembros  | Con cuenta (miembros)   |
@@ -75,6 +75,9 @@ Esta variable solo guarda la URL pública del backend. Las claves (base de datos
 | `/projects/:id/measurements/comparison` | Totales manuales contra los de la IA       | Con cuenta (miembros)   |
 | `/projects/:id/phases` | Plan de trabajo: crear las fases, tareas, estados y avance | Con cuenta (miembros)   |
 | `/projects/:id/tasks/:taskId` | Avance de una tarea: reportar y ver los reportes       | Con cuenta (miembros)   |
+| `/projects/:id/budgets` | Cotización actual de la obra y versiones guardadas del presupuesto | Con cuenta (miembros) |
+| `/projects/:id/budgets/:budgetId` | Una versión del presupuesto con sus capas de costo y el botón para aprobarla | Con cuenta (miembros) |
+| `/projects/:id/materials` | Materiales a comprar según la última versión guardada | Con cuenta (miembros)   |
 | `/site-managers`   | Mis maestros de obra: agregar, editar y borrar                 | Con cuenta              |
 | `/confirm-deletion` | Confirma la eliminación con el enlace recibido (`?token=`)    | Todos                   |
 
