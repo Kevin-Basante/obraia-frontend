@@ -1,3 +1,4 @@
+import { formatDifference } from '../../utils/comparison.js'
 import { formatAmount, formatQuantity } from '../../utils/format.js'
 import '../catalog/DataTable.css'
 
@@ -44,7 +45,15 @@ export function MeasurementTable({ measurements, onEdit, onDelete, busy }) {
             <td data-label="Amount" className="data-table__number">
               {formatAmount(measurement.amount, measurement.baseUnit)}
             </td>
-            <td data-label="Source">{measurement.sourceLabel}</td>
+            <td data-label="Source">
+              {measurement.sourceLabel}
+              {measurement.discrepancyPct !== null && measurement.discrepancyPct !== undefined && (
+                <span className="muted" title="Difference with the manual total of this element and floor">
+                  {' '}
+                  · {formatDifference(measurement.discrepancyPct)}
+                </span>
+              )}
+            </td>
             <td data-label="Actions">
               {measurement.source === 'manual' && onEdit && (
                 <div className="button-row">
