@@ -1,6 +1,7 @@
+import { formatPercent } from '../../utils/format.js'
 import './DataTable.css'
 
-/** Cities with their department and country. */
+/** Cities with their department, country and the transport rate that quotations add. */
 export function CityTable({ cities, updating }) {
   return (
     <div className="card">
@@ -10,6 +11,9 @@ export function CityTable({ cities, updating }) {
             <th scope="col">City</th>
             <th scope="col">Department</th>
             <th scope="col">Country</th>
+            <th scope="col" className="data-table__number">
+              Transport
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -18,6 +22,9 @@ export function CityTable({ cities, updating }) {
               <td data-label="City">{city.city}</td>
               <td data-label="Department">{city.department}</td>
               <td data-label="Country">{city.country}</td>
+              <td data-label="Transport" className="data-table__number">
+                {formatPercent(Number(city.transportPct) / 100)}
+              </td>
             </tr>
           ))}
         </tbody>
