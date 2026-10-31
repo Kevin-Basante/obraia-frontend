@@ -34,6 +34,9 @@ function CurrentQuotation({ projectId, closed }) {
           <Link to={`/projects/${projectId}/measurements`} className="button-link">
             Go to measurements
           </Link>
+          <Link to={`/projects/${projectId}/blueprints`} className="button-link button-secondary">
+            Read a blueprint with AI
+          </Link>
         </div>
       </section>
     )
