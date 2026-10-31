@@ -105,6 +105,16 @@ Una ruta desconocida muestra "Page not found". Un invitado que abre una página 
 - Las medidas leídas por la IA no tienen botones para editar ni borrar. Mientras la IA no lea planos, la comparación muestra solo los totales manuales.
 - En una obra terminada o cancelada, los planos y las medidas se pueden ver pero no cambiar.
 
+## Fases y tareas
+
+- Mientras la obra no tiene plan, la página muestra las fases que se crearían (`/phases/preview`): las del catálogo según el tipo y el tamaño de la obra. El local comercial trae además la fase "Adecuación comercial". El botón **Create plan** las guarda con sus tareas iniciales.
+- Las fechas de las fases salen de la fecha de inicio planeada de la obra, contando de lunes a sábado. Si la obra no tiene fecha, el plan se crea sin fechas y se pueden poner a mano en cada fase.
+- Cada fase y tarea muestra solo los botones de los cambios de estado que permite el backend (`nextStatuses`): **Start**, **Mark as delayed**, **Complete**, **Resume** o **Reopen**. Una fase o tarea que pasó su fecha de fin sin completarse aparece como **Late**.
+- Las tareas se pueden agregar, editar, pasar a otra fase y borrar. El formulario revisa el nombre (3 a 150 caracteres) y que la fecha de fin no sea antes que la de inicio.
+- En la página de una tarea se reporta el avance de 0 a 100 % (acepta coma decimal) con fecha opcional, que no puede ser futura. Si la obra tiene maestro de obra, se puede marcar que el reporte lo dio él. Más de 0 % inicia la tarea, 100 % la completa y la fase se completa sola cuando todas sus tareas lo están.
+- El avance de una tarea es su último reporte; el de la fase y el de la obra son promedios que calcula el backend.
+- El plan se puede borrar para crearlo de nuevo solo mientras ninguna tarea tenga reportes. En una obra terminada o cancelada todo se puede ver pero no cambiar.
+
 ## Sesión
 
 - Al iniciar sesión, el backend entrega un **access token** (dura 15 minutos) y un **refresh token** (dura 7 días).
