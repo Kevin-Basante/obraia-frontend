@@ -1,0 +1,28 @@
+.risk-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.risk-chart__grid {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.risk-chart__label {
+  fill: var(--muted);
+  font-size: 11px;
+}
+
+.risk-chart__line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.risk-chart__point {
+  fill: var(--card);
+  stroke: var(--accent);
+  stroke-width: 2;
+}
