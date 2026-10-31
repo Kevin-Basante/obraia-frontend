@@ -18,6 +18,7 @@ import { ProjectTypeDetailPage } from '../pages/catalog/ProjectTypeDetailPage.js
 import { ProjectTypesPage } from '../pages/catalog/ProjectTypesPage.jsx'
 import { BlueprintViewPage } from '../pages/projects/BlueprintViewPage.jsx'
 import { BlueprintsPage } from '../pages/projects/BlueprintsPage.jsx'
+import { BudgetDetailPage } from '../pages/projects/BudgetDetailPage.jsx'
 import { BudgetsPage } from '../pages/projects/BudgetsPage.jsx'
 import { ComparisonPage } from '../pages/projects/ComparisonPage.jsx'
 import { DeleteProjectPage } from '../pages/projects/DeleteProjectPage.jsx'
@@ -76,6 +77,7 @@ export function AppRoutes() {
             <Route path="projects/:id/phases" element={<PhasesPage />} />
             <Route path="projects/:id/tasks/:taskId" element={<TaskProgressPage />} />
             <Route path="projects/:id/budgets" element={<BudgetsPage />} />
+            <Route path="projects/:id/budgets/:budgetId" element={<BudgetDetailPage />} />
             <Route path="site-managers" element={<SiteManagersPage />} />
           </Route>
         </Route>
