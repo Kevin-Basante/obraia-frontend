@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import './ProfileCard.css'
 
 /** Account data of the signed-in user. */
@@ -25,6 +26,9 @@ export function ProfileCard({ user }) {
           <dd>{user.roles.join(', ')}</dd>
         </div>
       </dl>
+      <Link to="/account" className="button-link">
+        Edit my account
+      </Link>
     </section>
   )
 }
