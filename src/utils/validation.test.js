@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest'
-import { validateEmail, validateNewPassword, validatePassword, validateRegistration } from './validation.js'
+import {
+  validateEmail,
+  validateNewPassword,
+  validatePassword,
+  validatePasswordChange,
+  validateRegistration,
+} from './validation.js'
 
 const VALID_FORM = {
   firstName: 'Ana',
@@ -59,6 +65,34 @@ describe('validateRegistration', () => {
 describe('validateNewPassword', () => {
   it('requires both passwords to match', () => {
     expect(validateNewPassword({ password: 'secret123', confirmPassword: 'secret124' })).toEqual({
+      confirmPassword: 'The passwords do not match',
+    })
+  })
+})
+
+describe('validatePasswordChange', () => {
+  const change = { currentPassword: 'secret123', newPassword: 'better456', confirmPassword: 'better456' }
+
+  it('accepts a new strong password', () => {
+    expect(validatePasswordChange(change)).toEqual({})
+  })
+
+  it('asks for the current password', () => {
+    expect(validatePasswordChange({ ...change, currentPassword: '' }).currentPassword).toBe(
+      'Enter your current password',
+    )
+  })
+
+  it('rejects the same password', () => {
+    expect(
+      validatePasswordChange({ currentPassword: 'secret123', newPassword: 'secret123', confirmPassword: 'secret123' })
+        .newPassword,
+    ).toBe('Use a password different from the current one')
+  })
+
+  it('applies the strong password rules and the confirmation', () => {
+    expect(validatePasswordChange({ ...change, newPassword: 'short', confirmPassword: 'other' })).toEqual({
+      newPassword: 'Use 8 to 72 characters',
       confirmPassword: 'The passwords do not match',
     })
   })
