@@ -19,7 +19,9 @@ export function AppHeader() {
             <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/projects">Projects</NavLink>
             <NotificationBell />
-            <span className="app-header__user">{user.firstName}</span>
+            <NavLink to="/account" className="app-header__user" title="My account">
+              {user.firstName}
+            </NavLink>
             <button type="button" className="app-header__button" onClick={() => signOut()}>
               Sign out
             </button>
