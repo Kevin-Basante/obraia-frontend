@@ -32,6 +32,17 @@ export function validateRegistration({ firstName, lastName, email, password, con
   return errors
 }
 
+/** Rules for changing the password while signed in. The new one must be different. */
+export function validatePasswordChange({ currentPassword, newPassword, confirmPassword }) {
+  const errors = {}
+  if (!currentPassword) errors.currentPassword = 'Enter your current password'
+  const passwordError = validatePassword(newPassword)
+  if (passwordError) errors.newPassword = passwordError
+  else if (newPassword === currentPassword) errors.newPassword = 'Use a password different from the current one'
+  if (confirmPassword !== newPassword) errors.confirmPassword = 'The passwords do not match'
+  return errors
+}
+
 /** Rules for the "choose a new password" form. */
 export function validateNewPassword({ password, confirmPassword }) {
   const errors = {}
