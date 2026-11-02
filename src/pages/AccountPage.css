@@ -1,0 +1,8 @@
+.account-page__danger {
+  border-color: var(--bad);
+}
+
+.account-page__danger .button-link {
+  align-self: flex-start;
+  background: var(--bad);
+}
