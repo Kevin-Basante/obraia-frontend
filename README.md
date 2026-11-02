@@ -81,7 +81,10 @@ Esta variable solo guarda la URL pública del backend. Las claves (base de datos
 | `/projects/:id/expenses` | Gastos de la obra: registrar, borrar y comparar con el presupuesto aprobado | Con cuenta (miembros) |
 | `/notifications`   | Mis notificaciones: abrirlas y marcarlas como leídas           | Con cuenta              |
 | `/site-managers`   | Mis maestros de obra: agregar, editar y borrar                 | Con cuenta              |
+| `/account`         | Mi cuenta: editar el perfil, cambiar la contraseña y el enlace para eliminarla | Con cuenta |
+| `/account/delete`  | Advertencias, contraseña y envío del correo para eliminar la cuenta | Con cuenta         |
 | `/confirm-deletion` | Confirma la eliminación con el enlace recibido (`?token=`)    | Todos                   |
+| `/confirm-account-deletion` | Confirma la eliminación de la cuenta con el enlace recibido (`?token=`) | Todos |
 
 Una ruta desconocida muestra "Page not found". Un invitado que abre una página de obras ve una invitación a crear su cuenta, porque las obras se guardan en la cuenta. Si alguien sin sesión abre `/dashboard`, se le envía a `/login` y, al entrar, vuelve a la página que pidió.
 
