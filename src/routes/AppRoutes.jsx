@@ -1,9 +1,12 @@
 import { Navigate, Route, Routes } from 'react-router'
 import { AppLayout } from '../layouts/AppLayout.jsx'
+import { AccountPage } from '../pages/AccountPage.jsx'
 import { CatalogLayout } from '../layouts/CatalogLayout.jsx'
 import { CheckEmailPage } from '../pages/CheckEmailPage.jsx'
+import { ConfirmAccountDeletionPage } from '../pages/ConfirmAccountDeletionPage.jsx'
 import { ConfirmDeletionPage } from '../pages/ConfirmDeletionPage.jsx'
 import { DashboardPage } from '../pages/DashboardPage.jsx'
+import { DeleteAccountPage } from '../pages/DeleteAccountPage.jsx'
 import { ForgotPasswordPage } from '../pages/ForgotPasswordPage.jsx'
 import { HomePage } from '../pages/HomePage.jsx'
 import { LoginPage } from '../pages/LoginPage.jsx'
@@ -54,6 +57,7 @@ export function AppRoutes() {
         <Route path="verify-email" element={<VerifyEmailPage />} />
         <Route path="reset-password" element={<ResetPasswordPage />} />
         <Route path="confirm-deletion" element={<ConfirmDeletionPage />} />
+        <Route path="confirm-account-deletion" element={<ConfirmAccountDeletionPage />} />
 
         {/* Public: guests and signed-out visitors can browse the catalog. */}
         <Route path="catalog" element={<CatalogLayout />}>
@@ -85,6 +89,8 @@ export function AppRoutes() {
             <Route path="projects/:id/expenses" element={<ExpensesPage />} />
             <Route path="site-managers" element={<SiteManagersPage />} />
             <Route path="notifications" element={<NotificationsPage />} />
+            <Route path="account" element={<AccountPage />} />
+            <Route path="account/delete" element={<DeleteAccountPage />} />
           </Route>
         </Route>
 
