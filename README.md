@@ -149,6 +149,15 @@ Una ruta desconocida muestra "Page not found". Un invitado que abre una página 
 - El encabezado muestra **Notifications** con el número de no leídas. El número se vuelve a pedir al cambiar de página, cada minuto y cuando la página de notificaciones marca alguna como leída (evento del navegador `obraia:notifications-changed`).
 - En `/notifications` las no leídas aparecen en negrita; **Open** lleva a la página que explica cada una (gastos, presupuesto o la obra), **Mark as read** marca una y **Mark all as read**, todas.
 
+## Cuenta
+
+- El nombre en el encabezado lleva a **Mi cuenta** (`/account`). En el panel, la tarjeta del perfil tiene **Edit my account**.
+- **Perfil:** nombre, apellido y teléfono (opcional). El correo no se puede cambiar. Al guardar, el encabezado muestra el nombre nuevo.
+- **Contraseña:** pide la actual, la nueva y su confirmación. El backend cierra todas las sesiones, así que la página cierra la sesión y lleva a `/login` con el aviso del cambio; al entrar con la contraseña nueva vuelve a Mi cuenta.
+- **Eliminar la cuenta** tiene dos pasos, como una obra:
+  1. `/account/delete` muestra las obras que se eliminan con la cuenta, las que otros miembros pierden y en cuántas obras de otras personas participa. Pide la contraseña y una casilla de confirmación, y el backend envía un correo con un enlace que vence en 30 minutos.
+  2. El enlace abre `/confirm-account-deletion`, que elimina la cuenta y cierra la sesión guardada en ese navegador. Los datos se borran para siempre 30 días después.
+
 ## Sesión
 
 - Al iniciar sesión, el backend entrega un **access token** (dura 15 minutos) y un **refresh token** (dura 7 días).
