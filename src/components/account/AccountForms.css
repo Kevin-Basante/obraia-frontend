@@ -1,0 +1,21 @@
+.account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.account-form__fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.account-form__email {
+  max-width: 420px;
+}
+
+@media (max-width: 640px) {
+  .account-form__fields {
+    grid-template-columns: 1fr;
+  }
+}
