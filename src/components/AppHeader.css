@@ -35,8 +35,14 @@
   font-weight: 600;
 }
 
-.app-header__user {
+.app-header__nav a.app-header__user {
   color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.app-header__nav a.app-header__user.active {
+  color: var(--accent);
 }
 
 .app-header__button {
