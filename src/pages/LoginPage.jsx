@@ -11,7 +11,7 @@ import { validateEmail } from '../utils/validation.js'
 
 /** Sign-in form. An unverified account gets a link to resend the email. */
 export function LoginPage() {
-  const { signIn, continueAsGuest } = useAuth()
+  const { signIn, continueAsGuest, notice } = useAuth()
   const navigate = useNavigate()
   const location = useLocation()
   const [email, setEmail] = useState('')
@@ -58,6 +58,7 @@ export function LoginPage() {
       }
     >
       <form className="auth-form" onSubmit={handleSubmit} noValidate>
+        <FormAlert type="success">{!error && notice}</FormAlert>
         <FormAlert>{error?.message}</FormAlert>
         {error?.code === 'EMAIL_NOT_VERIFIED' && (
           <p className="auth-form__note">

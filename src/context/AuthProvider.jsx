@@ -28,10 +28,11 @@ export function AuthProvider({ children }) {
     return session.user
   }, [])
 
-  const signOut = useCallback(async () => {
+  // `notice` is shown on the sign-in page, for example after changing the password.
+  const signOut = useCallback(async (notice = null) => {
     const refreshToken = getRefreshToken()
     clearTokens()
-    setState({ status: 'signedOut', user: null })
+    setState({ status: 'signedOut', user: null, notice })
     // The local session is already closed; the backend call only revokes the token.
     if (refreshToken) await logout(refreshToken).catch(() => null)
   }, [])
