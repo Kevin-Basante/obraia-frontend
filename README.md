@@ -245,6 +245,12 @@ Las pruebas están junto al archivo que prueban (`*.test.js` y `*.test.jsx`). `s
 
 Después de desplegar, la URL de Vercel debe agregarse a `FRONTEND_URL` en Render para que el backend acepte sus peticiones (CORS).
 
+## Versiones
+
+| Versión | Qué trae                                                                                  |
+| ------- | ----------------------------------------------------------------------------------------- |
+| 1.0.0   | Todas las secciones (catálogo, obras, planos, medidas, presupuesto, fases, gastos, riesgo, notificaciones y cuenta), pruebas de componentes, cobertura y GitHub Actions |
+
 ## Equipo y responsabilidades
 
 | Integrante    | Responsabilidad                                   |
