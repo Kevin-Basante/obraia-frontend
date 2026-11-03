@@ -7,7 +7,9 @@ export default defineConfig({
   test: {
     coverage: {
       provider: 'v8',
-      include: ['src/**/*.{js,jsx}'],
+      // Logic of the app: calls to the backend, helpers and settings.
+      include: ['src/services/**', 'src/utils/**', 'src/config/**'],
+      exclude: ['**/*.test.{js,jsx}'],
       reporter: ['text-summary', 'html'],
     },
   },
