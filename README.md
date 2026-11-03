@@ -47,6 +47,7 @@ Esta variable solo guarda la URL pública del backend. Las claves (base de datos
 | `npm run preview` | Muestra localmente la versión de producción               |
 | `npm run lint`    | Revisa el código con Oxlint                               |
 | `npm test`        | Ejecuta las pruebas con Vitest                            |
+| `npm run coverage` | Pruebas con el reporte de cobertura (`coverage/index.html`) |
 
 ## Páginas
 
