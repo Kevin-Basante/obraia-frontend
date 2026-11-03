@@ -1,5 +1,11 @@
-import { describe, expect, it } from 'vitest'
-import { notificationLink, timeAgo, unreadBadge } from './notifications.js'
+import { afterEach, describe, expect, it, vi } from 'vitest'
+import {
+  NOTIFICATIONS_CHANGED,
+  announceNotificationsChanged,
+  notificationLink,
+  timeAgo,
+  unreadBadge,
+} from './notifications.js'
 
 const now = new Date('2026-10-31T15:00:00Z')
 
@@ -26,5 +32,22 @@ describe('notification helpers', () => {
     expect(notificationLink(notification('budget_approved'))).toBe('/projects/p1/budgets')
     expect(notificationLink(notification('delay_risk'))).toBe('/projects/p1')
     expect(notificationLink(notification('system', null))).toBeNull()
+  })
+})
+
+describe('announceNotificationsChanged', () => {
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
+  it('sends the event the bell listens to', () => {
+    const target = new EventTarget()
+    const heard = vi.fn()
+    target.addEventListener(NOTIFICATIONS_CHANGED, heard)
+    vi.stubGlobal('window', target)
+
+    announceNotificationsChanged()
+
+    expect(heard).toHaveBeenCalledTimes(1)
   })
 })
