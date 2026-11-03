@@ -1,5 +1,12 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { changePhaseStatus, deletePlan, generatePlan, getPlanPreview, updatePhase } from './phaseService.js'
+import {
+  changePhaseStatus,
+  deletePlan,
+  generatePlan,
+  getPlanPreview,
+  getWorkPlan,
+  updatePhase,
+} from './phaseService.js'
 import { changeTaskStatus, listProgressReports, reportProgress, updateTask } from './taskService.js'
 
 let fetchMock
@@ -84,5 +91,13 @@ describe('task services', () => {
     const [, init] = fetchMock.mock.calls[1]
     expect(init.method).toBe('POST')
     expect(JSON.parse(init.body)).toEqual({ completionPercentage: 40 })
+  })
+})
+
+describe('work plan', () => {
+  it('reads the phases with their tasks', async () => {
+    await getWorkPlan('p1')
+
+    expect(sentRequest()).toEqual({ path: '/api/projects/p1/phases', method: 'GET', body: undefined })
   })
 })
