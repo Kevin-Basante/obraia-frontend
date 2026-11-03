@@ -1,5 +1,11 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { analyzeBlueprint, deleteBlueprint, getBlueprintFile, uploadBlueprint } from './blueprintService.js'
+import {
+  analyzeBlueprint,
+  deleteBlueprint,
+  getBlueprintFile,
+  listBlueprints,
+  uploadBlueprint,
+} from './blueprintService.js'
 import { getMeasurementComparison, listMeasurements, updateMeasurement } from './measurementService.js'
 
 let fetchMock
@@ -75,5 +81,14 @@ describe('measurement services', () => {
     await getMeasurementComparison('p1')
 
     expect(sentRequest().path).toBe('/api/projects/p1/measurements/comparison')
+  })
+})
+
+describe('blueprint list', () => {
+  it('lists the blueprints of a project', async () => {
+    await listBlueprints('p1')
+
+    const { path, method } = sentRequest()
+    expect({ path, method }).toEqual({ path: '/api/projects/p1/blueprints', method: 'GET' })
   })
 })
