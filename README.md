@@ -1,5 +1,7 @@
 # obraia-frontend
 
+![Tests](https://github.com/Kevin-Basante/obraia-frontend/actions/workflows/tests.yml/badge.svg)
+
 Interfaz web de **ObraIA**, plataforma con inteligencia artificial para planear, presupuestar y hacer seguimiento a obras pequeñas.
 Proyecto final de Patrones de Software: Kevin Basante y Arley Riascos.
 
