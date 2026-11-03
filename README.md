@@ -196,7 +196,7 @@ src/
 └── main.jsx           Punto de entrada
 ```
 
-Las pruebas están junto al archivo que prueban (`*.test.js`).
+Las pruebas están junto al archivo que prueban (`*.test.js` y `*.test.jsx`). `src/test/` tiene la ayuda para probar componentes y `.github/workflows/` las pruebas automáticas de GitHub Actions.
 
 ## Despliegue en Vercel
 
