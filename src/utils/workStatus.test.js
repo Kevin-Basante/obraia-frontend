@@ -33,3 +33,9 @@ describe('work status', () => {
     expect(findTask(plan, 'nope')).toBeNull()
   })
 })
+
+describe('workActionLabel with an unknown status', () => {
+  it('shows the status code as it comes', () => {
+    expect(workActionLabel('planned', 'paused')).toBe('paused')
+  })
+})
