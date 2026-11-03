@@ -1,7 +1,15 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { confirmDeletion } from './deletionService.js'
 import { addMember } from './memberService.js'
-import { changeProjectStatus, listProjects, unassignSiteManager } from './projectService.js'
+import {
+  assignSiteManager,
+  changeProjectStatus,
+  createProject,
+  getProject,
+  listProjects,
+  unassignSiteManager,
+  updateProject,
+} from './projectService.js'
 
 let fetchMock
 
@@ -53,5 +61,29 @@ describe('project services', () => {
 
     expect(sentRequest()).toEqual({ path: '/api/projects/deletion/confirm', method: 'POST', body: { token: 'abc' } })
     expect(fetchMock.mock.calls[0][1].headers.Authorization).toBeUndefined()
+  })
+})
+
+describe('project services by id', () => {
+  function request(index) {
+    const [url, init] = fetchMock.mock.calls[index]
+    return { path: new URL(url).pathname, method: init.method, body: init.body ? JSON.parse(init.body) : undefined }
+  }
+
+  it('reads, creates and updates a project', async () => {
+    const project = { name: 'Casa Ruiz', floors: 1 }
+    await getProject('p1')
+    await createProject(project)
+    await updateProject('p1', project)
+
+    expect(request(0)).toEqual({ path: '/api/projects/p1', method: 'GET', body: undefined })
+    expect(request(1)).toEqual({ path: '/api/projects', method: 'POST', body: project })
+    expect(request(2)).toEqual({ path: '/api/projects/p1', method: 'PUT', body: project })
+  })
+
+  it('assigns a site manager with PUT', async () => {
+    await assignSiteManager('p1', 's1')
+
+    expect(request(0)).toEqual({ path: '/api/projects/p1/site-manager', method: 'PUT', body: { siteManagerId: 's1' } })
   })
 })
