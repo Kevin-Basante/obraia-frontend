@@ -261,4 +261,5 @@ Después de desplegar, la URL de Vercel debe agregarse a `FRONTEND_URL` en Rende
 ## Convenciones
 
 - Código, comentarios y textos de la interfaz en inglés; documentación en español.
-- Commits con prefijo según el tipo de cambio: `feat:`, `fix:`, `style:`, `docs:`, `test:`, `refactor:`, `chore:`.
+- Commits con prefijo según el tipo de cambio: `feat:`, `fix:`, `style:`, `docs:`, `test:`, `refactor:`, `chore:`, `ci:`.
+- Antes de cada commit: `npm run lint`, `npm test` y `npm run build`.
