@@ -201,6 +201,20 @@ Flujo de una petición: página → hook → servicio → cliente de la API → 
 - **Componentes:** se convierten a HTML con `renderToStaticMarkup` (`src/test/renderHtml.js`) para revisar lo que muestran. Los clics y la navegación se prueban a mano en el navegador.
 - **Cobertura** de servicios, utilidades y configuración: 100 % de las líneas y 93 % de las ramas. `npm run coverage` falla si baja de 95 % de líneas o 90 % de ramas.
 
+## Flujo completo
+
+Recorrido de la demostración, de principio a fin:
+
+1. **Registro:** crear la cuenta en `/register` y abrir el enlace del correo para verificarla.
+2. **Obra:** en `/projects/new`, crear una casa con su ciudad, área y pisos.
+3. **Plano:** subir el plano en la sección de planos y pulsar "Analyze with AI". La IA lee el plano y guarda las medidas.
+4. **Medidas:** revisar las medidas de la IA, agregar las manuales y comparar las dos en la tabla de comparación.
+5. **Presupuesto:** generar una cotización, revisar el desglose de costos y aprobar una versión.
+6. **Fases y tareas:** crear el plan de trabajo, reportar avance de las tareas y ver la barra de progreso.
+7. **Gastos y riesgo:** registrar gastos, ver cuánto queda del presupuesto y el riesgo de retraso.
+8. **Notificaciones:** la campana avisa cuando se aprueba un presupuesto, se pasa del presupuesto o sube el riesgo.
+9. **Cuenta:** editar el perfil, cambiar la contraseña o eliminar la cuenta con confirmación por correo.
+
 ## Estructura
 
 ```
