@@ -7,6 +7,28 @@ Proyecto final de Patrones de Software: Kevin Basante y Arley Riascos.
 
 El frontend solo se comunica con el backend (`obraia-backend`). Nunca accede a la base de datos ni al servicio de IA, y no guarda ninguna clave.
 
+## Arquitectura
+
+```mermaid
+flowchart LR
+    U[Usuario] --> F[Frontend React en Vercel]
+    F -- HTTPS + JWT --> B[Backend Spring Boot en Render]
+    B --> D[(PostgreSQL en Neon)]
+    B -- X-Service-Token --> I[obraia-ia FastAPI en Render]
+    I --> G[Gemini]
+    B --> M[Brevo: correos]
+```
+
+Dentro del frontend, cada capa solo llama a la siguiente:
+
+| Capa        | Carpeta                 | Qué hace                                             |
+| ----------- | ----------------------- | ---------------------------------------------------- |
+| Páginas     | `pages/`, `layouts/`    | Arman cada pantalla y deciden qué mostrar            |
+| Componentes | `components/`           | Piezas visuales reutilizables                        |
+| Hooks       | `hooks/`, `context/`    | Sesión, carga de datos y envío de formularios        |
+| Servicios   | `services/`             | Una función por ruta del backend                     |
+| Cliente     | `services/apiClient.js` | `fetch`, errores con la forma del backend y tokens   |
+
 ## Tecnologías
 
 - React 19
