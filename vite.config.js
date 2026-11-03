@@ -11,6 +11,8 @@ export default defineConfig({
       include: ['src/services/**', 'src/utils/**', 'src/config/**'],
       exclude: ['**/*.test.{js,jsx}'],
       reporter: ['text-summary', 'html'],
+      // npm run coverage fails if the coverage drops below these values.
+      thresholds: { lines: 95, functions: 95, branches: 90, statements: 95 },
     },
   },
 })
