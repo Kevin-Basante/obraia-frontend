@@ -1,5 +1,13 @@
 import { describe, expect, it } from 'vitest'
-import { formatAmount, formatCurrency, formatDate, formatFileSize, formatPercent, formatQuantity } from './format.js'
+import {
+  formatAmount,
+  formatCurrency,
+  formatDate,
+  formatDateTime,
+  formatFileSize,
+  formatPercent,
+  formatQuantity,
+} from './format.js'
 
 // Intl puts a non-breaking space after the currency symbol; tests compare with a normal space.
 const plain = (text) => text.replace(/\s/g, ' ')
@@ -32,5 +40,20 @@ describe('format', () => {
   it('writes the unit of an amount with its exponent', () => {
     expect(formatAmount(33.6, 'm2')).toBe('33,6 m²')
     expect(formatAmount('0.92', 'm3')).toBe('0,92 m³')
+  })
+})
+
+describe('formatDateTime', () => {
+  it('shows date and time in the time zone of the browser', () => {
+    const expected = new Date('2026-10-30T04:47:34Z').toLocaleString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+    })
+
+    expect(formatDateTime('2026-10-30T04:47:34Z')).toBe(expected)
+    expect(expected).toContain('2026')
   })
 })
