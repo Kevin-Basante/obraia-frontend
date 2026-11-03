@@ -1,5 +1,15 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { getLocations, getMaterials, getPhasePlan, getProjectTypes } from './catalogService.js'
+import {
+  getDepartments,
+  getElementTypes,
+  getLocations,
+  getMaterialCategories,
+  getMaterialFormulas,
+  getMaterials,
+  getPhasePlan,
+  getProjectType,
+  getProjectTypes,
+} from './catalogService.js'
 
 let fetchMock
 
@@ -44,5 +54,32 @@ describe('catalogService', () => {
     await getLocations({ department: 'Bolívar' })
 
     expect(requestedPath()).toBe('/api/catalogs/locations?department=Bol%C3%ADvar')
+  })
+})
+
+describe('catalogService paths', () => {
+  function pathOf(index) {
+    const url = new URL(fetchMock.mock.calls[index][0])
+    return url.pathname + url.search
+  }
+
+  it('reads one project type and its material formulas', async () => {
+    await getProjectType('house')
+    await getMaterialFormulas('house', { element: 'wall' })
+
+    expect(pathOf(0)).toBe('/api/catalogs/project-types/house')
+    expect(pathOf(1)).toBe('/api/catalogs/project-types/house/material-formulas?element=wall')
+  })
+
+  it('reads departments, material categories and element types', async () => {
+    await getDepartments()
+    await getMaterialCategories()
+    await getElementTypes()
+
+    expect([pathOf(0), pathOf(1), pathOf(2)]).toEqual([
+      '/api/catalogs/locations/departments',
+      '/api/catalogs/material-categories',
+      '/api/catalogs/element-types',
+    ])
   })
 })
