@@ -7,9 +7,9 @@
 .notification-bell__count {
   min-width: 1.5em;
   padding: 1px 6px;
-  border-radius: 999px;
+  border-radius: var(--radius-small);
   background: var(--bad);
-  color: var(--card);
+  color: var(--on-accent);
   font-size: 0.75rem;
   font-weight: 700;
   text-align: center;
