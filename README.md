@@ -206,7 +206,7 @@ Flujo de una petición: página → hook → servicio → cliente de la API → 
 
 ## Pruebas
 
-- 223 pruebas con Vitest, en Node (sin navegador). No llaman al backend: `fetch` se reemplaza por una respuesta falsa.
+- 260 pruebas con Vitest, en Node (sin navegador). No llaman al backend: `fetch` se reemplaza por una respuesta falsa.
 - **Servicios:** cada función revisa la ruta, el método y el cuerpo que envía al backend.
 - **Utilidades:** validaciones, formularios, formatos, presupuesto, riesgo y notificaciones.
 - **Componentes:** se convierten a HTML con `renderToStaticMarkup` (`src/test/renderHtml.js`) para revisar lo que muestran. Los clics y la navegación se prueban a mano en el navegador.
