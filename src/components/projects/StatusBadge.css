@@ -1,12 +1,28 @@
+/* Soft pill: the text takes the color of the status and the background a light tint of it. */
 .status-badge {
-  display: inline-block;
-  padding: 2px 10px;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 11px;
+  border: 0;
+  border-radius: var(--radius-small);
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  vertical-align: middle;
   white-space: nowrap;
   color: var(--muted);
+}
+
+.status-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
 }
 
 .status-badge--planned,
@@ -55,7 +71,6 @@
 }
 
 .status-badge--critical {
-  border-color: var(--bad);
   background: var(--bad);
-  color: var(--card);
+  color: var(--on-accent);
 }
