@@ -5,6 +5,19 @@
   gap: 10px;
 }
 
+/* Drawing of the phase, on a small sheet of drawing paper. */
+.phase-card__art {
+  width: 72px;
+  padding: 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-small);
+  background: var(--bg);
+}
+
+.phase-card__art + h2 {
+  margin-right: 4px;
+}
+
 /* Small red label next to the status of a phase or task that passed its planned end. */
 .late-tag {
   margin-left: 6px;
