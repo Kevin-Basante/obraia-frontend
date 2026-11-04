@@ -261,12 +261,13 @@ Después de desplegar, la URL de Vercel debe agregarse a `FRONTEND_URL` en Rende
 | Versión | Qué trae                                                                                  |
 | ------- | ----------------------------------------------------------------------------------------- |
 | 1.0.0   | Todas las secciones (catálogo, obras, planos, medidas, presupuesto, fases, gastos, riesgo, notificaciones y cuenta), pruebas de componentes, cobertura y GitHub Actions |
+| 1.1.0   | Diseño visual de obra: página de inicio nueva, inicio de sesión en dos columnas, dibujos de fases y materiales, animaciones y modo oscuro |
 
 ## Equipo y responsabilidades
 
 | Integrante    | Responsabilidad                                   |
 | ------------- | ------------------------------------------------- |
-| Kevin Basante | Backend (`obraia-backend`) y servicio de IA (`obraia-ia`) |
+| Kevin Basante | Backend (`obraia-backend`), servicio de IA (`obraia-ia`) y diseño visual del frontend |
 | Arley Riascos | Frontend (`obraia-frontend`)                      |
 
 ## Convenciones
