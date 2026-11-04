@@ -10,11 +10,26 @@
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  padding: 8px 0;
+  padding: 14px 4px;
   border-bottom: 1px solid var(--line);
+  transition: padding 0.25s var(--ease);
+}
+
+.recent-projects li:hover {
+  padding-inline: 12px 4px;
+}
+
+.recent-projects a {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.recent-projects a:hover {
+  color: var(--accent-strong);
 }
 
 .recent-projects__actions {
   align-items: center;
-  justify-content: center;
 }
