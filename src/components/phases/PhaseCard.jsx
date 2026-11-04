@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { LineArt } from '../art/LineArt.jsx'
 import { StatusBadge } from '../projects/StatusBadge.jsx'
+import { phaseArt } from '../../utils/artFor.js'
 import { formatDate } from '../../utils/format.js'
 import { toPhaseRequest, toWorkForm, validatePhase } from '../../utils/workForm.js'
 import { ProgressBar } from './ProgressBar.jsx'
@@ -30,6 +32,9 @@ export function PhaseCard({ projectId, phase, actions, busy }) {
   return (
     <section className="card phase-card" aria-labelledby={`phase-${phase.id}`}>
       <div className="phase-card__header">
+        <div className="phase-card__art">
+          <LineArt set="phase" art={phaseArt(phase.name)} />
+        </div>
         <h2 id={`phase-${phase.id}`}>
           {phase.order}. {phase.name}
         </h2>
