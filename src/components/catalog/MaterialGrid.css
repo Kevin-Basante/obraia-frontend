@@ -1,0 +1,78 @@
+.material-grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+  transition: opacity 0.2s;
+}
+
+.material-grid--updating {
+  opacity: 0.6;
+}
+
+.material-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: rise 0.5s var(--ease) both;
+  animation-delay: calc(min(var(--step), 12) * 0.04s);
+  transition:
+    transform 0.3s var(--ease),
+    border-color 0.3s;
+}
+
+.material-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--tan);
+}
+
+/* The drawing sits on a strip of drawing paper with a fine grid. */
+.material-card__art {
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  border-bottom: 1px solid var(--line);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 16px 16px;
+  background-position: -1px -1px;
+}
+
+.material-card__art .line-art {
+  width: 96px;
+  transition: transform 0.4s var(--ease);
+}
+
+.material-card:hover .line-art {
+  transform: scale(1.06) rotate(-2deg);
+}
+
+.material-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px 16px;
+}
+
+.material-card__body h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.material-card__price {
+  margin: 6px 0 0;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.material-card__date {
+  font-size: 0.85rem;
+}
