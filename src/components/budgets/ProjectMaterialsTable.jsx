@@ -1,3 +1,4 @@
+import { MaterialName } from '../catalog/MaterialName.jsx'
 import { materialsTotal } from '../../utils/budget.js'
 import { formatCurrency, formatQuantity } from '../../utils/format.js'
 import '../catalog/DataTable.css'
@@ -25,7 +26,9 @@ export function ProjectMaterialsTable({ materials }) {
       <tbody>
         {materials.map((material) => (
           <tr key={material.materialId}>
-            <td data-label="Material">{material.name}</td>
+            <td data-label="Material">
+              <MaterialName name={material.name} />
+            </td>
             <td data-label="Unit">{material.unit}</td>
             <td data-label="Quantity" className="data-table__number">
               {formatQuantity(material.quantity)}
