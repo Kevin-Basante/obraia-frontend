@@ -12,8 +12,16 @@
   vertical-align: top;
 }
 
+.data-table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.data-table tbody tr:hover {
+  background: var(--accent-soft);
+}
+
 .data-table th {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--muted);
@@ -72,4 +80,24 @@
 .formula-table caption .muted {
   display: inline;
   font-weight: 400;
+}
+
+/* Material name with its drawing in front (see MaterialName). */
+.material-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.material-name__art {
+  flex: none;
+  width: 30px;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-small);
+  background: var(--bg);
+}
+
+.material-name__art .line-art path {
+  stroke-width: 2.4;
 }
