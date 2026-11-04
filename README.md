@@ -78,7 +78,7 @@ Esta variable solo guarda la URL pública del backend. Las claves (base de datos
 
 | Ruta               | Página                                                         | Acceso                  |
 | ------------------ | -------------------------------------------------------------- | ----------------------- |
-| `/`                | Inicio: qué hace ObraIA y estado del servidor (`/api/hello`)   | Todos                   |
+| `/`                | Inicio: qué hace ObraIA, cómo funciona y las fases de una obra | Todos                   |
 | `/register`        | Crear cuenta                                                   | Sin sesión              |
 | `/check-email`     | Aviso de correo enviado y botón para reenviarlo                | Todos                   |
 | `/verify-email`    | Confirma el correo con el enlace recibido (`?token=`)          | Todos                   |
@@ -130,6 +130,7 @@ Una ruta desconocida muestra "Page not found". Un invitado que abre una página 
 - Mientras llega una respuesta nueva, la lista anterior sigue visible y atenuada; si llega una respuesta vieja, se ignora.
 - Los precios se muestran en pesos colombianos (`$ 33.000`) y las cantidades con coma decimal (`12,5`).
 - En el detalle de un tipo de obra, el área construida decide el tamaño: hasta 120 m² es pequeña y más de 120 m² es grande.
+- Los materiales se muestran en tarjetas, cada una con el dibujo del material, y las fases del tipo de obra como un camino numerado con el dibujo de cada fase.
 
 ## Obras
 
