@@ -1,0 +1,24 @@
+.brand-logo {
+  flex: none;
+}
+
+.brand-logo__tile {
+  fill: var(--accent);
+}
+
+.brand-logo__house,
+.brand-logo__measure {
+  fill: none;
+  stroke: var(--on-accent);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.brand-logo__house {
+  stroke-width: 2.2;
+}
+
+.brand-logo__measure {
+  stroke-width: 1.4;
+  opacity: 0.75;
+}
