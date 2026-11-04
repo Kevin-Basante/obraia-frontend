@@ -4,6 +4,7 @@ import { GuestBanner } from '../components/GuestBanner.jsx'
 import { ProfileCard } from '../components/ProfileCard.jsx'
 import { RecentProjects } from '../components/projects/RecentProjects.jsx'
 import { useCurrentUser } from '../hooks/useCurrentUser.js'
+import { greetingFor, longDate } from '../utils/greeting.js'
 import './DashboardPage.css'
 
 /** Start page after signing in: profile, newest projects and the catalog. */
@@ -12,31 +13,37 @@ export function DashboardPage() {
 
   return (
     <div className="dashboard">
-      {user ? (
-        <h1>Hello, {user.firstName}</h1>
-      ) : (
-        <>
-          <h1>Welcome to ObraIA</h1>
-          <GuestBanner />
-        </>
-      )}
+      <header className="dashboard__banner">
+        <p className="dashboard__date">{longDate()}</p>
+        <h1>{user ? `${greetingFor()}, ${user.firstName}` : 'Welcome to ObraIA'}</h1>
+        <p>{user ? 'Here is where your projects stand today.' : 'Try the tools of ObraIA before creating your account.'}</p>
+      </header>
+      {!user && <GuestBanner />}
       <FormAlert>{error && `We could not refresh your profile: ${error.message}`}</FormAlert>
-      {user && <ProfileCard user={user} />}
-      {user ? (
-        <RecentProjects />
-      ) : (
-        <section className="card dashboard__empty">
-          <h2>Your projects</h2>
-          <p className="muted">Projects are saved in your account. Create one to plan and quote your work.</p>
-        </section>
-      )}
-      <section className="card dashboard__empty">
-        <h2>Catalog</h2>
-        <p className="muted">See the materials with their reference prices, the phases of each project type and the cities.</p>
-        <Link to="/catalog" className="button-link">
-          Explore the catalog
-        </Link>
-      </section>
+      <div className="dashboard__grid">
+        <div className="dashboard__main">
+          {user ? (
+            <RecentProjects />
+          ) : (
+            <section className="card dashboard__empty">
+              <h2>Your projects</h2>
+              <p className="muted">Projects are saved in your account. Create one to plan and quote your work.</p>
+            </section>
+          )}
+        </div>
+        <aside className="dashboard__side">
+          {user && <ProfileCard user={user} />}
+          <section className="card dashboard__empty">
+            <h2>Catalog</h2>
+            <p className="muted">
+              See the materials with their reference prices, the phases of each project type and the cities.
+            </p>
+            <Link to="/catalog" className="button-link">
+              Explore the catalog
+            </Link>
+          </section>
+        </aside>
+      </div>
     </div>
   )
 }
