@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router'
 import { useAuth } from '../hooks/useAuth.js'
+import { BrandLogo } from './BrandLogo.jsx'
 import { NotificationBell } from './notifications/NotificationBell.jsx'
 import './AppHeader.css'
 
@@ -9,8 +10,11 @@ export function AppHeader() {
 
   return (
     <header className="app-header">
-      <Link to="/" className="app-header__brand">
-        ObraIA
+      <Link to="/" className="app-header__brand" aria-label="ObraIA home">
+        <BrandLogo />
+        <span aria-hidden="true">
+          Obra<span className="app-header__brand-ai">IA</span>
+        </span>
       </Link>
       <nav className="app-header__nav" aria-label="Main">
         <NavLink to="/catalog">Catalog</NavLink>
@@ -22,7 +26,7 @@ export function AppHeader() {
             <NavLink to="/account" className="app-header__user" title="My account">
               {user.firstName}
             </NavLink>
-            <button type="button" className="app-header__button" onClick={() => signOut()}>
+            <button type="button" className="app-header__button button-secondary" onClick={() => signOut()}>
               Sign out
             </button>
           </>
