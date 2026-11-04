@@ -1,3 +1,4 @@
+import { MaterialName } from './MaterialName.jsx'
 import { formatPercent, formatQuantity } from '../../utils/format.js'
 import './DataTable.css'
 
@@ -36,7 +37,9 @@ export function FormulaTable({ formulas, updating }) {
           <tbody>
             {group.rows.map((formula) => (
               <tr key={formula.materialId}>
-                <td data-label="Material">{formula.materialName}</td>
+                <td data-label="Material">
+                  <MaterialName name={formula.materialName} />
+                </td>
                 <td data-label="Quantity" className="data-table__number">
                   {formatQuantity(formula.consumptionPerUnit)} {formula.materialUnit}
                 </td>
