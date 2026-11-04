@@ -1,0 +1,82 @@
+/* Landing roadmap: eight sheets in a row, joined by a dimension line. */
+.phase-roadmap__intro {
+  max-width: 640px;
+}
+
+.phase-roadmap__intro h2 {
+  margin: 0 0 12px;
+}
+
+.phase-roadmap__list {
+  position: relative;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--ink);
+  border-left: 1px solid var(--ink);
+}
+
+.phase-roadmap__step {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px 22px;
+  border-right: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  background: var(--card);
+  transition: background-color 0.3s;
+}
+
+.phase-roadmap__step:hover {
+  background: var(--accent-soft);
+}
+
+.reveal .phase-roadmap__step {
+  opacity: 0;
+}
+
+.reveal--visible .phase-roadmap__step {
+  animation: rise-in 0.6s var(--ease) both;
+  animation-delay: calc(var(--step) * 0.1s);
+}
+
+.phase-roadmap__number {
+  color: var(--accent);
+}
+
+.phase-roadmap__art {
+  aspect-ratio: 80 / 64;
+  margin: 6px 0 4px;
+}
+
+/* The drawings of each sheet start after the sheet itself has appeared. */
+.phase-roadmap__art .line-art path {
+  animation-delay: calc(var(--step) * 0.1s + var(--stroke) * 0.12s + 0.2s);
+}
+
+.phase-roadmap__step h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.phase-roadmap__step p {
+  font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+  .phase-roadmap__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .phase-roadmap__list {
+    grid-template-columns: 1fr;
+  }
+
+  .phase-roadmap__art {
+    max-width: 200px;
+  }
+}
