@@ -1,0 +1,242 @@
+/* Blueprint of the landing page: the lines draw themselves, a scan reads them,
+   the measurements pop up and the budget counts up. */
+.blueprint-scene {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
+  padding: 28px 18px 84px;
+}
+
+.blueprint-scene__sheet {
+  position: relative;
+  padding: 18px;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-raised);
+  transform: rotate(-1deg);
+  animation: sheet-in 0.9s var(--ease) both;
+}
+
+/* Title block in the corner, like the one on every construction drawing. */
+.blueprint-scene__title-block {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.blueprint-scene__plan {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--accent);
+  overflow: visible;
+}
+
+.blueprint-scene__grid {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 0.6;
+}
+
+.blueprint-scene__line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 1.1s var(--ease) forwards;
+}
+
+.blueprint-scene__wall {
+  stroke: var(--ink);
+  stroke-width: 6;
+}
+
+.blueprint-scene__detail {
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.blueprint-scene__dimension {
+  stroke: var(--tan);
+  stroke-width: 1.2;
+  animation-delay: 1.6s;
+}
+
+.blueprint-scene__measure,
+.blueprint-scene__room {
+  font-family: var(--font-mono);
+  text-anchor: middle;
+  opacity: 0;
+  animation: fade-in 0.6s ease forwards;
+}
+
+.blueprint-scene__measure {
+  font-size: 11px;
+  font-weight: 700;
+  fill: var(--accent-strong);
+  animation-delay: 1.9s;
+}
+
+.blueprint-scene__room {
+  font-size: 12px;
+  fill: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  animation-delay: 1.6s;
+}
+
+.blueprint-scene__scan {
+  opacity: 0;
+  animation: scan 1.4s ease-in-out 1.9s forwards;
+}
+
+.blueprint-scene__chips {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+}
+
+.blueprint-scene__chip {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 14px;
+  border-radius: var(--radius-small);
+  border-left: 3px solid var(--accent);
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-raised);
+  font-size: 0.78rem;
+  color: var(--muted);
+  opacity: 0;
+  animation:
+    pop-in 0.6s var(--ease) forwards,
+    float 6s ease-in-out 3.2s infinite;
+}
+
+.blueprint-scene__chip span {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.blueprint-scene__chip strong {
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.blueprint-scene__chip--walls { top: 6%; right: -2%; }
+.blueprint-scene__chip--floor { top: 42%; left: -4%; }
+.blueprint-scene__chip--slab { top: 58%; right: -5%; }
+
+.blueprint-scene__budget {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  translate: -50% 0;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 20px;
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--on-panel);
+  box-shadow: var(--shadow-raised);
+  opacity: 0;
+  animation: pop-in 0.7s var(--ease) 2.5s forwards;
+}
+
+.blueprint-scene__budget span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.blueprint-scene__budget strong {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.blueprint-scene__bar {
+  display: block;
+  height: 6px;
+  border-radius: 1px;
+  background: rgb(255 255 255 / 15%);
+  overflow: hidden;
+}
+
+.blueprint-scene__bar span {
+  display: block;
+  height: 100%;
+  width: 72%;
+  background: repeating-linear-gradient(-45deg, var(--safety) 0 6px, transparent 6px 10px);
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: grow 1.8s var(--ease) 2.7s forwards;
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: rotate(-4deg) translateY(30px) scale(0.96);
+  }
+}
+
+@keyframes scan {
+  0% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(400px); }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes float {
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes grow {
+  to { transform: scaleX(1); }
+}
+
+@media (max-width: 520px) {
+  .blueprint-scene__chip { font-size: 0.7rem; padding: 6px 10px; }
+  .blueprint-scene__chip--floor { left: 0; }
+  .blueprint-scene__chip--walls,
+  .blueprint-scene__chip--slab { right: 0; }
+}
