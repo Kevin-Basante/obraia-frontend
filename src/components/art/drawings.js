@@ -5,7 +5,7 @@
  *   fill   outlined shape on sand    clay    outlined shape on soft brick
  *   thin   hatch and ground marks    dash    string lines and axes
  *   dot    round points (sand, gravel)
- * Phases are drawn on an 80 x 64 sheet.
+ * Phases are drawn on an 80 x 64 sheet, materials on a 64 x 64 one.
  */
 
 // Short diagonal strokes under a ground line, like soil in a section drawing.
@@ -98,5 +98,57 @@ export const PHASE_DRAWINGS = {
     { kind: 'fill', d: 'M16 42q0-24 24-24t24 24z' },
     { kind: 'line', d: 'M10 42H70v5H10zM36 18V12h8v6' },
     { kind: 'accent', d: 'M30 22v14M50 22v14' },
+  ],
+}
+
+export const MATERIAL_DRAWINGS = {
+  sand: [
+    { kind: 'thin', d: 'M4 54H60' },
+    { kind: 'fill', d: 'M8 54Q22 22 32 20t24 34z' },
+    { kind: 'dot', d: 'M24 40h.01M32 32h.01M38 44h.01M30 48h.01M44 46h.01M20 49h.01M36 26h.01' },
+    { kind: 'line', d: 'M48 18l8-8M54 10l4 4-4 2' },
+  ],
+  gravel: [
+    { kind: 'thin', d: 'M4 54H60' },
+    { kind: 'fill', d: 'M10 54l3-8 8-2 5 6-2 4zM24 54l2-9 9-3 6 6-1 6zM40 54l3-7 8 0 4 7z' },
+    { kind: 'fill', d: 'M18 44l4-8 8-1 4 6-3 4zM32 38l4-7 8 1 2 7-5 3z' },
+    { kind: 'clay', d: 'M26 30l4-6 7 1 1 5-6 2z' },
+  ],
+  cement: [
+    { kind: 'fill', d: 'M14 16q18-6 36 0l3 36q-21 6-42 0z' },
+    { kind: 'clay', d: 'M13 28q19 5 38 0l1 10q-20 5-40 0z' },
+    { kind: 'line', d: 'M14 16l4-6M50 16l-4-6M18 10q14-4 28 0' },
+    { kind: 'thin', d: 'M20 45h24M22 49h20' },
+  ],
+  paint: [
+    { kind: 'fill', d: 'M14 24H50L46 54H18z' },
+    { kind: 'line', d: 'M12 24h40v4H12zM16 24q16-20 32 0' },
+    { kind: 'clay', d: 'M17 34H47l-2 12H19z' },
+    { kind: 'accent', d: 'M30 28v8M36 28v4' },
+  ],
+  block: [
+    { kind: 'clay', d: 'M8 28H44V52H8zM8 28 20 18H56L44 28zM44 28 56 18V42L44 52z' },
+    { kind: 'line', d: 'M12 32h8v16h-8zM24 32h8v16h-8zM36 32h5v16h-5z' },
+    { kind: 'thin', d: 'M24 23h8l-3 3h-8zM36 23h8l-3 3h-8z' },
+  ],
+  sheet: [
+    { kind: 'fill', d: 'M6 40q4-6 8 0t8 0 8 0 8 0 8 0L58 24q-4 6-8 0t-8 0-8 0-8 0-8 0z' },
+    { kind: 'line', d: 'M6 40v6q4-6 8 0t8 0 8 0 8 0 8 0v-6M46 46 58 30V24' },
+    { kind: 'thin', d: 'M10 37 22 21M18 37 30 21M26 37 38 21M34 37 46 21' },
+  ],
+  rebar: [
+    { kind: 'line', d: 'M6 46 56 20M8 52 58 26M10 40 54 14' },
+    { kind: 'accent', d: 'M14 42l2 4M22 38l2 4M30 34l2 4M38 30l2 4M46 26l2 4M16 48l2 4M24 44l2 4M32 40l2 4M40 36l2 4M48 32l2 4' },
+    { kind: 'clay', d: 'M26 30l5 10 3-1-5-10z' },
+  ],
+  wire: [
+    { kind: 'line', d: 'M14 32a18 10 0 1 0 36 0a18 10 0 1 0-36 0M16 36a16 9 0 1 0 32 0M18 40a14 8 0 1 0 28 0' },
+    { kind: 'accent', d: 'M50 32q6 4 2 12t6 12' },
+    { kind: 'thin', d: 'M24 32a8 4 0 1 0 16 0a8 4 0 1 0-16 0' },
+  ],
+  crate: [
+    { kind: 'fill', d: 'M10 26H46V54H10zM10 26 20 16H56L46 26zM46 26 56 16V44L46 54z' },
+    { kind: 'line', d: 'M10 26 46 54M46 26 10 54' },
+    { kind: 'accent', d: 'M20 40h16' },
   ],
 }
