@@ -15,17 +15,28 @@
   width: 100%;
   min-width: 0;
   font: inherit;
-  padding: 9px 11px;
+  padding: 11px 14px;
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: var(--radius-small);
   background: var(--bg);
   color: var(--ink);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background-color 0.2s;
+}
+
+.form-field input:hover,
+.form-field select:hover {
+  border-color: var(--tan);
 }
 
 .form-field input:focus-visible,
 .form-field select:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 1px;
+  outline: none;
+  border-color: var(--accent);
+  background: var(--card);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
 }
 
 .form-field input[aria-invalid='true'],
