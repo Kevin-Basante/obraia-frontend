@@ -1,7 +1,8 @@
 .phase-timeline {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  transition: opacity 0.2s;
 }
 
 .phase-timeline--updating {
@@ -12,50 +13,106 @@
   margin: 0;
 }
 
+/* A vertical road: numbered stops joined by a dashed line. */
 .phase-timeline__list {
+  position: relative;
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+}
+
+.phase-timeline__list::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 17px;
+  border-left: 2px dashed var(--tan);
 }
 
 .phase-timeline__item {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr) 70px;
+  grid-template-columns: 36px 96px minmax(0, 1fr) 72px;
   align-items: center;
-  gap: 12px;
-  font-size: 0.95rem;
+  gap: 16px;
+  animation: rise 0.5s var(--ease) both;
+  animation-delay: calc(var(--step) * 0.08s);
+}
+
+.phase-timeline__marker {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-small);
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.phase-timeline__art {
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-small);
+  background: var(--bg);
+}
+
+.phase-timeline__art .line-art path {
+  animation-delay: calc(var(--step) * 0.08s + var(--stroke) * 0.1s + 0.2s);
+}
+
+.phase-timeline__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.phase-timeline__name {
+  font-weight: 700;
 }
 
 .phase-timeline__bar {
-  height: 10px;
-  border-radius: 5px;
-  background: var(--bg);
+  height: 8px;
+  border-radius: 2px;
+  background: var(--bg-alt);
   overflow: hidden;
 }
 
 .phase-timeline__bar span {
   display: block;
   height: 100%;
-  border-radius: 5px;
-  background: var(--accent);
+  background: repeating-linear-gradient(-45deg, var(--accent) 0 6px, var(--accent-strong) 6px 9px);
+  transform-origin: left;
+  animation: grow-bar 0.9s var(--ease) both;
+  animation-delay: calc(var(--step) * 0.08s + 0.3s);
 }
 
 .phase-timeline__days {
   text-align: right;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
   color: var(--muted);
-  font-variant-numeric: tabular-nums;
 }
 
-/* On phones the name goes on its own line above the bar. */
+@keyframes grow-bar {
+  from { transform: scaleX(0); }
+}
+
+/* On phones the drawing is smaller and the days go under the name. */
 @media (max-width: 640px) {
   .phase-timeline__item {
-    grid-template-columns: minmax(0, 1fr) 70px;
+    grid-template-columns: 36px 72px minmax(0, 1fr);
+    gap: 12px;
   }
 
-  .phase-timeline__name {
-    grid-column: 1 / -1;
+  .phase-timeline__days {
+    grid-column: 3;
+    text-align: left;
   }
 }
