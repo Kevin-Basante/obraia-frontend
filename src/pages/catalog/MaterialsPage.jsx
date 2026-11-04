@@ -5,7 +5,7 @@ import { LoadingState } from '../../components/LoadingState.jsx'
 import { SelectField } from '../../components/SelectField.jsx'
 import { EmptyState } from '../../components/catalog/EmptyState.jsx'
 import { FilterBar } from '../../components/catalog/FilterBar.jsx'
-import { MaterialTable } from '../../components/catalog/MaterialTable.jsx'
+import { MaterialGrid } from '../../components/catalog/MaterialGrid.jsx'
 import { ResultCount } from '../../components/catalog/ResultCount.jsx'
 import { useApiData } from '../../hooks/useApiData.js'
 import { useDebouncedValue } from '../../hooks/useDebouncedValue.js'
@@ -57,7 +57,7 @@ export function MaterialsPage() {
           {materials.data.length === 0 ? (
             <EmptyState>No materials match these filters.</EmptyState>
           ) : (
-            <MaterialTable materials={materials.data} updating={materials.status === 'loading'} />
+            <MaterialGrid materials={materials.data} updating={materials.status === 'loading'} />
           )}
         </>
       )}
