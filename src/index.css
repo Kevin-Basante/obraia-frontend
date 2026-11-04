@@ -68,11 +68,30 @@ body {
   min-height: 100vh;
   background: var(--bg);
   color: var(--ink);
+  -webkit-font-smoothing: antialiased;
 }
 
-h1 { margin: 0; font-size: 1.9rem; }
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 88%;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
 
-a { color: var(--accent); }
+h1 { margin: 0; font-size: 2rem; }
+
+a {
+  color: var(--accent-strong);
+  text-underline-offset: 3px;
+}
+
+::selection {
+  background: var(--safety);
+  color: var(--ink);
+}
 
 .page {
   min-height: 100vh;
@@ -81,7 +100,23 @@ a { color: var(--accent); }
   align-items: center;
   justify-content: center;
   gap: 16px;
-  padding: 24px 16px;
+  padding: 32px 16px;
+}
+
+/* Every page comes in rising softly; its blocks follow one after another. */
+.page > * {
+  animation: rise 0.6s var(--ease) both;
+}
+
+.page > :nth-child(2) { animation-delay: 0.06s; }
+.page > :nth-child(3) { animation-delay: 0.12s; }
+.page > :nth-child(4) { animation-delay: 0.18s; }
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
 }
 
 .card {
@@ -90,6 +125,7 @@ a { color: var(--accent); }
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
   padding: 28px 24px;
   display: flex;
   flex-direction: column;
@@ -102,17 +138,29 @@ a { color: var(--accent); }
 button {
   align-self: center;
   font: inherit;
-  font-weight: 600;
-  padding: 8px 18px;
+  font-weight: 700;
+  padding: 10px 20px;
   border: 0;
-  border-radius: 6px;
+  border-radius: var(--radius-small);
   background: var(--accent);
-  color: var(--card);
+  color: var(--on-accent);
   cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.2s var(--ease),
+    box-shadow 0.2s;
 }
 
+button:hover:not(:disabled) {
+  background: var(--accent-strong);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgb(180 83 42 / 25%);
+}
+
+button:active:not(:disabled) { transform: translateY(0); }
+
 button:focus-visible,
-a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 button:disabled { opacity: 0.6; cursor: wait; }
 
@@ -120,19 +168,47 @@ button:disabled { opacity: 0.6; cursor: wait; }
 .button-link {
   align-self: center;
   display: inline-block;
-  font-weight: 600;
-  padding: 8px 18px;
-  border-radius: 6px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: var(--radius-small);
   background: var(--accent);
-  color: var(--card);
+  color: var(--on-accent);
   text-decoration: none;
+  transition:
+    background-color 0.2s,
+    transform 0.2s var(--ease),
+    box-shadow 0.2s;
+}
+
+.button-link:hover {
+  background: var(--accent-strong);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgb(180 83 42 / 25%);
 }
 
 /* Less important action next to a main button. */
-.button-secondary {
+.button-secondary,
+button.button-secondary {
   background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
+  color: var(--accent-strong);
+  box-shadow: inset 0 0 0 1.5px var(--tan);
+}
+
+.button-secondary:hover,
+button.button-secondary:hover:not(:disabled) {
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 1.5px var(--accent);
+}
+
+/* Visitors who ask for less movement get the pages without animations. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Forms of the account pages. */
@@ -153,15 +229,21 @@ button:disabled { opacity: 0.6; cursor: wait; }
 }
 
 /* Action that deletes or closes something for good. */
-.button-danger {
+.button-danger,
+button.button-danger {
   background: var(--bad);
-  color: var(--card);
+  color: var(--on-accent);
+}
+
+button.button-danger:hover:not(:disabled) {
+  background: var(--bad);
+  filter: brightness(0.92);
 }
 
 /* Pages of the signed-in area (projects, site managers): full width, from the top. */
 .workspace {
   width: 100%;
-  max-width: 960px;
+  max-width: 1040px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -171,11 +253,12 @@ button:disabled { opacity: 0.6; cursor: wait; }
 .workspace .card {
   max-width: none;
   text-align: left;
+  padding: 26px 28px;
 }
 
 .workspace h2 {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
 }
 
 /* Several buttons side by side, aligned to the left. */
@@ -237,4 +320,14 @@ button:disabled { opacity: 0.6; cursor: wait; }
 .measurements-header {
   justify-content: space-between;
   align-items: flex-end;
+}
+
+/* Small technical label, like the notes on a drawing: monospace and uppercase. */
+.tech-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
