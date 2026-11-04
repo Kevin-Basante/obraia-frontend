@@ -35,6 +35,7 @@ Dentro del frontend, cada capa solo llama a la siguiente:
 - Vite
 - React Router 7 (navegación entre páginas)
 - Vitest (pruebas)
+- Fuentes Archivo, Manrope e IBM Plex Mono, instaladas con npm (`@fontsource`), sin depender de Google Fonts
 - Oxlint para revisar el código
 
 ## Requisitos
