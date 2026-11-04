@@ -1,61 +1,94 @@
+/* Stays at the top while scrolling, with the page softly visible behind it. */
 .app-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
-  padding: 14px 20px;
-  background: var(--card);
-  border-bottom: 1px solid var(--line);
+  padding: 12px clamp(16px, 4vw, 40px);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--ink);
 }
 
 .app-header__brand {
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 850;
+  font-stretch: 85%;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--ink);
   text-decoration: none;
+}
+
+.app-header__brand-ai {
+  color: var(--accent);
+}
+
+.app-header__brand .brand-logo {
+  transition: transform 0.4s var(--ease);
+}
+
+.app-header__brand:hover .brand-logo {
+  transform: rotate(-6deg) scale(1.05);
 }
 
 .app-header__nav {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 6px;
   font-size: 0.95rem;
 }
 
 .app-header__nav a {
+  position: relative;
+  padding: 6px 10px;
+  border-radius: var(--radius-small);
   color: var(--ink);
+  font-weight: 600;
   text-decoration: none;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.app-header__nav a:hover {
+  background: var(--accent-soft);
 }
 
 .app-header__nav a.active {
-  color: var(--accent);
-  font-weight: 600;
+  color: var(--accent-strong);
+  background: var(--accent-soft);
 }
 
 .app-header__nav a.app-header__user {
   color: var(--muted);
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .app-header__nav a.app-header__user.active {
-  color: var(--accent);
+  color: var(--accent-strong);
 }
 
 .app-header__button {
-  padding: 6px 12px;
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--line);
+  padding: 6px 14px;
+  font-size: 0.9rem;
 }
 
 .app-header__nav a.app-header__cta {
-  padding: 6px 12px;
-  border-radius: 6px;
+  margin-left: 4px;
+  padding: 7px 16px;
   background: var(--accent);
-  color: var(--card);
-  font-weight: 600;
+  color: var(--on-accent);
+}
+
+.app-header__nav a.app-header__cta:hover {
+  background: var(--accent-strong);
 }
