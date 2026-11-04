@@ -1,30 +1,62 @@
-/* Design tokens: every color comes from here, with a light and a dark theme. */
+/* Design tokens: every color comes from here, with a light and a dark theme.
+   Construction palette: drawing paper and concrete, sand and kraft browns,
+   brick red for actions and safety amber for highlights. */
 :root {
-  --bg: #f3f5f7;
-  --card: #ffffff;
-  --ink: #18263a;
-  --muted: #5a6878;
-  --line: #d5dce4;
-  --accent: #1f5fa8;
-  --ok: #1d7a46;
-  --bad: #b3261e;
-  --warn: #9a5b00;
-  --radius: 10px;
+  --bg: #f5f1ea;
+  --bg-alt: #ebe4d8;
+  --card: #fffdf8;
+  --ink: #2a241f;
+  --muted: #6e645a;
+  --line: #ddd3c4;
+  --accent: #b4532a;
+  --accent-strong: #8e3d1c;
+  --accent-soft: #f5e2d6;
+  --tan: #c9a57a;
+  --concrete: #8d877f;
+  --safety: #e2a12b;
+  --on-accent: #fffdf8;
+  /* Dark site panels (banners, the brand side of the login): dark in both themes. */
+  --panel: #2a241f;
+  --on-panel: #f5f1ea;
+  --ok: #4f7a3a;
+  --bad: #b23b2a;
+  --warn: #b7802a;
+  --radius: 6px;
+  --radius-small: 4px;
+  --shadow: 0 1px 0 rgb(42 36 31 / 6%), 0 6px 18px rgb(42 36 31 / 7%);
+  --shadow-raised: 0 2px 0 rgb(42 36 31 / 8%), 0 18px 40px rgb(42 36 31 / 14%);
+  --font-body: 'Manrope Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Archivo Variable', 'Arial Narrow', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
   color-scheme: light;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-body);
+  line-height: 1.5;
 }
 
+/* Dark theme: a site at night, dark earth and concrete instead of black. */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0f151d;
-    --card: #17202b;
-    --ink: #e4eaf1;
-    --muted: #97a5b5;
-    --line: #2a3644;
-    --accent: #7fb2ec;
-    --ok: #6fcf97;
-    --bad: #f28b82;
-    --warn: #f2b25c;
+    --bg: #181512;
+    --bg-alt: #201c18;
+    --card: #25201b;
+    --ink: #f1ebe2;
+    --muted: #b3a797;
+    --line: #3b332b;
+    --accent: #e0774a;
+    --accent-strong: #f09a72;
+    --accent-soft: #3d261b;
+    --tan: #b8936a;
+    --concrete: #8a847c;
+    --safety: #f0b440;
+    --on-accent: #181512;
+    --panel: #2c251f;
+    --on-panel: #f1ebe2;
+    --ok: #8fbf6c;
+    --bad: #ec7f69;
+    --warn: #e9b55a;
+    --shadow: 0 1px 0 rgb(0 0 0 / 30%), 0 6px 18px rgb(0 0 0 / 28%);
+    --shadow-raised: 0 2px 0 rgb(0 0 0 / 35%), 0 18px 40px rgb(0 0 0 / 40%);
     color-scheme: dark;
   }
 }
