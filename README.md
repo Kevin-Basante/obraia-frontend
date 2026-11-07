@@ -117,10 +117,11 @@ Una ruta desconocida muestra "Page not found". Un invitado que abre una página 
 ## Diseño
 
 - **Estilo de obra:** la interfaz parece una hoja de planos. Fondo de papel de dibujo, tonos de concreto y arena, rojo ladrillo para las acciones y franjas de seguridad amarillas y negras.
-- **Colores:** todos salen de las variables de `src/index.css`, con un tema claro y uno oscuro que sigue la configuración del sistema. Ningún otro archivo CSS escribe colores directamente.
+- **Colores:** todos salen de las variables de `src/index.css`, con un tema claro y uno oscuro. Ningún otro archivo CSS escribe colores directamente.
 - **Letras:** Archivo (condensada) para los títulos, Manrope para el texto e IBM Plex Mono para las etiquetas técnicas, como las notas de un plano.
 - **Inicio:** un plano que se dibuja solo, la IA lo mide y el presupuesto sube hasta su valor; después, cómo funciona, las ocho fases de una obra y lo que incluye.
 - **Dibujos:** cada fase y cada material tiene un dibujo de línea en SVG (`components/art/`). `utils/artFor.js` elige el dibujo por el nombre que llega del backend (en español) y, si no lo reconoce, por la categoría.
+- **Tema claro y oscuro:** el botón del sol o la luna, arriba a la derecha, cambia el tema. La primera vez se usa el del sistema; después se recuerda la elección en el navegador (`localStorage`). `index.html` aplica el tema antes de dibujar la página para que no parpadee.
 - **Pantalla completa:** las páginas usan todo el ancho de la pantalla, sin márgenes vacíos a los lados. En pantallas anchas (desde 1280 px) los formularios de medidas y gastos quedan al lado de su tabla o resumen.
 - **Animaciones:** solo con CSS: líneas que se dibujan, secciones que suben al aparecer en pantalla (`useInView`) y barras que crecen. Si el sistema pide menos movimiento (`prefers-reduced-motion`), se muestran sin animación.
 
