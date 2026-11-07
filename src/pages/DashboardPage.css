@@ -1,6 +1,5 @@
 .dashboard {
   width: 100%;
-  max-width: 1040px;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -65,7 +64,7 @@
 
 .dashboard__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 3fr) minmax(300px, 1fr);
   gap: 18px;
   align-items: start;
 }
