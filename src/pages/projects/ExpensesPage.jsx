@@ -60,31 +60,29 @@ export function ExpensesPage() {
         description={`${project.data.name} · money really spent on the work`}
         back={{ to: `/projects/${id}`, label: project.data.name }}
       />
-      <section className="card">
-        <h2>Spent against the budget</h2>
-        <ExpenseSummary summary={summary.data} />
-      </section>
-      {!closed && (
+      <div className="workspace__split">
+        {!closed && (
+          <section className="card">
+            <h2>Register an expense</h2>
+            <p className="muted">
+              Each expense updates the approved budget and the risk of the project. Members are notified when the
+              expenses pass the budget.
+            </p>
+            <ExpenseForm phases={plan.data.phases} onSave={save} />
+          </section>
+        )}
         <section className="card">
-          <h2>Register an expense</h2>
-          <p className="muted">
-            Each expense updates the approved budget and the risk of the project. Members are notified when the expenses
-            pass the budget.
-          </p>
-          <ExpenseForm phases={plan.data.phases} onSave={save} />
+          <h2>Spent against the budget</h2>
+          <ExpenseSummary summary={summary.data} />
         </section>
-      )}
+      </div>
       <section className="card">
         <h2>Expenses</h2>
         {closed && <p className="muted">The project is closed: the expenses can be read but not changed.</p>}
         {expenses.data.length === 0 ? (
           <p className="muted">There are no expenses yet.</p>
         ) : (
-          <ExpenseTable
-            expenses={expenses.data}
-            onDelete={closed ? undefined : handleDelete}
-            busy={removing.pending}
-          />
+          <ExpenseTable expenses={expenses.data} onDelete={closed ? undefined : handleDelete} busy={removing.pending} />
         )}
         <FormAlert>{removing.error?.message}</FormAlert>
       </section>
