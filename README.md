@@ -245,15 +245,15 @@ Recorrido de la demostración, de principio a fin:
 ```
 public/                Archivos estáticos (ícono)
 src/
-├── components/        Componentes visuales, cada uno con su CSS (por sección en account/, art/, blueprints/, budgets/, catalog/, expenses/, landing/, measurements/, notifications/, phases/, projects/, risk/ y siteManagers/)
+├── components/        Componentes visuales, cada uno con su CSS (por sección en account/, art/, blueprints/, budgets/, catalog/, dashboard/, expenses/, landing/, measurements/, notifications/, phases/, projects/, risk/, siteManagers/ y theme/)
 ├── config/            Configuración (URL del backend)
 ├── context/           Estado de la sesión compartido por toda la app
-├── hooks/             Lógica reutilizable: sesión, formularios y carga de datos
+├── hooks/             Lógica reutilizable: sesión, formularios, carga de datos y tema claro u oscuro
 ├── layouts/           Marcos comunes: la app completa y la sección de catálogo
 ├── pages/             Una página por ruta (las del catálogo en pages/catalog/ y las de obras en pages/projects/)
 ├── routes/            Rutas y protección de páginas según la sesión
 ├── services/          Llamadas a la API del backend y manejo de tokens
-├── utils/             Dibujo de cada fase y material, saludo y conteo animado, validaciones, formularios del perfil, obras, medidas, tareas, avance y gastos, textos de la eliminación de cuenta, estados de trabajo, presupuesto, riesgo, notificaciones, formato de precios, fechas y tamaños, y filtros
+├── utils/             Dibujo de cada fase y material, textos y tonos del dashboard, saludo y conteo animado, validaciones, formularios del perfil, obras, medidas, tareas, avance y gastos, textos de la eliminación de cuenta, estados de trabajo, presupuesto, riesgo, notificaciones, formato de precios, fechas y tamaños, y filtros
 ├── App.jsx            Enrutador y proveedor de sesión
 ├── index.css          Colores, fuentes y estilos generales (tema claro y oscuro)
 └── main.jsx           Punto de entrada
