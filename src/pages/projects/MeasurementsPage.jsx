@@ -93,51 +93,55 @@ export function MeasurementsPage() {
           </Link>
         }
       />
-      {!closed && (
+      <div className="workspace__split">
+        {!closed && (
+          <section className="card">
+            <h2>{editing ? `Edit measurement of ${editing.elementLabel.toLowerCase()}` : 'Add a measurement'}</h2>
+            <p className="muted">
+              Concrete parts are counted in m³; walls, floor and roof in m². Each element asks only for the dimensions
+              it needs.
+            </p>
+            <MeasurementForm
+              key={formKey}
+              initialForm={editing ? toMeasurementForm(editing) : EMPTY_MEASUREMENT_FORM}
+              elementTypes={elementTypes.data}
+              blueprints={blueprints.data}
+              floors={floors}
+              onSave={save}
+              onCancel={editing ? handleCancel : undefined}
+              submitText={editing ? 'Save changes' : 'Add measurement'}
+            />
+          </section>
+        )}
         <section className="card">
-          <h2>{editing ? `Edit measurement of ${editing.elementLabel.toLowerCase()}` : 'Add a measurement'}</h2>
-          <p className="muted">
-            Concrete parts are counted in m³; walls, floor and roof in m². Each element asks only for the dimensions it
-            needs.
-          </p>
-          <MeasurementForm
-            key={formKey}
-            initialForm={editing ? toMeasurementForm(editing) : EMPTY_MEASUREMENT_FORM}
-            elementTypes={elementTypes.data}
-            blueprints={blueprints.data}
-            floors={floors}
-            onSave={save}
-            onCancel={editing ? handleCancel : undefined}
-            submitText={editing ? 'Save changes' : 'Add measurement'}
-          />
-        </section>
-      )}
-      <section className="card">
-        <div className="button-row measurements-header">
-          <h2>Measured elements</h2>
-          {floors > 1 && (
-            <SelectField
-              label="Floor"
-              placeholder="All floors"
-              options={floorOptions}
-              value={floor}
-              onChange={(event) => setFloor(event.target.value)}
+          <div className="button-row measurements-header">
+            <h2>Measured elements</h2>
+            {floors > 1 && (
+              <SelectField
+                label="Floor"
+                placeholder="All floors"
+                options={floorOptions}
+                value={floor}
+                onChange={(event) => setFloor(event.target.value)}
+              />
+            )}
+          </div>
+          {closed && <p className="muted">The project is closed: the measurements can be read but not changed.</p>}
+          {measurements.data.length === 0 ? (
+            <p className="muted">
+              {floor ? 'There are no measurements on this floor.' : 'There are no measurements yet.'}
+            </p>
+          ) : (
+            <MeasurementTable
+              measurements={measurements.data}
+              onEdit={closed ? undefined : handleEdit}
+              onDelete={closed ? undefined : handleDelete}
+              busy={removing.pending}
             />
           )}
-        </div>
-        {closed && <p className="muted">The project is closed: the measurements can be read but not changed.</p>}
-        {measurements.data.length === 0 ? (
-          <p className="muted">{floor ? 'There are no measurements on this floor.' : 'There are no measurements yet.'}</p>
-        ) : (
-          <MeasurementTable
-            measurements={measurements.data}
-            onEdit={closed ? undefined : handleEdit}
-            onDelete={closed ? undefined : handleDelete}
-            busy={removing.pending}
-          />
-        )}
-        <FormAlert>{removing.error?.message}</FormAlert>
-      </section>
+          <FormAlert>{removing.error?.message}</FormAlert>
+        </section>
+      </div>
     </div>
   )
 }
