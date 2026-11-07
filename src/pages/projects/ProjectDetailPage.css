@@ -1,0 +1,31 @@
+/*
+ * Dashboard of a project on a 12-column grid that uses the whole screen.
+ * Under 1100px every block takes the full width, one under the other.
+ */
+.project-dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.project-dashboard__grid > * {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  grid-column: 1 / -1;
+}
+
+/* The cards stretch to the height of their row, so neighbours line up. */
+.project-dashboard__grid > * > .card {
+  flex: 1;
+}
+
+@media (min-width: 1100px) {
+  .project-dashboard__status { grid-column: span 4; }
+  .project-dashboard__details { grid-column: span 8; }
+  .project-dashboard__wide { grid-column: span 8; }
+  .project-dashboard__narrow { grid-column: span 4; }
+  .project-dashboard__half { grid-column: span 6; }
+}
