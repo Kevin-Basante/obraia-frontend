@@ -1,0 +1,106 @@
+.money-panel__links {
+  display: inline-flex;
+  gap: 16px;
+}
+
+.money-panel__facts {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px 20px;
+}
+
+.money-panel__facts dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.money-panel__facts dd {
+  margin: 2px 0 0;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.money-panel__over {
+  color: var(--bad);
+}
+
+/* Spent against approved: the bar stops at 100%, the sentence below tells the real share. */
+.money-panel__gauge {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.money-panel__track {
+  display: block;
+  height: 14px;
+  border-radius: 2px;
+  background: var(--accent-soft);
+  overflow: hidden;
+}
+
+.money-panel__track span {
+  display: block;
+  height: 100%;
+  background: var(--ok);
+  transform-origin: left;
+  animation: money-grow 1.2s var(--ease) both;
+}
+
+@keyframes money-grow {
+  from { transform: scaleX(0); }
+}
+
+.money-panel__gauge--near .money-panel__track span { background: var(--warn); }
+.money-panel__gauge--over .money-panel__track span { background: var(--bad); }
+
+.money-panel__gauge p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.money-panel__gauge--over p {
+  color: var(--bad);
+  font-weight: 600;
+}
+
+.money-panel__categories {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.money-panel__category {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.92rem;
+}
+
+.money-panel__category span:last-child {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.money-panel__share {
+  display: block;
+  height: 8px;
+  margin-top: 4px;
+  border-radius: 2px;
+  background: var(--accent-soft);
+  overflow: hidden;
+}
+
+.money-panel__share span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
