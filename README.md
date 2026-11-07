@@ -276,6 +276,7 @@ Después de desplegar, la URL de Vercel debe agregarse a `FRONTEND_URL` en Rende
 | ------- | ----------------------------------------------------------------------------------------- |
 | 1.0.0   | Todas las secciones (catálogo, obras, planos, medidas, presupuesto, fases, gastos, riesgo, notificaciones y cuenta), pruebas de componentes, cobertura y GitHub Actions |
 | 1.1.0   | Diseño visual de obra: página de inicio nueva, inicio de sesión en dos columnas, dibujos de fases y materiales, animaciones y modo oscuro |
+| 1.2.0   | Pantalla completa, dashboard general con todas las obras, dashboard de cada obra y botón de tema claro u oscuro |
 
 ## Equipo y responsabilidades
 
