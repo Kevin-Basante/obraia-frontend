@@ -2,6 +2,7 @@ import { Link, NavLink } from 'react-router'
 import { useAuth } from '../hooks/useAuth.js'
 import { BrandLogo } from './BrandLogo.jsx'
 import { NotificationBell } from './notifications/NotificationBell.jsx'
+import { ThemeToggle } from './theme/ThemeToggle.jsx'
 import './AppHeader.css'
 
 /** Top bar: brand and the links that match the session state. */
@@ -40,6 +41,7 @@ export function AppHeader() {
             </NavLink>
           </>
         )}
+        <ThemeToggle />
       </nav>
     </header>
   )
