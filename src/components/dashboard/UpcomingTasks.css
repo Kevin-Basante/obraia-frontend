@@ -1,0 +1,32 @@
+.upcoming-tasks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.upcoming-tasks li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.upcoming-tasks li:last-child {
+  border-bottom: 0;
+}
+
+.upcoming-tasks__name {
+  font-weight: 600;
+}
+
+.upcoming-tasks__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
