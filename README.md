@@ -123,6 +123,18 @@ Una ruta desconocida muestra "Page not found". Un invitado que abre una página 
 - **Dibujos:** cada fase y cada material tiene un dibujo de línea en SVG (`components/art/`). `utils/artFor.js` elige el dibujo por el nombre que llega del backend (en español) y, si no lo reconoce, por la categoría.
 - **Animaciones:** solo con CSS: líneas que se dibujan, secciones que suben al aparecer en pantalla (`useInView`) y barras que crecen. Si el sistema pide menos movimiento (`prefers-reduced-motion`), se muestran sin animación.
 
+## Dashboard
+
+- **Dashboard general (`/dashboard`):** lee `GET /api/dashboard` y muestra el número de obras, las que están en riesgo alto o crítico, la suma de los presupuestos aprobados y lo gastado. Debajo, una tarjeta por obra con su avance, el gasto contra el presupuesto y el último riesgo.
+- **Dashboard de la obra (`/projects/:id`):** lee `GET /api/dashboard/projects/{id}` y reúne en una sola página lo que antes pedía varios clics:
+  - cinco indicadores: avance, presupuesto gastado, riesgo, fase actual y registros (medidas, planos y miembros);
+  - las fases con su dibujo, estado, fechas y barra de avance;
+  - las próximas tareas, primero las atrasadas, cada una con enlace a su avance;
+  - el dinero: presupuesto aprobado, gastado, lo que queda y el gasto por categoría;
+  - el riesgo, el maestro de obra y los miembros.
+- Las cifras las calcula el backend; la página solo las muestra. Al cambiar el estado de la obra o evaluar el riesgo, el dashboard se vuelve a cargar.
+- La cuadrícula es de 12 columnas; por debajo de 1100 px cada tarjeta ocupa todo el ancho.
+
 ## Catálogo
 
 - Lee los catálogos públicos del backend (`/api/catalogs/...`), así que funciona con sesión, como invitado o sin sesión.
