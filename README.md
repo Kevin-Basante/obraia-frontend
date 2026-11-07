@@ -121,6 +121,7 @@ Una ruta desconocida muestra "Page not found". Un invitado que abre una página 
 - **Letras:** Archivo (condensada) para los títulos, Manrope para el texto e IBM Plex Mono para las etiquetas técnicas, como las notas de un plano.
 - **Inicio:** un plano que se dibuja solo, la IA lo mide y el presupuesto sube hasta su valor; después, cómo funciona, las ocho fases de una obra y lo que incluye.
 - **Dibujos:** cada fase y cada material tiene un dibujo de línea en SVG (`components/art/`). `utils/artFor.js` elige el dibujo por el nombre que llega del backend (en español) y, si no lo reconoce, por la categoría.
+- **Pantalla completa:** las páginas usan todo el ancho de la pantalla, sin márgenes vacíos a los lados. En pantallas anchas (desde 1280 px) los formularios de medidas y gastos quedan al lado de su tabla o resumen.
 - **Animaciones:** solo con CSS: líneas que se dibujan, secciones que suben al aparecer en pantalla (`useInView`) y barras que crecen. Si el sistema pide menos movimiento (`prefers-reduced-motion`), se muestran sin animación.
 
 ## Dashboard
