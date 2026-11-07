@@ -13,11 +13,19 @@ import './RiskPanel.css'
 /**
  * Risk of delay and of going over budget. The backend assesses it again
  * after every expense and progress report; the button asks for one now.
+ * `onAssessed` lets the page refresh what depends on the risk.
  */
-export function RiskPanel({ projectId }) {
+export function RiskPanel({ projectId, onAssessed }) {
   const overview = useApiData((signal) => getRiskOverview(projectId, { signal }), [projectId])
   const { retry } = overview
-  const assess = useCallback(() => assessRisk(projectId).then(retry), [projectId, retry])
+  const assess = useCallback(
+    () =>
+      assessRisk(projectId).then(() => {
+        retry()
+        onAssessed?.()
+      }),
+    [projectId, retry, onAssessed],
+  )
   const assessing = useFormSubmit(assess)
 
   const latest = overview.data?.latest
@@ -58,7 +66,12 @@ export function RiskPanel({ projectId }) {
       )}
       <FormAlert>{assessing.error?.message}</FormAlert>
       <div className="button-row">
-        <button type="button" className="button-secondary" disabled={assessing.pending} onClick={() => assessing.submit()}>
+        <button
+          type="button"
+          className="button-secondary"
+          disabled={assessing.pending}
+          onClick={() => assessing.submit()}
+        >
           {assessing.pending ? 'Assessing…' : 'Assess now'}
         </button>
       </div>
