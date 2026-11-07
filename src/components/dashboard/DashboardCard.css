@@ -1,0 +1,24 @@
+/* Title of a dashboard card with a link to the full page on its right. */
+.dashboard-card__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+
+.dashboard-card__header a {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Small red label for work that passed its planned end. */
+.dashboard-late {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--bad);
+}
+
+.dashboard-card__header h2 {
+  margin: 0;
+}
