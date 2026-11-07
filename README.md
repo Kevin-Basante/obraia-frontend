@@ -85,14 +85,14 @@ Esta variable solo guarda la URL pública del backend. Las claves (base de datos
 | `/login`           | Iniciar sesión o entrar como invitado                          | Sin sesión              |
 | `/forgot-password` | Pedir el enlace para cambiar la contraseña                     | Sin sesión              |
 | `/reset-password`  | Elegir una contraseña nueva con el enlace recibido (`?token=`) | Todos                   |
-| `/dashboard`       | Panel del usuario con sus datos                                | Con sesión o invitado   |
+| `/dashboard`       | Panel del usuario: totales de todas sus obras y una tarjeta por obra con avance, gasto y riesgo | Con sesión o invitado |
 | `/catalog/materials` | Materiales con precio de referencia, filtro por categoría y búsqueda | Todos           |
 | `/catalog/project-types` | Tipos de obra                                              | Todos                   |
 | `/catalog/project-types/:id` | Fases estándar según el tamaño o el área, y materiales por elemento | Todos      |
 | `/catalog/cities`  | Ciudades con su % de transporte, filtro por departamento y búsqueda | Todos              |
 | `/projects`        | Mis obras, con filtro por estado y búsqueda por nombre o ciudad | Con cuenta             |
 | `/projects/new`    | Crear una obra                                                 | Con cuenta              |
-| `/projects/:id`    | Detalle de la obra: estado, datos, riesgo, maestro de obra y miembros | Con cuenta (miembros) |
+| `/projects/:id`    | Dashboard de la obra: indicadores, fases, próximas tareas, dinero, riesgo, maestro de obra y miembros | Con cuenta (miembros) |
 | `/projects/:id/edit` | Editar una obra que no esté terminada ni cancelada           | Con cuenta (miembros)   |
 | `/projects/:id/delete` | Advertencias y envío del correo para eliminar la obra      | Con cuenta (creador)    |
 | `/projects/:id/blueprints` | Planos de la obra: subir fotos o PDF y borrarlos        | Con cuenta (miembros)   |
