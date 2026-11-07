@@ -34,31 +34,30 @@
   line-height: 1.5;
 }
 
-/* Dark theme: a site at night, dark earth and concrete instead of black. */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #181512;
-    --bg-alt: #201c18;
-    --card: #25201b;
-    --ink: #f1ebe2;
-    --muted: #b3a797;
-    --line: #3b332b;
-    --accent: #e0774a;
-    --accent-strong: #f09a72;
-    --accent-soft: #3d261b;
-    --tan: #b8936a;
-    --concrete: #8a847c;
-    --safety: #f0b440;
-    --on-accent: #181512;
-    --panel: #2c251f;
-    --on-panel: #f1ebe2;
-    --ok: #8fbf6c;
-    --bad: #ec7f69;
-    --warn: #e9b55a;
-    --shadow: 0 1px 0 rgb(0 0 0 / 30%), 0 6px 18px rgb(0 0 0 / 28%);
-    --shadow-raised: 0 2px 0 rgb(0 0 0 / 35%), 0 18px 40px rgb(0 0 0 / 40%);
-    color-scheme: dark;
-  }
+/* Dark theme: a site at night, dark earth and concrete instead of black.
+   useTheme sets data-theme on <html>, from the button or the system. */
+:root[data-theme='dark'] {
+  --bg: #181512;
+  --bg-alt: #201c18;
+  --card: #25201b;
+  --ink: #f1ebe2;
+  --muted: #b3a797;
+  --line: #3b332b;
+  --accent: #e0774a;
+  --accent-strong: #f09a72;
+  --accent-soft: #3d261b;
+  --tan: #b8936a;
+  --concrete: #8a847c;
+  --safety: #f0b440;
+  --on-accent: #181512;
+  --panel: #2c251f;
+  --on-panel: #f1ebe2;
+  --ok: #8fbf6c;
+  --bad: #ec7f69;
+  --warn: #e9b55a;
+  --shadow: 0 1px 0 rgb(0 0 0 / 30%), 0 6px 18px rgb(0 0 0 / 28%);
+  --shadow-raised: 0 2px 0 rgb(0 0 0 / 35%), 0 18px 40px rgb(0 0 0 / 40%);
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
