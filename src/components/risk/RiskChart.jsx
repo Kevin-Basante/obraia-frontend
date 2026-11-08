@@ -1,6 +1,7 @@
 import { formatDateTime } from '../../utils/format.js'
 import { chartPoints, formatScore, triggerText } from '../../utils/risk.js'
 import './RiskChart.css'
+import { t } from '../../i18n/i18n.js'
 
 // Small drawing, scaled up to at most 640 px, so the labels can still be read on phones.
 const WIDTH = 420
@@ -18,7 +19,7 @@ export function RiskChart({ history }) {
       className="risk-chart"
       viewBox={`0 -8 ${WIDTH} ${HEIGHT + 16}`}
       role="img"
-      aria-label={`Risk score of the last ${history.length} assessments`}
+      aria-label={t('riskChart.label', { count: history.length })}
     >
       {LEVEL_LINES.map((level) => {
         const y = HEIGHT - (level / 100) * HEIGHT

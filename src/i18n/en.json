@@ -799,6 +799,9 @@
     "theDateCannotBeIn": "The date cannot be in the future",
     "useAtMost1000Characters": "Use at most 1000 characters"
   },
+  "riskChart": {
+    "label": "Risk score of the last {count} assessments"
+  },
   "codes": {
     "status": {
       "draft": "Draft",
