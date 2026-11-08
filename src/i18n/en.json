@@ -251,6 +251,13 @@
     "markAsDelayed": "Mark as delayed",
     "complete": "Complete"
   },
+  "risk": {
+    "noDelayExpected": "No delay expected",
+    "delay": {
+      "one": "About {count} day of delay expected",
+      "other": "About {count} days of delay expected"
+    }
+  },
   "resetPasswordPage": {
     "theLinkIsIncomplete": "The link is incomplete",
     "askForANewLink": "Ask for a new link",
@@ -399,6 +406,22 @@
       "user": "User",
       "system_admin": "Administrator"
     }
+  },
+  "riskDetail": {
+    "no_budget": "There is no approved budget yet",
+    "budget_spent": "{spent}% of the approved budget is spent",
+    "no_dates": "The plan has no dates yet",
+    "time_vs_progress": "{elapsed}% of the planned time passed with {progress}% of the work done",
+    "no_late_tasks": "No task is past its planned end",
+    "late_tasks": {
+      "one": "1 task is past its planned end",
+      "other": "{count} tasks are past their planned end"
+    },
+    "worst_task": {
+      "one": "\"{task}\" is 1 day late",
+      "other": "\"{task}\" is {count} days late"
+    },
+    "spending_vs_progress": "{spent}% of the budget is spent with {progress}% of the work done"
   },
   "serverMessages": {
     "password_changed": "Your password was changed. Sign in again with the new password.",

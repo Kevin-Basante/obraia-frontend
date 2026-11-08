@@ -1,13 +1,7 @@
 import { formatQuantity } from './format.js'
+import { codeText, hasText, t } from '../i18n/i18n.js'
 
 // Helpers for the risk assessments sent by the backend (score from 0 to 100).
-
-const TRIGGER_TEXT = {
-  manual: 'Requested by a member',
-  expense: 'After an expense',
-  progress_report: 'After a progress report',
-  scheduled: 'Scheduled',
-}
 
 /** 66.88 -> "66,9". */
 export function formatScore(score) {
@@ -16,13 +10,35 @@ export function formatScore(score) {
 
 /** 0 -> "No delay expected", 12 -> "About 12 days of delay expected". */
 export function delayText(days) {
-  if (days <= 0) return 'No delay expected'
-  return `About ${days} ${days === 1 ? 'day' : 'days'} of delay expected`
+  if (days <= 0) return t('risk.noDelayExpected')
+  return t('risk.delay', { count: days })
+}
+
+/** Name of a rule of the assessment, such as "Late tasks", in the current language. */
+export function factorLabel(factor) {
+  return codeText('riskFactor', factor.code, factor.label)
+}
+
+/**
+ * Sentence that explains a score, built from the code and the values the
+ * backend sends. Without a known code it keeps the English sentence.
+ */
+export function riskDetailText(code, params, fallback) {
+  if (code === 'late_tasks') {
+    const tasks = t('riskDetail.late_tasks', { count: Number(params.count) })
+    return `${tasks}; ${t('riskDetail.worst_task', { task: params.task, count: Number(params.days) })}`
+  }
+  return code && hasText(`riskDetail.${code}`) ? t(`riskDetail.${code}`, params) : fallback
+}
+
+/** The sentence of a factor of the assessment. */
+export function factorDetail(factor) {
+  return riskDetailText(factor.detailCode, factor.detailParams, factor.detail)
 }
 
 /** What started an assessment, from the code of its trigger. */
 export function triggerText(code) {
-  return TRIGGER_TEXT[code] ?? code
+  return codeText('riskTrigger', code)
 }
 
 /**

@@ -251,6 +251,13 @@
     "markAsDelayed": "Marcar como atrasada",
     "complete": "Completar"
   },
+  "risk": {
+    "noDelayExpected": "No se espera retraso",
+    "delay": {
+      "one": "Se espera un retraso de cerca de {count} día",
+      "other": "Se espera un retraso de cerca de {count} días"
+    }
+  },
   "resetPasswordPage": {
     "theLinkIsIncomplete": "El enlace está incompleto",
     "askForANewLink": "Pedir un enlace nuevo",
@@ -399,6 +406,22 @@
       "user": "Usuario",
       "system_admin": "Administrador"
     }
+  },
+  "riskDetail": {
+    "no_budget": "Todavía no hay un presupuesto aprobado",
+    "budget_spent": "Se gastó el {spent}% del presupuesto aprobado",
+    "no_dates": "El plan todavía no tiene fechas",
+    "time_vs_progress": "Pasó el {elapsed}% del tiempo planeado con el {progress}% de la obra hecha",
+    "no_late_tasks": "Ninguna tarea pasó su fecha de fin planeada",
+    "late_tasks": {
+      "one": "1 tarea pasó su fecha de fin planeada",
+      "other": "{count} tareas pasaron su fecha de fin planeada"
+    },
+    "worst_task": {
+      "one": "\"{task}\" lleva 1 día de atraso",
+      "other": "\"{task}\" lleva {count} días de atraso"
+    },
+    "spending_vs_progress": "Se gastó el {spent}% del presupuesto con el {progress}% de la obra hecha"
   },
   "serverMessages": {
     "password_changed": "Tu contraseña cambió. Inicia sesión de nuevo con la contraseña nueva.",
