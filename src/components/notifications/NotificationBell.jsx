@@ -4,6 +4,7 @@ import { useApiData } from '../../hooks/useApiData.js'
 import { getUnreadCount } from '../../services/notificationService.js'
 import { NOTIFICATIONS_CHANGED, unreadBadge } from '../../utils/notifications.js'
 import './NotificationBell.css'
+import { t } from '../../i18n/i18n.js'
 
 // The count is read again every minute, on every page change and when a page marks notifications as read.
 const REFRESH_MS = 60000
@@ -30,9 +31,9 @@ export function NotificationBell() {
     <NavLink
       to="/notifications"
       className="notification-bell"
-      aria-label={badge ? `Notifications, ${badge} not read` : 'Notifications'}
+      aria-label={badge ? t('header.notificationsUnread', { count: badge }) : t('header.notifications')}
     >
-      Notifications
+      {t('header.notifications')}
       {badge && (
         <span className="notification-bell__count" aria-hidden="true">
           {badge}
