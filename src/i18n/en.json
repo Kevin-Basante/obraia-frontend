@@ -445,6 +445,18 @@
     "country": "Country",
     "transport": "Transport"
   },
+  "measurementTable": {
+    "element": "Element",
+    "floor": "Floor",
+    "quantity": "Quantity",
+    "amount": "Amount",
+    "source": "Source",
+    "actions": "Actions",
+    "dimensionsM": "Dimensions (m)",
+    "differenceWithTheManualTotal": "Difference with the manual total of this element and floor",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
   "siteManagerForm": {
     "fullName": "Full name",
     "documentOptional": "Document (optional)",

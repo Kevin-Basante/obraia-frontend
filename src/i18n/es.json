@@ -445,6 +445,18 @@
     "country": "País",
     "transport": "Transporte"
   },
+  "measurementTable": {
+    "element": "Elemento",
+    "floor": "Piso",
+    "quantity": "Cantidad",
+    "amount": "Cantidad total",
+    "source": "Fuente",
+    "actions": "Acciones",
+    "dimensionsM": "Dimensiones (m)",
+    "differenceWithTheManualTotal": "Diferencia con el total manual de este elemento y piso",
+    "edit": "Editar",
+    "delete": "Borrar"
+  },
   "siteManagerForm": {
     "fullName": "Nombre completo",
     "documentOptional": "Documento (opcional)",
