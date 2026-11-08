@@ -110,6 +110,24 @@
     },
     "leftOut": " and left out {count} it could not use"
   },
+  "expenseForm": {
+    "category": "Category",
+    "chooseACategory": "Choose a category",
+    "amountCop": "Amount (COP)",
+    "date": "Date",
+    "emptyMeansToday": "Empty means today",
+    "description": "Description",
+    "cementoGrisX20Bultos": "Cemento gris x 20 bultos",
+    "phaseOptional": "Phase (optional)",
+    "noPhase": "No phase",
+    "saving": "Saving…",
+    "registerExpense": "Register expense",
+    "chooseTheCategory": "Choose the category",
+    "writeWhatTheMoneyWas": "Write what the money was spent on",
+    "useAtMost255Characters": "Use at most 255 characters",
+    "enterAnAmountGreaterThan": "Enter an amount greater than 0, like 650.000",
+    "theDateCannotBeIn": "The date cannot be in the future"
+  },
   "greeting": {
     "goodMorning": "Good morning",
     "goodAfternoon": "Good afternoon",

@@ -1,14 +1,14 @@
 import { todayIso } from './progressForm.js'
+import { codeText, t } from '../i18n/i18n.js'
 
 // Rules of an expense, checked before sending the form. Same limits as the backend.
 
-export const EXPENSE_CATEGORIES = [
-  { value: 'materials', label: 'Materials' },
-  { value: 'labor', label: 'Labor' },
-  { value: 'equipment', label: 'Equipment' },
-  { value: 'tax', label: 'Taxes' },
-  { value: 'other', label: 'Other' },
-]
+export const EXPENSE_CATEGORIES = ['materials', 'labor', 'equipment', 'tax', 'other']
+
+/** Options of the category list, in the current language. */
+export function expenseCategoryOptions() {
+  return EXPENSE_CATEGORIES.map((code) => ({ value: code, label: codeText('expenseCategory', code) }))
+}
 
 export const EMPTY_EXPENSE_FORM = { category: '', description: '', amount: '', expenseDate: '', phaseId: '' }
 
@@ -30,12 +30,12 @@ export function parseMoney(text) {
 /** Returns one message per invalid field (empty if the form is valid). */
 export function validateExpense(form, today = todayIso()) {
   const errors = {}
-  if (!EXPENSE_CATEGORIES.some((category) => category.value === form.category)) errors.category = 'Choose the category'
+  if (!EXPENSE_CATEGORIES.includes(form.category)) errors.category = t('expenseForm.chooseTheCategory')
   const description = form.description.trim()
-  if (description.length === 0) errors.description = 'Write what the money was spent on'
-  else if (description.length > 255) errors.description = 'Use at most 255 characters'
-  if (parseMoney(form.amount) === null) errors.amount = 'Enter an amount greater than 0, like 650.000'
-  if (form.expenseDate && form.expenseDate > today) errors.expenseDate = 'The date cannot be in the future'
+  if (description.length === 0) errors.description = t('expenseForm.writeWhatTheMoneyWas')
+  else if (description.length > 255) errors.description = t('expenseForm.useAtMost255Characters')
+  if (parseMoney(form.amount) === null) errors.amount = t('expenseForm.enterAnAmountGreaterThan')
+  if (form.expenseDate && form.expenseDate > today) errors.expenseDate = t('expenseForm.theDateCannotBeIn')
   return errors
 }
 

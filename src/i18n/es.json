@@ -110,6 +110,24 @@
     },
     "leftOut": " y dejó fuera {count} que no pudo usar"
   },
+  "expenseForm": {
+    "category": "Categoría",
+    "chooseACategory": "Elige una categoría",
+    "amountCop": "Monto (COP)",
+    "date": "Fecha",
+    "emptyMeansToday": "Vacío es hoy",
+    "description": "Descripción",
+    "cementoGrisX20Bultos": "Cemento gris x 20 bultos",
+    "phaseOptional": "Fase (opcional)",
+    "noPhase": "Sin fase",
+    "saving": "Guardando…",
+    "registerExpense": "Registrar gasto",
+    "chooseTheCategory": "Elige la categoría",
+    "writeWhatTheMoneyWas": "Escribe en qué se gastó el dinero",
+    "useAtMost255Characters": "Usa máximo 255 caracteres",
+    "enterAnAmountGreaterThan": "Escribe un monto mayor que 0, como 650.000",
+    "theDateCannotBeIn": "La fecha no puede estar en el futuro"
+  },
   "greeting": {
     "goodMorning": "Buenos días",
     "goodAfternoon": "Buenas tardes",
