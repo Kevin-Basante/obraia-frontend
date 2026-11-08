@@ -280,6 +280,18 @@
     "open": "Abrir",
     "markAsRead": "Marcar como leída"
   },
+  "siteManagerPanel": {
+    "siteManager": "Maestro de obra",
+    "noSiteManagerAssigned": "Sin maestro de obra asignado.",
+    "youHaveNoSavedSite": "Todavía no tienes maestros de obra guardados.",
+    "addOne": "Agrega uno",
+    "assign": "Asignar",
+    "chooseASiteManager": "Elige un maestro de obra",
+    "removeSiteManager": "Quitar maestro de obra",
+    "manageMySiteManagers": "Administrar mis maestros de obra",
+    "changeTo": "Cambiar a",
+    "loading": "Cargando…"
+  },
   "greeting": {
     "goodMorning": "Buenos días",
     "goodAfternoon": "Buenas tardes",
