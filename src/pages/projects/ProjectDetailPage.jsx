@@ -21,6 +21,7 @@ import { getProject } from '../../services/projectService.js'
 import { isClosed } from '../../utils/projectStatus.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
 import './ProjectDetailPage.css'
+import { t } from '../../i18n/i18n.js'
 
 /**
  * Dashboard of one project: status and data on top, the key numbers, the
@@ -42,7 +43,7 @@ export function ProjectDetailPage() {
 
   if (project.error?.status === 404) return <NotFoundPage />
   if (project.status === 'error') return <ErrorState error={project.error} onRetry={retryProject} />
-  if (!project.data) return <LoadingState title="Loading the project…" />
+  if (!project.data) return <LoadingState title={t('projectDetailPage.loadingTheProject')} />
 
   const data = project.data
   const closed = isClosed(data)
@@ -53,16 +54,16 @@ export function ProjectDetailPage() {
       <PageHeader
         title={data.name}
         description={`${data.projectType.name} · ${data.location.city}`}
-        back={{ to: '/projects', label: 'My projects' }}
+        back={{ to: '/projects', label: t('projectDetailPage.myProjects') }}
         actions={
           <>
             {!closed && (
               <Link to={`/projects/${data.id}/edit`} className="button-link">
-                Edit
+                {t('projectDetailPage.edit')}
               </Link>
             )}
             <Link to={`/projects/${data.id}/delete`} className="button-link button-secondary">
-              Delete
+              {t('projectDetailPage.delete')}
             </Link>
           </>
         }
@@ -76,9 +77,13 @@ export function ProjectDetailPage() {
         </div>
         <div className="project-dashboard__full">
           {overview.status === 'error' && (
-            <FormAlert>We could not load the summary: {overview.error.message}</FormAlert>
+            <FormAlert>
+              {t('projectDetailPage.weCouldNotLoadThe')} {overview.error.message}
+            </FormAlert>
           )}
-          {!summary && overview.status === 'loading' && <p className="muted">Loading the summary…</p>}
+          {!summary && overview.status === 'loading' && (
+            <p className="muted">{t('projectDetailPage.loadingTheSummary')}</p>
+          )}
           {summary && <ProjectKpis overview={summary} />}
         </div>
         <div className="project-dashboard__full">

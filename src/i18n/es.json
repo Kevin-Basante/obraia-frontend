@@ -705,6 +705,14 @@
     "youHaveNoProjectsYet": "Todavía no tienes obras. Crea una para planear sus fases y su cotización.",
     "newProject": "Nueva obra"
   },
+  "projectDetailPage": {
+    "loadingTheProject": "Cargando la obra…",
+    "myProjects": "Mis obras",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "weCouldNotLoadThe": "No pudimos cargar el resumen:",
+    "loadingTheSummary": "Cargando el resumen…"
+  },
   "upcomingTasks": {
     "nextTasks": "Próximas tareas",
     "seeAll": "Ver todas",

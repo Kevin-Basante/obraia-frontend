@@ -705,6 +705,14 @@
     "youHaveNoProjectsYet": "You have no projects yet. Create one to plan its phases and quotation.",
     "newProject": "New project"
   },
+  "projectDetailPage": {
+    "loadingTheProject": "Loading the project…",
+    "myProjects": "My projects",
+    "edit": "Edit",
+    "delete": "Delete",
+    "weCouldNotLoadThe": "We could not load the summary:",
+    "loadingTheSummary": "Loading the summary…"
+  },
   "upcomingTasks": {
     "nextTasks": "Next tasks",
     "seeAll": "See all",
