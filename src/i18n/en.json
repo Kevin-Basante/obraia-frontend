@@ -143,6 +143,12 @@
     "saving": "Saving…",
     "savePassword": "Save password"
   },
+  "workForm": {
+    "theEndCannotBeBefore": "The end cannot be before the start",
+    "use3To100Characters": "Use 3 to 100 characters",
+    "chooseThePhase": "Choose the phase",
+    "use3To150Characters": "Use 3 to 150 characters"
+  },
   "progressForm": {
     "enterANumberFrom0": "Enter a number from 0 to 100, with up to 2 decimals",
     "theDateCannotBeIn": "The date cannot be in the future",

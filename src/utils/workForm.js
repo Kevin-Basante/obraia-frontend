@@ -1,10 +1,11 @@
+import { t } from '../i18n/i18n.js'
 // Same rules as the backend for phases and tasks, checked before sending the form.
 
 export const EMPTY_TASK_FORM = { phaseId: '', name: '', plannedStartDate: '', plannedEndDate: '' }
 
 function checkDates(form, errors) {
   if (form.plannedStartDate && form.plannedEndDate && form.plannedEndDate < form.plannedStartDate) {
-    errors.plannedEndDate = 'The end cannot be before the start'
+    errors.plannedEndDate = t('workForm.theEndCannotBeBefore')
   }
 }
 
@@ -12,16 +13,16 @@ function checkDates(form, errors) {
 export function validatePhase(form) {
   const errors = {}
   const name = form.name.trim()
-  if (name.length < 3 || name.length > 100) errors.name = 'Use 3 to 100 characters'
+  if (name.length < 3 || name.length > 100) errors.name = t('workForm.use3To100Characters')
   checkDates(form, errors)
   return errors
 }
 
 export function validateTask(form) {
   const errors = {}
-  if (!form.phaseId) errors.phaseId = 'Choose the phase'
+  if (!form.phaseId) errors.phaseId = t('workForm.chooseThePhase')
   const name = form.name.trim()
-  if (name.length < 3 || name.length > 150) errors.name = 'Use 3 to 150 characters'
+  if (name.length < 3 || name.length > 150) errors.name = t('workForm.use3To150Characters')
   checkDates(form, errors)
   return errors
 }
