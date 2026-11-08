@@ -130,6 +130,15 @@
     "theEndDateCannotBe": "The end date cannot be before the start date",
     "catalogError": "We could not load the catalog: {message}"
   },
+  "siteManagerForm": {
+    "fullName": "Full name",
+    "documentOptional": "Document (optional)",
+    "phoneOptional": "Phone (optional)",
+    "saving": "Saving…",
+    "cancel": "Cancel",
+    "use3To150Characters": "Use 3 to 150 characters",
+    "use5To20Letters": "Use 5 to 20 letters, numbers, dots or dashes"
+  },
   "workStatus": {
     "start": "Start",
     "resume": "Resume",

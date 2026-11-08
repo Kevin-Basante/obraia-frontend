@@ -130,6 +130,15 @@
     "theEndDateCannotBe": "La fecha de fin no puede ser antes de la de inicio",
     "catalogError": "No pudimos cargar el catálogo: {message}"
   },
+  "siteManagerForm": {
+    "fullName": "Nombre completo",
+    "documentOptional": "Documento (opcional)",
+    "phoneOptional": "Teléfono (opcional)",
+    "saving": "Guardando…",
+    "cancel": "Cancelar",
+    "use3To150Characters": "Usa de 3 a 150 caracteres",
+    "use5To20Letters": "Usa de 5 a 20 letras, números, puntos o guiones"
+  },
   "workStatus": {
     "start": "Iniciar",
     "resume": "Reanudar",
