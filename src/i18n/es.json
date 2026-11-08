@@ -522,6 +522,14 @@
     "saving": "Guardando…",
     "source": "Con las {source} y los precios de referencia de hoy. No se guarda nada hasta que guardes una versión."
   },
+  "catalogLayout": {
+    "catalog": "Catálogo",
+    "referenceDataUsedToPlan": "Datos de referencia para planear y cotizar tu obra. Los precios están en COP e incluyen IVA.",
+    "catalogSections": "Secciones del catálogo",
+    "materials": "Materiales",
+    "projectTypes": "Tipos de obra",
+    "cities": "Ciudades"
+  },
   "projectWorkLinks": {
     "blueprints": "Planos",
     "uploadThePlansAndRead": "Sube los planos y léelos con IA",

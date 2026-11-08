@@ -522,6 +522,14 @@
     "saving": "Saving…",
     "source": "From the {source} and today's reference prices. Nothing is saved until you save a version."
   },
+  "catalogLayout": {
+    "catalog": "Catalog",
+    "referenceDataUsedToPlan": "Reference data used to plan and quote your project. Prices are in COP and include VAT.",
+    "catalogSections": "Catalog sections",
+    "materials": "Materials",
+    "projectTypes": "Project types",
+    "cities": "Cities"
+  },
   "projectWorkLinks": {
     "blueprints": "Blueprints",
     "uploadThePlansAndRead": "Upload the plans and read them with AI",
