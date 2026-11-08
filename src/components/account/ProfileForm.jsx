@@ -5,6 +5,7 @@ import { SubmitButton } from '../SubmitButton.jsx'
 import { useFormSubmit } from '../../hooks/useFormSubmit.js'
 import { toProfileForm, toProfileRequest, validateProfile } from '../../utils/profileForm.js'
 import './AccountForms.css'
+import { t } from '../../i18n/i18n.js'
 
 /** Name and phone of the signed-in user. The email cannot be changed. */
 export function ProfileForm({ user, onSave }) {
@@ -36,24 +37,24 @@ export function ProfileForm({ user, onSave }) {
   return (
     <form className="account-form" onSubmit={handleSubmit} noValidate>
       <FormAlert>{error && !error.fields && error.message}</FormAlert>
-      <FormAlert type="success">{saved && 'Your profile was saved.'}</FormAlert>
+      <FormAlert type="success">{saved && t('profileForm.yourProfileWasSaved')}</FormAlert>
       <div className="account-form__fields">
         <FormField
-          label="First name"
+          label={t('profileForm.firstName')}
           autoComplete="given-name"
           value={form.firstName}
           onChange={update('firstName')}
           error={fieldErrors.firstName}
         />
         <FormField
-          label="Last name"
+          label={t('profileForm.lastName')}
           autoComplete="family-name"
           value={form.lastName}
           onChange={update('lastName')}
           error={fieldErrors.lastName}
         />
         <FormField
-          label="Phone (optional)"
+          label={t('profileForm.phoneOptional')}
           type="tel"
           autoComplete="tel"
           value={form.phone}
@@ -62,11 +63,16 @@ export function ProfileForm({ user, onSave }) {
         />
       </div>
       <div className="account-form__email">
-        <FormField label="Email" value={user.email} readOnly hint="The email cannot be changed." />
+        <FormField
+          label={t('profileForm.email')}
+          value={user.email}
+          readOnly
+          hint={t('profileForm.theEmailCannotBeChanged')}
+        />
       </div>
       <div className="button-row">
-        <SubmitButton pending={pending} pendingText="Saving…">
-          Save profile
+        <SubmitButton pending={pending} pendingText={t('profileForm.saving')}>
+          {t('profileForm.saveProfile')}
         </SubmitButton>
       </div>
     </form>
