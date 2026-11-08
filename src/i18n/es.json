@@ -46,6 +46,19 @@
     "saving": "Guardando…",
     "changePassword": "Cambiar contraseña"
   },
+  "profileForm": {
+    "yourProfileWasSaved": "Tu perfil se guardó.",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "phoneOptional": "Teléfono (opcional)",
+    "email": "Correo",
+    "theEmailCannotBeChanged": "El correo no se puede cambiar.",
+    "saving": "Guardando…",
+    "saveProfile": "Guardar perfil",
+    "enterYourFirstName": "Escribe tu nombre",
+    "enterYourLastName": "Escribe tu apellido",
+    "useUpTo": "Usa hasta {max} caracteres"
+  },
   "resultCount": {
     "updating": " · actualizando…",
     "city": {

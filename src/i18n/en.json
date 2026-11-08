@@ -46,6 +46,19 @@
     "saving": "Saving…",
     "changePassword": "Change password"
   },
+  "profileForm": {
+    "yourProfileWasSaved": "Your profile was saved.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phoneOptional": "Phone (optional)",
+    "email": "Email",
+    "theEmailCannotBeChanged": "The email cannot be changed.",
+    "saving": "Saving…",
+    "saveProfile": "Save profile",
+    "enterYourFirstName": "Enter your first name",
+    "enterYourLastName": "Enter your last name",
+    "useUpTo": "Use up to {max} characters"
+  },
   "resultCount": {
     "updating": " · updating…",
     "city": {
