@@ -902,6 +902,29 @@
     "enterAnAreaGreaterThan": "Escribe un área mayor que 0",
     "sizeNote": "{area} m² es una obra {size}."
   },
+  "phasesPage": {
+    "noWorkPlanYet": "Todavía no hay plan de trabajo",
+    "loadingTheStandardPhases": "Cargando las fases estándar…",
+    "theProjectIsClosedSo": "La obra está cerrada, así que ya no se puede crear el plan.",
+    "createPlan": "Crear plan",
+    "loadingTheWorkPlan": "Cargando el plan de trabajo…",
+    "phasesAndTasks": "Fases y tareas",
+    "deleteTheWholePlanIts": "¿Borrar todo el plan? Sus fases y tareas se quitan para poder crearlo otra vez.",
+    "deletePlan": "Borrar plan",
+    "progressOfTheProject": "Avance de la obra",
+    "theProjectIsClosedThe": "La obra está cerrada: el plan se puede leer, pero no cambiar.",
+    "addATask": "Agregar una tarea",
+    "addTask": "Agregar tarea",
+    "creating": "Creando…",
+    "saveTask": "Guardar tarea",
+    "confirmDeleteTask": "¿Borrar la tarea \"{name}\" y sus reportes de avance?",
+    "average": {
+      "one": "Promedio de la {count} tarea.",
+      "other": "Promedio de las {count} tareas."
+    },
+    "plannedRange": " Planeada del {start} al {end}.",
+    "editTask": "Editar tarea \"{name}\""
+  },
   "blueprintsPage": {
     "loadingTheBlueprints": "Cargando los planos…",
     "blueprints": "Planos",

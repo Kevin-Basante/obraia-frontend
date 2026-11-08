@@ -25,6 +25,7 @@ import { isClosed } from '../../utils/projectStatus.js'
 import { EMPTY_TASK_FORM, toTaskRequest, toWorkForm, validateTask } from '../../utils/workForm.js'
 import { countReports } from '../../utils/workStatus.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
+import { t } from '../../i18n/i18n.js'
 
 /** Shown while the project has no plan: the phases it would get and the button to create them. */
 function NoPlan({ projectId, closed, onCreated }) {
@@ -34,16 +35,18 @@ function NoPlan({ projectId, closed, onCreated }) {
 
   return (
     <section className="card">
-      <h2>No work plan yet</h2>
+      <h2>{t('phasesPage.noWorkPlanYet')}</h2>
       {preview.status === 'error' && <FormAlert>{preview.error.message}</FormAlert>}
-      {!preview.data && preview.status === 'loading' && <p className="muted">Loading the standard phases…</p>}
+      {!preview.data && preview.status === 'loading' && (
+        <p className="muted">{t('phasesPage.loadingTheStandardPhases')}</p>
+      )}
       {preview.data && <PlanPreview preview={preview.data} />}
       {closed ? (
-        <p className="muted">The project is closed, so the plan can no longer be created.</p>
+        <p className="muted">{t('phasesPage.theProjectIsClosedSo')}</p>
       ) : (
         <div className="button-row">
           <button type="button" disabled={creating.pending || !preview.data} onClick={() => creating.submit()}>
-            {creating.pending ? 'Creating…' : 'Create plan'}
+            {creating.pending ? t('phasesPage.creating') : t('phasesPage.createPlan')}
           </button>
         </div>
       )}
@@ -79,7 +82,7 @@ export function PhasesPage() {
         setFormKey((key) => key + 1)
       },
       deleteTask: (task) => {
-        if (window.confirm(`Delete the task "${task.name}" and its progress reports?`)) {
+        if (window.confirm(t('phasesPage.confirmDeleteTask', { name: task.name }))) {
           setEditing((current) => (current?.id === task.id ? null : current))
           submit(() => deleteTask(id, task.id))
         }
@@ -103,7 +106,7 @@ export function PhasesPage() {
   if (project.error?.status === 404) return <NotFoundPage />
   const failed = [project, plan].find((request) => request.status === 'error')
   if (failed) return <ErrorState error={failed.error} onRetry={failed.retry} />
-  if (!project.data || !plan.data) return <LoadingState title="Loading the work plan…" />
+  if (!project.data || !plan.data) return <LoadingState title={t('phasesPage.loadingTheWorkPlan')} />
 
   const closed = isClosed(project.data)
   const { phases } = plan.data
@@ -112,7 +115,7 @@ export function PhasesPage() {
   if (phases.length === 0) {
     return (
       <div className="workspace">
-        <PageHeader title="Phases and tasks" description={project.data.name} back={back} />
+        <PageHeader title={t('phasesPage.phasesAndTasks')} description={project.data.name} back={back} />
         <NoPlan projectId={id} closed={closed} onCreated={reload} />
       </div>
     )
@@ -121,7 +124,7 @@ export function PhasesPage() {
   const canDeletePlan = !closed && countReports(plan.data) === 0
 
   function handleDeletePlan() {
-    if (window.confirm('Delete the whole plan? Its phases and tasks are removed so it can be created again.')) {
+    if (window.confirm(t('phasesPage.deleteTheWholePlanIts'))) {
       submit(() => deletePlan(id))
     }
   }
@@ -134,31 +137,34 @@ export function PhasesPage() {
   return (
     <div className="workspace">
       <PageHeader
-        title="Phases and tasks"
+        title={t('phasesPage.phasesAndTasks')}
         description={project.data.name}
         back={back}
         actions={
           canDeletePlan && (
             <button type="button" className="button-secondary" disabled={working.pending} onClick={handleDeletePlan}>
-              Delete plan
+              {t('phasesPage.deletePlan')}
             </button>
           )
         }
       />
       <section className="card">
-        <h2>Progress of the project</h2>
-        <ProgressBar value={plan.data.progressPct} label="Progress of the project" />
+        <h2>{t('phasesPage.progressOfTheProject')}</h2>
+        <ProgressBar value={plan.data.progressPct} label={t('phasesPage.progressOfTheProject')} />
         <p className="muted">
-          Average of the {phases.reduce((total, phase) => total + phase.tasks.length, 0)} tasks.
+          {t('phasesPage.average', { count: phases.reduce((total, phase) => total + phase.tasks.length, 0) })}
           {plan.data.plannedStartDate &&
-            ` Planned from ${formatDate(plan.data.plannedStartDate)} to ${formatDate(plan.data.plannedEndDate)}.`}
+            t('phasesPage.plannedRange', {
+              start: formatDate(plan.data.plannedStartDate),
+              end: formatDate(plan.data.plannedEndDate),
+            })}
         </p>
-        {closed && <p className="muted">The project is closed: the plan can be read but not changed.</p>}
+        {closed && <p className="muted">{t('phasesPage.theProjectIsClosedThe')}</p>}
         <FormAlert>{working.error?.message}</FormAlert>
       </section>
       {!closed && (
         <section className="card">
-          <h2>{editing ? `Edit task "${editing.name}"` : 'Add a task'}</h2>
+          <h2>{editing ? t('phasesPage.editTask', { name: editing.name }) : t('phasesPage.addATask')}</h2>
           <WorkItemForm
             key={formKey}
             initialForm={editing ? toWorkForm(editing) : EMPTY_TASK_FORM}
@@ -166,7 +172,7 @@ export function PhasesPage() {
             validate={validateTask}
             onSave={saveTask}
             onCancel={editing ? handleCancel : undefined}
-            submitText={editing ? 'Save task' : 'Add task'}
+            submitText={editing ? t('phasesPage.saveTask') : t('phasesPage.addTask')}
           />
         </section>
       )}

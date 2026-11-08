@@ -902,6 +902,29 @@
     "enterAnAreaGreaterThan": "Enter an area greater than 0",
     "sizeNote": "{area} m² is a {size} project."
   },
+  "phasesPage": {
+    "noWorkPlanYet": "No work plan yet",
+    "loadingTheStandardPhases": "Loading the standard phases…",
+    "theProjectIsClosedSo": "The project is closed, so the plan can no longer be created.",
+    "createPlan": "Create plan",
+    "loadingTheWorkPlan": "Loading the work plan…",
+    "phasesAndTasks": "Phases and tasks",
+    "deleteTheWholePlanIts": "Delete the whole plan? Its phases and tasks are removed so it can be created again.",
+    "deletePlan": "Delete plan",
+    "progressOfTheProject": "Progress of the project",
+    "theProjectIsClosedThe": "The project is closed: the plan can be read but not changed.",
+    "addATask": "Add a task",
+    "addTask": "Add task",
+    "creating": "Creating…",
+    "saveTask": "Save task",
+    "confirmDeleteTask": "Delete the task \"{name}\" and its progress reports?",
+    "average": {
+      "one": "Average of the {count} task.",
+      "other": "Average of the {count} tasks."
+    },
+    "plannedRange": " Planned from {start} to {end}.",
+    "editTask": "Edit task \"{name}\""
+  },
   "blueprintsPage": {
     "loadingTheBlueprints": "Loading the blueprints…",
     "blueprints": "Blueprints",
