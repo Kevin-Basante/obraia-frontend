@@ -157,6 +157,10 @@
     "theEndDateCannotBe": "La fecha de fin no puede ser antes de la de inicio",
     "catalogError": "No pudimos cargar el catálogo: {message}"
   },
+  "budget": {
+    "countedBetweenTheDatesOf": "contados entre las fechas de las fases del plan",
+    "fromTheStandardPhasesOf": "según las fases estándar del tipo de obra, porque el plan todavía no tiene fechas"
+  },
   "siteManagerForm": {
     "fullName": "Nombre completo",
     "documentOptional": "Documento (opcional)",

@@ -157,6 +157,10 @@
     "theEndDateCannotBe": "The end date cannot be before the start date",
     "catalogError": "We could not load the catalog: {message}"
   },
+  "budget": {
+    "countedBetweenTheDatesOf": "counted between the dates of the phases of the plan",
+    "fromTheStandardPhasesOf": "from the standard phases of the project type, because the plan has no dates yet"
+  },
   "siteManagerForm": {
     "fullName": "Full name",
     "documentOptional": "Document (optional)",

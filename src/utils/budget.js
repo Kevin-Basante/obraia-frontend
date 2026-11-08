@@ -1,4 +1,5 @@
 import { formatPercent } from './format.js'
+import { t } from '../i18n/i18n.js'
 
 // Helpers for the quotation and the budget versions. Amounts come from the
 // backend as numbers in COP; percentages come from 0 to 100.
@@ -22,9 +23,7 @@ export function shareOfTotal(amount, total) {
 
 /** Where the working days of the labor come from, in words. */
 export function daysSourceText(source) {
-  return source === 'phases'
-    ? 'counted between the dates of the phases of the plan'
-    : 'from the standard phases of the project type, because the plan has no dates yet'
+  return source === 'phases' ? t('budget.countedBetweenTheDatesOf') : t('budget.fromTheStandardPhasesOf')
 }
 
 /** The approved version, or undefined while none is approved. */
