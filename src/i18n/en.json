@@ -246,6 +246,16 @@
     "actions": "Actions",
     "delete": "Delete"
   },
+  "riskPanel": {
+    "risk": "Risk",
+    "loadingTheRisk": "Loading the risk…",
+    "theRiskHasNotBeen": "The risk has not been assessed yet. It is assessed after every expense and progress report, or now with the button.",
+    "of100": "of 100",
+    "history": "History",
+    "assessNow": "Assess now",
+    "assessing": "Assessing…",
+    "summary": "{reason}. Assessed {date}, {trigger}."
+  },
   "expenseForm": {
     "category": "Category",
     "chooseACategory": "Choose a category",

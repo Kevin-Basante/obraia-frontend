@@ -5,10 +5,11 @@ import { useApiData } from '../../hooks/useApiData.js'
 import { useFormSubmit } from '../../hooks/useFormSubmit.js'
 import { assessRisk, getRiskOverview } from '../../services/riskService.js'
 import { formatDateTime } from '../../utils/format.js'
-import { delayText, formatScore, sortFactors, triggerText } from '../../utils/risk.js'
+import { delayText, factorDetail, formatScore, sortFactors, triggerText } from '../../utils/risk.js'
 import { RiskChart } from './RiskChart.jsx'
 import { RiskFactorTable } from './RiskFactorTable.jsx'
 import './RiskPanel.css'
+import { t } from '../../i18n/i18n.js'
 
 /**
  * Risk of delay and of going over budget. The backend assesses it again
@@ -33,32 +34,30 @@ export function RiskPanel({ projectId, onAssessed }) {
 
   return (
     <section className="card" aria-live="polite">
-      <h2>Risk</h2>
+      <h2>{t('riskPanel.risk')}</h2>
       {overview.status === 'error' && <FormAlert>{overview.error.message}</FormAlert>}
-      {!overview.data && overview.status === 'loading' && <p className="muted">Loading the risk…</p>}
-      {overview.data && !latest && (
-        <p className="muted">
-          The risk has not been assessed yet. It is assessed after every expense and progress report, or now with the
-          button.
-        </p>
-      )}
+      {!overview.data && overview.status === 'loading' && <p className="muted">{t('riskPanel.loadingTheRisk')}</p>}
+      {overview.data && !latest && <p className="muted">{t('riskPanel.theRiskHasNotBeen')}</p>}
       {latest && (
         <>
           <div className="risk-panel__headline">
             <StatusBadge status={latest.level} />
             <span className="risk-panel__score">
-              {formatScore(latest.score)} <small>of 100</small>
+              {formatScore(latest.score)} <small>{t('riskPanel.of100')}</small>
             </span>
             <span>{delayText(latest.predictedDelayDays)}</span>
           </div>
           <p className="muted">
-            {sortFactors(latest.factors)[0]?.detail}. Assessed {formatDateTime(latest.assessedAt)},{' '}
-            {triggerText(latest.trigger.code).toLowerCase()}.
+            {t('riskPanel.summary', {
+              reason: latest.factors.length > 0 ? factorDetail(sortFactors(latest.factors)[0]) : '',
+              date: formatDateTime(latest.assessedAt),
+              trigger: triggerText(latest.trigger.code).toLowerCase(),
+            })}
           </p>
           <RiskFactorTable factors={latest.factors} />
           {history.length > 1 && (
             <>
-              <h3>History</h3>
+              <h3>{t('riskPanel.history')}</h3>
               <RiskChart history={history} />
             </>
           )}
@@ -72,7 +71,7 @@ export function RiskPanel({ projectId, onAssessed }) {
           disabled={assessing.pending}
           onClick={() => assessing.submit()}
         >
-          {assessing.pending ? 'Assessing…' : 'Assess now'}
+          {assessing.pending ? t('riskPanel.assessing') : t('riskPanel.assessNow')}
         </button>
       </div>
     </section>
