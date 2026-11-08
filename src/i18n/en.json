@@ -379,6 +379,19 @@
     "theFileIsTooLarge": "The file is too large. The limit is 10 MB",
     "uploadAPdfOrAnImage": "Upload a PDF or an image (PNG, JPG or WEBP)"
   },
+  "siteManagersPage": {
+    "mySiteManagers": "My site managers",
+    "peopleInChargeOfThe": "People in charge of the work on site. Assign them from each project page.",
+    "myProjects": "My projects",
+    "addASiteManager": "Add a site manager",
+    "loadingYourSiteManagers": "Loading your site managers…",
+    "youHaveNotSavedAny": "You have not saved any site manager yet.",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "save": "Save",
+    "confirmDelete": "Delete {name}? Their projects will have no site manager."
+  },
   "planPreview": {
     "theProjectHasNoPlanned": "The project has no planned start date, so the phases are created without dates.",
     "days": {

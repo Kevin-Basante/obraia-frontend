@@ -14,6 +14,7 @@ import {
 } from '../services/siteManagerService.js'
 import { EMPTY_SITE_MANAGER_FORM, toSiteManagerForm } from '../utils/siteManagerForm.js'
 import './SiteManagersPage.css'
+import { t } from '../i18n/i18n.js'
 
 /** The user's site managers: add, edit and delete the contacts assigned to projects. */
 export function SiteManagersPage() {
@@ -40,30 +41,32 @@ export function SiteManagersPage() {
   }
 
   function handleDelete(manager) {
-    const question = `Delete ${manager.fullName}? Their projects will have no site manager.`
+    const question = t('siteManagersPage.confirmDelete', { name: manager.fullName })
     if (window.confirm(question)) removing.submit(manager.id)
   }
 
   return (
     <div className="workspace">
       <PageHeader
-        title="My site managers"
-        description="People in charge of the work on site. Assign them from each project page."
-        back={{ to: '/projects', label: 'My projects' }}
+        title={t('siteManagersPage.mySiteManagers')}
+        description={t('siteManagersPage.peopleInChargeOfThe')}
+        back={{ to: '/projects', label: t('siteManagersPage.myProjects') }}
       />
       <section className="card">
-        <h2>Add a site manager</h2>
-        <SiteManagerForm initialForm={EMPTY_SITE_MANAGER_FORM} onSave={create} submitText="Add" />
+        <h2>{t('siteManagersPage.addASiteManager')}</h2>
+        <SiteManagerForm initialForm={EMPTY_SITE_MANAGER_FORM} onSave={create} submitText={t('siteManagersPage.add')} />
       </section>
 
       {managers.status === 'error' && <ErrorState error={managers.error} onRetry={retry} />}
-      {managers.status === 'loading' && !managers.data && <LoadingState title="Loading your site managers…" />}
+      {managers.status === 'loading' && !managers.data && (
+        <LoadingState title={t('siteManagersPage.loadingYourSiteManagers')} />
+      )}
       {managers.data && (
         <section className="card">
           <h2>Saved ({managers.data.length})</h2>
           <FormAlert>{removing.error?.message}</FormAlert>
           {managers.data.length === 0 ? (
-            <p className="muted">You have not saved any site manager yet.</p>
+            <p className="muted">{t('siteManagersPage.youHaveNotSavedAny')}</p>
           ) : (
             <ul className="site-manager-list">
               {managers.data.map((manager) =>
@@ -73,7 +76,7 @@ export function SiteManagersPage() {
                       initialForm={toSiteManagerForm(manager)}
                       onSave={update}
                       onCancel={() => setEditingId(null)}
-                      submitText="Save"
+                      submitText={t('siteManagersPage.save')}
                     />
                   </li>
                 ) : (
@@ -88,7 +91,7 @@ export function SiteManagersPage() {
                     </span>
                     <span className="button-row">
                       <button type="button" className="button-secondary" onClick={() => setEditingId(manager.id)}>
-                        Edit
+                        {t('siteManagersPage.edit')}
                       </button>
                       <button
                         type="button"
@@ -96,7 +99,7 @@ export function SiteManagersPage() {
                         disabled={removing.pending}
                         onClick={() => handleDelete(manager)}
                       >
-                        Delete
+                        {t('siteManagersPage.delete')}
                       </button>
                     </span>
                   </li>

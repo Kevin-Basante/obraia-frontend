@@ -379,6 +379,19 @@
     "theFileIsTooLarge": "El archivo es muy grande. El límite es 10 MB",
     "uploadAPdfOrAnImage": "Sube un PDF o una imagen (PNG, JPG o WEBP)"
   },
+  "siteManagersPage": {
+    "mySiteManagers": "Mis maestros de obra",
+    "peopleInChargeOfThe": "Personas a cargo del trabajo en la obra. Asígnalas desde la página de cada obra.",
+    "myProjects": "Mis obras",
+    "addASiteManager": "Agregar un maestro de obra",
+    "loadingYourSiteManagers": "Cargando tus maestros de obra…",
+    "youHaveNotSavedAny": "Todavía no has guardado ningún maestro de obra.",
+    "edit": "Editar",
+    "delete": "Borrar",
+    "add": "Agregar",
+    "save": "Guardar",
+    "confirmDelete": "¿Borrar a {name}? Sus obras quedarán sin maestro de obra."
+  },
   "planPreview": {
     "theProjectHasNoPlanned": "La obra no tiene fecha de inicio planeada, así que las fases se crean sin fechas.",
     "days": {
