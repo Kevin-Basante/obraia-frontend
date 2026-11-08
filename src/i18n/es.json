@@ -113,6 +113,12 @@
     "enterYourLastName": "Escribe tu apellido",
     "useUpTo": "Usa hasta {max} caracteres"
   },
+  "analysisResult": {
+    "warnings": "Advertencias",
+    "compareWithTheManualMeasurements": "Comparar con las medidas manuales",
+    "title": "Lectura de la IA de {name}",
+    "model": "Modelo: {model}."
+  },
   "resultCount": {
     "updating": " · actualizando…",
     "city": {
