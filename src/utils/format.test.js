@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { setLanguage } from '../i18n/i18n.js'
 import {
   formatAmount,
   formatCurrency,
@@ -29,6 +30,15 @@ describe('format', () => {
 
   it('formats a date without moving it to another day', () => {
     expect(formatDate('2026-10-04')).toBe('Oct 4, 2026')
+  })
+
+  it('writes the date in Spanish when the site is in Spanish', () => {
+    setLanguage('es')
+    try {
+      expect(formatDate('2026-10-04')).toBe('4 de oct de 2026')
+    } finally {
+      setLanguage('en')
+    }
   })
 
   it('formats file sizes in B, KB and MB', () => {
