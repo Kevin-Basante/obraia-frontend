@@ -277,6 +277,20 @@
     "use3To150Characters": "Usa de 3 a 150 caracteres",
     "use5To20Letters": "Usa de 5 a 20 letras, números, puntos o guiones"
   },
+  "blueprintScene": {
+    "livingRoom": "Sala",
+    "bedroom": "Alcoba",
+    "bath": "Baño",
+    "kitchen": "Cocina",
+    "walls": "Muros",
+    "floor": "Piso",
+    "slab": "Placa",
+    "n120M": "12,0 m",
+    "n78M": "7,8 m",
+    "planA01GroundFloor": "Plano A-01 · Primer piso",
+    "scale1100": "Escala 1:100",
+    "estimatedBudget": "Presupuesto estimado"
+  },
   "workStatus": {
     "start": "Iniciar",
     "resume": "Reanudar",

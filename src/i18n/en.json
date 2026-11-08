@@ -277,6 +277,20 @@
     "use3To150Characters": "Use 3 to 150 characters",
     "use5To20Letters": "Use 5 to 20 letters, numbers, dots or dashes"
   },
+  "blueprintScene": {
+    "livingRoom": "Living room",
+    "bedroom": "Bedroom",
+    "bath": "Bath",
+    "kitchen": "Kitchen",
+    "walls": "Walls",
+    "floor": "Floor",
+    "slab": "Slab",
+    "n120M": "12,0 m",
+    "n78M": "7,8 m",
+    "planA01GroundFloor": "Plan A-01 · Ground floor",
+    "scale1100": "Scale 1:100",
+    "estimatedBudget": "Estimated budget"
+  },
   "workStatus": {
     "start": "Start",
     "resume": "Resume",
