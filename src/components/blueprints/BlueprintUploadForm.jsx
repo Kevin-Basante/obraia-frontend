@@ -4,6 +4,7 @@ import { SubmitButton } from '../SubmitButton.jsx'
 import { useFormSubmit } from '../../hooks/useFormSubmit.js'
 import { ACCEPTED_FILES, validateBlueprintFile } from '../../utils/blueprintFile.js'
 import '../FormField.css'
+import { t } from '../../i18n/i18n.js'
 
 /** Picks a photo or PDF and uploads it. `onUpload(file)` sends it to the backend. */
 export function BlueprintUploadForm({ onUpload }) {
@@ -35,7 +36,7 @@ export function BlueprintUploadForm({ onUpload }) {
   return (
     <form className="inline-form" onSubmit={handleSubmit} noValidate>
       <div className="form-field">
-        <label htmlFor="blueprint-file">Blueprint (PDF, PNG, JPG or WEBP, up to 10 MB)</label>
+        <label htmlFor="blueprint-file">{t('blueprintUploadForm.fileLabel')}</label>
         <input
           ref={inputRef}
           id="blueprint-file"
@@ -51,8 +52,8 @@ export function BlueprintUploadForm({ onUpload }) {
           </p>
         )}
       </div>
-      <SubmitButton pending={pending} pendingText="Uploading…">
-        Upload
+      <SubmitButton pending={pending} pendingText={t('blueprintUploadForm.uploading')}>
+        {t('blueprintUploadForm.upload')}
       </SubmitButton>
       <FormAlert>{error?.message}</FormAlert>
     </form>

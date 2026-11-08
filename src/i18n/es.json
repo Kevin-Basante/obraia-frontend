@@ -417,6 +417,11 @@
     "loadingCities": "Cargando ciudades…",
     "noCitiesMatchTheseFilters": "Ninguna ciudad coincide con estos filtros."
   },
+  "blueprintUploadForm": {
+    "uploading": "Subiendo…",
+    "upload": "Subir",
+    "fileLabel": "Plano (PDF, PNG, JPG o WEBP, hasta 10 MB)"
+  },
   "materialsPage": {
     "search": "Buscar",
     "cementSandBlock": "Cemento, arena, bloque…",

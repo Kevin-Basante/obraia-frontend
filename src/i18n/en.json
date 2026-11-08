@@ -417,6 +417,11 @@
     "loadingCities": "Loading cities…",
     "noCitiesMatchTheseFilters": "No cities match these filters."
   },
+  "blueprintUploadForm": {
+    "uploading": "Uploading…",
+    "upload": "Upload",
+    "fileLabel": "Blueprint (PDF, PNG, JPG or WEBP, up to 10 MB)"
+  },
   "materialsPage": {
     "search": "Search",
     "cementSandBlock": "Cement, sand, block…",
