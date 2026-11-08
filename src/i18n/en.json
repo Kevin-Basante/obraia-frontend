@@ -38,6 +38,14 @@
     "notAdded": "Not added",
     "dateRange": "{start} to {end}"
   },
+  "authCard": {
+    "quote": "Plan it once. Build it right.",
+    "promises": {
+      "ai": "Measurements read by AI",
+      "prices": "Budgets with the prices of your city",
+      "alerts": "Alerts before a delay"
+    }
+  },
   "dashboard": {
     "noTasksYet": "No tasks yet",
     "noLateTasks": "No late tasks",

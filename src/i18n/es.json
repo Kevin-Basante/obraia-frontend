@@ -38,6 +38,14 @@
     "notAdded": "Sin agregar",
     "dateRange": "{start} a {end}"
   },
+  "authCard": {
+    "quote": "Planéala una vez. Constrúyela bien.",
+    "promises": {
+      "ai": "Medidas leídas por IA",
+      "prices": "Presupuestos con los precios de tu ciudad",
+      "alerts": "Alertas antes de un retraso"
+    }
+  },
   "dashboard": {
     "noTasksYet": "Sin tareas todavía",
     "noLateTasks": "Sin tareas atrasadas",
