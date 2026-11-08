@@ -126,6 +126,14 @@ Una ruta desconocida muestra "Page not found". Un invitado que abre una página 
 - **Idiomas (ES/EN):** el botón `ES` o `EN`, al lado del de tema, cambia todo el sitio entre español e inglés. La primera vez se usa el idioma del navegador; después se recuerda la elección (`localStorage`). Las fechas siguen el idioma; el dinero y los números siguen en formato colombiano. `index.html` le pide al traductor del navegador que no traduzca la página, porque el sitio ya tiene su propio botón.
 - **Animaciones:** solo con CSS: líneas que se dibujan, secciones que suben al aparecer en pantalla (`useInView`) y barras que crecen. Si el sistema pide menos movimiento (`prefers-reduced-motion`), se muestran sin animación.
 
+## Idiomas
+
+- Todo el código y las claves están en inglés. Los textos de la interfaz están en `src/i18n/en.json` y `src/i18n/es.json`, con las mismas claves en los dos archivos (una prueba lo revisa).
+- `t('header.catalog')` devuelve el texto en el idioma actual. Acepta valores (`t('projectList.starts', { date })`) y plural (`{ one, other }` según `count`). Si falta un texto en español, usa el inglés.
+- **Datos del backend:** el backend envía códigos (`in_progress`, `wall`, `late_tasks`...) y los valores de cada frase (`params`). El frontend arma la frase en el idioma elegido: estados, categorías, elementos, reglas de riesgo y su detalle, notificaciones, filas del presupuesto, mensajes de la cuenta y errores (`errors.<CODE>`). Si llega un código que el frontend no conoce, muestra el texto que envió el backend.
+- Los datos que escribe el usuario y los del catálogo (nombres de obras, fases, materiales y ciudades) se muestran tal como están guardados.
+- Las notificaciones de riesgo creadas antes de la versión 1.3.0 no tienen valores guardados y se siguen mostrando en inglés.
+
 ## Dashboard
 
 - **Dashboard general (`/dashboard`):** lee `GET /api/dashboard` y muestra el número de obras, las que están en riesgo alto o crítico, la suma de los presupuestos aprobados y lo gastado. Debajo, una tarjeta por obra con su avance, el gasto contra el presupuesto y el último riesgo.
