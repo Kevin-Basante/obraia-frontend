@@ -1,0 +1,27 @@
+/* Same square as the theme button, with the code of the other language. */
+button.language-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 6px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+button.language-button:hover:not(:disabled) {
+  box-shadow: none;
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
