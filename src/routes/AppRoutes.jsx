@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router'
+import { useLanguage } from '../hooks/useLanguage.js'
 import { AppLayout } from '../layouts/AppLayout.jsx'
 import { AccountPage } from '../pages/AccountPage.jsx'
 import { CatalogLayout } from '../layouts/CatalogLayout.jsx'
@@ -41,6 +42,9 @@ import { RequireSession } from './RequireSession.jsx'
 
 /** Every page of the app and its URL. */
 export function AppRoutes() {
+  // Reading the language here draws every page again when it changes.
+  useLanguage()
+
   return (
     <Routes>
       <Route element={<AppLayout />}>
