@@ -5,6 +5,7 @@ import { SubmitButton } from '../SubmitButton.jsx'
 import { useFormSubmit } from '../../hooks/useFormSubmit.js'
 import { toSiteManagerRequest, validateSiteManager } from '../../utils/siteManagerForm.js'
 import './SiteManagerForm.css'
+import { t } from '../../i18n/i18n.js'
 
 /** Name, document and phone of a site manager. Used to add one and to edit one. */
 export function SiteManagerForm({ initialForm, onSave, onCancel, submitText }) {
@@ -30,15 +31,20 @@ export function SiteManagerForm({ initialForm, onSave, onCancel, submitText }) {
     <form className="site-manager-form" onSubmit={handleSubmit} noValidate>
       <FormAlert>{error && !error.fields && error.message}</FormAlert>
       <div className="site-manager-form__fields">
-        <FormField label="Full name" value={form.fullName} onChange={update('fullName')} error={fieldErrors.fullName} />
         <FormField
-          label="Document (optional)"
+          label={t('siteManagerForm.fullName')}
+          value={form.fullName}
+          onChange={update('fullName')}
+          error={fieldErrors.fullName}
+        />
+        <FormField
+          label={t('siteManagerForm.documentOptional')}
           value={form.documentNumber}
           onChange={update('documentNumber')}
           error={fieldErrors.documentNumber}
         />
         <FormField
-          label="Phone (optional)"
+          label={t('siteManagerForm.phoneOptional')}
           type="tel"
           value={form.phone}
           onChange={update('phone')}
@@ -46,12 +52,12 @@ export function SiteManagerForm({ initialForm, onSave, onCancel, submitText }) {
         />
       </div>
       <div className="button-row">
-        <SubmitButton pending={pending} pendingText="Saving…">
+        <SubmitButton pending={pending} pendingText={t('siteManagerForm.saving')}>
           {submitText}
         </SubmitButton>
         {onCancel && (
           <button type="button" className="button-secondary" onClick={onCancel}>
-            Cancel
+            {t('siteManagerForm.cancel')}
           </button>
         )}
       </div>
