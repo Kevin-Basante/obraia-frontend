@@ -320,6 +320,28 @@
     "scale1100": "Escala 1:100",
     "estimatedBudget": "Presupuesto estimado"
   },
+  "phaseRoadmap": {
+    "sitePrepAndLayout": "Preliminares y replanteo",
+    "cleanTheLotAndMark": "Limpiar el lote y marcar los ejes en el terreno.",
+    "excavation": "Excavación",
+    "digTheTrenchesForThe": "Cavar las zanjas para las zapatas.",
+    "foundations": "Cimentación",
+    "footingsAndTieBeamsWith": "Zapatas y vigas de amarre con su acero.",
+    "structure": "Estructura",
+    "columnsBeamsAndSlabs": "Columnas, vigas y placas.",
+    "masonry": "Mampostería",
+    "blockWallsBetweenTheColumns": "Muros de bloque entre las columnas.",
+    "roof": "Cubierta",
+    "trussesAndRoofSheets": "Cerchas y tejas.",
+    "plumbingAndWiring": "Instalaciones hidrosanitarias y eléctricas",
+    "waterDrainsAndElectricity": "Agua, desagües y electricidad.",
+    "finishes": "Acabados",
+    "plasterFloorsAndPaint": "Pañetes, pisos y pintura.",
+    "theRoadmap": "El camino",
+    "eightPhasesFromTheFirst": "Ocho fases, de la primera estaca a la última mano de pintura",
+    "everyProjectGetsThisPlan": "Cada obra recibe este plan con duraciones según su tamaño. Sigues cada fase con tareas, fechas y reportes de avance.",
+    "phase": "Fase"
+  },
   "workStatus": {
     "start": "Iniciar",
     "resume": "Reanudar",

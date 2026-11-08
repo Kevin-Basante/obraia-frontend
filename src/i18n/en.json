@@ -320,6 +320,28 @@
     "scale1100": "Scale 1:100",
     "estimatedBudget": "Estimated budget"
   },
+  "phaseRoadmap": {
+    "sitePrepAndLayout": "Site prep and layout",
+    "cleanTheLotAndMark": "Clean the lot and mark the axes on the ground.",
+    "excavation": "Excavation",
+    "digTheTrenchesForThe": "Dig the trenches for the footings.",
+    "foundations": "Foundations",
+    "footingsAndTieBeamsWith": "Footings and tie beams with their steel.",
+    "structure": "Structure",
+    "columnsBeamsAndSlabs": "Columns, beams and slabs.",
+    "masonry": "Masonry",
+    "blockWallsBetweenTheColumns": "Block walls between the columns.",
+    "roof": "Roof",
+    "trussesAndRoofSheets": "Trusses and roof sheets.",
+    "plumbingAndWiring": "Plumbing and wiring",
+    "waterDrainsAndElectricity": "Water, drains and electricity.",
+    "finishes": "Finishes",
+    "plasterFloorsAndPaint": "Plaster, floors and paint.",
+    "theRoadmap": "The roadmap",
+    "eightPhasesFromTheFirst": "Eight phases, from the first stake to the last coat of paint",
+    "everyProjectGetsThisPlan": "Every project gets this plan with durations by size. You follow each phase with tasks, dates and progress reports.",
+    "phase": "Phase"
+  },
   "workStatus": {
     "start": "Start",
     "resume": "Resume",

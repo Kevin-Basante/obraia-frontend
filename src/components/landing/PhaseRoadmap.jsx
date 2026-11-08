@@ -1,17 +1,25 @@
 import { LineArt } from '../art/LineArt.jsx'
 import { useInView } from '../../hooks/useInView.js'
 import './PhaseRoadmap.css'
+import { t } from '../../i18n/i18n.js'
 
-const PHASES = [
-  { art: 'survey', title: 'Site prep and layout', text: 'Clean the lot and mark the axes on the ground.' },
-  { art: 'excavation', title: 'Excavation', text: 'Dig the trenches for the footings.' },
-  { art: 'foundation', title: 'Foundations', text: 'Footings and tie beams with their steel.' },
-  { art: 'structure', title: 'Structure', text: 'Columns, beams and slabs.' },
-  { art: 'masonry', title: 'Masonry', text: 'Block walls between the columns.' },
-  { art: 'roof', title: 'Roof', text: 'Trusses and roof sheets.' },
-  { art: 'installations', title: 'Plumbing and wiring', text: 'Water, drains and electricity.' },
-  { art: 'finishes', title: 'Finishes', text: 'Plaster, floors and paint.' },
-]
+// Read in each render, so the texts follow the language.
+function phases() {
+  return [
+    { art: 'survey', title: t('phaseRoadmap.sitePrepAndLayout'), text: t('phaseRoadmap.cleanTheLotAndMark') },
+    { art: 'excavation', title: t('phaseRoadmap.excavation'), text: t('phaseRoadmap.digTheTrenchesForThe') },
+    { art: 'foundation', title: t('phaseRoadmap.foundations'), text: t('phaseRoadmap.footingsAndTieBeamsWith') },
+    { art: 'structure', title: t('phaseRoadmap.structure'), text: t('phaseRoadmap.columnsBeamsAndSlabs') },
+    { art: 'masonry', title: t('phaseRoadmap.masonry'), text: t('phaseRoadmap.blockWallsBetweenTheColumns') },
+    { art: 'roof', title: t('phaseRoadmap.roof'), text: t('phaseRoadmap.trussesAndRoofSheets') },
+    {
+      art: 'installations',
+      title: t('phaseRoadmap.plumbingAndWiring'),
+      text: t('phaseRoadmap.waterDrainsAndElectricity'),
+    },
+    { art: 'finishes', title: t('phaseRoadmap.finishes'), text: t('phaseRoadmap.plasterFloorsAndPaint') },
+  ]
+}
 
 /** The eight phases ObraIA plans for a house, drawn as a construction sheet. */
 export function PhaseRoadmap() {
@@ -24,17 +32,16 @@ export function PhaseRoadmap() {
       aria-labelledby="phase-roadmap-title"
     >
       <div className="phase-roadmap__intro">
-        <p className="landing-eyebrow">The roadmap</p>
-        <h2 id="phase-roadmap-title">Eight phases, from the first stake to the last coat of paint</h2>
-        <p className="muted">
-          Every project gets this plan with durations by size. You follow each phase with tasks, dates and progress
-          reports.
-        </p>
+        <p className="landing-eyebrow">{t('phaseRoadmap.theRoadmap')}</p>
+        <h2 id="phase-roadmap-title">{t('phaseRoadmap.eightPhasesFromTheFirst')}</h2>
+        <p className="muted">{t('phaseRoadmap.everyProjectGetsThisPlan')}</p>
       </div>
       <ol className="phase-roadmap__list">
-        {PHASES.map((phase, index) => (
+        {phases().map((phase, index) => (
           <li key={phase.art} className="phase-roadmap__step" style={{ '--step': index }}>
-            <span className="phase-roadmap__number tech-label">Phase {String(index + 1).padStart(2, '0')}</span>
+            <span className="phase-roadmap__number tech-label">
+              {t('phaseRoadmap.phase')} {String(index + 1).padStart(2, '0')}
+            </span>
             <div className="phase-roadmap__art">{inView && <LineArt set="phase" art={phase.art} animated />}</div>
             <h3>{phase.title}</h3>
             <p className="muted">{phase.text}</p>
