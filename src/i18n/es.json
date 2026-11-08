@@ -582,6 +582,11 @@
       "other": "hace {count} días"
     }
   },
+  "deleteAccountPage": {
+    "checkingYourProjects": "Revisando tus obras…",
+    "deleteMyAccount": "Eliminar mi cuenta",
+    "myAccount": "Mi cuenta"
+  },
   "budget": {
     "countedBetweenTheDatesOf": "contados entre las fechas de las fases del plan",
     "fromTheStandardPhasesOf": "según las fases estándar del tipo de obra, porque el plan todavía no tiene fechas"

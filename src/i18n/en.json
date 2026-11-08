@@ -582,6 +582,11 @@
       "other": "{count} days ago"
     }
   },
+  "deleteAccountPage": {
+    "checkingYourProjects": "Checking your projects…",
+    "deleteMyAccount": "Delete my account",
+    "myAccount": "My account"
+  },
   "budget": {
     "countedBetweenTheDatesOf": "counted between the dates of the phases of the plan",
     "fromTheStandardPhasesOf": "from the standard phases of the project type, because the plan has no dates yet"

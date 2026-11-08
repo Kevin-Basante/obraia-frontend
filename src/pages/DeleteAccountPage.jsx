@@ -5,6 +5,7 @@ import { LoadingState } from '../components/LoadingState.jsx'
 import { PageHeader } from '../components/PageHeader.jsx'
 import { useApiData } from '../hooks/useApiData.js'
 import { getAccountDeletionImpact } from '../services/accountService.js'
+import { t } from '../i18n/i18n.js'
 
 /**
  * First step of the account deletion: shows the warnings, asks for the
@@ -14,11 +15,14 @@ export function DeleteAccountPage() {
   const impact = useApiData((signal) => getAccountDeletionImpact({ signal }), [])
 
   if (impact.status === 'error') return <ErrorState error={impact.error} onRetry={impact.retry} />
-  if (!impact.data) return <LoadingState title="Checking your projects…" />
+  if (!impact.data) return <LoadingState title={t('deleteAccountPage.checkingYourProjects')} />
 
   return (
     <div className="workspace">
-      <PageHeader title="Delete my account" back={{ to: '/account', label: 'My account' }} />
+      <PageHeader
+        title={t('deleteAccountPage.deleteMyAccount')}
+        back={{ to: '/account', label: t('deleteAccountPage.myAccount') }}
+      />
       <AccountDeletionImpact impact={impact.data} />
       <DeleteAccountForm />
     </div>
