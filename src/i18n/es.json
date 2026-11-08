@@ -312,6 +312,13 @@
     "creatingAccount": "Creando la cuenta…",
     "createAccount": "Crear cuenta"
   },
+  "sizePicker": {
+    "small": "Pequeña",
+    "upTo120M": "hasta 120 m²",
+    "large": "Grande",
+    "moreThan120M": "más de 120 m²",
+    "projectSize": "Tamaño de la obra"
+  },
   "projectForm": {
     "n1Floor": "1 piso",
     "n2Floors": "2 pisos",

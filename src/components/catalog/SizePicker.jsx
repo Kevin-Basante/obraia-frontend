@@ -1,16 +1,20 @@
 import './SizePicker.css'
+import { t } from '../../i18n/i18n.js'
 
-const SIZES = [
-  { value: 'small', label: 'Small', detail: 'up to 120 m²' },
-  { value: 'large', label: 'Large', detail: 'more than 120 m²' },
-]
+// Read in each render, so the texts follow the language.
+function sizes() {
+  return [
+    { value: 'small', label: t('sizePicker.small'), detail: t('sizePicker.upTo120M') },
+    { value: 'large', label: t('sizePicker.large'), detail: t('sizePicker.moreThan120M') },
+  ]
+}
 
 /** Two options for the project size. Disabled while a built area decides it. */
 export function SizePicker({ value, onChange, disabled }) {
   return (
     <fieldset className="size-picker" disabled={disabled}>
-      <legend>Project size</legend>
-      {SIZES.map((size) => (
+      <legend>{t('sizePicker.projectSize')}</legend>
+      {sizes().map((size) => (
         <label key={size.value} className="size-picker__option">
           <input
             type="radio"
