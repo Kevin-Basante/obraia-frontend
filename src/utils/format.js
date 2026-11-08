@@ -1,3 +1,4 @@
+import { dateLocale } from '../i18n/i18n.js'
 // Prices come from Colombia, so money and numbers use the Colombian format.
 const currency = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 })
 const decimal = new Intl.NumberFormat('es-CO', { maximumFractionDigits: 4 })
@@ -18,15 +19,22 @@ export function formatPercent(value) {
   return percent.format(Number(value))
 }
 
-/** "2026-10-04" -> "Oct 4, 2026". The date has no time, so it is read as local. */
+/**
+ * "2026-10-04" -> "Oct 4, 2026" in English or "4 oct 2026" in Spanish.
+ * The date has no time, so it is read as local.
+ */
 export function formatDate(isoDate) {
   const [year, month, day] = isoDate.split('-').map(Number)
-  return new Date(year, month - 1, day).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+  return new Date(year, month - 1, day).toLocaleDateString(dateLocale(), {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  })
 }
 
-/** "2026-10-30T04:47:34Z" -> "Oct 30, 2026, 11:47 PM", in the time zone of the browser. */
+/** "2026-10-30T04:47:34Z" -> "Oct 30, 2026, 11:47 PM", in the language and time zone of the browser. */
 export function formatDateTime(isoInstant) {
-  return new Date(isoInstant).toLocaleString('en-US', {
+  return new Date(isoInstant).toLocaleString(dateLocale(), {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
