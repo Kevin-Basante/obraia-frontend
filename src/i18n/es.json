@@ -547,6 +547,14 @@
     "link": "Te enviaremos un correo con un enlace que sirve durante {minutes} minutos. No se borra nada hasta que lo abras.",
     "purge": "Después de confirmar, tus datos se borran para siempre el {date}."
   },
+  "progressHistory": {
+    "nobodyHasReportedProgressOn": "Nadie ha reportado avance en esta tarea todavía.",
+    "date": "Fecha",
+    "progress": "Avance",
+    "reportedBy": "Reportado por",
+    "notes": "Notas",
+    "siteManager": "· maestro de obra"
+  },
   "phaseCard": {
     "late": "Atrasada",
     "editPhase": "Editar fase",

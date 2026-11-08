@@ -547,6 +547,14 @@
     "link": "We will email you a link that works for {minutes} minutes. Nothing is deleted until you open it.",
     "purge": "After you confirm, your data is removed for good on {date}."
   },
+  "progressHistory": {
+    "nobodyHasReportedProgressOn": "Nobody has reported progress on this task yet.",
+    "date": "Date",
+    "progress": "Progress",
+    "reportedBy": "Reported by",
+    "notes": "Notes",
+    "siteManager": "· site manager"
+  },
   "phaseCard": {
     "late": "Late",
     "editPhase": "Edit phase",

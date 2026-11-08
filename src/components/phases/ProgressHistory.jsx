@@ -1,32 +1,38 @@
 import { formatDate } from '../../utils/format.js'
 import { formatProgress } from '../../utils/workStatus.js'
 import '../catalog/DataTable.css'
+import { t } from '../../i18n/i18n.js'
 
 /** Progress reports of a task, newest first. The first one is its current progress. */
 export function ProgressHistory({ reports }) {
-  if (reports.length === 0) return <p className="muted">Nobody has reported progress on this task yet.</p>
+  if (reports.length === 0) return <p className="muted">{t('progressHistory.nobodyHasReportedProgressOn')}</p>
   return (
     <table className="data-table">
       <thead>
         <tr>
-          <th>Date</th>
-          <th className="data-table__number">Progress</th>
-          <th>Reported by</th>
-          <th>Notes</th>
+          <th>{t('progressHistory.date')}</th>
+          <th className="data-table__number">{t('progressHistory.progress')}</th>
+          <th>{t('progressHistory.reportedBy')}</th>
+          <th>{t('progressHistory.notes')}</th>
         </tr>
       </thead>
       <tbody>
         {reports.map((report) => (
           <tr key={report.id}>
-            <td data-label="Date">{formatDate(report.reportDate)}</td>
-            <td data-label="Progress" className="data-table__number">
+            <td data-label={t('progressHistory.date')}>{formatDate(report.reportDate)}</td>
+            <td data-label={t('progressHistory.progress')} className="data-table__number">
               {formatProgress(report.completionPercentage)}
             </td>
-            <td data-label="Reported by">
+            <td data-label={t('progressHistory.reportedBy')}>
               {report.reportedBy ?? '—'}
-              {report.siteManager && <span className="muted"> · site manager {report.siteManager}</span>}
+              {report.siteManager && (
+                <span className="muted">
+                  {' '}
+                  {t('progressHistory.siteManager')} {report.siteManager}
+                </span>
+              )}
             </td>
-            <td data-label="Notes">{report.notes ?? '—'}</td>
+            <td data-label={t('progressHistory.notes')}>{report.notes ?? '—'}</td>
           </tr>
         ))}
       </tbody>
