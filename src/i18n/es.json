@@ -359,6 +359,13 @@
     "link": "Te enviaremos un correo con un enlace que sirve durante {minutes} minutos. No se borra nada hasta que lo abras.",
     "purge": "Después de confirmar, tus datos se borran para siempre el {date}."
   },
+  "deleteAccountForm": {
+    "enterYourPassword": "Escribe tu contraseña",
+    "yourPassword": "Tu contraseña",
+    "emailMeTheConfirmationLink": "Enviarme el enlace de confirmación",
+    "sending": "Enviando…",
+    "understand": "Entiendo que se eliminarán mi cuenta y las obras que creé."
+  },
   "workStatus": {
     "start": "Iniciar",
     "resume": "Reanudar",

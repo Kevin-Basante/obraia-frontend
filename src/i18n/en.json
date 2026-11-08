@@ -359,6 +359,13 @@
     "link": "We will email you a link that works for {minutes} minutes. Nothing is deleted until you open it.",
     "purge": "After you confirm, your data is removed for good on {date}."
   },
+  "deleteAccountForm": {
+    "enterYourPassword": "Enter your password",
+    "yourPassword": "Your password",
+    "emailMeTheConfirmationLink": "Email me the confirmation link",
+    "sending": "Sending…",
+    "understand": "I understand that my account and the projects I created will be deleted."
+  },
   "workStatus": {
     "start": "Start",
     "resume": "Resume",
