@@ -6,6 +6,7 @@ import { useFormSubmit } from '../../hooks/useFormSubmit.js'
 import { addMember, listMembers, removeMember } from '../../services/memberService.js'
 import { validateEmail } from '../../utils/validation.js'
 import './MembersPanel.css'
+import { t } from '../../i18n/i18n.js'
 
 /** People who manage the project. Any member can add others by email; the creator always stays. */
 export function MembersPanel({ projectId, currentUserId }) {
@@ -37,13 +38,14 @@ export function MembersPanel({ projectId, currentUserId }) {
   }
 
   function handleRemove(member) {
-    if (window.confirm(`Remove ${member.firstName} ${member.lastName} from this project?`)) removing.submit(member.userId)
+    if (window.confirm(t('membersPanel.confirmRemove', { name: `${member.firstName} ${member.lastName}` })))
+      removing.submit(member.userId)
   }
 
   return (
     <section className="card">
-      <h2>Members</h2>
-      <p className="muted">Members can see and manage this project. Only the creator can delete it.</p>
+      <h2>{t('membersPanel.members')}</h2>
+      <p className="muted">{t('membersPanel.membersCanSeeAndManage')}</p>
       <FormAlert>{members.error?.message}</FormAlert>
       {members.data && (
         <ul className="member-list">
@@ -53,11 +55,11 @@ export function MembersPanel({ projectId, currentUserId }) {
                 <strong>
                   {member.firstName} {member.lastName}
                 </strong>
-                {member.userId === currentUserId && ' (you)'}
+                {member.userId === currentUserId && t('membersPanel.you')}
                 <span className="muted"> · {member.email}</span>
               </span>
               {member.creator ? (
-                <span className="muted">Creator</span>
+                <span className="muted">{t('membersPanel.creator')}</span>
               ) : (
                 <button
                   type="button"
@@ -65,7 +67,7 @@ export function MembersPanel({ projectId, currentUserId }) {
                   disabled={removing.pending}
                   onClick={() => handleRemove(member)}
                 >
-                  Remove
+                  {t('membersPanel.remove')}
                 </button>
               )}
             </li>
@@ -74,7 +76,7 @@ export function MembersPanel({ projectId, currentUserId }) {
       )}
       <form className="inline-form" onSubmit={handleAdd} noValidate>
         <FormField
-          label="Add a member by email"
+          label={t('membersPanel.addAMemberByEmail')}
           type="email"
           placeholder="name@example.com"
           value={email}
@@ -82,7 +84,7 @@ export function MembersPanel({ projectId, currentUserId }) {
           error={adding.fieldErrors.email}
         />
         <button type="submit" disabled={adding.pending}>
-          Add
+          {t('membersPanel.add')}
         </button>
       </form>
       <FormAlert>{(adding.error ?? removing.error)?.message}</FormAlert>

@@ -93,6 +93,16 @@
     "ends": "Termina el {date}",
     "range": "{start} a {end}"
   },
+  "membersPanel": {
+    "members": "Miembros",
+    "membersCanSeeAndManage": "Los miembros pueden ver y manejar esta obra. Solo quien la creó puede eliminarla.",
+    "you": " (tú)",
+    "creator": "Creador",
+    "remove": "Quitar",
+    "addAMemberByEmail": "Agregar un miembro por correo",
+    "add": "Agregar",
+    "confirmRemove": "¿Quitar a {name} de esta obra?"
+  },
   "changePasswordForm": {
     "currentPassword": "Contraseña actual",
     "newPassword": "Contraseña nueva",

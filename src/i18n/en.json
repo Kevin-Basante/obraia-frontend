@@ -93,6 +93,16 @@
     "ends": "Ends {date}",
     "range": "{start} to {end}"
   },
+  "membersPanel": {
+    "members": "Members",
+    "membersCanSeeAndManage": "Members can see and manage this project. Only the creator can delete it.",
+    "you": " (you)",
+    "creator": "Creator",
+    "remove": "Remove",
+    "addAMemberByEmail": "Add a member by email",
+    "add": "Add",
+    "confirmRemove": "Remove {name} from this project?"
+  },
   "changePasswordForm": {
     "currentPassword": "Current password",
     "newPassword": "New password",
