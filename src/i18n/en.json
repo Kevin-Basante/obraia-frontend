@@ -121,6 +121,10 @@
     "enterYourLastName": "Enter your last name",
     "useUpTo": "Use up to {max} characters"
   },
+  "progressBar": {
+    "progress": "Progress",
+    "of": "Progress of {name}"
+  },
   "analysisResult": {
     "warnings": "Warnings",
     "compareWithTheManualMeasurements": "Compare with the manual measurements",
@@ -506,6 +510,13 @@
     "allCategories": "All categories",
     "loadingMaterials": "Loading materials…",
     "noMaterialsMatchTheseFilters": "No materials match these filters."
+  },
+  "phaseProgressList": {
+    "phases": "Phases",
+    "openPhasesAndTasks": "Open phases and tasks",
+    "thePlanHasNotBeen": "The plan has not been created yet. Create it from the standard phases of the project type.",
+    "late": "Late",
+    "noDates": "No dates"
   },
   "projectStatus": {
     "actions": {

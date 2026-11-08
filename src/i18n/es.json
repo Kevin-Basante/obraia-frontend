@@ -121,6 +121,10 @@
     "enterYourLastName": "Escribe tu apellido",
     "useUpTo": "Usa hasta {max} caracteres"
   },
+  "progressBar": {
+    "progress": "Avance",
+    "of": "Avance de {name}"
+  },
   "analysisResult": {
     "warnings": "Advertencias",
     "compareWithTheManualMeasurements": "Comparar con las medidas manuales",
@@ -506,6 +510,13 @@
     "allCategories": "Todas las categorías",
     "loadingMaterials": "Cargando materiales…",
     "noMaterialsMatchTheseFilters": "Ningún material coincide con estos filtros."
+  },
+  "phaseProgressList": {
+    "phases": "Fases",
+    "openPhasesAndTasks": "Abrir fases y tareas",
+    "thePlanHasNotBeen": "El plan todavía no se ha creado. Créalo con las fases estándar del tipo de obra.",
+    "late": "Atrasada",
+    "noDates": "Sin fechas"
   },
   "projectStatus": {
     "actions": {

@@ -6,19 +6,18 @@ import { phaseArt } from '../../utils/artFor.js'
 import { shortRange } from '../../utils/dashboard.js'
 import './DashboardCard.css'
 import './PhaseProgressList.css'
+import { t } from '../../i18n/i18n.js'
 
 /** Every phase of the plan in one look: drawing, status, dates and progress. */
 export function PhaseProgressList({ projectId, phases }) {
   return (
     <section className="card">
       <div className="dashboard-card__header">
-        <h2>Phases</h2>
-        <Link to={`/projects/${projectId}/phases`}>Open phases and tasks</Link>
+        <h2>{t('phaseProgressList.phases')}</h2>
+        <Link to={`/projects/${projectId}/phases`}>{t('phaseProgressList.openPhasesAndTasks')}</Link>
       </div>
       {phases.length === 0 ? (
-        <p className="muted">
-          The plan has not been created yet. Create it from the standard phases of the project type.
-        </p>
+        <p className="muted">{t('phaseProgressList.thePlanHasNotBeen')}</p>
       ) : (
         <ol className="phase-progress">
           {phases.map((phase) => (
@@ -31,12 +30,14 @@ export function PhaseProgressList({ projectId, phases }) {
                 </span>
                 <span className="phase-progress__meta">
                   <StatusBadge status={phase.status} />
-                  {phase.late && <span className="dashboard-late">Late</span>}
-                  <span>{shortRange(phase.plannedStartDate, phase.plannedEndDate) ?? 'No dates'}</span>
+                  {phase.late && <span className="dashboard-late">{t('phaseProgressList.late')}</span>}
+                  <span>
+                    {shortRange(phase.plannedStartDate, phase.plannedEndDate) ?? t('phaseProgressList.noDates')}
+                  </span>
                 </span>
               </div>
               <div className="phase-progress__bar">
-                <ProgressBar value={phase.progressPct} label={`Progress of ${phase.name}`} />
+                <ProgressBar value={phase.progressPct} label={t('progressBar.of', { name: phase.name })} />
               </div>
             </li>
           ))}
