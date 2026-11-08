@@ -1,4 +1,5 @@
 import './ThemeButton.css'
+import { t } from '../../i18n/i18n.js'
 
 function SunIcon() {
   return (
@@ -26,8 +27,8 @@ export function ThemeButton({ theme, onToggle }) {
       type="button"
       className="theme-button"
       onClick={onToggle}
-      aria-label={`Switch to the ${next} theme`}
-      title={`Switch to the ${next} theme`}
+      aria-label={t(`theme.switchTo.${next}`)}
+      title={t(`theme.switchTo.${next}`)}
     >
       {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
     </button>

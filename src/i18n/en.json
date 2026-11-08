@@ -19,6 +19,12 @@
     "notifications": "Notifications",
     "notificationsUnread": "Notifications, {count} not read"
   },
+  "theme": {
+    "switchTo": {
+      "light": "Switch to the light theme",
+      "dark": "Switch to the dark theme"
+    }
+  },
   "common": {
     "retry": "Retry",
     "unknownError": "Unknown error",
