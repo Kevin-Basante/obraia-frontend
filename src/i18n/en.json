@@ -81,6 +81,20 @@
       "other": "{count} projects"
     }
   },
+  "analysis": {
+    "theAiServiceIsNot": "The AI service is not configured on the server yet.",
+    "theAiCouldNotRead": "The AI could not read the blueprint. Wait a moment and try again.",
+    "analyzeWithAi": "Analyze with AI",
+    "thisFileWasAlreadyRead": " This file was already read, so the AI was not called again.",
+    "readByTheAiBecause": "read by the AI, because there are no manual measurements",
+    "typedByHand": "typed by hand",
+    "analyzeAgain": "Analyze again",
+    "found": {
+      "one": "The AI found {count} measurement",
+      "other": "The AI found {count} measurements"
+    },
+    "leftOut": " and left out {count} it could not use"
+  },
   "greeting": {
     "goodMorning": "Good morning",
     "goodAfternoon": "Good afternoon",

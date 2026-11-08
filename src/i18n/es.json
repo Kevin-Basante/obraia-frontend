@@ -81,6 +81,20 @@
       "other": "{count} obras"
     }
   },
+  "analysis": {
+    "theAiServiceIsNot": "El servicio de IA todavía no está configurado en el servidor.",
+    "theAiCouldNotRead": "La IA no pudo leer el plano. Espera un momento e inténtalo otra vez.",
+    "analyzeWithAi": "Analizar con IA",
+    "thisFileWasAlreadyRead": " Este archivo ya se había leído, así que no se volvió a llamar a la IA.",
+    "readByTheAiBecause": "leídas por la IA, porque no hay medidas manuales",
+    "typedByHand": "escritas a mano",
+    "analyzeAgain": "Analizar otra vez",
+    "found": {
+      "one": "La IA encontró {count} medida",
+      "other": "La IA encontró {count} medidas"
+    },
+    "leftOut": " y dejó fuera {count} que no pudo usar"
+  },
   "greeting": {
     "goodMorning": "Buenos días",
     "goodAfternoon": "Buenas tardes",
