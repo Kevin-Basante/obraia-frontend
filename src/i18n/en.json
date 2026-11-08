@@ -371,6 +371,35 @@
     "quantity": "Quantity",
     "waste": "Waste"
   },
+  "deletionImpact": {
+    "theProjectHasNoBlueprints": "The project has no blueprints, phases, budgets or expenses yet.",
+    "items": {
+      "blueprints": {
+        "one": "{count} blueprint",
+        "other": "{count} blueprints"
+      },
+      "phases": {
+        "one": "{count} phase",
+        "other": "{count} phases"
+      },
+      "budgets": {
+        "one": "{count} budget",
+        "other": "{count} budgets"
+      },
+      "expenses": {
+        "one": "{count} expense",
+        "other": "{count} expenses"
+      }
+    },
+    "title": "Before you delete “{name}”",
+    "holds": "It will delete everything the project holds: {items}.",
+    "others": {
+      "one": "The other member will lose access too.",
+      "other": "The other {count} members will lose access too."
+    },
+    "link": "We will email you a link that works for {minutes} minutes. Nothing is deleted until you open it.",
+    "purge": "After you confirm, the project disappears from your list, and its data is removed for good on {date}."
+  },
   "validation": {
     "atLeast8CharactersWith": "At least 8 characters, with one letter and one number.",
     "enterYourEmail": "Enter your email",

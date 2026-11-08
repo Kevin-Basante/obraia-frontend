@@ -371,6 +371,35 @@
     "quantity": "Cantidad",
     "waste": "Desperdicio"
   },
+  "deletionImpact": {
+    "theProjectHasNoBlueprints": "La obra todavía no tiene planos, fases, presupuestos ni gastos.",
+    "items": {
+      "blueprints": {
+        "one": "{count} plano",
+        "other": "{count} planos"
+      },
+      "phases": {
+        "one": "{count} fase",
+        "other": "{count} fases"
+      },
+      "budgets": {
+        "one": "{count} presupuesto",
+        "other": "{count} presupuestos"
+      },
+      "expenses": {
+        "one": "{count} gasto",
+        "other": "{count} gastos"
+      }
+    },
+    "title": "Antes de eliminar “{name}”",
+    "holds": "Se borrará todo lo que tiene la obra: {items}.",
+    "others": {
+      "one": "El otro miembro también perderá el acceso.",
+      "other": "Los otros {count} miembros también perderán el acceso."
+    },
+    "link": "Te enviaremos un correo con un enlace que sirve durante {minutes} minutos. No se borra nada hasta que lo abras.",
+    "purge": "Después de confirmar, la obra desaparece de tu lista y sus datos se borran para siempre el {date}."
+  },
   "validation": {
     "atLeast8CharactersWith": "Mínimo 8 caracteres, con una letra y un número.",
     "enterYourEmail": "Escribe tu correo",
