@@ -454,6 +454,14 @@
     "use3To150Characters": "Use 3 to 150 characters",
     "use5To20Letters": "Use 5 to 20 letters, numbers, dots or dashes"
   },
+  "comparisonTable": {
+    "element": "Element",
+    "floor": "Floor",
+    "manual": "Manual",
+    "difference": "Difference",
+    "result": "Result",
+    "ai": "AI"
+  },
   "blueprintScene": {
     "livingRoom": "Living room",
     "bedroom": "Bedroom",
