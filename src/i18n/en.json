@@ -237,6 +237,19 @@
   "materialGrid": {
     "priceOf": "Price of"
   },
+  "homePage": {
+    "goToMyDashboard": "Go to my dashboard",
+    "createAFreeAccount": "Create a free account",
+    "tryItAsAGuest": "Try it as a guest",
+    "aiForSmallConstructionProjects": "AI for small construction projects",
+    "fromTheBlueprintToYour": "From the blueprint to your house,",
+    "withoutSurprises": "without surprises.",
+    "uploadYourBlueprintAndObraia": "Upload your blueprint and ObraIA measures it with AI, quotes the materials with the prices of your city, plans the work in phases and warns you before the budget or the schedule slips.",
+    "alreadyHaveAnAccount": "Already have an account?",
+    "signIn": "Sign in",
+    "yourNextHouseStartsWith": "Your next house starts with a drawing.",
+    "createYourAccountInA": "Create your account in a minute. It is free."
+  },
   "expenseTable": {
     "date": "Date",
     "category": "Category",

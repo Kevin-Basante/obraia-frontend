@@ -237,6 +237,19 @@
   "materialGrid": {
     "priceOf": "Precio del"
   },
+  "homePage": {
+    "goToMyDashboard": "Ir a mi panel",
+    "createAFreeAccount": "Crear una cuenta gratis",
+    "tryItAsAGuest": "Probar como invitado",
+    "aiForSmallConstructionProjects": "IA para obras pequeñas",
+    "fromTheBlueprintToYour": "Del plano a tu casa,",
+    "withoutSurprises": "sin sorpresas.",
+    "uploadYourBlueprintAndObraia": "Sube tu plano y ObraIA lo mide con IA, cotiza los materiales con los precios de tu ciudad, planea la obra por fases y te avisa antes de que se pase el presupuesto o se atrase el cronograma.",
+    "alreadyHaveAnAccount": "¿Ya tienes una cuenta?",
+    "signIn": "Iniciar sesión",
+    "yourNextHouseStartsWith": "Tu próxima casa empieza con un dibujo.",
+    "createYourAccountInA": "Crea tu cuenta en un minuto. Es gratis."
+  },
   "expenseTable": {
     "date": "Fecha",
     "category": "Categoría",

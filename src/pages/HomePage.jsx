@@ -7,6 +7,7 @@ import { RevealSection } from '../components/landing/RevealSection.jsx'
 import { useAuth } from '../hooks/useAuth.js'
 import { useServerWakeUp } from '../hooks/useServerWakeUp.js'
 import './HomePage.css'
+import { t } from '../i18n/i18n.js'
 
 /** Landing page: what ObraIA does, how it works, the phases of a build and how to start. */
 export function HomePage() {
@@ -22,15 +23,15 @@ export function HomePage() {
   const actions =
     status === 'signedIn' ? (
       <Link to="/dashboard" className="button-link">
-        Go to my dashboard
+        {t('homePage.goToMyDashboard')}
       </Link>
     ) : (
       <>
         <Link to="/register" className="button-link">
-          Create a free account
+          {t('homePage.createAFreeAccount')}
         </Link>
         <button type="button" className="button-secondary" onClick={tryAsGuest}>
-          Try it as a guest
+          {t('homePage.tryItAsAGuest')}
         </button>
       </>
     )
@@ -39,18 +40,15 @@ export function HomePage() {
     <div className="home">
       <section className="home-hero">
         <div className="home-hero__text">
-          <p className="landing-eyebrow">AI for small construction projects</p>
+          <p className="landing-eyebrow">{t('homePage.aiForSmallConstructionProjects')}</p>
           <h1>
-            From the blueprint to your house, <em>without surprises.</em>
+            {t('homePage.fromTheBlueprintToYour')} <em>{t('homePage.withoutSurprises')}</em>
           </h1>
-          <p className="home-hero__lead">
-            Upload your blueprint and ObraIA measures it with AI, quotes the materials with the prices of your city,
-            plans the work in phases and warns you before the budget or the schedule slips.
-          </p>
+          <p className="home-hero__lead">{t('homePage.uploadYourBlueprintAndObraia')}</p>
           <div className="home-hero__actions">{actions}</div>
           {status === 'signedOut' && (
             <p className="muted home-hero__signin">
-              Already have an account? <Link to="/login">Sign in</Link>
+              {t('homePage.alreadyHaveAnAccount')} <Link to="/login">{t('homePage.signIn')}</Link>
             </p>
           )}
         </div>
@@ -61,11 +59,10 @@ export function HomePage() {
       <PhaseRoadmap />
       <FeatureGrid />
 
-
       {status !== 'signedIn' && (
         <RevealSection className="home-cta">
-          <h2>Your next house starts with a drawing.</h2>
-          <p>Create your account in a minute. It is free.</p>
+          <h2>{t('homePage.yourNextHouseStartsWith')}</h2>
+          <p>{t('homePage.createYourAccountInA')}</p>
           <div className="home-hero__actions">{actions}</div>
         </RevealSection>
       )}
