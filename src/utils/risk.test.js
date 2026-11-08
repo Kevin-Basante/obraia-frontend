@@ -1,5 +1,15 @@
-import { describe, expect, it } from 'vitest'
-import { chartPoints, delayText, formatScore, sortFactors, triggerText } from './risk.js'
+import { afterEach, describe, expect, it } from 'vitest'
+import { setLanguage } from '../i18n/i18n.js'
+import {
+  chartPoints,
+  delayText,
+  factorDetail,
+  factorLabel,
+  formatScore,
+  riskDetailText,
+  sortFactors,
+  triggerText,
+} from './risk.js'
 
 describe('risk helpers', () => {
   it('rounds the score to one decimal with a comma', () => {
@@ -47,5 +57,35 @@ describe('risk helpers', () => {
       'progress_pace',
     ])
     expect(factors[0].code).toBe('progress_pace')
+  })
+
+  describe('sentences of the factors', () => {
+    afterEach(() => setLanguage('en'))
+
+    it('names each rule in the current language', () => {
+      setLanguage('es')
+      expect(factorLabel({ code: 'schedule_delay', label: 'Late tasks' })).toBe('Tareas atrasadas')
+      expect(factorLabel({ code: 'new_rule', label: 'New rule' })).toBe('New rule')
+    })
+
+    it('builds the detail from its code and values', () => {
+      expect(riskDetailText('time_vs_progress', { elapsed: '50', progress: '30' })).toBe(
+        '50% of the planned time passed with 30% of the work done',
+      )
+      expect(riskDetailText('late_tasks', { count: '2', task: 'Muros', days: '1' })).toBe(
+        '2 tasks are past their planned end; "Muros" is 1 day late',
+      )
+      setLanguage('es')
+      expect(riskDetailText('late_tasks', { count: '1', task: 'Muros', days: '6' })).toBe(
+        '1 tarea pasó su fecha de fin planeada; "Muros" lleva 6 días de atraso',
+      )
+    })
+
+    it('keeps the English detail of factors saved without a code', () => {
+      expect(factorDetail({ detail: 'Old sentence', detailCode: null })).toBe('Old sentence')
+      expect(factorDetail({ detail: 'x', detailCode: 'no_budget', detailParams: {} })).toBe(
+        'There is no approved budget yet',
+      )
+    })
   })
 })
