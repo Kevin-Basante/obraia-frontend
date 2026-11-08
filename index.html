@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" translate="no">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- The site has its own ES/EN button, so the translator of the browser stays off. -->
+    <meta name="google" content="notranslate" />
     <title>ObraIA</title>
     <script>
       // Sets the theme before the page is drawn, so it does not flash (see src/utils/theme.js).
@@ -13,6 +15,13 @@
         document.documentElement.dataset.theme = dark ? 'dark' : 'light'
       } catch (error) {
         document.documentElement.dataset.theme = 'light'
+      }
+      // Same for the language of the page (see src/i18n/language.js).
+      try {
+        var language = localStorage.getItem('obraia.language') || (navigator.languages || [''])[0] || ''
+        document.documentElement.lang = language.toLowerCase().indexOf('es') === 0 ? 'es' : 'en'
+      } catch (error) {
+        document.documentElement.lang = 'en'
       }
     </script>
   </head>
