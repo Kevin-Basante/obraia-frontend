@@ -491,6 +491,16 @@
     "moreThan120M": "more than 120 m²",
     "projectSize": "Project size"
   },
+  "confirmDeletionPage": {
+    "deletingTheProject": "Deleting the project…",
+    "oneMoment": "One moment.",
+    "projectDeleted": "Project deleted",
+    "goToMyProjects": "Go to my projects",
+    "weCouldNotDeleteThe": "We could not delete the project",
+    "youCanAskForA": "You can ask for a new link from the project page.",
+    "myProjects": "My projects",
+    "theLinkIsIncompleteOpen": "The link is incomplete. Open it again from your email."
+  },
   "taskTable": {
     "task": "Task",
     "status": "Status",

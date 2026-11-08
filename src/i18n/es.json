@@ -491,6 +491,16 @@
     "moreThan120M": "más de 120 m²",
     "projectSize": "Tamaño de la obra"
   },
+  "confirmDeletionPage": {
+    "deletingTheProject": "Eliminando la obra…",
+    "oneMoment": "Un momento.",
+    "projectDeleted": "Obra eliminada",
+    "goToMyProjects": "Ir a mis obras",
+    "weCouldNotDeleteThe": "No pudimos eliminar la obra",
+    "youCanAskForA": "Puedes pedir un enlace nuevo desde la página de la obra.",
+    "myProjects": "Mis obras",
+    "theLinkIsIncompleteOpen": "El enlace está incompleto. Ábrelo otra vez desde tu correo."
+  },
   "taskTable": {
     "task": "Tarea",
     "status": "Estado",
