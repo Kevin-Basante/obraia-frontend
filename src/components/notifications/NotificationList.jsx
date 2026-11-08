@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
-import { notificationLink, timeAgo } from '../../utils/notifications.js'
+import { notificationLink, notificationText, timeAgo } from '../../utils/notifications.js'
 import './NotificationList.css'
+import { codeLabel, t } from '../../i18n/i18n.js'
 
 /** Notifications, newest first. The unread ones are bold and have a button to mark them as read. */
 export function NotificationList({ notifications, onMarkRead, busy }) {
@@ -14,16 +15,16 @@ export function NotificationList({ notifications, onMarkRead, busy }) {
             className={`notification-list__item${notification.read ? '' : ' notification-list__item--unread'}`}
           >
             <div className="notification-list__body">
-              <p>{notification.message}</p>
+              <p>{notificationText(notification)}</p>
               <p className="muted notification-list__meta">
-                {notification.type.label}
+                {codeLabel('notificationType', notification.type)}
                 {notification.projectName && <> · {notification.projectName}</>} · {timeAgo(notification.createdAt)}
               </p>
             </div>
             <div className="button-row">
               {link && (
                 <Link to={link} className="button-link button-secondary button-small">
-                  Open
+                  {t('notificationList.open')}
                 </Link>
               )}
               {!notification.read && (
@@ -33,7 +34,7 @@ export function NotificationList({ notifications, onMarkRead, busy }) {
                   disabled={busy}
                   onClick={() => onMarkRead(notification)}
                 >
-                  Mark as read
+                  {t('notificationList.markAsRead')}
                 </button>
               )}
             </div>

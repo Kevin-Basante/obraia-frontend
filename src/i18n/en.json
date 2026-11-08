@@ -266,6 +266,10 @@
     "inProgress": "{count} in progress",
     "ofBudgets": "{share} of the approved budgets"
   },
+  "notificationList": {
+    "open": "Open",
+    "markAsRead": "Mark as read"
+  },
   "greeting": {
     "goodMorning": "Good morning",
     "goodAfternoon": "Good afternoon",

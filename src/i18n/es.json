@@ -266,6 +266,10 @@
     "inProgress": "{count} en curso",
     "ofBudgets": "{share} de los presupuestos aprobados"
   },
+  "notificationList": {
+    "open": "Abrir",
+    "markAsRead": "Marcar como leída"
+  },
   "greeting": {
     "goodMorning": "Buenos días",
     "goodAfternoon": "Buenas tardes",
