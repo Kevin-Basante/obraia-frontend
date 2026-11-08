@@ -38,6 +38,21 @@
     "notAdded": "Sin agregar",
     "dateRange": "{start} a {end}"
   },
+  "dashboard": {
+    "noTasksYet": "Sin tareas todavía",
+    "noLateTasks": "Sin tareas atrasadas",
+    "thePlanHasNoDates": "El plan todavía no tiene fechas",
+    "tasksDone": {
+      "one": "{done} de {count} tarea terminada",
+      "other": "{done} de {count} tareas terminadas"
+    },
+    "lateTasks": {
+      "one": "{count} tarea atrasada",
+      "other": "{count} tareas atrasadas"
+    },
+    "ends": "Termina el {date}",
+    "range": "{start} a {end}"
+  },
   "changePasswordForm": {
     "currentPassword": "Contraseña actual",
     "newPassword": "Contraseña nueva",

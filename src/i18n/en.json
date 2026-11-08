@@ -38,6 +38,21 @@
     "notAdded": "Not added",
     "dateRange": "{start} to {end}"
   },
+  "dashboard": {
+    "noTasksYet": "No tasks yet",
+    "noLateTasks": "No late tasks",
+    "thePlanHasNoDates": "The plan has no dates yet",
+    "tasksDone": {
+      "one": "{done} of {count} task done",
+      "other": "{done} of {count} tasks done"
+    },
+    "lateTasks": {
+      "one": "{count} late task",
+      "other": "{count} late tasks"
+    },
+    "ends": "Ends {date}",
+    "range": "{start} to {end}"
+  },
   "changePasswordForm": {
     "currentPassword": "Current password",
     "newPassword": "New password",

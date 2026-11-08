@@ -1,22 +1,25 @@
 import { formatDate } from './format.js'
+import { t } from '../i18n/i18n.js'
 
 // Helpers for the dashboards. Percentages come from the backend from 0 to 100.
 
 /** "5 of 22 tasks done", or a hint while the plan has no tasks. */
 export function tasksDoneText(work) {
-  if (work.taskCount === 0) return 'No tasks yet'
-  return `${work.completedTasks} of ${work.taskCount} ${work.taskCount === 1 ? 'task' : 'tasks'} done`
+  if (work.taskCount === 0) return t('dashboard.noTasksYet')
+  return t('dashboard.tasksDone', { done: work.completedTasks, count: work.taskCount })
 }
 
 /** 0 -> "No late tasks", 1 -> "1 late task", 7 -> "7 late tasks". */
 export function lateTasksText(count) {
-  if (count === 0) return 'No late tasks'
-  return `${count} late ${count === 1 ? 'task' : 'tasks'}`
+  if (count === 0) return t('dashboard.noLateTasks')
+  return t('dashboard.lateTasks', { count })
 }
 
 /** "Ends Jan 30, 2027", or a hint while the plan has no dates. */
 export function planEndText(work) {
-  return work.plannedEndDate ? `Ends ${formatDate(work.plannedEndDate)}` : 'The plan has no dates yet'
+  return work.plannedEndDate
+    ? t('dashboard.ends', { date: formatDate(work.plannedEndDate) })
+    : t('dashboard.thePlanHasNoDates')
 }
 
 /**
@@ -54,5 +57,5 @@ export function barWidth(value) {
 /** "Sep 1 to Sep 5, 2026"-like range, or null without dates. */
 export function shortRange(start, end) {
   if (!start && !end) return null
-  return `${start ? formatDate(start) : '—'} to ${end ? formatDate(end) : '—'}`
+  return t('dashboard.range', { start: start ? formatDate(start) : '—', end: end ? formatDate(end) : '—' })
 }
