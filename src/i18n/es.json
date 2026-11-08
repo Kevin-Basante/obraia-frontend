@@ -231,6 +231,15 @@
     "theEndDateCannotBe": "La fecha de fin no puede ser antes de la de inicio",
     "catalogError": "No pudimos cargar el catálogo: {message}"
   },
+  "notifications": {
+    "justNow": "ahora mismo",
+    "minutesAgo": "hace {minutes} min",
+    "hoursAgo": "hace {hours} h",
+    "daysAgo": {
+      "one": "hace 1 día",
+      "other": "hace {count} días"
+    }
+  },
   "budget": {
     "countedBetweenTheDatesOf": "contados entre las fechas de las fases del plan",
     "fromTheStandardPhasesOf": "según las fases estándar del tipo de obra, porque el plan todavía no tiene fechas"
@@ -422,6 +431,15 @@
       "other": "\"{task}\" lleva {count} días de atraso"
     },
     "spending_vs_progress": "Se gastó el {spent}% del presupuesto con el {progress}% de la obra hecha"
+  },
+  "notificationText": {
+    "budget_approved": "Se aprobó la versión {version} del presupuesto de \"{project}\" por {amount}.",
+    "budget_deviation": "Los gastos de \"{project}\" superaron el presupuesto aprobado: {spent} gastados de {budget}.",
+    "delay_risk": "El riesgo de \"{project}\" subió a {level} ({score} de 100)",
+    "delay": {
+      "one": "Se espera cerca de 1 día de retraso.",
+      "other": "Se esperan cerca de {count} días de retraso."
+    }
   },
   "serverMessages": {
     "password_changed": "Tu contraseña cambió. Inicia sesión de nuevo con la contraseña nueva.",

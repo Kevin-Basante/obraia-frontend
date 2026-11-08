@@ -231,6 +231,15 @@
     "theEndDateCannotBe": "The end date cannot be before the start date",
     "catalogError": "We could not load the catalog: {message}"
   },
+  "notifications": {
+    "justNow": "just now",
+    "minutesAgo": "{minutes} min ago",
+    "hoursAgo": "{hours} h ago",
+    "daysAgo": {
+      "one": "1 day ago",
+      "other": "{count} days ago"
+    }
+  },
   "budget": {
     "countedBetweenTheDatesOf": "counted between the dates of the phases of the plan",
     "fromTheStandardPhasesOf": "from the standard phases of the project type, because the plan has no dates yet"
@@ -422,6 +431,15 @@
       "other": "\"{task}\" is {count} days late"
     },
     "spending_vs_progress": "{spent}% of the budget is spent with {progress}% of the work done"
+  },
+  "notificationText": {
+    "budget_approved": "Version {version} of the budget of \"{project}\" was approved for {amount}.",
+    "budget_deviation": "The expenses of \"{project}\" passed the approved budget: {spent} spent of {budget}.",
+    "delay_risk": "The risk of \"{project}\" rose to {level} ({score} of 100)",
+    "delay": {
+      "one": "About 1 day of delay is expected.",
+      "other": "About {count} days of delay are expected."
+    }
   },
   "serverMessages": {
     "password_changed": "Your password was changed. Sign in again with the new password.",
