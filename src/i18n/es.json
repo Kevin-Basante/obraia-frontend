@@ -531,6 +531,14 @@
     "link": "Te enviaremos un correo con un enlace que sirve durante {minutes} minutos. No se borra nada hasta que lo abras.",
     "purge": "Después de confirmar, tus datos se borran para siempre el {date}."
   },
+  "phaseCard": {
+    "late": "Atrasada",
+    "editPhase": "Editar fase",
+    "thisPhaseHasNoTasks": "Esta fase no tiene tareas.",
+    "savePhase": "Guardar fase",
+    "planned": "Planeado: {dates}",
+    "actual": "Real: {dates}"
+  },
   "deleteAccountForm": {
     "enterYourPassword": "Escribe tu contraseña",
     "yourPassword": "Tu contraseña",

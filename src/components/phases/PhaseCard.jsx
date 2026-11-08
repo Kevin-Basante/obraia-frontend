@@ -9,10 +9,11 @@ import { TaskTable } from './TaskTable.jsx'
 import { WorkItemForm } from './WorkItemForm.jsx'
 import { WorkStatusButtons } from './WorkStatusButtons.jsx'
 import './PhaseCard.css'
+import { t } from '../../i18n/i18n.js'
 
 function dateRange(start, end) {
   if (!start && !end) return null
-  return `${start ? formatDate(start) : '—'} to ${end ? formatDate(end) : '—'}`
+  return t('common.dateRange', { start: start ? formatDate(start) : '—', end: end ? formatDate(end) : '—' })
 }
 
 /**
@@ -39,21 +40,21 @@ export function PhaseCard({ projectId, phase, actions, busy }) {
           {phase.order}. {phase.name}
         </h2>
         <StatusBadge status={phase.status} />
-        {phase.late && <span className="late-tag">Late</span>}
+        {phase.late && <span className="late-tag">{t('phaseCard.late')}</span>}
       </div>
       {(planned || actual) && (
         <p className="muted">
-          {planned && `Planned: ${planned}`}
+          {planned && t('phaseCard.planned', { dates: planned })}
           {planned && actual && ' · '}
-          {actual && `Actual: ${actual}`}
+          {actual && t('phaseCard.actual', { dates: actual })}
         </p>
       )}
-      <ProgressBar value={phase.progressPct} label={`Progress of ${phase.name}`} />
+      <ProgressBar value={phase.progressPct} label={t('progressBar.of', { name: phase.name })} />
       {actions && !editing && (
         <div className="button-row">
           <WorkStatusButtons item={phase} onChange={(code) => actions.changePhaseStatus(phase, code)} busy={busy} />
           <button type="button" className="button-secondary button-small" onClick={() => setEditing(true)}>
-            Edit phase
+            {t('phaseCard.editPhase')}
           </button>
         </div>
       )}
@@ -63,11 +64,11 @@ export function PhaseCard({ projectId, phase, actions, busy }) {
           validate={validatePhase}
           onSave={save}
           onCancel={() => setEditing(false)}
-          submitText="Save phase"
+          submitText={t('phaseCard.savePhase')}
         />
       )}
       {phase.tasks.length === 0 ? (
-        <p className="muted">This phase has no tasks.</p>
+        <p className="muted">{t('phaseCard.thisPhaseHasNoTasks')}</p>
       ) : (
         <TaskTable
           projectId={projectId}

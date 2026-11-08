@@ -531,6 +531,14 @@
     "link": "We will email you a link that works for {minutes} minutes. Nothing is deleted until you open it.",
     "purge": "After you confirm, your data is removed for good on {date}."
   },
+  "phaseCard": {
+    "late": "Late",
+    "editPhase": "Edit phase",
+    "thisPhaseHasNoTasks": "This phase has no tasks.",
+    "savePhase": "Save phase",
+    "planned": "Planned: {dates}",
+    "actual": "Actual: {dates}"
+  },
   "deleteAccountForm": {
     "enterYourPassword": "Enter your password",
     "yourPassword": "Your password",
