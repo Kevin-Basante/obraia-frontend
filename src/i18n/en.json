@@ -690,6 +690,20 @@
       "other": "{count} members"
     }
   },
+  "projectSummary": {
+    "details": "Details",
+    "projectType": "Project type",
+    "city": "City",
+    "address": "Address",
+    "builtArea": "Built area",
+    "floors": "Floors",
+    "plannedDates": "Planned dates",
+    "actualDates": "Actual dates",
+    "area": "{area} m² ({size})",
+    "small": "small",
+    "large": "large",
+    "range": "{start} to {end}"
+  },
   "citiesPage": {
     "search": "Search",
     "cityName": "City name",

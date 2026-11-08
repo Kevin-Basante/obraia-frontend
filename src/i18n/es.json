@@ -690,6 +690,20 @@
       "other": "{count} miembros"
     }
   },
+  "projectSummary": {
+    "details": "Datos",
+    "projectType": "Tipo de obra",
+    "city": "Ciudad",
+    "address": "Dirección",
+    "builtArea": "Área construida",
+    "floors": "Pisos",
+    "plannedDates": "Fechas planeadas",
+    "actualDates": "Fechas reales",
+    "area": "{area} m² ({size})",
+    "small": "pequeña",
+    "large": "grande",
+    "range": "{start} a {end}"
+  },
   "citiesPage": {
     "search": "Buscar",
     "cityName": "Nombre de la ciudad",
