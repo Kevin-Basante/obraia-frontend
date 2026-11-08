@@ -184,6 +184,27 @@
     "overBudget": "Por encima del presupuesto",
     "spentShare": "Se ha gastado el {share} del presupuesto aprobado."
   },
+  "measurementsPage": {
+    "loadingTheMeasurements": "Cargando las medidas…",
+    "measurements": "Medidas",
+    "compareWithAi": "Comparar con la IA",
+    "addAMeasurement": "Agregar una medida",
+    "addMeasurement": "Agregar medida",
+    "measuredElements": "Elementos medidos",
+    "floor": "Piso",
+    "allFloors": "Todos los pisos",
+    "theProjectIsClosedThe": "La obra está cerrada: las medidas se pueden leer, pero no cambiar.",
+    "thereAreNoMeasurementsYet": "Todavía no hay medidas.",
+    "saveChanges": "Guardar cambios",
+    "thereAreNoMeasurementsOn": "No hay medidas en este piso.",
+    "confirmDelete": "¿Borrar esta medida de {element}?",
+    "editTitle": "Editar medida de {element}",
+    "units": "Las partes de concreto se cuentan en m³; muros, piso y cubierta en m². Cada elemento pide solo las dimensiones que necesita.",
+    "floors": {
+      "one": "1 piso",
+      "other": "{count} pisos"
+    }
+  },
   "costBreakdown": {
     "layer": "Capa",
     "detail": "Detalle",

@@ -184,6 +184,27 @@
     "overBudget": "Over budget",
     "spentShare": "{share} of the approved budget is spent."
   },
+  "measurementsPage": {
+    "loadingTheMeasurements": "Loading the measurements…",
+    "measurements": "Measurements",
+    "compareWithAi": "Compare with AI",
+    "addAMeasurement": "Add a measurement",
+    "addMeasurement": "Add measurement",
+    "measuredElements": "Measured elements",
+    "floor": "Floor",
+    "allFloors": "All floors",
+    "theProjectIsClosedThe": "The project is closed: the measurements can be read but not changed.",
+    "thereAreNoMeasurementsYet": "There are no measurements yet.",
+    "saveChanges": "Save changes",
+    "thereAreNoMeasurementsOn": "There are no measurements on this floor.",
+    "confirmDelete": "Delete this measurement of {element}?",
+    "editTitle": "Edit measurement of {element}",
+    "units": "Concrete parts are counted in m³; walls, floor and roof in m². Each element asks only for the dimensions it needs.",
+    "floors": {
+      "one": "1 floor",
+      "other": "{count} floors"
+    }
+  },
   "costBreakdown": {
     "layer": "Layer",
     "detail": "Detail",

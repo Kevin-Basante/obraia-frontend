@@ -21,6 +21,7 @@ import { getProject } from '../../services/projectService.js'
 import { EMPTY_MEASUREMENT_FORM, toMeasurementForm } from '../../utils/measurementForm.js'
 import { isClosed } from '../../utils/projectStatus.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
+import { codeText, t } from '../../i18n/i18n.js'
 
 /** Manual measurements of a project: add, edit, delete and filter them by floor. */
 export function MeasurementsPage() {
@@ -54,14 +55,14 @@ export function MeasurementsPage() {
   const failed = [project, elementTypes, blueprints, measurements].find((request) => request.status === 'error')
   if (failed) return <ErrorState error={failed.error} onRetry={failed.retry} />
   if (!project.data || !elementTypes.data || !blueprints.data || !measurements.data) {
-    return <LoadingState title="Loading the measurements…" />
+    return <LoadingState title={t('measurementsPage.loadingTheMeasurements')} />
   }
 
   const closed = isClosed(project.data)
   const floors = project.data.floors
   const floorOptions = Array.from({ length: floors }, (_, index) => ({
     value: String(index + 1),
-    label: `Floor ${index + 1}`,
+    label: t('measurementForm.floorNumber', { number: index + 1 }),
   }))
 
   function handleEdit(measurement) {
@@ -75,7 +76,13 @@ export function MeasurementsPage() {
   }
 
   function handleDelete(measurement) {
-    if (window.confirm(`Delete this measurement of ${measurement.elementLabel.toLowerCase()}?`)) {
+    if (
+      window.confirm(
+        t('measurementsPage.confirmDelete', {
+          element: codeText('element', measurement.elementType, measurement.elementLabel).toLowerCase(),
+        }),
+      )
+    ) {
       if (editing?.id === measurement.id) handleCancel()
       removing.submit(measurement.id)
     }
@@ -84,23 +91,26 @@ export function MeasurementsPage() {
   return (
     <div className="workspace">
       <PageHeader
-        title="Measurements"
-        description={`${project.data.name} · ${floors === 1 ? '1 floor' : `${floors} floors`}`}
+        title={t('measurementsPage.measurements')}
+        description={`${project.data.name} · ${t('measurementsPage.floors', { count: floors })}`}
         back={{ to: `/projects/${id}`, label: project.data.name }}
         actions={
           <Link to={`/projects/${id}/measurements/comparison`} className="button-link button-secondary">
-            Compare with AI
+            {t('measurementsPage.compareWithAi')}
           </Link>
         }
       />
       <div className="workspace__split">
         {!closed && (
           <section className="card">
-            <h2>{editing ? `Edit measurement of ${editing.elementLabel.toLowerCase()}` : 'Add a measurement'}</h2>
-            <p className="muted">
-              Concrete parts are counted in m³; walls, floor and roof in m². Each element asks only for the dimensions
-              it needs.
-            </p>
+            <h2>
+              {editing
+                ? t('measurementsPage.editTitle', {
+                    element: codeText('element', editing.elementType, editing.elementLabel).toLowerCase(),
+                  })
+                : t('measurementsPage.addAMeasurement')}
+            </h2>
+            <p className="muted">{t('measurementsPage.units')}</p>
             <MeasurementForm
               key={formKey}
               initialForm={editing ? toMeasurementForm(editing) : EMPTY_MEASUREMENT_FORM}
@@ -109,27 +119,27 @@ export function MeasurementsPage() {
               floors={floors}
               onSave={save}
               onCancel={editing ? handleCancel : undefined}
-              submitText={editing ? 'Save changes' : 'Add measurement'}
+              submitText={editing ? t('measurementsPage.saveChanges') : t('measurementsPage.addMeasurement')}
             />
           </section>
         )}
         <section className="card">
           <div className="button-row measurements-header">
-            <h2>Measured elements</h2>
+            <h2>{t('measurementsPage.measuredElements')}</h2>
             {floors > 1 && (
               <SelectField
-                label="Floor"
-                placeholder="All floors"
+                label={t('measurementsPage.floor')}
+                placeholder={t('measurementsPage.allFloors')}
                 options={floorOptions}
                 value={floor}
                 onChange={(event) => setFloor(event.target.value)}
               />
             )}
           </div>
-          {closed && <p className="muted">The project is closed: the measurements can be read but not changed.</p>}
+          {closed && <p className="muted">{t('measurementsPage.theProjectIsClosedThe')}</p>}
           {measurements.data.length === 0 ? (
             <p className="muted">
-              {floor ? 'There are no measurements on this floor.' : 'There are no measurements yet.'}
+              {floor ? t('measurementsPage.thereAreNoMeasurementsOn') : t('measurementsPage.thereAreNoMeasurementsYet')}
             </p>
           ) : (
             <MeasurementTable
