@@ -4,6 +4,7 @@ import { ProgressBar } from '../phases/ProgressBar.jsx'
 import '../budgets/QuotationFacts.css'
 import '../catalog/DataTable.css'
 import './ExpenseSummary.css'
+import { codeLabel, t } from '../../i18n/i18n.js'
 
 /**
  * Total spent against the approved budget and the total of each category.
@@ -17,16 +18,16 @@ export function ExpenseSummary({ summary }) {
     <>
       <dl className="quotation-facts">
         <div>
-          <dt>Spent</dt>
+          <dt>{t('expenseSummary.spent')}</dt>
           <dd>{formatCurrency(summary.totalSpent)}</dd>
         </div>
         <div>
-          <dt>Approved budget</dt>
-          <dd>{hasBudget ? formatCurrency(summary.approvedBudget) : 'Not approved yet'}</dd>
+          <dt>{t('expenseSummary.approvedBudget')}</dt>
+          <dd>{hasBudget ? formatCurrency(summary.approvedBudget) : t('expenseSummary.notApprovedYet')}</dd>
         </div>
         {hasBudget && (
           <div>
-            <dt>{over ? 'Over budget' : 'Remaining'}</dt>
+            <dt>{over ? t('expenseSummary.overBudget') : t('expenseSummary.remaining')}</dt>
             <dd className={over ? 'expense-summary__over' : undefined}>
               {formatCurrency(Math.abs(Number(summary.remaining)))}
             </dd>
@@ -38,10 +39,10 @@ export function ExpenseSummary({ summary }) {
           {/* The bar stops at 100%, so a passed budget is told in words. */}
           {over ? (
             <p className="expense-summary__over">
-              {formatPercent(Number(summary.spentPct) / 100)} of the approved budget is spent.
+              {t('expenseSummary.spentShare', { share: formatPercent(Number(summary.spentPct) / 100) })}
             </p>
           ) : (
-            <ProgressBar value={summary.spentPct} label="Approved budget spent" />
+            <ProgressBar value={summary.spentPct} label={t('expenseSummary.approvedBudgetSpent')} />
           )}
         </div>
       )}
@@ -49,29 +50,29 @@ export function ExpenseSummary({ summary }) {
         <table className="data-table">
           <thead>
             <tr>
-              <th scope="col">Category</th>
+              <th scope="col">{t('expenseSummary.category')}</th>
               <th scope="col" className="data-table__number">
-                Expenses
+                {t('expenseSummary.expenses')}
               </th>
               <th scope="col" className="data-table__number">
-                Amount
+                {t('expenseSummary.amount')}
               </th>
               <th scope="col" className="data-table__number">
-                Share
+                {t('expenseSummary.share')}
               </th>
             </tr>
           </thead>
           <tbody>
             {summary.byCategory.map((total) => (
               <tr key={total.category.code}>
-                <td data-label="Category">{total.category.label}</td>
-                <td data-label="Expenses" className="data-table__number">
+                <td data-label={t('expenseSummary.category')}>{codeLabel('expenseCategory', total.category)}</td>
+                <td data-label={t('expenseSummary.expenses')} className="data-table__number">
                   {total.count}
                 </td>
-                <td data-label="Amount" className="data-table__number">
+                <td data-label={t('expenseSummary.amount')} className="data-table__number">
                   {formatCurrency(total.amount)}
                 </td>
-                <td data-label="Share" className="data-table__number">
+                <td data-label={t('expenseSummary.share')} className="data-table__number">
                   {formatPercent(shareOfTotal(total.amount, summary.totalSpent))}
                 </td>
               </tr>

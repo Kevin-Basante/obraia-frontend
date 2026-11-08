@@ -154,6 +154,19 @@
     "subtotal": "Subtotal",
     "totalMaterials": "Total materials"
   },
+  "expenseSummary": {
+    "spent": "Spent",
+    "approvedBudget": "Approved budget",
+    "notApprovedYet": "Not approved yet",
+    "remaining": "Remaining",
+    "approvedBudgetSpent": "Approved budget spent",
+    "category": "Category",
+    "expenses": "Expenses",
+    "amount": "Amount",
+    "share": "Share",
+    "overBudget": "Over budget",
+    "spentShare": "{share} of the approved budget is spent."
+  },
   "costBreakdown": {
     "layer": "Layer",
     "detail": "Detail",
