@@ -3,6 +3,7 @@ import { PageHeader } from '../../components/PageHeader.jsx'
 import { ProjectForm } from '../../components/projects/ProjectForm.jsx'
 import { createProject } from '../../services/projectService.js'
 import { EMPTY_PROJECT_FORM } from '../../utils/projectForm.js'
+import { t } from '../../i18n/i18n.js'
 
 /** Creates a project in draft status and opens its page. */
 export function NewProjectPage() {
@@ -17,11 +18,16 @@ export function NewProjectPage() {
   return (
     <div className="workspace">
       <PageHeader
-        title="New project"
-        description="It starts as a draft. You can change every value later."
-        back={{ to: '/projects', label: 'My projects' }}
+        title={t('newProjectPage.newProject')}
+        description={t('newProjectPage.itStartsAsADraft')}
+        back={{ to: '/projects', label: t('newProjectPage.myProjects') }}
       />
-      <ProjectForm initialForm={EMPTY_PROJECT_FORM} onSave={save} submitText="Create project" pendingText="Creating…" />
+      <ProjectForm
+        initialForm={EMPTY_PROJECT_FORM}
+        onSave={save}
+        submitText={t('newProjectPage.createProject')}
+        pendingText={t('newProjectPage.creating')}
+      />
     </div>
   )
 }

@@ -959,6 +959,13 @@
     "large": "grande",
     "range": "{start} a {end}"
   },
+  "newProjectPage": {
+    "newProject": "Nueva obra",
+    "itStartsAsADraft": "Empieza como borrador. Puedes cambiar cada valor después.",
+    "myProjects": "Mis obras",
+    "creating": "Creando…",
+    "createProject": "Crear obra"
+  },
   "citiesPage": {
     "search": "Buscar",
     "cityName": "Nombre de la ciudad",

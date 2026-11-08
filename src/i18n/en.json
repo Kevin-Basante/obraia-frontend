@@ -959,6 +959,13 @@
     "large": "large",
     "range": "{start} to {end}"
   },
+  "newProjectPage": {
+    "newProject": "New project",
+    "itStartsAsADraft": "It starts as a draft. You can change every value later.",
+    "myProjects": "My projects",
+    "creating": "Creating…",
+    "createProject": "Create project"
+  },
   "citiesPage": {
     "search": "Search",
     "cityName": "City name",
