@@ -1,5 +1,6 @@
 import { formatCurrency, formatDate } from '../../utils/format.js'
 import '../catalog/DataTable.css'
+import { codeLabel, t } from '../../i18n/i18n.js'
 
 /** Expenses of a project, newest first. `onDelete` is left out when the project is closed. */
 export function ExpenseTable({ expenses, onDelete, busy }) {
@@ -7,32 +8,32 @@ export function ExpenseTable({ expenses, onDelete, busy }) {
     <table className="data-table">
       <thead>
         <tr>
-          <th scope="col">Date</th>
-          <th scope="col">Category</th>
-          <th scope="col">Description</th>
-          <th scope="col">Registered by</th>
+          <th scope="col">{t('expenseTable.date')}</th>
+          <th scope="col">{t('expenseTable.category')}</th>
+          <th scope="col">{t('expenseTable.description')}</th>
+          <th scope="col">{t('expenseTable.registeredBy')}</th>
           <th scope="col" className="data-table__number">
-            Amount
+            {t('expenseTable.amount')}
           </th>
           <th scope="col">
-            <span className="visually-hidden">Actions</span>
+            <span className="visually-hidden">{t('expenseTable.actions')}</span>
           </th>
         </tr>
       </thead>
       <tbody>
         {expenses.map((expense) => (
           <tr key={expense.id}>
-            <td data-label="Date">{formatDate(expense.expenseDate)}</td>
-            <td data-label="Category">{expense.category.label}</td>
-            <td data-label="Description">
+            <td data-label={t('expenseTable.date')}>{formatDate(expense.expenseDate)}</td>
+            <td data-label={t('expenseTable.category')}>{codeLabel('expenseCategory', expense.category)}</td>
+            <td data-label={t('expenseTable.description')}>
               {expense.description}
               {expense.phaseName && <span className="muted"> · {expense.phaseName}</span>}
             </td>
-            <td data-label="Registered by">{expense.registeredBy ?? '—'}</td>
-            <td data-label="Amount" className="data-table__number">
+            <td data-label={t('expenseTable.registeredBy')}>{expense.registeredBy ?? '—'}</td>
+            <td data-label={t('expenseTable.amount')} className="data-table__number">
               {formatCurrency(expense.amount)}
             </td>
-            <td data-label="Actions">
+            <td data-label={t('expenseTable.actions')}>
               {onDelete && (
                 <button
                   type="button"
@@ -40,7 +41,7 @@ export function ExpenseTable({ expenses, onDelete, busy }) {
                   disabled={busy}
                   onClick={() => onDelete(expense)}
                 >
-                  Delete
+                  {t('expenseTable.delete')}
                 </button>
               )}
             </td>

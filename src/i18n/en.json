@@ -227,6 +227,15 @@
   "materialGrid": {
     "priceOf": "Price of"
   },
+  "expenseTable": {
+    "date": "Date",
+    "category": "Category",
+    "description": "Description",
+    "registeredBy": "Registered by",
+    "amount": "Amount",
+    "actions": "Actions",
+    "delete": "Delete"
+  },
   "expenseForm": {
     "category": "Category",
     "chooseACategory": "Choose a category",

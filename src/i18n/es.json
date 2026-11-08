@@ -227,6 +227,15 @@
   "materialGrid": {
     "priceOf": "Precio del"
   },
+  "expenseTable": {
+    "date": "Fecha",
+    "category": "Categoría",
+    "description": "Descripción",
+    "registeredBy": "Registrado por",
+    "amount": "Monto",
+    "actions": "Acciones",
+    "delete": "Borrar"
+  },
   "expenseForm": {
     "category": "Categoría",
     "chooseACategory": "Elige una categoría",
