@@ -53,6 +53,11 @@
       "other": "{count} obras"
     }
   },
+  "greeting": {
+    "goodMorning": "Buenos días",
+    "goodAfternoon": "Buenas tardes",
+    "goodEvening": "Buenas noches"
+  },
   "codes": {
     "status": {
       "draft": "Borrador",
