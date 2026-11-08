@@ -375,6 +375,20 @@
     "everythingAHouseNeedsIn": "Everything a house needs, in one place",
     "familiesAndSmallBuildersPlan": "Families and small builders plan houses of up to two floors without spreadsheets or guesses."
   },
+  "projectWorkLinks": {
+    "blueprints": "Blueprints",
+    "uploadThePlansAndRead": "Upload the plans and read them with AI",
+    "measurements": "Measurements",
+    "eachElementByHandOr": "Each element, by hand or by AI",
+    "phasesAndTasks": "Phases and tasks",
+    "thePlanOfTheWork": "The plan of the work and its progress",
+    "budget": "Budget",
+    "quoteTheCostAndApprove": "Quote the cost and approve a version",
+    "expenses": "Expenses",
+    "whatIsSpentAgainstThe": "What is spent against the budget",
+    "workOnTheProject": "Work on the project",
+    "uploadThePlansRecordThe": "Upload the plans, record the measurements of each element, follow the phases and tasks of the work, quote its cost and register what is spent."
+  },
   "formulaTable": {
     "per": "· per",
     "material": "Material",

@@ -375,6 +375,20 @@
     "everythingAHouseNeedsIn": "Todo lo que una casa necesita, en un solo lugar",
     "familiesAndSmallBuildersPlan": "Familias y pequeños constructores planean casas de hasta dos pisos sin hojas de cálculo ni suposiciones."
   },
+  "projectWorkLinks": {
+    "blueprints": "Planos",
+    "uploadThePlansAndRead": "Sube los planos y léelos con IA",
+    "measurements": "Medidas",
+    "eachElementByHandOr": "Cada elemento, a mano o con IA",
+    "phasesAndTasks": "Fases y tareas",
+    "thePlanOfTheWork": "El plan de la obra y su avance",
+    "budget": "Presupuesto",
+    "quoteTheCostAndApprove": "Cotiza el costo y aprueba una versión",
+    "expenses": "Gastos",
+    "whatIsSpentAgainstThe": "Lo gastado frente al presupuesto",
+    "workOnTheProject": "Trabajar en la obra",
+    "uploadThePlansRecordThe": "Sube los planos, registra las medidas de cada elemento, sigue las fases y tareas de la obra, cotiza su costo y registra lo que se gasta."
+  },
   "formulaTable": {
     "per": "· por",
     "material": "Material",
