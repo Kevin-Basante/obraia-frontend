@@ -1,3 +1,4 @@
+import { t } from '../i18n/i18n.js'
 // Rules of a progress report, checked before sending the form.
 
 export const EMPTY_PROGRESS_FORM = { completionPercentage: '', reportDate: '', notes: '', fromSiteManager: false }
@@ -23,10 +24,10 @@ export function todayIso(now = new Date()) {
 export function validateProgress(form, today = todayIso()) {
   const errors = {}
   if (parsePercentage(form.completionPercentage) === null) {
-    errors.completionPercentage = 'Enter a number from 0 to 100, with up to 2 decimals'
+    errors.completionPercentage = t('progressForm.enterANumberFrom0')
   }
-  if (form.reportDate && form.reportDate > today) errors.reportDate = 'The date cannot be in the future'
-  if (form.notes.trim().length > 1000) errors.notes = 'Use at most 1000 characters'
+  if (form.reportDate && form.reportDate > today) errors.reportDate = t('progressForm.theDateCannotBeIn')
+  if (form.notes.trim().length > 1000) errors.notes = t('progressForm.useAtMost1000Characters')
   return errors
 }
 

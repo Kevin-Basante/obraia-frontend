@@ -143,6 +143,11 @@
     "saving": "Saving…",
     "savePassword": "Save password"
   },
+  "progressForm": {
+    "enterANumberFrom0": "Enter a number from 0 to 100, with up to 2 decimals",
+    "theDateCannotBeIn": "The date cannot be in the future",
+    "useAtMost1000Characters": "Use at most 1000 characters"
+  },
   "codes": {
     "status": {
       "draft": "Draft",
