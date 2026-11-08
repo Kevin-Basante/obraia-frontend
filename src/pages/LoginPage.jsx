@@ -8,6 +8,7 @@ import { SubmitButton } from '../components/SubmitButton.jsx'
 import { useAuth } from '../hooks/useAuth.js'
 import { useFormSubmit } from '../hooks/useFormSubmit.js'
 import { validateEmail } from '../utils/validation.js'
+import { t } from '../i18n/i18n.js'
 
 /** Sign-in form. An unverified account gets a link to resend the email. */
 export function LoginPage() {
@@ -25,7 +26,7 @@ export function LoginPage() {
     const errors = {}
     const emailError = validateEmail(email)
     if (emailError) errors.email = emailError
-    if (!password) errors.password = 'Enter your password'
+    if (!password) errors.password = t('loginPage.enterYourPassword')
     if (Object.keys(errors).length > 0) {
       setFieldErrors(errors)
       return
@@ -41,18 +42,18 @@ export function LoginPage() {
 
   return (
     <AuthCard
-      title="Sign in"
-      description="Welcome back to ObraIA."
+      title={t('loginPage.signIn')}
+      description={t('loginPage.welcomeBackToObraia')}
       footer={
         <>
           <p>
-            <Link to="/forgot-password">Forgot your password?</Link>
+            <Link to="/forgot-password">{t('loginPage.forgotYourPassword')}</Link>
           </p>
           <p>
-            New to ObraIA? <Link to="/register">Create an account</Link>
+            {t('loginPage.newToObraia')} <Link to="/register">{t('loginPage.createAnAccount')}</Link>
           </p>
           <button type="button" className="button-secondary" onClick={tryAsGuest}>
-            Continue as guest
+            {t('loginPage.continueAsGuest')}
           </button>
         </>
       }
@@ -63,12 +64,12 @@ export function LoginPage() {
         {error?.code === 'EMAIL_NOT_VERIFIED' && (
           <p className="auth-form__note">
             <Link to="/check-email" state={{ email: email.trim() }}>
-              Send me the verification email again
+              {t('loginPage.sendMeTheVerificationEmail')}
             </Link>
           </p>
         )}
         <FormField
-          label="Email"
+          label={t('loginPage.email')}
           type="email"
           autoComplete="email"
           value={email}
@@ -76,14 +77,14 @@ export function LoginPage() {
           error={fieldErrors.email}
         />
         <PasswordField
-          label="Password"
+          label={t('loginPage.password')}
           autoComplete="current-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           error={fieldErrors.password}
         />
-        <SubmitButton pending={pending} pendingText="Signing in…">
-          Sign in
+        <SubmitButton pending={pending} pendingText={t('loginPage.signingIn')}>
+          {t('loginPage.signIn')}
         </SubmitButton>
       </form>
     </AuthCard>

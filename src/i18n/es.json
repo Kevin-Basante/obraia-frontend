@@ -331,6 +331,19 @@
     "goodAfternoon": "Buenas tardes",
     "goodEvening": "Buenas noches"
   },
+  "loginPage": {
+    "enterYourPassword": "Escribe tu contraseña",
+    "signIn": "Iniciar sesión",
+    "welcomeBackToObraia": "Qué bueno verte de nuevo en ObraIA.",
+    "forgotYourPassword": "¿Olvidaste tu contraseña?",
+    "newToObraia": "¿Eres nuevo en ObraIA?",
+    "createAnAccount": "Crea una cuenta",
+    "continueAsGuest": "Continuar como invitado",
+    "sendMeTheVerificationEmail": "Enviarme otra vez el correo de verificación",
+    "email": "Correo",
+    "password": "Contraseña",
+    "signingIn": "Entrando…"
+  },
   "measurementForm": {
     "element": "Elemento",
     "chooseAnElement": "Elige un elemento",
