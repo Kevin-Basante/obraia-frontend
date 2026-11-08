@@ -549,6 +549,10 @@
     "moreThan120M": "más de 120 m²",
     "projectSize": "Tamaño de la obra"
   },
+  "projectTypesPage": {
+    "loadingProjectTypes": "Cargando tipos de obra…",
+    "seePhasesAndMaterials": "Ver fases y materiales"
+  },
   "confirmDeletionPage": {
     "deletingTheProject": "Eliminando la obra…",
     "oneMoment": "Un momento.",
