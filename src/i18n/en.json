@@ -272,6 +272,18 @@
     "theEndDateCannotBe": "The end date cannot be before the start date",
     "catalogError": "We could not load the catalog: {message}"
   },
+  "howItWorks": {
+    "uploadTheBlueprint": "Upload the blueprint",
+    "aPhotoOrAPdf": "A photo or a PDF of the plans of your house. Up to two floors.",
+    "theAiMeasuresIt": "The AI measures it",
+    "itReadsWallsFloorsSlabs": "It reads walls, floors, slabs and roofs, and you compare them with your own measurements.",
+    "getTheBudget": "Get the budget",
+    "materialsWasteTransportLaborAnd": "Materials, waste, transport, labor and VAT with the reference prices of your city.",
+    "followTheWork": "Follow the work",
+    "phasesTasksExpensesAndAn": "Phases, tasks, expenses and an alert when the project risks a delay or a budget overrun.",
+    "howItWorks": "How it works",
+    "fromTheDrawingToThe": "From the drawing to the last brick"
+  },
   "notifications": {
     "justNow": "just now",
     "minutesAgo": "{minutes} min ago",

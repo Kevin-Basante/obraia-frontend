@@ -272,6 +272,18 @@
     "theEndDateCannotBe": "La fecha de fin no puede ser antes de la de inicio",
     "catalogError": "No pudimos cargar el catálogo: {message}"
   },
+  "howItWorks": {
+    "uploadTheBlueprint": "Sube el plano",
+    "aPhotoOrAPdf": "Una foto o un PDF de los planos de tu casa. Hasta dos pisos.",
+    "theAiMeasuresIt": "La IA lo mide",
+    "itReadsWallsFloorsSlabs": "Lee muros, pisos, placas y cubiertas, y tú los comparas con tus propias medidas.",
+    "getTheBudget": "Obtén el presupuesto",
+    "materialsWasteTransportLaborAnd": "Materiales, desperdicio, transporte, mano de obra e IVA con los precios de referencia de tu ciudad.",
+    "followTheWork": "Sigue la obra",
+    "phasesTasksExpensesAndAn": "Fases, tareas, gastos y una alerta cuando la obra corre riesgo de retraso o de pasarse del presupuesto.",
+    "howItWorks": "Cómo funciona",
+    "fromTheDrawingToThe": "Del dibujo al último ladrillo"
+  },
   "notifications": {
     "justNow": "ahora mismo",
     "minutesAgo": "hace {minutes} min",
