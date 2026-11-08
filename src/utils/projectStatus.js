@@ -1,26 +1,16 @@
+import { codeText, hasText, t } from '../i18n/i18n.js'
 // Statuses of a project, in the order of its life cycle. The backend sends
 // the label too; this list is only for the filter of the project list.
-export const PROJECT_STATUSES = [
-  { value: 'draft', label: 'Draft' },
-  { value: 'planned', label: 'Planned' },
-  { value: 'in_progress', label: 'In progress' },
-  { value: 'paused', label: 'Paused' },
-  { value: 'completed', label: 'Completed' },
-  { value: 'cancelled', label: 'Cancelled' },
-]
+export const PROJECT_STATUSES = ['draft', 'planned', 'in_progress', 'paused', 'completed', 'cancelled']
 
-// Text of the button that moves a project to each status.
-const ACTION_LABELS = {
-  draft: 'Back to draft',
-  planned: 'Mark as planned',
-  in_progress: 'Start work',
-  paused: 'Pause',
-  completed: 'Mark as completed',
-  cancelled: 'Cancel project',
+/** Options of the status filter, in the current language. */
+export function projectStatusOptions() {
+  return PROJECT_STATUSES.map((code) => ({ value: code, label: codeText('status', code) }))
 }
 
+/** Text of the button that moves a project to each status. */
 export function statusActionLabel(code) {
-  return ACTION_LABELS[code] ?? code
+  return hasText(`projectStatus.actions.${code}`) ? t(`projectStatus.actions.${code}`) : code
 }
 
 /** Completed and cancelled projects can no longer change. */

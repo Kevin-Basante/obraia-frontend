@@ -168,6 +168,18 @@
     "theFileIsTooLarge": "The file is too large. The limit is 10 MB",
     "uploadAPdfOrAnImage": "Upload a PDF or an image (PNG, JPG or WEBP)"
   },
+  "projectsPage": {
+    "myProjects": "My projects",
+    "projectsYouCreatedOrThat": "Projects you created or that others shared with you.",
+    "newProject": "New project",
+    "search": "Search",
+    "nameOrCity": "Name or city…",
+    "status": "Status",
+    "allStatuses": "All statuses",
+    "loadingYourProjects": "Loading your projects…",
+    "youHaveNoProjectsYet": "You have no projects yet. Create the first one.",
+    "noProjectsMatchTheseFilters": "No projects match these filters."
+  },
   "validation": {
     "atLeast8CharactersWith": "At least 8 characters, with one letter and one number.",
     "enterYourEmail": "Enter your email",
@@ -251,6 +263,32 @@
     "confirmNewPassword": "Confirm new password",
     "saving": "Saving…",
     "savePassword": "Save password"
+  },
+  "citiesPage": {
+    "search": "Search",
+    "cityName": "City name",
+    "department": "Department",
+    "allDepartments": "All departments",
+    "loadingCities": "Loading cities…",
+    "noCitiesMatchTheseFilters": "No cities match these filters."
+  },
+  "materialsPage": {
+    "search": "Search",
+    "cementSandBlock": "Cement, sand, block…",
+    "category": "Category",
+    "allCategories": "All categories",
+    "loadingMaterials": "Loading materials…",
+    "noMaterialsMatchTheseFilters": "No materials match these filters."
+  },
+  "projectStatus": {
+    "actions": {
+      "draft": "Back to draft",
+      "planned": "Mark as planned",
+      "in_progress": "Start work",
+      "paused": "Pause",
+      "completed": "Mark as completed",
+      "cancelled": "Cancel project"
+    }
   },
   "workForm": {
     "theEndCannotBeBefore": "The end cannot be before the start",

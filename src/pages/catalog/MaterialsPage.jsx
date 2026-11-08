@@ -10,6 +10,7 @@ import { ResultCount } from '../../components/catalog/ResultCount.jsx'
 import { useApiData } from '../../hooks/useApiData.js'
 import { useDebouncedValue } from '../../hooks/useDebouncedValue.js'
 import { getMaterialCategories, getMaterials } from '../../services/catalogService.js'
+import { codeLabel, t } from '../../i18n/i18n.js'
 
 /** Material catalog with filters by category and name. */
 export function MaterialsPage() {
@@ -23,21 +24,24 @@ export function MaterialsPage() {
     [category, debouncedSearch],
   )
 
-  const categoryOptions = (categories.data ?? []).map((item) => ({ value: item.code, label: item.label }))
+  const categoryOptions = (categories.data ?? []).map((item) => ({
+    value: item.code,
+    label: codeLabel('materialCategory', item),
+  }))
 
   return (
     <>
       <FilterBar>
         <FormField
-          label="Search"
+          label={t('materialsPage.search')}
           type="search"
-          placeholder="Cement, sand, block…"
+          placeholder={t('materialsPage.cementSandBlock')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         <SelectField
-          label="Category"
-          placeholder="All categories"
+          label={t('materialsPage.category')}
+          placeholder={t('materialsPage.allCategories')}
           options={categoryOptions}
           value={category}
           onChange={(e) => setCategory(e.target.value)}
@@ -45,17 +49,14 @@ export function MaterialsPage() {
       </FilterBar>
 
       {materials.status === 'error' && <ErrorState error={materials.error} onRetry={materials.retry} />}
-      {materials.status === 'loading' && !materials.data && <LoadingState title="Loading materials…" />}
+      {materials.status === 'loading' && !materials.data && (
+        <LoadingState title={t('materialsPage.loadingMaterials')} />
+      )}
       {materials.data && materials.status !== 'error' && (
         <>
-          <ResultCount
-            count={materials.data.length}
-            singular="material"
-            plural="materials"
-            updating={materials.status === 'loading'}
-          />
+          <ResultCount count={materials.data.length} noun="material" updating={materials.status === 'loading'} />
           {materials.data.length === 0 ? (
-            <EmptyState>No materials match these filters.</EmptyState>
+            <EmptyState>{t('materialsPage.noMaterialsMatchTheseFilters')}</EmptyState>
           ) : (
             <MaterialGrid materials={materials.data} updating={materials.status === 'loading'} />
           )}

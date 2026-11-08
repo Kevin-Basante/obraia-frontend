@@ -12,7 +12,8 @@ import { ProjectList } from '../../components/projects/ProjectList.jsx'
 import { useApiData } from '../../hooks/useApiData.js'
 import { useDebouncedValue } from '../../hooks/useDebouncedValue.js'
 import { listProjects } from '../../services/projectService.js'
-import { PROJECT_STATUSES } from '../../utils/projectStatus.js'
+import { projectStatusOptions } from '../../utils/projectStatus.js'
+import { t } from '../../i18n/i18n.js'
 
 /** Projects of the user, newest first, with filters by status and by name or city. */
 export function ProjectsPage() {
@@ -28,44 +29,41 @@ export function ProjectsPage() {
   return (
     <div className="workspace">
       <PageHeader
-        title="My projects"
-        description="Projects you created or that others shared with you."
+        title={t('projectsPage.myProjects')}
+        description={t('projectsPage.projectsYouCreatedOrThat')}
         actions={
           <Link to="/projects/new" className="button-link">
-            New project
+            {t('projectsPage.newProject')}
           </Link>
         }
       />
       <FilterBar>
         <FormField
-          label="Search"
+          label={t('projectsPage.search')}
           type="search"
-          placeholder="Name or city…"
+          placeholder={t('projectsPage.nameOrCity')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         <SelectField
-          label="Status"
-          placeholder="All statuses"
-          options={PROJECT_STATUSES}
+          label={t('projectsPage.status')}
+          placeholder={t('projectsPage.allStatuses')}
+          options={projectStatusOptions()}
           value={status}
           onChange={(e) => setStatus(e.target.value)}
         />
       </FilterBar>
 
       {projects.status === 'error' && <ErrorState error={projects.error} onRetry={projects.retry} />}
-      {projects.status === 'loading' && !projects.data && <LoadingState title="Loading your projects…" />}
+      {projects.status === 'loading' && !projects.data && (
+        <LoadingState title={t('projectsPage.loadingYourProjects')} />
+      )}
       {projects.data && projects.status !== 'error' && (
         <>
-          <ResultCount
-            count={projects.data.length}
-            singular="project"
-            plural="projects"
-            updating={projects.status === 'loading'}
-          />
+          <ResultCount count={projects.data.length} noun="project" updating={projects.status === 'loading'} />
           {projects.data.length === 0 ? (
             <EmptyState>
-              {filtered ? 'No projects match these filters.' : 'You have no projects yet. Create the first one.'}
+              {filtered ? t('projectsPage.noProjectsMatchTheseFilters') : t('projectsPage.youHaveNoProjectsYet')}
             </EmptyState>
           ) : (
             <ProjectList projects={projects.data} updating={projects.status === 'loading'} />

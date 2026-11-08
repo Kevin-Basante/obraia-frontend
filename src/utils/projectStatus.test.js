@@ -1,16 +1,19 @@
 import { describe, expect, it } from 'vitest'
-import { PROJECT_STATUSES, isClosed, needsConfirmation, statusActionLabel } from './projectStatus.js'
+import {
+  PROJECT_STATUSES,
+  isClosed,
+  projectStatusOptions,
+  needsConfirmation,
+  statusActionLabel,
+} from './projectStatus.js'
 
 describe('projectStatus', () => {
   it('lists the six statuses of the backend', () => {
-    expect(PROJECT_STATUSES.map((status) => status.value)).toEqual([
-      'draft',
-      'planned',
-      'in_progress',
-      'paused',
-      'completed',
-      'cancelled',
-    ])
+    expect(PROJECT_STATUSES).toEqual(['draft', 'planned', 'in_progress', 'paused', 'completed', 'cancelled'])
+  })
+
+  it('builds the options of the status list', () => {
+    expect(projectStatusOptions()[2]).toEqual({ value: 'in_progress', label: 'In progress' })
   })
 
   it('names the action that moves the project to each status', () => {

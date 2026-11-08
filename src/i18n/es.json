@@ -168,6 +168,18 @@
     "theFileIsTooLarge": "El archivo es muy grande. El límite es 10 MB",
     "uploadAPdfOrAnImage": "Sube un PDF o una imagen (PNG, JPG o WEBP)"
   },
+  "projectsPage": {
+    "myProjects": "Mis obras",
+    "projectsYouCreatedOrThat": "Obras que creaste o que otras personas compartieron contigo.",
+    "newProject": "Nueva obra",
+    "search": "Buscar",
+    "nameOrCity": "Nombre o ciudad…",
+    "status": "Estado",
+    "allStatuses": "Todos los estados",
+    "loadingYourProjects": "Cargando tus obras…",
+    "youHaveNoProjectsYet": "Todavía no tienes obras. Crea la primera.",
+    "noProjectsMatchTheseFilters": "Ninguna obra coincide con estos filtros."
+  },
   "validation": {
     "atLeast8CharactersWith": "Mínimo 8 caracteres, con una letra y un número.",
     "enterYourEmail": "Escribe tu correo",
@@ -251,6 +263,32 @@
     "confirmNewPassword": "Confirma la contraseña nueva",
     "saving": "Guardando…",
     "savePassword": "Guardar contraseña"
+  },
+  "citiesPage": {
+    "search": "Buscar",
+    "cityName": "Nombre de la ciudad",
+    "department": "Departamento",
+    "allDepartments": "Todos los departamentos",
+    "loadingCities": "Cargando ciudades…",
+    "noCitiesMatchTheseFilters": "Ninguna ciudad coincide con estos filtros."
+  },
+  "materialsPage": {
+    "search": "Buscar",
+    "cementSandBlock": "Cemento, arena, bloque…",
+    "category": "Categoría",
+    "allCategories": "Todas las categorías",
+    "loadingMaterials": "Cargando materiales…",
+    "noMaterialsMatchTheseFilters": "Ningún material coincide con estos filtros."
+  },
+  "projectStatus": {
+    "actions": {
+      "draft": "Volver a borrador",
+      "planned": "Marcar como planeada",
+      "in_progress": "Iniciar obra",
+      "paused": "Pausar",
+      "completed": "Marcar como completada",
+      "cancelled": "Cancelar obra"
+    }
   },
   "workForm": {
     "theEndCannotBeBefore": "El fin no puede ser antes del inicio",

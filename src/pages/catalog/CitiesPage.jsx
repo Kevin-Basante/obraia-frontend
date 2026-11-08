@@ -10,6 +10,7 @@ import { ResultCount } from '../../components/catalog/ResultCount.jsx'
 import { useApiData } from '../../hooks/useApiData.js'
 import { useDebouncedValue } from '../../hooks/useDebouncedValue.js'
 import { getDepartments, getLocations } from '../../services/catalogService.js'
+import { t } from '../../i18n/i18n.js'
 
 /** Cities where projects can be built, with filters by department and name. */
 export function CitiesPage() {
@@ -30,15 +31,15 @@ export function CitiesPage() {
     <>
       <FilterBar>
         <FormField
-          label="Search"
+          label={t('citiesPage.search')}
           type="search"
-          placeholder="City name"
+          placeholder={t('citiesPage.cityName')}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
         <SelectField
-          label="Department"
-          placeholder="All departments"
+          label={t('citiesPage.department')}
+          placeholder={t('citiesPage.allDepartments')}
           options={departmentOptions}
           value={department}
           onChange={(e) => setDepartment(e.target.value)}
@@ -46,12 +47,12 @@ export function CitiesPage() {
       </FilterBar>
 
       {cities.status === 'error' && <ErrorState error={cities.error} onRetry={cities.retry} />}
-      {cities.status === 'loading' && !cities.data && <LoadingState title="Loading cities…" />}
+      {cities.status === 'loading' && !cities.data && <LoadingState title={t('citiesPage.loadingCities')} />}
       {cities.data && cities.status !== 'error' && (
         <>
-          <ResultCount count={cities.data.length} singular="city" plural="cities" updating={updating} />
+          <ResultCount count={cities.data.length} noun="city" updating={updating} />
           {cities.data.length === 0 ? (
-            <EmptyState>No cities match these filters.</EmptyState>
+            <EmptyState>{t('citiesPage.noCitiesMatchTheseFilters')}</EmptyState>
           ) : (
             <CityTable cities={cities.data} updating={updating} />
           )}

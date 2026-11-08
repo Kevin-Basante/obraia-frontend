@@ -30,9 +30,7 @@ describe('state messages', () => {
   })
 
   it('result count uses singular or plural', () => {
-    expect(renderText(<ResultCount count={1} singular="city" plural="cities" />)).toBe('1 city')
-    expect(renderText(<ResultCount count={3} singular="city" plural="cities" updating />)).toBe(
-      '3 cities · updating…',
-    )
+    expect(renderText(<ResultCount count={1} noun="city" />)).toBe('1 city')
+    expect(renderText(<ResultCount count={3} noun="city" updating />)).toBe('3 cities · updating…')
   })
 })
