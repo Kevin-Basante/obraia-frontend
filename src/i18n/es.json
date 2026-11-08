@@ -232,6 +232,18 @@
     "enterAnAmountGreaterThan": "Escribe un monto mayor que 0, como 650.000",
     "theDateCannotBeIn": "La fecha no puede estar en el futuro"
   },
+  "portfolioTotals": {
+    "projects": "Obras",
+    "atRisk": "En riesgo",
+    "withHighOrCriticalRisk": "Con riesgo alto o crítico",
+    "approvedBudgets": "Presupuestos aprobados",
+    "sumOfTheApprovedVersion": "Suma de la versión aprobada de cada obra",
+    "spent": "Gastado",
+    "noApprovedBudgetToCompare": "No hay presupuesto aprobado para comparar",
+    "noProjectWithHighRisk": "Ninguna obra con riesgo alto",
+    "inProgress": "{count} en curso",
+    "ofBudgets": "{share} de los presupuestos aprobados"
+  },
   "greeting": {
     "goodMorning": "Buenos días",
     "goodAfternoon": "Buenas tardes",

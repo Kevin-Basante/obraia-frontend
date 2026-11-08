@@ -1,6 +1,7 @@
 import { formatCurrency } from '../../utils/format.js'
 import { formatProgress } from '../../utils/workStatus.js'
 import { KpiTile } from './KpiTile.jsx'
+import { t } from '../../i18n/i18n.js'
 
 /** Totals of every project of the user, on top of the main dashboard. */
 export function PortfolioTotals({ portfolio }) {
@@ -11,25 +12,33 @@ export function PortfolioTotals({ portfolio }) {
 
   return (
     <div className="kpi-row">
-      <KpiTile label="Projects" value={portfolio.projectCount} detail={`${portfolio.active} in progress`} />
       <KpiTile
-        label="At risk"
+        label={t('portfolioTotals.projects')}
+        value={portfolio.projectCount}
+        detail={t('portfolioTotals.inProgress', { count: portfolio.active })}
+      />
+      <KpiTile
+        label={t('portfolioTotals.atRisk')}
         value={portfolio.atRisk}
-        detail={portfolio.atRisk === 0 ? 'No project with high risk' : 'With high or critical risk'}
+        detail={
+          portfolio.atRisk === 0
+            ? t('portfolioTotals.noProjectWithHighRisk')
+            : t('portfolioTotals.withHighOrCriticalRisk')
+        }
         tone={portfolio.atRisk > 0 ? 'bad' : 'ok'}
       />
       <KpiTile
-        label="Approved budgets"
+        label={t('portfolioTotals.approvedBudgets')}
         value={formatCurrency(portfolio.approvedBudget)}
-        detail="Sum of the approved version of each project"
+        detail={t('portfolioTotals.sumOfTheApprovedVersion')}
       />
       <KpiTile
-        label="Spent"
+        label={t('portfolioTotals.spent')}
         value={formatCurrency(portfolio.totalSpent)}
         detail={
           spentShare === null
-            ? 'No approved budget to compare with'
-            : `${formatProgress(spentShare)} of the approved budgets`
+            ? t('portfolioTotals.noApprovedBudgetToCompare')
+            : t('portfolioTotals.ofBudgets', { share: formatProgress(spentShare) })
         }
         tone={spentShare !== null && spentShare > 100 ? 'bad' : 'neutral'}
       />
