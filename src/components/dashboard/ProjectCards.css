@@ -44,7 +44,8 @@
 
 .project-cards__row {
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr);
+  /* Wide enough for the longest label in both languages ("PRESUPUESTO"). */
+  grid-template-columns: 96px minmax(0, 1fr);
   align-items: center;
   gap: 10px;
   font-size: 0.88rem;
@@ -59,7 +60,7 @@
 }
 
 .project-cards__risk .project-cards__label {
-  width: 72px;
+  width: 96px;
 }
 
 .project-cards__label {
