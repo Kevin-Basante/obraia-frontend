@@ -692,6 +692,11 @@
     "result": "Result",
     "ai": "AI"
   },
+  "blueprintViewPage": {
+    "loadingTheBlueprint": "Loading the blueprint…",
+    "blueprints": "Blueprints",
+    "description": "{type} · {size} · Uploaded {date}"
+  },
   "blueprintScene": {
     "livingRoom": "Living room",
     "bedroom": "Bedroom",

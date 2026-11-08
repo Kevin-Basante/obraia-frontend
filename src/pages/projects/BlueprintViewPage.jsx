@@ -7,6 +7,7 @@ import { useApiData } from '../../hooks/useApiData.js'
 import { listBlueprints } from '../../services/blueprintService.js'
 import { formatDateTime, formatFileSize } from '../../utils/format.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
+import { codeText, t } from '../../i18n/i18n.js'
 
 /** One blueprint shown inside the page, with its data. */
 export function BlueprintViewPage() {
@@ -15,7 +16,7 @@ export function BlueprintViewPage() {
 
   if (blueprints.error?.status === 404) return <NotFoundPage />
   if (blueprints.status === 'error') return <ErrorState error={blueprints.error} onRetry={blueprints.retry} />
-  if (!blueprints.data) return <LoadingState title="Loading the blueprint…" />
+  if (!blueprints.data) return <LoadingState title={t('blueprintViewPage.loadingTheBlueprint')} />
 
   const blueprint = blueprints.data.find((item) => item.id === blueprintId)
   if (!blueprint) return <NotFoundPage />
@@ -24,8 +25,12 @@ export function BlueprintViewPage() {
     <div className="workspace">
       <PageHeader
         title={blueprint.originalFilename}
-        description={`${blueprint.fileTypeLabel} · ${formatFileSize(blueprint.sizeBytes)} · Uploaded ${formatDateTime(blueprint.uploadedAt)}`}
-        back={{ to: `/projects/${id}/blueprints`, label: 'Blueprints' }}
+        description={t('blueprintViewPage.description', {
+          type: codeText('fileType', blueprint.fileType, blueprint.fileTypeLabel),
+          size: formatFileSize(blueprint.sizeBytes),
+          date: formatDateTime(blueprint.uploadedAt),
+        })}
+        back={{ to: `/projects/${id}/blueprints`, label: t('blueprintViewPage.blueprints') }}
       />
       <BlueprintViewer projectId={id} blueprint={blueprint} />
     </div>

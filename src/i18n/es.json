@@ -692,6 +692,11 @@
     "result": "Resultado",
     "ai": "IA"
   },
+  "blueprintViewPage": {
+    "loadingTheBlueprint": "Cargando el plano…",
+    "blueprints": "Planos",
+    "description": "{type} · {size} · Subido el {date}"
+  },
   "blueprintScene": {
     "livingRoom": "Sala",
     "bedroom": "Alcoba",
