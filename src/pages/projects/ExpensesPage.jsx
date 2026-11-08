@@ -14,6 +14,7 @@ import { getWorkPlan } from '../../services/phaseService.js'
 import { getProject } from '../../services/projectService.js'
 import { isClosed } from '../../utils/projectStatus.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
+import { t } from '../../i18n/i18n.js'
 
 /** Money really spent on a project: register and delete expenses and compare them with the budget. */
 export function ExpensesPage() {
@@ -44,43 +45,41 @@ export function ExpensesPage() {
   const failed = [project, plan, expenses, summary].find((request) => request.status === 'error')
   if (failed) return <ErrorState error={failed.error} onRetry={failed.retry} />
   if (!project.data || !plan.data || !expenses.data || !summary.data) {
-    return <LoadingState title="Loading the expenses…" />
+    return <LoadingState title={t('expensesPage.loadingTheExpenses')} />
   }
 
   const closed = isClosed(project.data)
 
   function handleDelete(expense) {
-    if (window.confirm(`Delete the expense "${expense.description}"?`)) removing.submit(expense.id)
+    if (window.confirm(t('expensesPage.confirmDelete', { description: expense.description })))
+      removing.submit(expense.id)
   }
 
   return (
     <div className="workspace">
       <PageHeader
-        title="Expenses"
-        description={`${project.data.name} · money really spent on the work`}
+        title={t('expensesPage.expenses')}
+        description={t('expensesPage.description', { name: project.data.name })}
         back={{ to: `/projects/${id}`, label: project.data.name }}
       />
       <div className="workspace__split">
         {!closed && (
           <section className="card">
-            <h2>Register an expense</h2>
-            <p className="muted">
-              Each expense updates the approved budget and the risk of the project. Members are notified when the
-              expenses pass the budget.
-            </p>
+            <h2>{t('expensesPage.registerAnExpense')}</h2>
+            <p className="muted">{t('expensesPage.eachExpenseUpdatesTheApproved')}</p>
             <ExpenseForm phases={plan.data.phases} onSave={save} />
           </section>
         )}
         <section className="card">
-          <h2>Spent against the budget</h2>
+          <h2>{t('expensesPage.spentAgainstTheBudget')}</h2>
           <ExpenseSummary summary={summary.data} />
         </section>
       </div>
       <section className="card">
-        <h2>Expenses</h2>
-        {closed && <p className="muted">The project is closed: the expenses can be read but not changed.</p>}
+        <h2>{t('expensesPage.expenses')}</h2>
+        {closed && <p className="muted">{t('expensesPage.theProjectIsClosedThe')}</p>}
         {expenses.data.length === 0 ? (
-          <p className="muted">There are no expenses yet.</p>
+          <p className="muted">{t('expensesPage.thereAreNoExpensesYet')}</p>
         ) : (
           <ExpenseTable expenses={expenses.data} onDelete={closed ? undefined : handleDelete} busy={removing.pending} />
         )}

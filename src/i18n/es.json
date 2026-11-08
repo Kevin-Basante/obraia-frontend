@@ -444,6 +444,17 @@
     "marking": "Marcando…",
     "unread": "{count} sin leer todavía."
   },
+  "expensesPage": {
+    "loadingTheExpenses": "Cargando los gastos…",
+    "expenses": "Gastos",
+    "registerAnExpense": "Registrar un gasto",
+    "eachExpenseUpdatesTheApproved": "Cada gasto actualiza el presupuesto aprobado y el riesgo de la obra. Se avisa a los miembros cuando los gastos pasan el presupuesto.",
+    "spentAgainstTheBudget": "Gastado frente al presupuesto",
+    "theProjectIsClosedThe": "La obra está cerrada: los gastos se pueden leer, pero no cambiar.",
+    "thereAreNoExpensesYet": "Todavía no hay gastos.",
+    "confirmDelete": "¿Borrar el gasto \"{description}\"?",
+    "description": "{name} · dinero que de verdad se gastó en la obra"
+  },
   "progressReportForm": {
     "progress": "Avance (%)",
     "totalProgressOfTheTask": "Avance total de la tarea, de 0 a 100",

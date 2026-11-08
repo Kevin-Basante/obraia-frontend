@@ -444,6 +444,17 @@
     "marking": "Marking…",
     "unread": "{count} not read yet."
   },
+  "expensesPage": {
+    "loadingTheExpenses": "Loading the expenses…",
+    "expenses": "Expenses",
+    "registerAnExpense": "Register an expense",
+    "eachExpenseUpdatesTheApproved": "Each expense updates the approved budget and the risk of the project. Members are notified when the expenses pass the budget.",
+    "spentAgainstTheBudget": "Spent against the budget",
+    "theProjectIsClosedThe": "The project is closed: the expenses can be read but not changed.",
+    "thereAreNoExpensesYet": "There are no expenses yet.",
+    "confirmDelete": "Delete the expense \"{description}\"?",
+    "description": "{name} · money really spent on the work"
+  },
   "progressReportForm": {
     "progress": "Progress (%)",
     "totalProgressOfTheTask": "Total progress of the task, from 0 to 100",
