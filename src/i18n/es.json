@@ -189,6 +189,24 @@
     "measurements": "Medidas",
     "ofMaterials": "{rate} de los materiales"
   },
+  "moneyPanel": {
+    "budgetAndExpenses": "Presupuesto y gastos",
+    "budget": "Presupuesto",
+    "expenses": "Gastos",
+    "spent": "Gastado",
+    "approvedBudget": "Presupuesto aprobado",
+    "remaining": "Disponible",
+    "spentByCategory": "Gasto por categoría",
+    "noExpensesRegisteredYet": "Todavía no hay gastos registrados.",
+    "overBudget": "Por encima del presupuesto",
+    "quoted": {
+      "one": "{count} versión cotizada",
+      "other": "{count} versiones cotizadas"
+    },
+    "noneApproved": "{quoted}, ninguna aprobada",
+    "approvedVersion": "Versión {version} aprobada · {quoted}",
+    "spentShare": "Se ha gastado el {share} del presupuesto aprobado"
+  },
   "materialGrid": {
     "priceOf": "Precio del"
   },
