@@ -103,6 +103,13 @@
     "add": "Add",
     "confirmRemove": "Remove {name} from this project?"
   },
+  "editProjectPage": {
+    "loadingTheProject": "Loading the project…",
+    "editProject": "Edit project",
+    "saving": "Saving…",
+    "saveChanges": "Save changes",
+    "closed": "A {status} project can no longer be edited."
+  },
   "changePasswordForm": {
     "currentPassword": "Current password",
     "newPassword": "New password",

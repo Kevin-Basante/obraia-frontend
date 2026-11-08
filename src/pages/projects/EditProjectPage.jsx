@@ -9,6 +9,7 @@ import { getProject, updateProject } from '../../services/projectService.js'
 import { toProjectForm } from '../../utils/projectForm.js'
 import { isClosed } from '../../utils/projectStatus.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
+import { codeLabel, t } from '../../i18n/i18n.js'
 
 /** Edits the data of a project that is not completed or cancelled. */
 export function EditProjectPage() {
@@ -24,21 +25,23 @@ export function EditProjectPage() {
 
   if (project.error?.status === 404) return <NotFoundPage />
   if (project.status === 'error') return <ErrorState error={project.error} onRetry={project.retry} />
-  if (!project.data) return <LoadingState title="Loading the project…" />
+  if (!project.data) return <LoadingState title={t('editProjectPage.loadingTheProject')} />
 
   const back = { to: `/projects/${id}`, label: project.data.name }
 
   return (
     <div className="workspace">
-      <PageHeader title="Edit project" back={back} />
+      <PageHeader title={t('editProjectPage.editProject')} back={back} />
       {isClosed(project.data) ? (
-        <FormAlert>A {project.data.status.label.toLowerCase()} project can no longer be edited.</FormAlert>
+        <FormAlert>
+          {t('editProjectPage.closed', { status: codeLabel('status', project.data.status).toLowerCase() })}
+        </FormAlert>
       ) : (
         <ProjectForm
           initialForm={toProjectForm(project.data)}
           onSave={save}
-          submitText="Save changes"
-          pendingText="Saving…"
+          submitText={t('editProjectPage.saveChanges')}
+          pendingText={t('editProjectPage.saving')}
         />
       )}
     </div>

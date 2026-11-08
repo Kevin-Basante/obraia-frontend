@@ -103,6 +103,13 @@
     "add": "Agregar",
     "confirmRemove": "¿Quitar a {name} de esta obra?"
   },
+  "editProjectPage": {
+    "loadingTheProject": "Cargando la obra…",
+    "editProject": "Editar obra",
+    "saving": "Guardando…",
+    "saveChanges": "Guardar cambios",
+    "closed": "Una obra {status} ya no se puede editar."
+  },
   "changePasswordForm": {
     "currentPassword": "Contraseña actual",
     "newPassword": "Contraseña nueva",
