@@ -254,10 +254,11 @@ Recorrido de la demostración, de principio a fin:
 ```
 public/                Archivos estáticos (ícono)
 src/
-├── components/        Componentes visuales, cada uno con su CSS (por sección en account/, art/, blueprints/, budgets/, catalog/, dashboard/, expenses/, landing/, measurements/, notifications/, phases/, projects/, risk/, siteManagers/ y theme/)
+├── components/        Componentes visuales, cada uno con su CSS (por sección en account/, art/, blueprints/, budgets/, catalog/, dashboard/, expenses/, landing/, measurements/, notifications/, phases/, projects/, risk/, siteManagers/, language/ y theme/)
 ├── config/            Configuración (URL del backend)
-├── context/           Estado de la sesión compartido por toda la app
-├── hooks/             Lógica reutilizable: sesión, formularios, carga de datos y tema claro u oscuro
+├── context/           Estado de la sesión y del idioma compartido por toda la app
+├── hooks/             Lógica reutilizable: sesión, formularios, carga de datos, tema claro u oscuro e idioma
+├── i18n/              Textos en inglés y español (en.json y es.json), la función t() y el idioma inicial
 ├── layouts/           Marcos comunes: la app completa y la sección de catálogo
 ├── pages/             Una página por ruta (las del catálogo en pages/catalog/ y las de obras en pages/projects/)
 ├── routes/            Rutas y protección de páginas según la sesión
