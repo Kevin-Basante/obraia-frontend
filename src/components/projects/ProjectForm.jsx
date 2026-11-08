@@ -8,11 +8,15 @@ import { useFormSubmit } from '../../hooks/useFormSubmit.js'
 import { getLocations, getProjectTypes } from '../../services/catalogService.js'
 import { toFormErrors, toProjectRequest, validateProject } from '../../utils/projectForm.js'
 import './ProjectForm.css'
+import { t } from '../../i18n/i18n.js'
 
-const FLOOR_OPTIONS = [
-  { value: '1', label: '1 floor' },
-  { value: '2', label: '2 floors' },
-]
+// Read in each render, so the texts follow the language.
+function floorOptions() {
+  return [
+    { value: '1', label: t('projectForm.n1Floor') },
+    { value: '2', label: t('projectForm.n2Floors') },
+  ]
+}
 
 /**
  * Form to create or edit a project. `onSave(request)` sends it to the
@@ -46,41 +50,46 @@ export function ProjectForm({ initialForm, onSave, submitText, pendingText }) {
 
   return (
     <form className="card project-form" onSubmit={handleSubmit} noValidate>
-      <FormAlert>{catalogError && `We could not load the catalog: ${catalogError.message}`}</FormAlert>
+      <FormAlert>{catalogError && t('projectForm.catalogError', { message: catalogError.message })}</FormAlert>
       <FormAlert>{error && !error.fields && error.message}</FormAlert>
-      <FormField label="Project name" value={form.name} onChange={update('name')} error={errors.name} />
+      <FormField label={t('projectForm.projectName')} value={form.name} onChange={update('name')} error={errors.name} />
       <div className="project-form__row">
         <SelectField
-          label="Project type"
-          placeholder={types.status === 'loading' ? 'Loading…' : 'Choose a type'}
+          label={t('projectForm.projectType')}
+          placeholder={types.status === 'loading' ? t('projectForm.loading') : t('projectForm.chooseAType')}
           options={typeOptions}
           value={form.projectTypeId}
           onChange={update('projectTypeId')}
           error={errors.projectTypeId}
         />
         <SelectField
-          label="City"
-          placeholder={cities.status === 'loading' ? 'Loading…' : 'Choose a city'}
+          label={t('projectForm.city')}
+          placeholder={cities.status === 'loading' ? t('projectForm.loading') : t('projectForm.chooseACity')}
           options={cityOptions}
           value={form.locationId}
           onChange={update('locationId')}
           error={errors.locationId}
         />
       </div>
-      <FormField label="Address (optional)" value={form.address} onChange={update('address')} error={errors.address} />
+      <FormField
+        label={t('projectForm.addressOptional')}
+        value={form.address}
+        onChange={update('address')}
+        error={errors.address}
+      />
       <div className="project-form__row">
         <FormField
-          label="Built area (m²)"
+          label={t('projectForm.builtAreaM')}
           inputMode="decimal"
           placeholder="120,5"
           value={form.builtAreaM2}
           onChange={update('builtAreaM2')}
           error={errors.builtAreaM2}
-          hint="Up to 120 m² is a small project; more is a large one."
+          hint={t('projectForm.upTo120MIs')}
         />
         <SelectField
-          label="Floors"
-          options={FLOOR_OPTIONS}
+          label={t('projectForm.floors')}
+          options={floorOptions()}
           value={form.floors}
           onChange={update('floors')}
           error={errors.floors}
@@ -88,14 +97,14 @@ export function ProjectForm({ initialForm, onSave, submitText, pendingText }) {
       </div>
       <div className="project-form__row">
         <FormField
-          label="Planned start (optional)"
+          label={t('projectForm.plannedStartOptional')}
           type="date"
           value={form.plannedStartDate}
           onChange={update('plannedStartDate')}
           error={errors.plannedStartDate}
         />
         <FormField
-          label="Planned end (optional)"
+          label={t('projectForm.plannedEndOptional')}
           type="date"
           value={form.plannedEndDate}
           onChange={update('plannedEndDate')}
