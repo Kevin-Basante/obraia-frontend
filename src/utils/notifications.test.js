@@ -1,8 +1,10 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
+import { setLanguage } from '../i18n/i18n.js'
 import {
   NOTIFICATIONS_CHANGED,
   announceNotificationsChanged,
   notificationLink,
+  notificationText,
   timeAgo,
   unreadBadge,
 } from './notifications.js'
@@ -49,5 +51,46 @@ describe('announceNotificationsChanged', () => {
     announceNotificationsChanged()
 
     expect(heard).toHaveBeenCalledTimes(1)
+  })
+
+  it('writes a notification from its type and values', () => {
+    const approved = {
+      type: { code: 'budget_approved' },
+      message: 'Version 2...',
+      params: { project: 'Casa', version: '2', amount: '120000000' },
+    }
+    expect(notificationText(approved)).toMatch(
+      /^Version 2 of the budget of "Casa" was approved for \$\s120\.000\.000\.$/,
+    )
+    setLanguage('es')
+    expect(notificationText(approved)).toMatch(/^Se aprobó la versión 2 del presupuesto de "Casa" por/)
+    setLanguage('en')
+  })
+
+  it('writes the risk with its main reason and the expected delay', () => {
+    const risk = {
+      type: { code: 'delay_risk' },
+      message: 'The risk...',
+      params: {
+        project: 'Casa',
+        level: 'high',
+        score: '66.88',
+        delayDays: '12',
+        reason: 'budget_spent',
+        'reason.spent': '110',
+      },
+    }
+    expect(notificationText(risk)).toBe(
+      'The risk of "Casa" rose to high (66,9 of 100): 110% of the approved budget is spent. About 12 days of delay are expected.',
+    )
+    setLanguage('es')
+    expect(notificationText({ ...risk, params: { ...risk.params, delayDays: '0', reason: undefined } })).toBe(
+      'El riesgo de "Casa" subió a alto (66,9 de 100).',
+    )
+    setLanguage('en')
+  })
+
+  it('keeps the message of older notifications', () => {
+    expect(notificationText({ type: { code: 'system' }, message: 'Welcome', params: null })).toBe('Welcome')
   })
 })
