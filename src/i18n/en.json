@@ -501,6 +501,17 @@
     "myProjects": "My projects",
     "theLinkIsIncompleteOpen": "The link is incomplete. Open it again from your email."
   },
+  "dashboardPage": {
+    "welcomeToObraia": "Welcome to ObraIA",
+    "tryTheToolsOfObraia": "Try the tools of ObraIA before creating your account.",
+    "yourProjects": "Your projects",
+    "projectsAreSavedInYour": "Projects are saved in your account. Create one to plan and quote your work.",
+    "catalog": "Catalog",
+    "seeTheMaterialsWithTheir": "See the materials with their reference prices, the phases of each project type and the cities.",
+    "exploreTheCatalog": "Explore the catalog",
+    "hereIsWhereYourProjects": "Here is where your projects stand today.",
+    "refreshError": "We could not refresh your profile: {message}"
+  },
   "taskTable": {
     "task": "Task",
     "status": "Status",

@@ -501,6 +501,17 @@
     "myProjects": "Mis obras",
     "theLinkIsIncompleteOpen": "El enlace está incompleto. Ábrelo otra vez desde tu correo."
   },
+  "dashboardPage": {
+    "welcomeToObraia": "Bienvenido a ObraIA",
+    "tryTheToolsOfObraia": "Prueba las herramientas de ObraIA antes de crear tu cuenta.",
+    "yourProjects": "Tus obras",
+    "projectsAreSavedInYour": "Las obras se guardan en tu cuenta. Crea una para planear y cotizar tu trabajo.",
+    "catalog": "Catálogo",
+    "seeTheMaterialsWithTheir": "Mira los materiales con sus precios de referencia, las fases de cada tipo de obra y las ciudades.",
+    "exploreTheCatalog": "Explorar el catálogo",
+    "hereIsWhereYourProjects": "Así van tus obras hoy.",
+    "refreshError": "No pudimos actualizar tu perfil: {message}"
+  },
   "taskTable": {
     "task": "Tarea",
     "status": "Estado",

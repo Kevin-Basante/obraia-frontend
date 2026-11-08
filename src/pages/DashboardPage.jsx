@@ -9,6 +9,7 @@ import { useCurrentUser } from '../hooks/useCurrentUser.js'
 import { getPortfolio } from '../services/dashboardService.js'
 import { greetingFor, longDate } from '../utils/greeting.js'
 import './DashboardPage.css'
+import { t } from '../i18n/i18n.js'
 
 /** Signed-in user: totals and every project at a glance. */
 function SignedInDashboard() {
@@ -29,33 +30,29 @@ export function DashboardPage() {
     <div className="dashboard">
       <header className="dashboard__banner">
         <p className="dashboard__date">{longDate()}</p>
-        <h1>{user ? `${greetingFor()}, ${user.firstName}` : 'Welcome to ObraIA'}</h1>
-        <p>
-          {user ? 'Here is where your projects stand today.' : 'Try the tools of ObraIA before creating your account.'}
-        </p>
+        <h1>{user ? `${greetingFor()}, ${user.firstName}` : t('dashboardPage.welcomeToObraia')}</h1>
+        <p>{user ? t('dashboardPage.hereIsWhereYourProjects') : t('dashboardPage.tryTheToolsOfObraia')}</p>
       </header>
       {!user && <GuestBanner />}
-      <FormAlert>{error && `We could not refresh your profile: ${error.message}`}</FormAlert>
+      <FormAlert>{error && t('dashboardPage.refreshError', { message: error.message })}</FormAlert>
       <div className="dashboard__grid">
         <div className="dashboard__main">
           {user ? (
             <SignedInDashboard />
           ) : (
             <section className="card dashboard__empty">
-              <h2>Your projects</h2>
-              <p className="muted">Projects are saved in your account. Create one to plan and quote your work.</p>
+              <h2>{t('dashboardPage.yourProjects')}</h2>
+              <p className="muted">{t('dashboardPage.projectsAreSavedInYour')}</p>
             </section>
           )}
         </div>
         <aside className="dashboard__side">
           {user && <ProfileCard user={user} />}
           <section className="card dashboard__empty">
-            <h2>Catalog</h2>
-            <p className="muted">
-              See the materials with their reference prices, the phases of each project type and the cities.
-            </p>
+            <h2>{t('dashboardPage.catalog')}</h2>
+            <p className="muted">{t('dashboardPage.seeTheMaterialsWithTheir')}</p>
             <Link to="/catalog" className="button-link">
-              Explore the catalog
+              {t('dashboardPage.exploreTheCatalog')}
             </Link>
           </section>
         </aside>
