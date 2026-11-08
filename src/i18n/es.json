@@ -148,6 +148,16 @@
     },
     "leftOut": " y dejó fuera {count} que no pudo usar"
   },
+  "blueprintList": {
+    "file": "Archivo",
+    "type": "Tipo",
+    "size": "Tamaño",
+    "uploaded": "Subido",
+    "aiReading": "Lectura de la IA",
+    "actions": "Acciones",
+    "delete": "Borrar",
+    "reading": "Leyendo…"
+  },
   "expenseForm": {
     "category": "Categoría",
     "chooseACategory": "Elige una categoría",

@@ -3,6 +3,7 @@ import { analyzeLabel } from '../../utils/analysis.js'
 import { formatDateTime, formatFileSize } from '../../utils/format.js'
 import { StatusBadge } from '../projects/StatusBadge.jsx'
 import '../catalog/DataTable.css'
+import { codeText, t } from '../../i18n/i18n.js'
 
 /**
  * Blueprints of a project as a table. Each one opens its viewer. `onAnalyze`
@@ -14,31 +15,33 @@ export function BlueprintList({ projectId, blueprints, onAnalyze, analyzingId, o
     <table className="data-table">
       <thead>
         <tr>
-          <th>File</th>
-          <th>Type</th>
-          <th className="data-table__number">Size</th>
-          <th>Uploaded</th>
-          <th>AI reading</th>
+          <th>{t('blueprintList.file')}</th>
+          <th>{t('blueprintList.type')}</th>
+          <th className="data-table__number">{t('blueprintList.size')}</th>
+          <th>{t('blueprintList.uploaded')}</th>
+          <th>{t('blueprintList.aiReading')}</th>
           <th>
-            <span className="visually-hidden">Actions</span>
+            <span className="visually-hidden">{t('blueprintList.actions')}</span>
           </th>
         </tr>
       </thead>
       <tbody>
         {blueprints.map((blueprint) => (
           <tr key={blueprint.id}>
-            <td data-label="File">
+            <td data-label={t('blueprintList.file')}>
               <Link to={`/projects/${projectId}/blueprints/${blueprint.id}`}>{blueprint.originalFilename}</Link>
             </td>
-            <td data-label="Type">{blueprint.fileTypeLabel}</td>
-            <td data-label="Size" className="data-table__number">
+            <td data-label={t('blueprintList.type')}>
+              {codeText('fileType', blueprint.fileType, blueprint.fileTypeLabel)}
+            </td>
+            <td data-label={t('blueprintList.size')} className="data-table__number">
               {formatFileSize(blueprint.sizeBytes)}
             </td>
-            <td data-label="Uploaded">{formatDateTime(blueprint.uploadedAt)}</td>
-            <td data-label="AI reading">
+            <td data-label={t('blueprintList.uploaded')}>{formatDateTime(blueprint.uploadedAt)}</td>
+            <td data-label={t('blueprintList.aiReading')}>
               <StatusBadge status={blueprint.processingStatus} />
             </td>
-            <td data-label="Actions">
+            <td data-label={t('blueprintList.actions')}>
               <div className="button-row">
                 {onAnalyze && (
                   <button
@@ -47,7 +50,7 @@ export function BlueprintList({ projectId, blueprints, onAnalyze, analyzingId, o
                     disabled={Boolean(analyzingId) || deleting}
                     onClick={() => onAnalyze(blueprint)}
                   >
-                    {analyzingId === blueprint.id ? 'Reading…' : analyzeLabel(blueprint)}
+                    {analyzingId === blueprint.id ? t('blueprintList.reading') : analyzeLabel(blueprint)}
                   </button>
                 )}
                 {onDelete && (
@@ -57,7 +60,7 @@ export function BlueprintList({ projectId, blueprints, onAnalyze, analyzingId, o
                     disabled={deleting || Boolean(analyzingId)}
                     onClick={() => onDelete(blueprint)}
                   >
-                    Delete
+                    {t('blueprintList.delete')}
                   </button>
                 )}
               </div>

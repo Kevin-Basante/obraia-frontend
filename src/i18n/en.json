@@ -148,6 +148,16 @@
     },
     "leftOut": " and left out {count} it could not use"
   },
+  "blueprintList": {
+    "file": "File",
+    "type": "Type",
+    "size": "Size",
+    "uploaded": "Uploaded",
+    "aiReading": "AI reading",
+    "actions": "Actions",
+    "delete": "Delete",
+    "reading": "Reading…"
+  },
   "expenseForm": {
     "category": "Category",
     "chooseACategory": "Choose a category",
