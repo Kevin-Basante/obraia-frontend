@@ -504,6 +504,36 @@
     "saving": "Guardando…",
     "savePassword": "Guardar contraseña"
   },
+  "projectKpis": {
+    "notApproved": "Sin aprobar",
+    "progress": "Avance",
+    "progressOfTheProject": "Avance de la obra",
+    "budget": "Presupuesto",
+    "approvedBudgetSpent": "Presupuesto aprobado gastado",
+    "risk": "Riesgo",
+    "notAssessed": "Sin evaluar",
+    "itIsAssessedAfterExpenses": "Se evalúa después de los gastos y los reportes de avance",
+    "currentPhase": "Fase actual",
+    "noPlanYet": "Sin plan todavía",
+    "records": "Registros",
+    "allPhasesDone": "Todas las fases terminadas",
+    "spentValue": "{share} gastado",
+    "spentNoBudget": "{spent} gastados, sin presupuesto para comparar",
+    "spentOf": "{spent} de {budget}",
+    "measurements": {
+      "one": "{count} medida",
+      "other": "{count} medidas"
+    },
+    "recordsDetail": "{ai} por IA · {blueprints} · {members}",
+    "blueprints": {
+      "one": "{count} plano",
+      "other": "{count} planos"
+    },
+    "members": {
+      "one": "{count} miembro",
+      "other": "{count} miembros"
+    }
+  },
   "citiesPage": {
     "search": "Buscar",
     "cityName": "Nombre de la ciudad",
