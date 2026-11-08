@@ -801,6 +801,21 @@
     "saving": "Saving…",
     "savePassword": "Save password"
   },
+  "projectTypeDetailPage": {
+    "loadingProjectType": "Loading project type…",
+    "allProjectTypes": "← All project types",
+    "standardPhases": "Standard phases",
+    "orTypeTheBuiltArea": "Or type the built area (m²)",
+    "theAreaDecidesTheSize": "The area decides the size.",
+    "loadingPhases": "Loading phases…",
+    "materialsPerBuildingElement": "Materials per building element",
+    "howMuchOfEachMaterial": "How much of each material one unit of the element needs, plus the share bought for waste.",
+    "loadingMaterials": "Loading materials…",
+    "buildingElement": "Building element",
+    "allElements": "All elements",
+    "enterAnAreaGreaterThan": "Enter an area greater than 0",
+    "sizeNote": "{area} m² is a {size} project."
+  },
   "projectKpis": {
     "notApproved": "Not approved",
     "progress": "Progress",

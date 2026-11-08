@@ -801,6 +801,21 @@
     "saving": "Guardando…",
     "savePassword": "Guardar contraseña"
   },
+  "projectTypeDetailPage": {
+    "loadingProjectType": "Cargando el tipo de obra…",
+    "allProjectTypes": "← Todos los tipos de obra",
+    "standardPhases": "Fases estándar",
+    "orTypeTheBuiltArea": "O escribe el área construida (m²)",
+    "theAreaDecidesTheSize": "El área decide el tamaño.",
+    "loadingPhases": "Cargando fases…",
+    "materialsPerBuildingElement": "Materiales por elemento de construcción",
+    "howMuchOfEachMaterial": "Cuánto de cada material necesita una unidad del elemento, más la parte que se compra por desperdicio.",
+    "loadingMaterials": "Cargando materiales…",
+    "buildingElement": "Elemento de construcción",
+    "allElements": "Todos los elementos",
+    "enterAnAreaGreaterThan": "Escribe un área mayor que 0",
+    "sizeNote": "{area} m² es una obra {size}."
+  },
   "projectKpis": {
     "notApproved": "Sin aprobar",
     "progress": "Avance",
