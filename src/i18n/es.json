@@ -276,6 +276,11 @@
     "inProgress": "{count} en curso",
     "ofBudgets": "{share} de los presupuestos aprobados"
   },
+  "statusActions": {
+    "status": "Estado",
+    "thisProjectIsClosedIts": "Esta obra está cerrada: sus datos se pueden leer, pero ya no cambiar.",
+    "confirm": "¿Marcar esta obra como {status}? Después no se puede cambiar."
+  },
   "notificationList": {
     "open": "Abrir",
     "markAsRead": "Marcar como leída"

@@ -276,6 +276,11 @@
     "inProgress": "{count} in progress",
     "ofBudgets": "{share} of the approved budgets"
   },
+  "statusActions": {
+    "status": "Status",
+    "thisProjectIsClosedIts": "This project is closed: its data can be read but no longer changed.",
+    "confirm": "Mark this project as {status}? It cannot be changed afterwards."
+  },
   "notificationList": {
     "open": "Open",
     "markAsRead": "Mark as read"
