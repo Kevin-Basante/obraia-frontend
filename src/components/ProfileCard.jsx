@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import './ProfileCard.css'
+import { codeText, t } from '../i18n/i18n.js'
 
 /** Account data of the signed-in user. */
 export function ProfileCard({ user }) {
@@ -10,30 +11,30 @@ export function ProfileCard({ user }) {
           {user.firstName.charAt(0)}
           {user.lastName.charAt(0)}
         </span>
-        <h2>My account</h2>
+        <h2>{t('profileCard.title')}</h2>
       </div>
       <dl className="profile-card__facts">
         <div>
-          <dt>Name</dt>
+          <dt>{t('profileCard.name')}</dt>
           <dd>
             {user.firstName} {user.lastName}
           </dd>
         </div>
         <div>
-          <dt>Email</dt>
+          <dt>{t('profileCard.email')}</dt>
           <dd>{user.email}</dd>
         </div>
         <div>
-          <dt>Phone</dt>
-          <dd>{user.phone ?? 'Not added'}</dd>
+          <dt>{t('profileCard.phone')}</dt>
+          <dd>{user.phone ?? t('common.notAdded')}</dd>
         </div>
         <div>
-          <dt>Role</dt>
-          <dd>{user.roles.join(', ')}</dd>
+          <dt>{t('profileCard.role')}</dt>
+          <dd>{user.roles.map((role) => codeText('role', role)).join(', ')}</dd>
         </div>
       </dl>
       <Link to="/account" className="button-link">
-        Edit my account
+        {t('profileCard.edit')}
       </Link>
     </section>
   )

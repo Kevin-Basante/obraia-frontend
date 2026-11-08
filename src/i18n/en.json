@@ -1,4 +1,12 @@
 {
+  "profileCard": {
+    "title": "My account",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "role": "Role",
+    "edit": "Edit my account"
+  },
   "language": {
     "switchTo": "Switch to {language}",
     "names": {
