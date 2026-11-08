@@ -810,6 +810,16 @@
     "chooseThePhase": "Elige la fase",
     "use3To150Characters": "Usa de 3 a 150 caracteres"
   },
+  "accountPage": {
+    "loadingYourAccount": "Cargando tu cuenta…",
+    "myAccount": "Mi cuenta",
+    "yourProfileYourPasswordAnd": "Tu perfil, tu contraseña y la eliminación de tu cuenta.",
+    "dashboard": "Panel",
+    "profile": "Perfil",
+    "password": "Contraseña",
+    "deleteMyAccount": "Eliminar mi cuenta",
+    "yourAccountAndTheProjects": "Se eliminan tu cuenta y las obras que creaste. Verás los detalles antes de que pase algo."
+  },
   "progressForm": {
     "enterANumberFrom0": "Escribe un número de 0 a 100, con máximo 2 decimales",
     "theDateCannotBeIn": "La fecha no puede estar en el futuro",

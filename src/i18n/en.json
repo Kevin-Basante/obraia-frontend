@@ -810,6 +810,16 @@
     "chooseThePhase": "Choose the phase",
     "use3To150Characters": "Use 3 to 150 characters"
   },
+  "accountPage": {
+    "loadingYourAccount": "Loading your account…",
+    "myAccount": "My account",
+    "yourProfileYourPasswordAnd": "Your profile, your password and the deletion of your account.",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "password": "Password",
+    "deleteMyAccount": "Delete my account",
+    "yourAccountAndTheProjects": "Your account and the projects you created are deleted. You will see the details before anything happens."
+  },
   "progressForm": {
     "enterANumberFrom0": "Enter a number from 0 to 100, with up to 2 decimals",
     "theDateCannotBeIn": "The date cannot be in the future",

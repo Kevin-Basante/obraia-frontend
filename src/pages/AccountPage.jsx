@@ -9,6 +9,7 @@ import { useApiData } from '../hooks/useApiData.js'
 import { useAuth } from '../hooks/useAuth.js'
 import { getCurrentUser, updateProfile } from '../services/userService.js'
 import './AccountPage.css'
+import { t } from '../i18n/i18n.js'
 
 /** Profile, password and the way to delete the account of the signed-in user. */
 export function AccountPage() {
@@ -32,30 +33,28 @@ export function AccountPage() {
   }
 
   if (profile.status === 'error') return <ErrorState error={profile.error} onRetry={profile.retry} />
-  if (!profile.data) return <LoadingState title="Loading your account…" />
+  if (!profile.data) return <LoadingState title={t('accountPage.loadingYourAccount')} />
 
   return (
     <div className="workspace">
       <PageHeader
-        title="My account"
-        description="Your profile, your password and the deletion of your account."
-        back={{ to: '/dashboard', label: 'Dashboard' }}
+        title={t('accountPage.myAccount')}
+        description={t('accountPage.yourProfileYourPasswordAnd')}
+        back={{ to: '/dashboard', label: t('accountPage.dashboard') }}
       />
       <section className="card">
-        <h2>Profile</h2>
+        <h2>{t('accountPage.profile')}</h2>
         <ProfileForm user={profile.data} onSave={save} />
       </section>
       <section className="card">
-        <h2>Password</h2>
+        <h2>{t('accountPage.password')}</h2>
         <ChangePasswordForm onChanged={handlePasswordChanged} />
       </section>
       <section className="card account-page__danger">
-        <h2>Delete my account</h2>
-        <p className="muted">
-          Your account and the projects you created are deleted. You will see the details before anything happens.
-        </p>
+        <h2>{t('accountPage.deleteMyAccount')}</h2>
+        <p className="muted">{t('accountPage.yourAccountAndTheProjects')}</p>
         <Link to="/account/delete" className="button-link">
-          Delete my account
+          {t('accountPage.deleteMyAccount')}
         </Link>
       </section>
     </div>
