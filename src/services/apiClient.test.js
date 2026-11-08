@@ -48,8 +48,18 @@ describe('apiRequest', () => {
     const error = await apiPost('/api/auth/register', {}).catch((err) => err)
 
     expect(error).toBeInstanceOf(ApiError)
-    expect(error).toMatchObject({ status: 400, code: 'VALIDATION_ERROR', message: 'Check the form' })
+    expect(error).toMatchObject({ status: 400, code: 'VALIDATION_ERROR', message: 'Some fields are invalid' })
     expect(error.fields).toEqual({ email: 'Invalid' })
+  })
+
+  it('writes known errors with their values and keeps the message of unknown ones', async () => {
+    const limit = { error: { code: 'BLUEPRINT_LIMIT_REACHED', message: 'Up to 20', params: { max: '20' } } }
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(jsonResponse(409, limit)))
+    await expect(apiGet('/api/projects/1/blueprints')).rejects.toThrow('A project can have up to 20 blueprints')
+
+    const unknown = { error: { code: 'NEW_ERROR', message: 'Something new' } }
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(jsonResponse(409, unknown)))
+    await expect(apiGet('/api/projects')).rejects.toThrow('Something new')
   })
 
   it('reports a network failure with its own code', async () => {

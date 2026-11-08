@@ -1,4 +1,5 @@
 import { API_URL } from '../config/env.js'
+import { hasText, t } from '../i18n/i18n.js'
 
 /**
  * Error with the code and message sent by the backend:
@@ -13,6 +14,14 @@ export class ApiError extends Error {
     this.code = code
     this.fields = fields
   }
+}
+
+/**
+ * Message of an error in the current language, from its code and the values
+ * the backend sends in `params`. Unknown codes keep the message of the backend.
+ */
+export function errorText(code, params, fallback) {
+  return hasText(`errors.${code}`) ? t(`errors.${code}`, params) : fallback
 }
 
 /**
@@ -37,7 +46,7 @@ export async function apiRequest(path, { method = 'GET', body, token, signal, re
     })
   } catch (error) {
     if (error.name === 'AbortError') throw error
-    throw new ApiError('Could not connect to the server', { code: 'NETWORK_ERROR' })
+    throw new ApiError(t('errors.NETWORK_ERROR'), { code: 'NETWORK_ERROR' })
   }
 
   if (response.ok && responseType === 'blob') return response.blob()
@@ -45,9 +54,11 @@ export async function apiRequest(path, { method = 'GET', body, token, signal, re
   const data = await response.json().catch(() => null)
 
   if (!response.ok) {
-    throw new ApiError(data?.error?.message ?? `The server responded with status ${response.status}`, {
+    const code = data?.error?.code ?? 'HTTP_ERROR'
+    const params = { status: response.status, ...data?.error?.params }
+    throw new ApiError(errorText(code, params, data?.error?.message ?? t('errors.HTTP_ERROR', params)), {
       status: response.status,
-      code: data?.error?.code ?? 'HTTP_ERROR',
+      code,
       fields: data?.error?.fields ?? null,
     })
   }
