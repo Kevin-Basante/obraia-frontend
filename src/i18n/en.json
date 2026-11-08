@@ -115,6 +115,35 @@
     "goodAfternoon": "Good afternoon",
     "goodEvening": "Good evening"
   },
+  "measurementForm": {
+    "element": "Element",
+    "chooseAnElement": "Choose an element",
+    "floor": "Floor",
+    "blueprintOptional": "Blueprint (optional)",
+    "noBlueprint": "No blueprint",
+    "quantity": "Quantity",
+    "howManyEqualElements": "How many equal elements",
+    "notesOptional": "Notes (optional)",
+    "saving": "Saving…",
+    "cancel": "Cancel",
+    "fillInTheDimensionsTo": "Fill in the dimensions to see the amount.",
+    "chooseTheElement": "Choose the element",
+    "chooseTheFloor": "Choose the floor",
+    "enterAValueFrom0": "Enter a value from 0,01 to 1000 m, with up to 2 decimals",
+    "enterAWholeNumberFrom": "Enter a whole number from 1 to 1000",
+    "useAtMost500Characters": "Use at most 500 characters",
+    "dimensions": {
+      "lengthM": "Length (m)",
+      "widthM": "Width (m)",
+      "heightM": "Height (m)"
+    },
+    "floorNumber": "Floor {number}",
+    "amount": "Amount: {amount}",
+    "onlyFloors": {
+      "one": "The project has only 1 floor",
+      "other": "The project has only {count} floors"
+    }
+  },
   "blueprintFile": {
     "chooseAPdfOrAn": "Choose a PDF or an image",
     "theFileIsEmpty": "The file is empty",

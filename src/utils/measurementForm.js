@@ -1,4 +1,5 @@
 import { parseArea } from './projectForm.js'
+import { t } from '../i18n/i18n.js'
 
 // Same rules as the backend for a measurement, checked before sending the form.
 // Which dimensions are needed comes from the element type catalog.
@@ -14,10 +15,9 @@ export const EMPTY_MEASUREMENT_FORM = {
   notes: '',
 }
 
-export const DIMENSION_LABELS = {
-  lengthM: 'Length (m)',
-  widthM: 'Width (m)',
-  heightM: 'Height (m)',
+/** Label of a dimension field (lengthM, widthM or heightM) in the current language. */
+export function dimensionLabel(field) {
+  return t(`measurementForm.dimensions.${field}`)
 }
 
 /** A dimension in meters: "3,5" is read as 3.5. Returns null if it is not valid. */
@@ -34,15 +34,15 @@ function parseQuantity(text) {
 /** Returns one message per invalid field (empty if the form is valid). */
 export function validateMeasurement(form, element, floors) {
   const errors = {}
-  if (!element) errors.elementType = 'Choose the element'
+  if (!element) errors.elementType = t('measurementForm.chooseTheElement')
   const floor = Number(form.floorNumber)
-  if (floor !== 1 && floor !== 2) errors.floorNumber = 'Choose the floor'
-  else if (floor > floors) errors.floorNumber = `The project has only ${floors} floor`
+  if (floor !== 1 && floor !== 2) errors.floorNumber = t('measurementForm.chooseTheFloor')
+  else if (floor > floors) errors.floorNumber = t('measurementForm.onlyFloors', { count: floors })
   for (const field of element?.requiredDimensions ?? ['lengthM']) {
-    if (parseDimension(form[field]) === null) errors[field] = 'Enter a value from 0,01 to 1000 m, with up to 2 decimals'
+    if (parseDimension(form[field]) === null) errors[field] = t('measurementForm.enterAValueFrom0')
   }
-  if (parseQuantity(form.quantity) === null) errors.quantity = 'Enter a whole number from 1 to 1000'
-  if (form.notes.trim().length > 500) errors.notes = 'Use at most 500 characters'
+  if (parseQuantity(form.quantity) === null) errors.quantity = t('measurementForm.enterAWholeNumberFrom')
+  if (form.notes.trim().length > 500) errors.notes = t('measurementForm.useAtMost500Characters')
   return errors
 }
 

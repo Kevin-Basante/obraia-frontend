@@ -115,6 +115,35 @@
     "goodAfternoon": "Buenas tardes",
     "goodEvening": "Buenas noches"
   },
+  "measurementForm": {
+    "element": "Elemento",
+    "chooseAnElement": "Elige un elemento",
+    "floor": "Piso",
+    "blueprintOptional": "Plano (opcional)",
+    "noBlueprint": "Sin plano",
+    "quantity": "Cantidad",
+    "howManyEqualElements": "Cuántos elementos iguales",
+    "notesOptional": "Notas (opcional)",
+    "saving": "Guardando…",
+    "cancel": "Cancelar",
+    "fillInTheDimensionsTo": "Llena las dimensiones para ver la cantidad.",
+    "chooseTheElement": "Elige el elemento",
+    "chooseTheFloor": "Elige el piso",
+    "enterAValueFrom0": "Escribe un valor de 0,01 a 1000 m, con máximo 2 decimales",
+    "enterAWholeNumberFrom": "Escribe un número entero de 1 a 1000",
+    "useAtMost500Characters": "Usa máximo 500 caracteres",
+    "dimensions": {
+      "lengthM": "Largo (m)",
+      "widthM": "Ancho (m)",
+      "heightM": "Alto (m)"
+    },
+    "floorNumber": "Piso {number}",
+    "amount": "Cantidad: {amount}",
+    "onlyFloors": {
+      "one": "La obra tiene solo 1 piso",
+      "other": "La obra tiene solo {count} pisos"
+    }
+  },
   "blueprintFile": {
     "chooseAPdfOrAn": "Elige un PDF o una imagen",
     "theFileIsEmpty": "El archivo está vacío",
