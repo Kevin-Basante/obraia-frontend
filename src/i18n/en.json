@@ -407,6 +407,15 @@
     "youHaveNoProjectsYet": "You have no projects yet. Create the first one.",
     "noProjectsMatchTheseFilters": "No projects match these filters."
   },
+  "notificationsPage": {
+    "loadingTheNotifications": "Loading the notifications…",
+    "notifications": "Notifications",
+    "markAllAsRead": "Mark all as read",
+    "thereAreNoNotificationsYet": "There are no notifications yet. They arrive when a budget is approved, when the expenses pass the budget and when the risk of a project rises to high.",
+    "everythingIsRead": "Everything is read.",
+    "marking": "Marking…",
+    "unread": "{count} not read yet."
+  },
   "progressReportForm": {
     "progress": "Progress (%)",
     "totalProgressOfTheTask": "Total progress of the task, from 0 to 100",

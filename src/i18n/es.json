@@ -407,6 +407,15 @@
     "youHaveNoProjectsYet": "Todavía no tienes obras. Crea la primera.",
     "noProjectsMatchTheseFilters": "Ninguna obra coincide con estos filtros."
   },
+  "notificationsPage": {
+    "loadingTheNotifications": "Cargando las notificaciones…",
+    "notifications": "Notificaciones",
+    "markAllAsRead": "Marcar todas como leídas",
+    "thereAreNoNotificationsYet": "Todavía no hay notificaciones. Llegan cuando se aprueba un presupuesto, cuando los gastos pasan el presupuesto y cuando el riesgo de una obra sube a alto.",
+    "everythingIsRead": "Todo está leído.",
+    "marking": "Marcando…",
+    "unread": "{count} sin leer todavía."
+  },
   "progressReportForm": {
     "progress": "Avance (%)",
     "totalProgressOfTheTask": "Avance total de la tarea, de 0 a 100",
