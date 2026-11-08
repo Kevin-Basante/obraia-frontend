@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { FormField } from './FormField.jsx'
 import './PasswordField.css'
+import { t } from '../i18n/i18n.js'
 
 /** Password input with a button to show or hide what was typed. */
 export function PasswordField(props) {
@@ -15,7 +16,7 @@ export function PasswordField(props) {
         onClick={() => setVisible((v) => !v)}
         aria-pressed={visible}
       >
-        {visible ? 'Hide' : 'Show'}
+        {visible ? t('common.hide') : t('common.show')}
       </button>
     </div>
   )
