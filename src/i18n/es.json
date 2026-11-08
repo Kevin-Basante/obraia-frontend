@@ -379,6 +379,14 @@
     "theFileIsTooLarge": "El archivo es muy grande. El límite es 10 MB",
     "uploadAPdfOrAnImage": "Sube un PDF o una imagen (PNG, JPG o WEBP)"
   },
+  "comparisonPage": {
+    "loadingTheComparison": "Cargando la comparación…",
+    "manualVsAi": "Manual vs. IA",
+    "measurements": "Medidas",
+    "theAiHasNotRead": "La IA todavía no ha leído ningún plano de esta obra, así que solo aparecen los totales manuales.",
+    "thereAreNoMeasurementsTo": "Todavía no hay medidas para comparar.",
+    "tolerance": "Una diferencia de hasta {pct}% cuenta como coincidencia."
+  },
   "siteManagersPage": {
     "mySiteManagers": "Mis maestros de obra",
     "peopleInChargeOfThe": "Personas a cargo del trabajo en la obra. Asígnalas desde la página de cada obra.",
