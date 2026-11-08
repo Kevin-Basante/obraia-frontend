@@ -130,6 +130,13 @@
     "theEndDateCannotBe": "The end date cannot be before the start date",
     "catalogError": "We could not load the catalog: {message}"
   },
+  "workStatus": {
+    "start": "Start",
+    "resume": "Resume",
+    "reopen": "Reopen",
+    "markAsDelayed": "Mark as delayed",
+    "complete": "Complete"
+  },
   "resetPasswordPage": {
     "theLinkIsIncomplete": "The link is incomplete",
     "askForANewLink": "Ask for a new link",

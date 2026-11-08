@@ -130,6 +130,13 @@
     "theEndDateCannotBe": "La fecha de fin no puede ser antes de la de inicio",
     "catalogError": "No pudimos cargar el catálogo: {message}"
   },
+  "workStatus": {
+    "start": "Iniciar",
+    "resume": "Reanudar",
+    "reopen": "Reabrir",
+    "markAsDelayed": "Marcar como atrasada",
+    "complete": "Completar"
+  },
   "resetPasswordPage": {
     "theLinkIsIncomplete": "El enlace está incompleto",
     "askForANewLink": "Pedir un enlace nuevo",
