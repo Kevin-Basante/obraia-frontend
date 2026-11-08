@@ -142,6 +142,14 @@
       "other": "{count} projects"
     }
   },
+  "costBreakdown": {
+    "layer": "Layer",
+    "detail": "Detail",
+    "rate": "Rate",
+    "amount": "Amount",
+    "share": "Share",
+    "total": "Total"
+  },
   "analysis": {
     "theAiServiceIsNot": "The AI service is not configured on the server yet.",
     "theAiCouldNotRead": "The AI could not read the blueprint. Wait a moment and try again.",

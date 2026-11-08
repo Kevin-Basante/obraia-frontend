@@ -142,6 +142,14 @@
       "other": "{count} obras"
     }
   },
+  "costBreakdown": {
+    "layer": "Capa",
+    "detail": "Detalle",
+    "rate": "Tasa",
+    "amount": "Monto",
+    "share": "Parte",
+    "total": "Total"
+  },
   "analysis": {
     "theAiServiceIsNot": "El servicio de IA todavía no está configurado en el servidor.",
     "theAiCouldNotRead": "La IA no pudo leer el plano. Espera un momento e inténtalo otra vez.",
