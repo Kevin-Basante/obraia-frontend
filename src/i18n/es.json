@@ -687,6 +687,16 @@
     "markAsDelayed": "Marcar como atrasada",
     "complete": "Completar"
   },
+  "confirmAccountDeletionPage": {
+    "deletingYourAccount": "Eliminando tu cuenta…",
+    "oneMoment": "Un momento.",
+    "accountDeleted": "Cuenta eliminada",
+    "goToTheHomePage": "Ir al inicio",
+    "weCouldNotDeleteYour": "No pudimos eliminar tu cuenta",
+    "youCanAskForA": "Puedes pedir un enlace nuevo desde la página de tu cuenta.",
+    "myAccount": "Mi cuenta",
+    "theLinkIsIncompleteOpen": "El enlace está incompleto. Ábrelo otra vez desde tu correo."
+  },
   "risk": {
     "noDelayExpected": "No se espera retraso",
     "delay": {

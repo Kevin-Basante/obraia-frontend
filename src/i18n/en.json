@@ -687,6 +687,16 @@
     "markAsDelayed": "Mark as delayed",
     "complete": "Complete"
   },
+  "confirmAccountDeletionPage": {
+    "deletingYourAccount": "Deleting your account…",
+    "oneMoment": "One moment.",
+    "accountDeleted": "Account deleted",
+    "goToTheHomePage": "Go to the home page",
+    "weCouldNotDeleteYour": "We could not delete your account",
+    "youCanAskForA": "You can ask for a new link from your account page.",
+    "myAccount": "My account",
+    "theLinkIsIncompleteOpen": "The link is incomplete. Open it again from your email."
+  },
   "risk": {
     "noDelayExpected": "No delay expected",
     "delay": {

@@ -5,6 +5,8 @@ import { FormAlert } from '../components/FormAlert.jsx'
 import { LoadingState } from '../components/LoadingState.jsx'
 import { useAuth } from '../hooks/useAuth.js'
 import { confirmAccountDeletion } from '../services/accountService.js'
+import { serverMessage } from '../utils/serverMessage.js'
+import { t } from '../i18n/i18n.js'
 
 // A link works only once, so both runs of the effect in development share the request.
 const requests = new Map()
@@ -29,7 +31,7 @@ export function ConfirmAccountDeletionPage() {
         if (!active) return
         // The account no longer exists, so the saved session is useless.
         signOut()
-        setResult({ status: 'success', message: response.message })
+        setResult({ status: 'success', message: serverMessage(response) })
       })
       .catch((error) => active && setResult({ status: 'error', error }))
     return () => {
@@ -37,13 +39,19 @@ export function ConfirmAccountDeletionPage() {
     }
   }, [token, signOut])
 
-  if (result.status === 'loading') return <LoadingState title="Deleting your account…" message="One moment." />
+  if (result.status === 'loading')
+    return (
+      <LoadingState
+        title={t('confirmAccountDeletionPage.deletingYourAccount')}
+        message={t('confirmAccountDeletionPage.oneMoment')}
+      />
+    )
 
   if (result.status === 'success') {
     return (
-      <AuthCard title="Account deleted" description={result.message}>
+      <AuthCard title={t('confirmAccountDeletionPage.accountDeleted')} description={result.message}>
         <Link to="/" className="button-link">
-          Go to the home page
+          {t('confirmAccountDeletionPage.goToTheHomePage')}
         </Link>
       </AuthCard>
     )
@@ -51,15 +59,16 @@ export function ConfirmAccountDeletionPage() {
 
   return (
     <AuthCard
-      title="We could not delete your account"
+      title={t('confirmAccountDeletionPage.weCouldNotDeleteYour')}
       footer={
         <p>
-          You can ask for a new link from your account page. <Link to="/account">My account</Link>
+          {t('confirmAccountDeletionPage.youCanAskForA')}{' '}
+          <Link to="/account">{t('confirmAccountDeletionPage.myAccount')}</Link>
         </p>
       }
     >
       <FormAlert>
-        {result.status === 'missing' ? 'The link is incomplete. Open it again from your email.' : result.error.message}
+        {result.status === 'missing' ? t('confirmAccountDeletionPage.theLinkIsIncompleteOpen') : result.error.message}
       </FormAlert>
     </AuthCard>
   )
