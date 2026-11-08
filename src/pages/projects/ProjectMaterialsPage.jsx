@@ -6,6 +6,7 @@ import { ProjectMaterialsTable } from '../../components/budgets/ProjectMaterials
 import { useApiData } from '../../hooks/useApiData.js'
 import { listProjectMaterials } from '../../services/budgetService.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
+import { t } from '../../i18n/i18n.js'
 
 /** Materials to buy for the project, from the last saved quotation. */
 export function ProjectMaterialsPage() {
@@ -14,22 +15,22 @@ export function ProjectMaterialsPage() {
 
   if (materials.error?.status === 404) return <NotFoundPage />
   if (materials.status === 'error') return <ErrorState error={materials.error} onRetry={materials.retry} />
-  if (!materials.data) return <LoadingState title="Loading the materials…" />
+  if (!materials.data) return <LoadingState title={t('projectMaterialsPage.loadingTheMaterials')} />
 
   return (
     <div className="workspace">
       <PageHeader
-        title="Materials to buy"
-        description="Quantities of the last saved version, waste included, with the price of that day."
-        back={{ to: `/projects/${id}/budgets`, label: 'Budget' }}
+        title={t('projectMaterialsPage.materialsToBuy')}
+        description={t('projectMaterialsPage.quantitiesOfTheLastSaved')}
+        back={{ to: `/projects/${id}/budgets`, label: t('projectMaterialsPage.budget') }}
       />
       <section className="card">
         {materials.data.length === 0 ? (
           <>
-            <p className="muted">The list appears after the first version of the budget is saved.</p>
+            <p className="muted">{t('projectMaterialsPage.theListAppearsAfterThe')}</p>
             <div className="button-row">
               <Link to={`/projects/${id}/budgets`} className="button-link">
-                Go to the budget
+                {t('projectMaterialsPage.goToTheBudget')}
               </Link>
             </div>
           </>

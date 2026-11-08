@@ -1048,6 +1048,14 @@
     "sending": "Enviando…",
     "understand": "Entiendo que esto elimina la obra para todos los miembros."
   },
+  "projectMaterialsPage": {
+    "loadingTheMaterials": "Cargando los materiales…",
+    "materialsToBuy": "Materiales para comprar",
+    "quantitiesOfTheLastSaved": "Cantidades de la última versión guardada, con desperdicio, al precio de ese día.",
+    "budget": "Presupuesto",
+    "theListAppearsAfterThe": "La lista aparece cuando se guarda la primera versión del presupuesto.",
+    "goToTheBudget": "Ir al presupuesto"
+  },
   "workItemForm": {
     "phase": "Fase",
     "chooseAPhase": "Elige una fase",

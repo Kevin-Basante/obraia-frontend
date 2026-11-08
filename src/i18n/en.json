@@ -1048,6 +1048,14 @@
     "sending": "Sending…",
     "understand": "I understand that this deletes the project for every member."
   },
+  "projectMaterialsPage": {
+    "loadingTheMaterials": "Loading the materials…",
+    "materialsToBuy": "Materials to buy",
+    "quantitiesOfTheLastSaved": "Quantities of the last saved version, waste included, with the price of that day.",
+    "budget": "Budget",
+    "theListAppearsAfterThe": "The list appears after the first version of the budget is saved.",
+    "goToTheBudget": "Go to the budget"
+  },
   "workItemForm": {
     "phase": "Phase",
     "chooseAPhase": "Choose a phase",
