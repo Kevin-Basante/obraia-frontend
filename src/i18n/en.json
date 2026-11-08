@@ -38,6 +38,22 @@
     "notAdded": "Not added",
     "dateRange": "{start} to {end}"
   },
+  "states": {
+    "errorTitle": "Could not load the data",
+    "backendHint": "Make sure the backend is running at {url}",
+    "connecting": "Connecting to the server…",
+    "wakeUp": "If the server was asleep, the first response can take about a minute.",
+    "guest": {
+      "before": "You are using ObraIA as a guest: you can try the tools, but nothing is saved.",
+      "link": "Create an account",
+      "after": "to keep your projects."
+    },
+    "notFound": {
+      "title": "Page not found",
+      "text": "The address may be mistyped, or the page was moved.",
+      "home": "Go to the home page"
+    }
+  },
   "authCard": {
     "quote": "Plan it once. Build it right.",
     "promises": {

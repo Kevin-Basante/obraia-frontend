@@ -38,6 +38,22 @@
     "notAdded": "Sin agregar",
     "dateRange": "{start} a {end}"
   },
+  "states": {
+    "errorTitle": "No se pudieron cargar los datos",
+    "backendHint": "Revisa que el backend esté funcionando en {url}",
+    "connecting": "Conectando con el servidor…",
+    "wakeUp": "Si el servidor estaba dormido, la primera respuesta puede tardar cerca de un minuto.",
+    "guest": {
+      "before": "Estás usando ObraIA como invitado: puedes probar las herramientas, pero no se guarda nada.",
+      "link": "Crea una cuenta",
+      "after": "para guardar tus obras."
+    },
+    "notFound": {
+      "title": "Página no encontrada",
+      "text": "La dirección puede estar mal escrita o la página cambió de lugar.",
+      "home": "Ir al inicio"
+    }
+  },
   "authCard": {
     "quote": "Planéala una vez. Constrúyela bien.",
     "promises": {
