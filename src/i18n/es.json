@@ -310,6 +310,22 @@
     "theFileIsTooLarge": "El archivo es muy grande. El límite es 10 MB",
     "uploadAPdfOrAnImage": "Sube un PDF o una imagen (PNG, JPG o WEBP)"
   },
+  "planPreview": {
+    "theProjectHasNoPlanned": "La obra no tiene fecha de inicio planeada, así que las fases se crean sin fechas.",
+    "days": {
+      "one": "{count} día de trabajo",
+      "other": "{count} días de trabajo"
+    },
+    "dates": "{start} a {end} · {days}",
+    "small": "pequeña",
+    "large": "grande",
+    "summary": "{type}, obra {size}:",
+    "phases": {
+      "one": "{count} fase",
+      "other": "{count} fases"
+    },
+    "workingDays": "y {days} (de lunes a sábado)."
+  },
   "projectsPage": {
     "myProjects": "Mis obras",
     "projectsYouCreatedOrThat": "Obras que creaste o que otras personas compartieron contigo.",

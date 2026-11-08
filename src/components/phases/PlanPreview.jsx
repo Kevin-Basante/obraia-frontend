@@ -1,9 +1,15 @@
 import { formatDate } from '../../utils/format.js'
 import './PlanPreview.css'
+import { t } from '../../i18n/i18n.js'
 
 function dates(phase) {
-  if (!phase.plannedStartDate) return `${phase.durationDays} working days`
-  return `${formatDate(phase.plannedStartDate)} to ${formatDate(phase.plannedEndDate)} · ${phase.durationDays} working days`
+  const days = t('planPreview.days', { count: phase.durationDays })
+  if (!phase.plannedStartDate) return days
+  return t('planPreview.dates', {
+    start: formatDate(phase.plannedStartDate),
+    end: formatDate(phase.plannedEndDate),
+    days,
+  })
 }
 
 /** Phases that "Create plan" would save, each one with its starting tasks. */
@@ -12,12 +18,14 @@ export function PlanPreview({ preview }) {
   return (
     <div className="plan-preview">
       <p className="muted">
-        {preview.projectType}, {preview.sizeCategory === 'small' ? 'small' : 'large'} project:{' '}
-        <strong>{preview.phases.length} phases</strong> and {preview.workingDays} working days (Monday to Saturday).
+        {t('planPreview.summary', {
+          type: preview.projectType,
+          size: t(`planPreview.${preview.sizeCategory === 'small' ? 'small' : 'large'}`),
+        })}{' '}
+        <strong>{t('planPreview.phases', { count: preview.phases.length })}</strong>{' '}
+        {t('planPreview.workingDays', { days: t('planPreview.days', { count: preview.workingDays }) })}
       </p>
-      {withoutDates && (
-        <p className="muted">The project has no planned start date, so the phases are created without dates.</p>
-      )}
+      {withoutDates && <p className="muted">{t('planPreview.theProjectHasNoPlanned')}</p>}
       <ol className="plan-preview__list">
         {preview.phases.map((phase) => (
           <li key={phase.order}>

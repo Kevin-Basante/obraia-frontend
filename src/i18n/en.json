@@ -310,6 +310,22 @@
     "theFileIsTooLarge": "The file is too large. The limit is 10 MB",
     "uploadAPdfOrAnImage": "Upload a PDF or an image (PNG, JPG or WEBP)"
   },
+  "planPreview": {
+    "theProjectHasNoPlanned": "The project has no planned start date, so the phases are created without dates.",
+    "days": {
+      "one": "{count} working day",
+      "other": "{count} working days"
+    },
+    "dates": "{start} to {end} · {days}",
+    "small": "small",
+    "large": "large",
+    "summary": "{type}, {size} project:",
+    "phases": {
+      "one": "{count} phase",
+      "other": "{count} phases"
+    },
+    "workingDays": "and {days} (Monday to Saturday)."
+  },
   "projectsPage": {
     "myProjects": "My projects",
     "projectsYouCreatedOrThat": "Projects you created or that others shared with you.",
