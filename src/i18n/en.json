@@ -352,6 +352,12 @@
     "countedBetweenTheDatesOf": "counted between the dates of the phases of the plan",
     "fromTheStandardPhasesOf": "from the standard phases of the project type, because the plan has no dates yet"
   },
+  "cityTable": {
+    "city": "City",
+    "department": "Department",
+    "country": "Country",
+    "transport": "Transport"
+  },
   "siteManagerForm": {
     "fullName": "Full name",
     "documentOptional": "Document (optional)",
