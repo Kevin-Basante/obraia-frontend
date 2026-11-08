@@ -563,6 +563,17 @@
     "myProjects": "Mis obras",
     "theLinkIsIncompleteOpen": "El enlace está incompleto. Ábrelo otra vez desde tu correo."
   },
+  "budgetDetailPage": {
+    "loadingTheBudgetVersion": "Cargando la versión del presupuesto…",
+    "budget": "Presupuesto",
+    "approve": "Aprobar",
+    "costLayers": "Capas de costo",
+    "approving": "Aprobando…",
+    "confirmApprove": "¿Aprobar la versión {version}? La versión aprobada antes, si hay una, queda reemplazada.",
+    "title": "Versión {version} del presupuesto",
+    "savedAt": "Guardada el {date}",
+    "approvedAt": " · aprobado el {date}"
+  },
   "dashboardPage": {
     "welcomeToObraia": "Bienvenido a ObraIA",
     "tryTheToolsOfObraia": "Prueba las herramientas de ObraIA antes de crear tu cuenta.",

@@ -563,6 +563,17 @@
     "myProjects": "My projects",
     "theLinkIsIncompleteOpen": "The link is incomplete. Open it again from your email."
   },
+  "budgetDetailPage": {
+    "loadingTheBudgetVersion": "Loading the budget version…",
+    "budget": "Budget",
+    "approve": "Approve",
+    "costLayers": "Cost layers",
+    "approving": "Approving…",
+    "confirmApprove": "Approve version {version}? The version approved before, if any, becomes superseded.",
+    "title": "Budget version {version}",
+    "savedAt": "Saved {date}",
+    "approvedAt": " · approved {date}"
+  },
   "dashboardPage": {
     "welcomeToObraia": "Welcome to ObraIA",
     "tryTheToolsOfObraia": "Try the tools of ObraIA before creating your account.",

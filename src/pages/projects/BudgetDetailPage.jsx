@@ -13,6 +13,7 @@ import { getProject } from '../../services/projectService.js'
 import { formatDateTime } from '../../utils/format.js'
 import { isClosed } from '../../utils/projectStatus.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
+import { t } from '../../i18n/i18n.js'
 
 /** One saved version of the budget, with its rows and the button to approve it. */
 export function BudgetDetailPage() {
@@ -26,13 +27,13 @@ export function BudgetDetailPage() {
   if (project.error?.status === 404 || budget.error?.status === 404) return <NotFoundPage />
   const failed = [project, budget].find((request) => request.status === 'error')
   if (failed) return <ErrorState error={failed.error} onRetry={failed.retry} />
-  if (!project.data || !budget.data) return <LoadingState title="Loading the budget version…" />
+  if (!project.data || !budget.data) return <LoadingState title={t('budgetDetailPage.loadingTheBudgetVersion')} />
 
   const { data } = budget
   const canApprove = data.status.code === 'draft' && !isClosed(project.data)
 
   function handleApprove() {
-    if (window.confirm(`Approve version ${data.version}? The version approved before, if any, becomes superseded.`)) {
+    if (window.confirm(t('budgetDetailPage.confirmApprove', { version: data.version }))) {
       approving.submit()
     }
   }
@@ -40,24 +41,24 @@ export function BudgetDetailPage() {
   return (
     <div className="workspace">
       <PageHeader
-        title={`Budget version ${data.version}`}
+        title={t('budgetDetailPage.title', { version: data.version })}
         description={project.data.name}
-        back={{ to: `/projects/${id}/budgets`, label: 'Budget' }}
+        back={{ to: `/projects/${id}/budgets`, label: t('budgetDetailPage.budget') }}
         actions={
           canApprove && (
             <button type="button" disabled={approving.pending} onClick={handleApprove}>
-              {approving.pending ? 'Approving…' : 'Approve'}
+              {approving.pending ? t('budgetDetailPage.approving') : t('budgetDetailPage.approve')}
             </button>
           )
         }
       />
       <section className="card">
         <h2>
-          Cost layers <StatusBadge status={data.status} />
+          {t('budgetDetailPage.costLayers')} <StatusBadge status={data.status} />
         </h2>
         <p className="muted">
-          Saved {formatDateTime(data.createdAt)}
-          {data.approvedAt && ` · approved ${formatDateTime(data.approvedAt)}`}.
+          {t('budgetDetailPage.savedAt', { date: formatDateTime(data.createdAt) })}
+          {data.approvedAt && t('budgetDetailPage.approvedAt', { date: formatDateTime(data.approvedAt) })}
         </p>
         <FormAlert>{approving.error?.message}</FormAlert>
         <CostBreakdown items={data.items} total={data.projectedAmount} />
