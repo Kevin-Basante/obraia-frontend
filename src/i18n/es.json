@@ -715,5 +715,12 @@
     "INVALID_SIZE_CATEGORY": "Un valor de la solicitud no es válido",
     "INVALID_WORK_STATUS": "Un valor de la solicitud no es válido",
     "ANALYZER_BUSY": "La IA está ocupada en este momento. Inténtalo en un momento"
+  },
+  "phaseTimeline": {
+    "days": {
+      "one": "1 día",
+      "other": "{count} días"
+    },
+    "inTotal": "en total (cerca de {months} meses), una fase después de la otra."
   }
 }

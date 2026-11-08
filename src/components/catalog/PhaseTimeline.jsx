@@ -1,6 +1,7 @@
 import { LineArt } from '../art/LineArt.jsx'
 import { phaseArt } from '../../utils/artFor.js'
 import './PhaseTimeline.css'
+import { t } from '../../i18n/i18n.js'
 
 /**
  * Phases in construction order, as a roadmap: each stop has its drawing and a
@@ -13,7 +14,8 @@ export function PhaseTimeline({ plan, updating }) {
   return (
     <div className={`phase-timeline${updating ? ' phase-timeline--updating' : ''}`}>
       <p className="phase-timeline__total">
-        <strong>{plan.totalDurationDays} days</strong> in total (about {months} months), one phase after the other.
+        <strong>{t('phaseTimeline.days', { count: plan.totalDurationDays })}</strong>{' '}
+        {t('phaseTimeline.inTotal', { months })}
       </p>
       <ol className="phase-timeline__list">
         {plan.phases.map((phase, index) => (
@@ -30,7 +32,9 @@ export function PhaseTimeline({ plan, updating }) {
                 <span style={{ width: `${(phase.estimatedDurationDays / longest) * 100}%` }} />
               </span>
             </div>
-            <span className="phase-timeline__days">{phase.estimatedDurationDays} days</span>
+            <span className="phase-timeline__days">
+              {t('phaseTimeline.days', { count: phase.estimatedDurationDays })}
+            </span>
           </li>
         ))}
       </ol>
