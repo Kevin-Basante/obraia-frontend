@@ -25,6 +25,10 @@
       "dark": "Switch to the dark theme"
     }
   },
+  "footer": {
+    "tagline": "Plan, budget and track small construction projects",
+    "team": "Software Patterns final project · Kevin Basante and Arley Riascos"
+  },
   "common": {
     "retry": "Retry",
     "unknownError": "Unknown error",

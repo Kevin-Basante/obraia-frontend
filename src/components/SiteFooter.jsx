@@ -1,5 +1,6 @@
 import { BrandLogo } from './BrandLogo.jsx'
 import './SiteFooter.css'
+import { t } from '../i18n/i18n.js'
 
 /** Bottom of every page. */
 export function SiteFooter() {
@@ -9,8 +10,8 @@ export function SiteFooter() {
         <BrandLogo size={26} />
         <span>ObraIA</span>
       </div>
-      <p>Plan, budget and track small construction projects</p>
-      <p className="site-footer__team">Software Patterns final project · Kevin Basante and Arley Riascos</p>
+      <p>{t('footer.tagline')}</p>
+      <p className="site-footer__team">{t('footer.team')}</p>
     </footer>
   )
 }

@@ -25,6 +25,10 @@
       "dark": "Cambiar al tema oscuro"
     }
   },
+  "footer": {
+    "tagline": "Planea, presupuesta y sigue obras pequeñas",
+    "team": "Proyecto final de Patrones de Software · Kevin Basante y Arley Riascos"
+  },
   "common": {
     "retry": "Reintentar",
     "unknownError": "Error desconocido",
