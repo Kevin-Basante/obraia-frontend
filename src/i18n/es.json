@@ -156,5 +156,13 @@
       "user": "Usuario",
       "system_admin": "Administrador"
     }
+  },
+  "serverMessages": {
+    "password_changed": "Tu contraseña cambió. Inicia sesión de nuevo con la contraseña nueva.",
+    "account_deletion_sent": "Te enviamos un correo para confirmar la eliminación de tu cuenta",
+    "account_deleted": "Tu cuenta fue eliminada. Tus datos se borrarán para siempre el {purgeDate}.",
+    "project_deletion_sent": "Te enviamos un correo para confirmar la eliminación de {project}",
+    "project_deleted": "La obra {project} fue eliminada. Sus datos se borrarán para siempre el {purgeDate}.",
+    "withLink": "{message}. Abre el enlace de ese correo para terminar."
   }
 }
