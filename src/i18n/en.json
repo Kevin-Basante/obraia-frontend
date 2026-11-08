@@ -536,6 +536,10 @@
     "edit": "Edit",
     "delete": "Delete"
   },
+  "projectList": {
+    "noStartDateYet": "No start date yet",
+    "starts": "Starts {date}"
+  },
   "siteManagerForm": {
     "fullName": "Full name",
     "documentOptional": "Document (optional)",

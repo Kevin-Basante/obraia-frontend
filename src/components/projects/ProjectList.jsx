@@ -2,6 +2,7 @@ import { Link } from 'react-router'
 import { formatDate, formatQuantity } from '../../utils/format.js'
 import { StatusBadge } from './StatusBadge.jsx'
 import './ProjectList.css'
+import { t } from '../../i18n/i18n.js'
 
 /** Projects as cards; each one opens the project page. */
 export function ProjectList({ projects, updating }) {
@@ -19,7 +20,9 @@ export function ProjectList({ projects, updating }) {
             </span>
             <span className="muted">
               {formatQuantity(project.builtAreaM2)} m² ·{' '}
-              {project.plannedStartDate ? `Starts ${formatDate(project.plannedStartDate)}` : 'No start date yet'}
+              {project.plannedStartDate
+                ? t('projectList.starts', { date: formatDate(project.plannedStartDate) })
+                : t('projectList.noStartDateYet')}
             </span>
           </Link>
         </li>
