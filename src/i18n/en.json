@@ -681,6 +681,15 @@
     "late": "Late",
     "noDates": "No dates"
   },
+  "workItemForm": {
+    "phase": "Phase",
+    "chooseAPhase": "Choose a phase",
+    "name": "Name",
+    "plannedStartOptional": "Planned start (optional)",
+    "plannedEndOptional": "Planned end (optional)",
+    "saving": "Saving…",
+    "cancel": "Cancel"
+  },
   "projectStatus": {
     "actions": {
       "draft": "Back to draft",

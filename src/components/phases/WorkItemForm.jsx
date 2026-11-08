@@ -6,6 +6,7 @@ import { SubmitButton } from '../SubmitButton.jsx'
 import { useFormSubmit } from '../../hooks/useFormSubmit.js'
 import { workFieldErrors } from '../../utils/workForm.js'
 import './WorkItemForm.css'
+import { t } from '../../i18n/i18n.js'
 
 /**
  * Name and planned dates of a phase or a task. With `phases` it also asks
@@ -46,26 +47,26 @@ export function WorkItemForm({ initialForm, phases, validate, onSave, onCancel, 
       <div className="work-item-form__row">
         {phases && (
           <SelectField
-            label="Phase"
-            placeholder="Choose a phase"
+            label={t('workItemForm.phase')}
+            placeholder={t('workItemForm.chooseAPhase')}
             options={phases.map((phase) => ({ value: phase.id, label: `${phase.order}. ${phase.name}` }))}
             value={form.phaseId}
             onChange={update('phaseId')}
             error={errors.phaseId}
           />
         )}
-        <FormField label="Name" value={form.name} onChange={update('name')} error={errors.name} />
+        <FormField label={t('workItemForm.name')} value={form.name} onChange={update('name')} error={errors.name} />
       </div>
       <div className="work-item-form__row">
         <FormField
-          label="Planned start (optional)"
+          label={t('workItemForm.plannedStartOptional')}
           type="date"
           value={form.plannedStartDate}
           onChange={update('plannedStartDate')}
           error={errors.plannedStartDate}
         />
         <FormField
-          label="Planned end (optional)"
+          label={t('workItemForm.plannedEndOptional')}
           type="date"
           value={form.plannedEndDate}
           onChange={update('plannedEndDate')}
@@ -73,12 +74,12 @@ export function WorkItemForm({ initialForm, phases, validate, onSave, onCancel, 
         />
       </div>
       <div className="button-row">
-        <SubmitButton pending={pending} pendingText="Saving…">
+        <SubmitButton pending={pending} pendingText={t('workItemForm.saving')}>
           {submitText}
         </SubmitButton>
         {onCancel && (
           <button type="button" className="button-secondary" onClick={onCancel}>
-            Cancel
+            {t('workItemForm.cancel')}
           </button>
         )}
       </div>

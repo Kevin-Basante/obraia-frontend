@@ -681,6 +681,15 @@
     "late": "Atrasada",
     "noDates": "Sin fechas"
   },
+  "workItemForm": {
+    "phase": "Fase",
+    "chooseAPhase": "Elige una fase",
+    "name": "Nombre",
+    "plannedStartOptional": "Inicio planeado (opcional)",
+    "plannedEndOptional": "Fin planeado (opcional)",
+    "saving": "Guardando…",
+    "cancel": "Cancelar"
+  },
   "projectStatus": {
     "actions": {
       "draft": "Volver a borrador",
