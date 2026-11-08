@@ -389,6 +389,14 @@
     "howItWorks": "How it works",
     "fromTheDrawingToThe": "From the drawing to the last brick"
   },
+  "yourProjects": {
+    "yourProjects": "Your projects",
+    "searchAndFilter": "Search and filter",
+    "loading": "Loading…",
+    "weCouldNotLoadYour": "We could not load your projects:",
+    "youHaveNoProjectsYet": "You have no projects yet. Create one to plan its phases and quotation.",
+    "newProject": "New project"
+  },
   "upcomingTasks": {
     "nextTasks": "Next tasks",
     "seeAll": "See all",

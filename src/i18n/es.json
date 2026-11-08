@@ -389,6 +389,14 @@
     "howItWorks": "Cómo funciona",
     "fromTheDrawingToThe": "Del dibujo al último ladrillo"
   },
+  "yourProjects": {
+    "yourProjects": "Tus obras",
+    "searchAndFilter": "Buscar y filtrar",
+    "loading": "Cargando…",
+    "weCouldNotLoadYour": "No pudimos cargar tus obras:",
+    "youHaveNoProjectsYet": "Todavía no tienes obras. Crea una para planear sus fases y su cotización.",
+    "newProject": "Nueva obra"
+  },
   "upcomingTasks": {
     "nextTasks": "Próximas tareas",
     "seeAll": "Ver todas",
