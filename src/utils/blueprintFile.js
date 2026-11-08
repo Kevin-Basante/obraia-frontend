@@ -1,3 +1,4 @@
+import { t } from '../i18n/i18n.js'
 // Same limits as the backend for a blueprint, checked before uploading it.
 
 export const MAX_FILE_BYTES = 10 * 1024 * 1024
@@ -10,11 +11,11 @@ const ACCEPTED_EXTENSIONS = ['pdf', 'png', 'jpg', 'jpeg', 'webp']
 
 /** Returns the problem of the file, or null if it can be uploaded. */
 export function validateBlueprintFile(file) {
-  if (!file) return 'Choose a PDF or an image'
+  if (!file) return t('blueprintFile.chooseAPdfOrAn')
   const extension = file.name.split('.').pop().toLowerCase()
-  if (!ACCEPTED_EXTENSIONS.includes(extension)) return 'Upload a PDF or an image (PNG, JPG or WEBP)'
-  if (file.size === 0) return 'The file is empty'
-  if (file.size > MAX_FILE_BYTES) return 'The file is too large. The limit is 10 MB'
+  if (!ACCEPTED_EXTENSIONS.includes(extension)) return t('blueprintFile.uploadAPdfOrAnImage')
+  if (file.size === 0) return t('blueprintFile.theFileIsEmpty')
+  if (file.size > MAX_FILE_BYTES) return t('blueprintFile.theFileIsTooLarge')
   return null
 }
 

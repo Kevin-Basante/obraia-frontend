@@ -79,6 +79,12 @@
     "goodAfternoon": "Good afternoon",
     "goodEvening": "Good evening"
   },
+  "blueprintFile": {
+    "chooseAPdfOrAn": "Choose a PDF or an image",
+    "theFileIsEmpty": "The file is empty",
+    "theFileIsTooLarge": "The file is too large. The limit is 10 MB",
+    "uploadAPdfOrAnImage": "Upload a PDF or an image (PNG, JPG or WEBP)"
+  },
   "validation": {
     "atLeast8CharactersWith": "At least 8 characters, with one letter and one number.",
     "enterYourEmail": "Enter your email",
