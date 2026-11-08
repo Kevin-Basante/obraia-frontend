@@ -359,6 +359,11 @@
     "goodAfternoon": "Good afternoon",
     "goodEvening": "Good evening"
   },
+  "requireAccount": {
+    "createAnAccountToSave": "Create an account to save projects",
+    "asAGuestYouCan": "As a guest you can browse the catalog, but projects are saved in your account.",
+    "createAccount": "Create account"
+  },
   "loginPage": {
     "enterYourPassword": "Enter your password",
     "signIn": "Sign in",

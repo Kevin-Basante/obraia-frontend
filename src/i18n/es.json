@@ -359,6 +359,11 @@
     "goodAfternoon": "Buenas tardes",
     "goodEvening": "Buenas noches"
   },
+  "requireAccount": {
+    "createAnAccountToSave": "Crea una cuenta para guardar obras",
+    "asAGuestYouCan": "Como invitado puedes ver el catálogo, pero las obras se guardan en tu cuenta.",
+    "createAccount": "Crear cuenta"
+  },
   "loginPage": {
     "enterYourPassword": "Escribe tu contraseña",
     "signIn": "Iniciar sesión",
