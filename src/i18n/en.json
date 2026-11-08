@@ -389,6 +389,13 @@
     "howItWorks": "How it works",
     "fromTheDrawingToThe": "From the drawing to the last brick"
   },
+  "upcomingTasks": {
+    "nextTasks": "Next tasks",
+    "seeAll": "See all",
+    "thereAreNoPendingTasks": "There are no pending tasks.",
+    "late": "Late",
+    "noDates": "No dates"
+  },
   "notifications": {
     "justNow": "just now",
     "minutesAgo": "{minutes} min ago",

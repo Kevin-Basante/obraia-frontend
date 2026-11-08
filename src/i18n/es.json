@@ -389,6 +389,13 @@
     "howItWorks": "Cómo funciona",
     "fromTheDrawingToThe": "Del dibujo al último ladrillo"
   },
+  "upcomingTasks": {
+    "nextTasks": "Próximas tareas",
+    "seeAll": "Ver todas",
+    "thereAreNoPendingTasks": "No hay tareas pendientes.",
+    "late": "Atrasada",
+    "noDates": "Sin fechas"
+  },
   "notifications": {
     "justNow": "ahora mismo",
     "minutesAgo": "hace {minutes} min",
