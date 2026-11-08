@@ -1,0 +1,145 @@
+{
+  "language": {
+    "switchTo": "Cambiar a {language}",
+    "names": {
+      "en": "inglés",
+      "es": "español"
+    }
+  },
+  "header": {
+    "home": "Inicio de ObraIA",
+    "main": "Principal",
+    "catalog": "Catálogo",
+    "dashboard": "Panel",
+    "projects": "Obras",
+    "myAccount": "Mi cuenta",
+    "signOut": "Cerrar sesión",
+    "signIn": "Iniciar sesión",
+    "createAccount": "Crear cuenta",
+    "notifications": "Notificaciones",
+    "notificationsUnread": "Notificaciones, {count} sin leer"
+  },
+  "common": {
+    "retry": "Reintentar",
+    "unknownError": "Error desconocido",
+    "pleaseWait": "Espera un momento…",
+    "show": "Ver",
+    "hide": "Ocultar",
+    "notAdded": "Sin agregar",
+    "dateRange": "{start} a {end}"
+  },
+  "resultCount": {
+    "updating": " · actualizando…",
+    "city": {
+      "one": "1 ciudad",
+      "other": "{count} ciudades"
+    },
+    "material": {
+      "one": "1 material",
+      "other": "{count} materiales"
+    },
+    "project": {
+      "one": "1 obra",
+      "other": "{count} obras"
+    }
+  },
+  "codes": {
+    "status": {
+      "draft": "Borrador",
+      "planned": "Planeada",
+      "in_progress": "En curso",
+      "paused": "Pausada",
+      "completed": "Completada",
+      "cancelled": "Cancelada",
+      "delayed": "Atrasada",
+      "approved": "Aprobada",
+      "superseded": "Reemplazada",
+      "pending": "Pendiente",
+      "processing": "Procesando",
+      "failed": "Falló",
+      "low": "Bajo",
+      "medium": "Medio",
+      "high": "Alto",
+      "critical": "Crítico"
+    },
+    "element": {
+      "foundation": "Cimentación",
+      "column": "Columnas",
+      "beam": "Vigas",
+      "slab": "Placas",
+      "wall": "Muros",
+      "floor": "Base del piso",
+      "roof": "Cubierta"
+    },
+    "materialCategory": {
+      "cement_concrete": "Cemento y concreto",
+      "aggregates": "Agregados",
+      "masonry": "Mampostería",
+      "steel": "Acero",
+      "roofing": "Cubiertas",
+      "finishes": "Acabados",
+      "other": "Otros"
+    },
+    "expenseCategory": {
+      "materials": "Materiales",
+      "labor": "Mano de obra",
+      "equipment": "Equipos",
+      "tax": "Impuestos",
+      "other": "Otro"
+    },
+    "budgetItem": {
+      "materials": "Materiales",
+      "waste": "Desperdicio",
+      "transport": "Transporte",
+      "labor": "Mano de obra",
+      "equipment": "Equipos",
+      "tax": "Impuestos",
+      "contingency": "Imprevistos",
+      "other": "Otro"
+    },
+    "notificationType": {
+      "budget_deviation": "Presupuesto superado",
+      "delay_risk": "Riesgo de retraso",
+      "phase_status_changed": "Cambio de estado de una fase",
+      "task_overdue": "Tarea vencida",
+      "budget_approved": "Presupuesto aprobado",
+      "deletion_scheduled": "Eliminación programada",
+      "system": "Sistema"
+    },
+    "riskTrigger": {
+      "progress_report": "Después de un reporte de avance",
+      "expense": "Después de un gasto",
+      "scheduled": "Programada",
+      "manual": "Pedida por un miembro"
+    },
+    "fileType": {
+      "image": "Imagen",
+      "scanned_pdf": "PDF escaneado",
+      "vector_pdf": "PDF vectorial"
+    },
+    "source": {
+      "manual": "Manual",
+      "ocr": "IA"
+    },
+    "comparison": {
+      "manual_only": "Solo manual",
+      "ai_only": "Solo IA",
+      "match": "Coincide",
+      "review": "Revisar"
+    },
+    "riskFactor": {
+      "schedule_delay": "Tareas atrasadas",
+      "progress_pace": "Avance frente al tiempo",
+      "budget_overrun": "Gasto frente al presupuesto",
+      "spending_pace": "Gasto frente al avance"
+    },
+    "size": {
+      "small": "pequeña",
+      "large": "grande"
+    },
+    "role": {
+      "user": "Usuario",
+      "system_admin": "Administrador"
+    }
+  }
+}
