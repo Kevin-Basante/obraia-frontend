@@ -456,6 +456,25 @@
     "everythingAHouseNeedsIn": "Todo lo que una casa necesita, en un solo lugar",
     "familiesAndSmallBuildersPlan": "Familias y pequeños constructores planean casas de hasta dos pisos sin hojas de cálculo ni suposiciones."
   },
+  "budgetsPage": {
+    "currentQuotation": "Cotización actual",
+    "goToMeasurements": "Ir a las medidas",
+    "readABlueprintWithAi": "Leer un plano con IA",
+    "quotingTheProject": "Cotizando la obra…",
+    "manualMeasurements": "medidas manuales",
+    "leftOutBecauseTheProject": "Quedan fuera porque el tipo de obra no tiene fórmulas de materiales para ellos:",
+    "theProjectIsClosedSo": "La obra está cerrada, así que no se pueden guardar versiones nuevas.",
+    "saveAsANewVersion": "Guardar como versión nueva",
+    "loadingTheBudget": "Cargando el presupuesto…",
+    "budget": "Presupuesto",
+    "materialsToBuy": "Materiales para comprar",
+    "expenses": "Gastos",
+    "savedVersions": "Versiones guardadas",
+    "noVersionSavedYetSave": "Todavía no hay versiones guardadas. Guarda la cotización actual para conservarla y aprobarla.",
+    "measurementsReadByTheAi": "medidas leídas por la IA",
+    "saving": "Guardando…",
+    "source": "Con las {source} y los precios de referencia de hoy. No se guarda nada hasta que guardes una versión."
+  },
   "projectWorkLinks": {
     "blueprints": "Planos",
     "uploadThePlansAndRead": "Sube los planos y léelos con IA",

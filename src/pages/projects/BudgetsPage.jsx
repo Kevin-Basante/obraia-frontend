@@ -14,6 +14,7 @@ import { getProject } from '../../services/projectService.js'
 import { isNothingToQuote } from '../../utils/budget.js'
 import { isClosed } from '../../utils/projectStatus.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
+import { t } from '../../i18n/i18n.js'
 
 /** The cost the project would have today, with the button to save it as a version. */
 function CurrentQuotation({ projectId, closed }) {
@@ -28,14 +29,14 @@ function CurrentQuotation({ projectId, closed }) {
   if (isNothingToQuote(preview.error)) {
     return (
       <section className="card">
-        <h2>Current quotation</h2>
+        <h2>{t('budgetsPage.currentQuotation')}</h2>
         <p className="muted">{preview.error.message}.</p>
         <div className="button-row">
           <Link to={`/projects/${projectId}/measurements`} className="button-link">
-            Go to measurements
+            {t('budgetsPage.goToMeasurements')}
           </Link>
           <Link to={`/projects/${projectId}/blueprints`} className="button-link button-secondary">
-            Read a blueprint with AI
+            {t('budgetsPage.readABlueprintWithAi')}
           </Link>
         </div>
       </section>
@@ -44,31 +45,34 @@ function CurrentQuotation({ projectId, closed }) {
 
   return (
     <section className="card">
-      <h2>Current quotation</h2>
+      <h2>{t('budgetsPage.currentQuotation')}</h2>
       {preview.status === 'error' && <FormAlert>{preview.error.message}</FormAlert>}
-      {!preview.data && preview.status === 'loading' && <p className="muted">Quoting the project…</p>}
+      {!preview.data && preview.status === 'loading' && <p className="muted">{t('budgetsPage.quotingTheProject')}</p>}
       {preview.data && (
         <>
           <p className="muted">
-            From the {preview.data.measurementSource === 'ocr' ? 'measurements read by the AI' : 'manual measurements'} and
-            today&apos;s reference prices. Nothing is saved until you save a version.
+            {t('budgetsPage.source', {
+              source:
+                preview.data.measurementSource === 'ocr'
+                  ? t('budgetsPage.measurementsReadByTheAi')
+                  : t('budgetsPage.manualMeasurements'),
+            })}
           </p>
           <QuotationFacts quotation={preview.data} />
           <CostBreakdown items={preview.data.items} total={preview.data.projectedAmount} />
           {preview.data.elementsWithoutFormulas.length > 0 && (
             <p className="muted">
-              Left out because the project type has no material formulas for them:{' '}
-              {preview.data.elementsWithoutFormulas.join(', ')}.
+              {t('budgetsPage.leftOutBecauseTheProject')} {preview.data.elementsWithoutFormulas.join(', ')}.
             </p>
           )}
         </>
       )}
       {closed ? (
-        <p className="muted">The project is closed, so no new versions can be saved.</p>
+        <p className="muted">{t('budgetsPage.theProjectIsClosedSo')}</p>
       ) : (
         <div className="button-row">
           <button type="button" disabled={saving.pending || !preview.data} onClick={() => saving.submit()}>
-            {saving.pending ? 'Saving…' : 'Save as a new version'}
+            {saving.pending ? t('budgetsPage.saving') : t('budgetsPage.saveAsANewVersion')}
           </button>
         </div>
       )}
@@ -86,32 +90,32 @@ export function BudgetsPage() {
   if (project.error?.status === 404) return <NotFoundPage />
   const failed = [project, versions].find((request) => request.status === 'error')
   if (failed) return <ErrorState error={failed.error} onRetry={failed.retry} />
-  if (!project.data || !versions.data) return <LoadingState title="Loading the budget…" />
+  if (!project.data || !versions.data) return <LoadingState title={t('budgetsPage.loadingTheBudget')} />
 
   return (
     <div className="workspace">
       <PageHeader
-        title="Budget"
+        title={t('budgetsPage.budget')}
         description={project.data.name}
         back={{ to: `/projects/${id}`, label: project.data.name }}
         actions={
           <>
             {versions.data.length > 0 && (
               <Link to={`/projects/${id}/materials`} className="button-link button-secondary">
-                Materials to buy
+                {t('budgetsPage.materialsToBuy')}
               </Link>
             )}
             <Link to={`/projects/${id}/expenses`} className="button-link button-secondary">
-              Expenses
+              {t('budgetsPage.expenses')}
             </Link>
           </>
         }
       />
       <CurrentQuotation projectId={id} closed={isClosed(project.data)} />
       <section className="card">
-        <h2>Saved versions</h2>
+        <h2>{t('budgetsPage.savedVersions')}</h2>
         {versions.data.length === 0 ? (
-          <p className="muted">No version saved yet. Save the current quotation to keep it and approve it.</p>
+          <p className="muted">{t('budgetsPage.noVersionSavedYetSave')}</p>
         ) : (
           <BudgetVersionTable projectId={id} versions={versions.data} />
         )}

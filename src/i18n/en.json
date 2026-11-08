@@ -456,6 +456,25 @@
     "everythingAHouseNeedsIn": "Everything a house needs, in one place",
     "familiesAndSmallBuildersPlan": "Families and small builders plan houses of up to two floors without spreadsheets or guesses."
   },
+  "budgetsPage": {
+    "currentQuotation": "Current quotation",
+    "goToMeasurements": "Go to measurements",
+    "readABlueprintWithAi": "Read a blueprint with AI",
+    "quotingTheProject": "Quoting the project…",
+    "manualMeasurements": "manual measurements",
+    "leftOutBecauseTheProject": "Left out because the project type has no material formulas for them:",
+    "theProjectIsClosedSo": "The project is closed, so no new versions can be saved.",
+    "saveAsANewVersion": "Save as a new version",
+    "loadingTheBudget": "Loading the budget…",
+    "budget": "Budget",
+    "materialsToBuy": "Materials to buy",
+    "expenses": "Expenses",
+    "savedVersions": "Saved versions",
+    "noVersionSavedYetSave": "No version saved yet. Save the current quotation to keep it and approve it.",
+    "measurementsReadByTheAi": "measurements read by the AI",
+    "saving": "Saving…",
+    "source": "From the {source} and today's reference prices. Nothing is saved until you save a version."
+  },
   "projectWorkLinks": {
     "blueprints": "Blueprints",
     "uploadThePlansAndRead": "Upload the plans and read them with AI",
