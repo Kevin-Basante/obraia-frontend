@@ -1,0 +1,145 @@
+{
+  "language": {
+    "switchTo": "Switch to {language}",
+    "names": {
+      "en": "English",
+      "es": "Spanish"
+    }
+  },
+  "header": {
+    "home": "ObraIA home",
+    "main": "Main",
+    "catalog": "Catalog",
+    "dashboard": "Dashboard",
+    "projects": "Projects",
+    "myAccount": "My account",
+    "signOut": "Sign out",
+    "signIn": "Sign in",
+    "createAccount": "Create account",
+    "notifications": "Notifications",
+    "notificationsUnread": "Notifications, {count} not read"
+  },
+  "common": {
+    "retry": "Retry",
+    "unknownError": "Unknown error",
+    "pleaseWait": "Please wait…",
+    "show": "Show",
+    "hide": "Hide",
+    "notAdded": "Not added",
+    "dateRange": "{start} to {end}"
+  },
+  "resultCount": {
+    "updating": " · updating…",
+    "city": {
+      "one": "1 city",
+      "other": "{count} cities"
+    },
+    "material": {
+      "one": "1 material",
+      "other": "{count} materials"
+    },
+    "project": {
+      "one": "1 project",
+      "other": "{count} projects"
+    }
+  },
+  "codes": {
+    "status": {
+      "draft": "Draft",
+      "planned": "Planned",
+      "in_progress": "In progress",
+      "paused": "Paused",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "delayed": "Delayed",
+      "approved": "Approved",
+      "superseded": "Superseded",
+      "pending": "Pending",
+      "processing": "Processing",
+      "failed": "Failed",
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High",
+      "critical": "Critical"
+    },
+    "element": {
+      "foundation": "Foundation",
+      "column": "Columns",
+      "beam": "Beams",
+      "slab": "Slabs",
+      "wall": "Walls",
+      "floor": "Floor base",
+      "roof": "Roof"
+    },
+    "materialCategory": {
+      "cement_concrete": "Cement and concrete",
+      "aggregates": "Aggregates",
+      "masonry": "Masonry",
+      "steel": "Steel",
+      "roofing": "Roofing",
+      "finishes": "Finishes",
+      "other": "Other"
+    },
+    "expenseCategory": {
+      "materials": "Materials",
+      "labor": "Labor",
+      "equipment": "Equipment",
+      "tax": "Taxes",
+      "other": "Other"
+    },
+    "budgetItem": {
+      "materials": "Materials",
+      "waste": "Waste",
+      "transport": "Transport",
+      "labor": "Labor",
+      "equipment": "Equipment",
+      "tax": "Tax",
+      "contingency": "Contingency",
+      "other": "Other"
+    },
+    "notificationType": {
+      "budget_deviation": "Budget passed",
+      "delay_risk": "Risk of delay",
+      "phase_status_changed": "Phase status changed",
+      "task_overdue": "Task overdue",
+      "budget_approved": "Budget approved",
+      "deletion_scheduled": "Deletion scheduled",
+      "system": "System"
+    },
+    "riskTrigger": {
+      "progress_report": "After a progress report",
+      "expense": "After an expense",
+      "scheduled": "Scheduled",
+      "manual": "Requested by a member"
+    },
+    "fileType": {
+      "image": "Image",
+      "scanned_pdf": "Scanned PDF",
+      "vector_pdf": "Vector PDF"
+    },
+    "source": {
+      "manual": "Manual",
+      "ocr": "AI"
+    },
+    "comparison": {
+      "manual_only": "Manual only",
+      "ai_only": "AI only",
+      "match": "Match",
+      "review": "Review"
+    },
+    "riskFactor": {
+      "schedule_delay": "Late tasks",
+      "progress_pace": "Progress against time",
+      "budget_overrun": "Spending against budget",
+      "spending_pace": "Spending against progress"
+    },
+    "size": {
+      "small": "small",
+      "large": "large"
+    },
+    "role": {
+      "user": "User",
+      "system_admin": "Administrator"
+    }
+  }
+}
