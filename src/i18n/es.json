@@ -431,6 +431,14 @@
     "scale1100": "Escala 1:100",
     "estimatedBudget": "Presupuesto estimado"
   },
+  "projectCards": {
+    "progress": "Avance",
+    "budget": "Presupuesto",
+    "risk": "Riesgo",
+    "notAssessedYet": "Sin evaluar todavía",
+    "noBudgetSpent": "Sin presupuesto aprobado · {spent} gastados",
+    "budgetOf": "Presupuesto gastado de {name}"
+  },
   "phaseRoadmap": {
     "sitePrepAndLayout": "Preliminares y replanteo",
     "cleanTheLotAndMark": "Limpiar el lote y marcar los ejes en el terreno.",
