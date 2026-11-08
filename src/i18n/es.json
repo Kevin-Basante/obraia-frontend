@@ -46,6 +46,13 @@
     "saving": "Guardando…",
     "changePassword": "Cambiar contraseña"
   },
+  "accountDeletion": {
+    "and": "{first} y {last}",
+    "joined": {
+      "one": "Dejas 1 obra creada por otra persona. Sigue siendo de su dueño.",
+      "other": "Dejas {count} obras creadas por otras personas. Siguen siendo de sus dueños."
+    }
+  },
   "profileForm": {
     "yourProfileWasSaved": "Tu perfil se guardó.",
     "firstName": "Nombre",

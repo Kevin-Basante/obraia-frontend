@@ -46,6 +46,13 @@
     "saving": "Saving…",
     "changePassword": "Change password"
   },
+  "accountDeletion": {
+    "and": "{first} and {last}",
+    "joined": {
+      "one": "You leave 1 project created by another person. It stays for its owner.",
+      "other": "You leave {count} projects created by other people. They stay for their owners."
+    }
+  },
   "profileForm": {
     "yourProfileWasSaved": "Your profile was saved.",
     "firstName": "First name",
