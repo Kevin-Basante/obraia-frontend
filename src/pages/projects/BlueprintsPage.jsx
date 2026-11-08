@@ -15,6 +15,7 @@ import { getProject } from '../../services/projectService.js'
 import { MAX_BLUEPRINTS } from '../../utils/blueprintFile.js'
 import { isClosed } from '../../utils/projectStatus.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
+import { t } from '../../i18n/i18n.js'
 
 /** Blueprints of a project: upload photos or PDFs, open them, read them with the AI and delete them. */
 export function BlueprintsPage() {
@@ -57,41 +58,45 @@ export function BlueprintsPage() {
   if (error) {
     return <ErrorState error={error} onRetry={project.error ? project.retry : retry} />
   }
-  if (!project.data || !blueprints.data) return <LoadingState title="Loading the blueprints…" />
+  if (!project.data || !blueprints.data) return <LoadingState title={t('blueprintsPage.loadingTheBlueprints')} />
 
   const closed = isClosed(project.data)
   const full = blueprints.data.length >= MAX_BLUEPRINTS
 
   function handleDelete(blueprint) {
-    const question = `Delete ${blueprint.originalFilename}? Its measurements stay, without the link to the blueprint.`
+    const question = t('blueprintsPage.confirmDelete', { name: blueprint.originalFilename })
     if (window.confirm(question)) removing.submit(blueprint.id)
   }
 
   return (
     <div className="workspace">
       <PageHeader
-        title="Blueprints"
-        description={`${project.data.name} · ${blueprints.data.length} of ${MAX_BLUEPRINTS} blueprints`}
+        title={t('blueprintsPage.blueprints')}
+        description={t('blueprintsPage.description', {
+          project: project.data.name,
+          count: blueprints.data.length,
+          max: MAX_BLUEPRINTS,
+        })}
         back={{ to: `/projects/${id}`, label: project.data.name }}
       />
       {!closed && (
         <section className="card">
-          <h2>Upload a blueprint</h2>
+          <h2>{t('blueprintsPage.uploadABlueprint')}</h2>
           {full ? (
-            <p className="muted">This project already has {MAX_BLUEPRINTS} blueprints. Delete one to upload another.</p>
+            <p className="muted">{t('blueprintsPage.limit', { count: MAX_BLUEPRINTS })}</p>
           ) : (
             <>
-              <p className="muted">A photo or a PDF of the plans. Then press Analyze with AI to read its measurements.</p>
+              <p className="muted">{t('blueprintsPage.aPhotoOrAPdf')}</p>
               <BlueprintUploadForm onUpload={upload} />
             </>
           )}
         </section>
       )}
       <section className="card">
-        <h2>Uploaded blueprints</h2>
-        {closed && <p className="muted">The project is closed: the blueprints can be opened but not changed.</p>}
+        <h2>{t('blueprintsPage.uploadedBlueprints')}</h2>
+        {closed && <p className="muted">{t('blueprintsPage.theProjectIsClosedThe')}</p>}
         {blueprints.data.length === 0 ? (
-          <p className="muted">There are no blueprints yet.</p>
+          <p className="muted">{t('blueprintsPage.thereAreNoBlueprintsYet')}</p>
         ) : (
           <BlueprintList
             projectId={id}
@@ -104,7 +109,7 @@ export function BlueprintsPage() {
         )}
         {analyzing && (
           <p className="muted" role="status">
-            The AI is reading {analyzing.originalFilename}. The first reading of the day can take about a minute.
+            {t('blueprintsPage.reading', { name: analyzing.originalFilename })}
           </p>
         )}
         <FormAlert>{analysisErrorMessage(analyzer.error)}</FormAlert>

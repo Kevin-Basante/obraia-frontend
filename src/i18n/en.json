@@ -825,6 +825,19 @@
     "enterAnAreaGreaterThan": "Enter an area greater than 0",
     "sizeNote": "{area} m² is a {size} project."
   },
+  "blueprintsPage": {
+    "loadingTheBlueprints": "Loading the blueprints…",
+    "blueprints": "Blueprints",
+    "uploadABlueprint": "Upload a blueprint",
+    "aPhotoOrAPdf": "A photo or a PDF of the plans. Then press Analyze with AI to read its measurements.",
+    "uploadedBlueprints": "Uploaded blueprints",
+    "theProjectIsClosedThe": "The project is closed: the blueprints can be opened but not changed.",
+    "thereAreNoBlueprintsYet": "There are no blueprints yet.",
+    "confirmDelete": "Delete {name}? Its measurements stay, without the link to the blueprint.",
+    "limit": "This project already has {count} blueprints. Delete one to upload another.",
+    "reading": "The AI is reading {name}. The first reading of the day can take about a minute.",
+    "description": "{project} · {count} of {max} blueprints"
+  },
   "projectKpis": {
     "notApproved": "Not approved",
     "progress": "Progress",

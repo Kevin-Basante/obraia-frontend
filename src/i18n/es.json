@@ -825,6 +825,19 @@
     "enterAnAreaGreaterThan": "Escribe un área mayor que 0",
     "sizeNote": "{area} m² es una obra {size}."
   },
+  "blueprintsPage": {
+    "loadingTheBlueprints": "Cargando los planos…",
+    "blueprints": "Planos",
+    "uploadABlueprint": "Subir un plano",
+    "aPhotoOrAPdf": "Una foto o un PDF de los planos. Luego pulsa Analizar con IA para leer sus medidas.",
+    "uploadedBlueprints": "Planos subidos",
+    "theProjectIsClosedThe": "La obra está cerrada: los planos se pueden abrir, pero no cambiar.",
+    "thereAreNoBlueprintsYet": "Todavía no hay planos.",
+    "confirmDelete": "¿Borrar {name}? Sus medidas se quedan, sin el vínculo con el plano.",
+    "limit": "Esta obra ya tiene {count} planos. Borra uno para subir otro.",
+    "reading": "La IA está leyendo {name}. La primera lectura del día puede tardar cerca de un minuto.",
+    "description": "{project} · {count} de {max} planos"
+  },
   "projectKpis": {
     "notApproved": "Sin aprobar",
     "progress": "Avance",
