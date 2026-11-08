@@ -336,6 +336,9 @@
     "open": "Abrir",
     "markAsRead": "Marcar como leída"
   },
+  "requireSession": {
+    "checkingYourSession": "Revisando tu sesión…"
+  },
   "riskFactorTable": {
     "rule": "Regla",
     "weight": "Peso",

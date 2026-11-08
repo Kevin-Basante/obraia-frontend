@@ -336,6 +336,9 @@
     "open": "Open",
     "markAsRead": "Mark as read"
   },
+  "requireSession": {
+    "checkingYourSession": "Checking your session…"
+  },
   "riskFactorTable": {
     "rule": "Rule",
     "weight": "Weight",
