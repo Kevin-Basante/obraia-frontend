@@ -70,6 +70,14 @@
       "alerts": "Alertas antes de un retraso"
     }
   },
+  "budgetVersionTable": {
+    "version": "Versión",
+    "status": "Estado",
+    "projectedAmount": "Monto proyectado",
+    "spent": "Gastado",
+    "saved": "Guardada",
+    "approved": "Aprobada"
+  },
   "dashboard": {
     "noTasksYet": "Sin tareas todavía",
     "noLateTasks": "Sin tareas atrasadas",

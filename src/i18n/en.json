@@ -70,6 +70,14 @@
       "alerts": "Alerts before a delay"
     }
   },
+  "budgetVersionTable": {
+    "version": "Version",
+    "status": "Status",
+    "projectedAmount": "Projected amount",
+    "spent": "Spent",
+    "saved": "Saved",
+    "approved": "Approved"
+  },
   "dashboard": {
     "noTasksYet": "No tasks yet",
     "noLateTasks": "No late tasks",
