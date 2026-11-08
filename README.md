@@ -123,6 +123,7 @@ Una ruta desconocida muestra "Page not found". Un invitado que abre una página 
 - **Dibujos:** cada fase y cada material tiene un dibujo de línea en SVG (`components/art/`). `utils/artFor.js` elige el dibujo por el nombre que llega del backend (en español) y, si no lo reconoce, por la categoría.
 - **Tema claro y oscuro:** el botón del sol o la luna, arriba a la derecha, cambia el tema. La primera vez se usa el del sistema; después se recuerda la elección en el navegador (`localStorage`). `index.html` aplica el tema antes de dibujar la página para que no parpadee.
 - **Pantalla completa:** las páginas usan todo el ancho de la pantalla, sin márgenes vacíos a los lados. En pantallas anchas (desde 1280 px) los formularios de medidas y gastos quedan al lado de su tabla o resumen.
+- **Idiomas (ES/EN):** el botón `ES` o `EN`, al lado del de tema, cambia todo el sitio entre español e inglés. La primera vez se usa el idioma del navegador; después se recuerda la elección (`localStorage`). Las fechas siguen el idioma; el dinero y los números siguen en formato colombiano. `index.html` le pide al traductor del navegador que no traduzca la página, porque el sitio ya tiene su propio botón.
 - **Animaciones:** solo con CSS: líneas que se dibujan, secciones que suben al aparecer en pantalla (`useInView`) y barras que crecen. Si el sistema pide menos movimiento (`prefers-reduced-motion`), se muestran sin animación.
 
 ## Dashboard
