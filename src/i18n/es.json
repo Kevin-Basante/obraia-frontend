@@ -882,6 +882,15 @@
       "other": "Se espera un retraso de cerca de {count} días"
     }
   },
+  "taskProgressPage": {
+    "loadingTheTask": "Cargando la tarea…",
+    "phasesAndTasks": "Fases y tareas",
+    "progress": "Avance",
+    "reportProgress": "Reportar avance",
+    "reports": "Reportes",
+    "howItWorks": "El avance de una tarea es su último reporte. Más de 0% la inicia y 100% la completa; la fase se completa cuando todas sus tareas lo están.",
+    "description": "{project} · Fase {order}: {phase}"
+  },
   "resetPasswordPage": {
     "theLinkIsIncomplete": "El enlace está incompleto",
     "askForANewLink": "Pedir un enlace nuevo",

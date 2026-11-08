@@ -14,6 +14,7 @@ import { listProgressReports, reportProgress } from '../../services/taskService.
 import { isClosed } from '../../utils/projectStatus.js'
 import { findTask } from '../../utils/workStatus.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
+import { t } from '../../i18n/i18n.js'
 
 /** One task: its progress, the form to report more and the reports so far. */
 export function TaskProgressPage() {
@@ -38,7 +39,7 @@ export function TaskProgressPage() {
   if (project.error?.status === 404 || reports.error?.status === 404) return <NotFoundPage />
   const failed = [project, plan, reports].find((request) => request.status === 'error')
   if (failed) return <ErrorState error={failed.error} onRetry={failed.retry} />
-  if (!project.data || !plan.data || !reports.data) return <LoadingState title="Loading the task…" />
+  if (!project.data || !plan.data || !reports.data) return <LoadingState title={t('taskProgressPage.loadingTheTask')} />
 
   const found = findTask(plan.data, taskId)
   if (!found) return <NotFoundPage />
@@ -49,27 +50,28 @@ export function TaskProgressPage() {
     <div className="workspace">
       <PageHeader
         title={task.name}
-        description={`${project.data.name} · Phase ${phase.order}: ${phase.name}`}
-        back={{ to: `/projects/${id}/phases`, label: 'Phases and tasks' }}
+        description={t('taskProgressPage.description', {
+          project: project.data.name,
+          order: phase.order,
+          phase: phase.name,
+        })}
+        back={{ to: `/projects/${id}/phases`, label: t('taskProgressPage.phasesAndTasks') }}
       />
       <section className="card">
         <h2>
-          Progress <StatusBadge status={task.status} />
+          {t('taskProgressPage.progress')} <StatusBadge status={task.status} />
         </h2>
-        <ProgressBar value={task.progressPct} label={`Progress of ${task.name}`} />
-        <p className="muted">
-          The progress of a task is its latest report. More than 0% starts it and 100% completes it; the phase is
-          completed when all its tasks are.
-        </p>
+        <ProgressBar value={task.progressPct} label={t('progressBar.of', { name: task.name })} />
+        <p className="muted">{t('taskProgressPage.howItWorks')}</p>
       </section>
       {!closed && (
         <section className="card">
-          <h2>Report progress</h2>
+          <h2>{t('taskProgressPage.reportProgress')}</h2>
           <ProgressReportForm siteManager={project.data.siteManager} onSave={save} />
         </section>
       )}
       <section className="card">
-        <h2>Reports</h2>
+        <h2>{t('taskProgressPage.reports')}</h2>
         <ProgressHistory reports={reports.data} />
       </section>
     </div>

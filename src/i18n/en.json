@@ -882,6 +882,15 @@
       "other": "About {count} days of delay expected"
     }
   },
+  "taskProgressPage": {
+    "loadingTheTask": "Loading the task…",
+    "phasesAndTasks": "Phases and tasks",
+    "progress": "Progress",
+    "reportProgress": "Report progress",
+    "reports": "Reports",
+    "howItWorks": "The progress of a task is its latest report. More than 0% starts it and 100% completes it; the phase is completed when all its tasks are.",
+    "description": "{project} · Phase {order}: {phase}"
+  },
   "resetPasswordPage": {
     "theLinkIsIncomplete": "The link is incomplete",
     "askForANewLink": "Ask for a new link",
