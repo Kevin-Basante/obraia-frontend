@@ -964,6 +964,13 @@
     "sending": "Enviando…",
     "resendTheEmail": "Reenviar el correo"
   },
+  "deleteProjectPage": {
+    "checkingWhatTheProjectHolds": "Revisando lo que tiene la obra…",
+    "deleteProject": "Eliminar obra",
+    "emailMeTheConfirmationLink": "Enviarme el enlace de confirmación",
+    "sending": "Enviando…",
+    "understand": "Entiendo que esto elimina la obra para todos los miembros."
+  },
   "workItemForm": {
     "phase": "Fase",
     "chooseAPhase": "Elige una fase",

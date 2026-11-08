@@ -9,6 +9,8 @@ import { useApiData } from '../../hooks/useApiData.js'
 import { useFormSubmit } from '../../hooks/useFormSubmit.js'
 import { getDeletionImpact, requestDeletion } from '../../services/deletionService.js'
 import { NotFoundPage } from '../NotFoundPage.jsx'
+import { serverMessage } from '../../utils/serverMessage.js'
+import { t } from '../../i18n/i18n.js'
 
 /**
  * First step of the deletion: shows the warnings and sends the email.
@@ -25,32 +27,32 @@ export function DeleteProjectPage() {
   async function handleSubmit(event) {
     event.preventDefault()
     const response = await submit()
-    if (response) setSent(response.message)
+    if (response) setSent(serverMessage(response))
   }
 
   if (impact.error?.status === 404) return <NotFoundPage />
   if (impact.status === 'error') return <ErrorState error={impact.error} onRetry={impact.retry} />
-  if (!impact.data) return <LoadingState title="Checking what the project holds…" />
+  if (!impact.data) return <LoadingState title={t('deleteProjectPage.checkingWhatTheProjectHolds')} />
 
   const back = { to: `/projects/${id}`, label: impact.data.projectName }
 
   return (
     <div className="workspace">
-      <PageHeader title="Delete project" back={back} />
+      <PageHeader title={t('deleteProjectPage.deleteProject')} back={back} />
       <DeletionImpact impact={impact.data} />
       <form className="card" onSubmit={handleSubmit}>
         {sent ? (
-          <FormAlert type="success">{sent}. Open the link in that email to finish.</FormAlert>
+          <FormAlert type="success">{t('serverMessages.withLink', { message: sent })}</FormAlert>
         ) : (
           <>
             <label className="checkbox-field">
-              <input type="checkbox" checked={understood} onChange={(e) => setUnderstood(e.target.checked)} />I
-              understand that this deletes the project for every member.
+              <input type="checkbox" checked={understood} onChange={(e) => setUnderstood(e.target.checked)} />
+              {t('deleteProjectPage.understand')}
             </label>
             <FormAlert>{error?.message}</FormAlert>
             <div className="button-row">
               <button type="submit" className="button-danger" disabled={!understood || pending}>
-                {pending ? 'Sending…' : 'Email me the confirmation link'}
+                {pending ? t('deleteProjectPage.sending') : t('deleteProjectPage.emailMeTheConfirmationLink')}
               </button>
             </div>
           </>

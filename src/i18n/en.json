@@ -964,6 +964,13 @@
     "sending": "Sending…",
     "resendTheEmail": "Resend the email"
   },
+  "deleteProjectPage": {
+    "checkingWhatTheProjectHolds": "Checking what the project holds…",
+    "deleteProject": "Delete project",
+    "emailMeTheConfirmationLink": "Email me the confirmation link",
+    "sending": "Sending…",
+    "understand": "I understand that this deletes the project for every member."
+  },
   "workItemForm": {
     "phase": "Phase",
     "chooseAPhase": "Choose a phase",
