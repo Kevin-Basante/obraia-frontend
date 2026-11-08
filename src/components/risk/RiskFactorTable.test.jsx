@@ -11,7 +11,7 @@ describe('RiskFactorTable', () => {
   it('lists the highest score first', () => {
     const text = renderText(<RiskFactorTable factors={factors} />)
 
-    expect(text.indexOf('Schedule delay')).toBeLessThan(text.indexOf('Budget overrun'))
+    expect(text.indexOf('Late tasks')).toBeLessThan(text.indexOf('Spending against budget'))
   })
 
   it('shows the delay in days or a dash', () => {

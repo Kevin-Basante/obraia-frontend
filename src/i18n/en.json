@@ -285,6 +285,12 @@
     "open": "Open",
     "markAsRead": "Mark as read"
   },
+  "riskFactorTable": {
+    "rule": "Rule",
+    "weight": "Weight",
+    "score": "Score",
+    "delay": "Delay"
+  },
   "siteManagerPanel": {
     "siteManager": "Site manager",
     "noSiteManagerAssigned": "No site manager assigned.",

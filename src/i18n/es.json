@@ -285,6 +285,12 @@
     "open": "Abrir",
     "markAsRead": "Marcar como leída"
   },
+  "riskFactorTable": {
+    "rule": "Regla",
+    "weight": "Peso",
+    "score": "Puntaje",
+    "delay": "Retraso"
+  },
   "siteManagerPanel": {
     "siteManager": "Maestro de obra",
     "noSiteManagerAssigned": "Sin maestro de obra asignado.",
