@@ -38,6 +38,14 @@
     "notAdded": "Sin agregar",
     "dateRange": "{start} a {end}"
   },
+  "changePasswordForm": {
+    "currentPassword": "Contraseña actual",
+    "newPassword": "Contraseña nueva",
+    "confirmNewPassword": "Confirma la contraseña nueva",
+    "afterTheChangeYouSign": "Después del cambio vuelves a iniciar sesión, aquí y en tus otros dispositivos.",
+    "saving": "Guardando…",
+    "changePassword": "Cambiar contraseña"
+  },
   "resultCount": {
     "updating": " · actualizando…",
     "city": {
@@ -57,6 +65,46 @@
     "goodMorning": "Buenos días",
     "goodAfternoon": "Buenas tardes",
     "goodEvening": "Buenas noches"
+  },
+  "validation": {
+    "atLeast8CharactersWith": "Mínimo 8 caracteres, con una letra y un número.",
+    "enterYourEmail": "Escribe tu correo",
+    "use8To72Characters": "Usa de 8 a 72 caracteres",
+    "enterYourFirstName": "Escribe tu nombre",
+    "enterYourLastName": "Escribe tu apellido",
+    "thePasswordsDoNotMatch": "Las contraseñas no coinciden",
+    "enterYourCurrentPassword": "Escribe tu contraseña actual",
+    "useAPasswordDifferentFrom": "Usa una contraseña distinta de la actual",
+    "enterAValidEmail": "Escribe un correo válido",
+    "includeALetterAndANumber": "Incluye al menos una letra y un número",
+    "enterAValidPhone": "Escribe un teléfono válido"
+  },
+  "registerPage": {
+    "createYourAccount": "Crea tu cuenta",
+    "saveYourProjectsQuotationsAnd": "Guarda tus obras, cotizaciones y avance.",
+    "alreadyHaveAnAccount": "¿Ya tienes una cuenta?",
+    "signIn": "Iniciar sesión",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo",
+    "phoneOptional": "Teléfono (opcional)",
+    "password": "Contraseña",
+    "confirmPassword": "Confirma la contraseña",
+    "creatingAccount": "Creando la cuenta…",
+    "createAccount": "Crear cuenta"
+  },
+  "resetPasswordPage": {
+    "theLinkIsIncomplete": "El enlace está incompleto",
+    "askForANewLink": "Pedir un enlace nuevo",
+    "openTheLinkAgainFrom": "Abre otra vez el enlace desde tu correo.",
+    "passwordUpdated": "Contraseña actualizada",
+    "signInWithYourNew": "Inicia sesión con tu contraseña nueva. Las otras sesiones se cerraron.",
+    "signIn": "Iniciar sesión",
+    "chooseANewPassword": "Elige una contraseña nueva",
+    "newPassword": "Contraseña nueva",
+    "confirmNewPassword": "Confirma la contraseña nueva",
+    "saving": "Guardando…",
+    "savePassword": "Guardar contraseña"
   },
   "codes": {
     "status": {

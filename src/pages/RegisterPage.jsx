@@ -7,7 +7,8 @@ import { PasswordField } from '../components/PasswordField.jsx'
 import { SubmitButton } from '../components/SubmitButton.jsx'
 import { useFormSubmit } from '../hooks/useFormSubmit.js'
 import { register } from '../services/authService.js'
-import { PASSWORD_HINT, validateRegistration } from '../utils/validation.js'
+import { passwordHint, validateRegistration } from '../utils/validation.js'
+import { t } from '../i18n/i18n.js'
 
 const EMPTY_FORM = { firstName: '', lastName: '', email: '', phone: '', password: '', confirmPassword: '' }
 
@@ -41,11 +42,11 @@ export function RegisterPage() {
 
   return (
     <AuthCard
-      title="Create your account"
-      description="Save your projects, quotations and progress."
+      title={t('registerPage.createYourAccount')}
+      description={t('registerPage.saveYourProjectsQuotationsAnd')}
       footer={
         <p>
-          Already have an account? <Link to="/login">Sign in</Link>
+          {t('registerPage.alreadyHaveAnAccount')} <Link to="/login">{t('registerPage.signIn')}</Link>
         </p>
       }
     >
@@ -53,14 +54,14 @@ export function RegisterPage() {
         <FormAlert>{error?.message}</FormAlert>
         <div className="auth-form__row">
           <FormField
-            label="First name"
+            label={t('registerPage.firstName')}
             autoComplete="given-name"
             value={form.firstName}
             onChange={update('firstName')}
             error={fieldErrors.firstName}
           />
           <FormField
-            label="Last name"
+            label={t('registerPage.lastName')}
             autoComplete="family-name"
             value={form.lastName}
             onChange={update('lastName')}
@@ -68,7 +69,7 @@ export function RegisterPage() {
           />
         </div>
         <FormField
-          label="Email"
+          label={t('registerPage.email')}
           type="email"
           autoComplete="email"
           value={form.email}
@@ -76,7 +77,7 @@ export function RegisterPage() {
           error={fieldErrors.email}
         />
         <FormField
-          label="Phone (optional)"
+          label={t('registerPage.phoneOptional')}
           type="tel"
           autoComplete="tel"
           value={form.phone}
@@ -84,22 +85,22 @@ export function RegisterPage() {
           error={fieldErrors.phone}
         />
         <PasswordField
-          label="Password"
+          label={t('registerPage.password')}
           autoComplete="new-password"
           value={form.password}
           onChange={update('password')}
           error={fieldErrors.password}
-          hint={PASSWORD_HINT}
+          hint={passwordHint()}
         />
         <PasswordField
-          label="Confirm password"
+          label={t('registerPage.confirmPassword')}
           autoComplete="new-password"
           value={form.confirmPassword}
           onChange={update('confirmPassword')}
           error={fieldErrors.confirmPassword}
         />
-        <SubmitButton pending={pending} pendingText="Creating account…">
-          Create account
+        <SubmitButton pending={pending} pendingText={t('registerPage.creatingAccount')}>
+          {t('registerPage.createAccount')}
         </SubmitButton>
       </form>
     </AuthCard>

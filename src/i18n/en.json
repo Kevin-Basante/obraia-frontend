@@ -38,6 +38,14 @@
     "notAdded": "Not added",
     "dateRange": "{start} to {end}"
   },
+  "changePasswordForm": {
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "confirmNewPassword": "Confirm new password",
+    "afterTheChangeYouSign": "After the change you sign in again, here and on your other devices.",
+    "saving": "Saving…",
+    "changePassword": "Change password"
+  },
   "resultCount": {
     "updating": " · updating…",
     "city": {
@@ -57,6 +65,46 @@
     "goodMorning": "Good morning",
     "goodAfternoon": "Good afternoon",
     "goodEvening": "Good evening"
+  },
+  "validation": {
+    "atLeast8CharactersWith": "At least 8 characters, with one letter and one number.",
+    "enterYourEmail": "Enter your email",
+    "use8To72Characters": "Use 8 to 72 characters",
+    "enterYourFirstName": "Enter your first name",
+    "enterYourLastName": "Enter your last name",
+    "thePasswordsDoNotMatch": "The passwords do not match",
+    "enterYourCurrentPassword": "Enter your current password",
+    "useAPasswordDifferentFrom": "Use a password different from the current one",
+    "enterAValidEmail": "Enter a valid email",
+    "includeALetterAndANumber": "Include at least one letter and one number",
+    "enterAValidPhone": "Enter a valid phone number"
+  },
+  "registerPage": {
+    "createYourAccount": "Create your account",
+    "saveYourProjectsQuotationsAnd": "Save your projects, quotations and progress.",
+    "alreadyHaveAnAccount": "Already have an account?",
+    "signIn": "Sign in",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phoneOptional": "Phone (optional)",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "creatingAccount": "Creating account…",
+    "createAccount": "Create account"
+  },
+  "resetPasswordPage": {
+    "theLinkIsIncomplete": "The link is incomplete",
+    "askForANewLink": "Ask for a new link",
+    "openTheLinkAgainFrom": "Open the link again from your email.",
+    "passwordUpdated": "Password updated",
+    "signInWithYourNew": "Sign in with your new password. Other sessions were closed.",
+    "signIn": "Sign in",
+    "chooseANewPassword": "Choose a new password",
+    "newPassword": "New password",
+    "confirmNewPassword": "Confirm new password",
+    "saving": "Saving…",
+    "savePassword": "Save password"
   },
   "codes": {
     "status": {

@@ -6,7 +6,8 @@ import { PasswordField } from '../components/PasswordField.jsx'
 import { SubmitButton } from '../components/SubmitButton.jsx'
 import { useFormSubmit } from '../hooks/useFormSubmit.js'
 import { resetPassword } from '../services/authService.js'
-import { PASSWORD_HINT, validateNewPassword } from '../utils/validation.js'
+import { passwordHint, validateNewPassword } from '../utils/validation.js'
+import { t } from '../i18n/i18n.js'
 
 /** Opened from the email link: the user chooses a new password. */
 export function ResetPasswordPage() {
@@ -31,23 +32,23 @@ export function ResetPasswordPage() {
   if (!token) {
     return (
       <AuthCard
-        title="The link is incomplete"
+        title={t('resetPasswordPage.theLinkIsIncomplete')}
         footer={
           <p>
-            <Link to="/forgot-password">Ask for a new link</Link>
+            <Link to="/forgot-password">{t('resetPasswordPage.askForANewLink')}</Link>
           </p>
         }
       >
-        <FormAlert>Open the link again from your email.</FormAlert>
+        <FormAlert>{t('resetPasswordPage.openTheLinkAgainFrom')}</FormAlert>
       </AuthCard>
     )
   }
 
   if (done) {
     return (
-      <AuthCard title="Password updated" description="Sign in with your new password. Other sessions were closed.">
+      <AuthCard title={t('resetPasswordPage.passwordUpdated')} description={t('resetPasswordPage.signInWithYourNew')}>
         <Link to="/login" className="button-link">
-          Sign in
+          {t('resetPasswordPage.signIn')}
         </Link>
       </AuthCard>
     )
@@ -55,32 +56,32 @@ export function ResetPasswordPage() {
 
   return (
     <AuthCard
-      title="Choose a new password"
+      title={t('resetPasswordPage.chooseANewPassword')}
       footer={
         <p>
-          <Link to="/forgot-password">Ask for a new link</Link>
+          <Link to="/forgot-password">{t('resetPasswordPage.askForANewLink')}</Link>
         </p>
       }
     >
       <form className="auth-form" onSubmit={handleSubmit} noValidate>
         <FormAlert>{error?.message}</FormAlert>
         <PasswordField
-          label="New password"
+          label={t('resetPasswordPage.newPassword')}
           autoComplete="new-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           error={fieldErrors.password ?? fieldErrors.newPassword}
-          hint={PASSWORD_HINT}
+          hint={passwordHint()}
         />
         <PasswordField
-          label="Confirm new password"
+          label={t('resetPasswordPage.confirmNewPassword')}
           autoComplete="new-password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           error={fieldErrors.confirmPassword}
         />
-        <SubmitButton pending={pending} pendingText="Saving…">
-          Save password
+        <SubmitButton pending={pending} pendingText={t('resetPasswordPage.saving')}>
+          {t('resetPasswordPage.savePassword')}
         </SubmitButton>
       </form>
     </AuthCard>

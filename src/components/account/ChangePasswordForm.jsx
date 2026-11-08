@@ -4,8 +4,10 @@ import { PasswordField } from '../PasswordField.jsx'
 import { SubmitButton } from '../SubmitButton.jsx'
 import { useFormSubmit } from '../../hooks/useFormSubmit.js'
 import { changePassword } from '../../services/userService.js'
-import { PASSWORD_HINT, validatePasswordChange } from '../../utils/validation.js'
+import { passwordHint, validatePasswordChange } from '../../utils/validation.js'
 import './AccountForms.css'
+import { serverMessage } from '../../utils/serverMessage.js'
+import { t } from '../../i18n/i18n.js'
 
 const EMPTY_FORM = { currentPassword: '', newPassword: '', confirmPassword: '' }
 
@@ -26,38 +28,38 @@ export function ChangePasswordForm({ onChanged }) {
       return
     }
     const response = await submit(form)
-    if (response) onChanged(response.message)
+    if (response) onChanged(serverMessage(response))
   }
 
   return (
     <form className="account-form account-form__email" onSubmit={handleSubmit} noValidate>
       <FormAlert>{error && !error.fields && error.message}</FormAlert>
       <PasswordField
-        label="Current password"
+        label={t('changePasswordForm.currentPassword')}
         autoComplete="current-password"
         value={form.currentPassword}
         onChange={update('currentPassword')}
         error={fieldErrors.currentPassword}
       />
       <PasswordField
-        label="New password"
+        label={t('changePasswordForm.newPassword')}
         autoComplete="new-password"
         value={form.newPassword}
         onChange={update('newPassword')}
         error={fieldErrors.newPassword}
-        hint={PASSWORD_HINT}
+        hint={passwordHint()}
       />
       <PasswordField
-        label="Confirm new password"
+        label={t('changePasswordForm.confirmNewPassword')}
         autoComplete="new-password"
         value={form.confirmPassword}
         onChange={update('confirmPassword')}
         error={fieldErrors.confirmPassword}
       />
-      <p className="muted">After the change you sign in again, here and on your other devices.</p>
+      <p className="muted">{t('changePasswordForm.afterTheChangeYouSign')}</p>
       <div className="button-row">
-        <SubmitButton pending={pending} pendingText="Saving…">
-          Change password
+        <SubmitButton pending={pending} pendingText={t('changePasswordForm.saving')}>
+          {t('changePasswordForm.changePassword')}
         </SubmitButton>
       </div>
     </form>
