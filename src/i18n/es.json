@@ -338,6 +338,16 @@
     "youHaveNoProjectsYet": "Todavía no tienes obras. Crea la primera.",
     "noProjectsMatchTheseFilters": "Ninguna obra coincide con estos filtros."
   },
+  "progressReportForm": {
+    "progress": "Avance (%)",
+    "totalProgressOfTheTask": "Avance total de la tarea, de 0 a 100",
+    "dateOptional": "Fecha (opcional)",
+    "todayIfItIsEmpty": "Hoy si está vacía",
+    "notesOptional": "Notas (opcional)",
+    "reportedByTheSiteManager": "Reportado por el maestro de obra,",
+    "saving": "Guardando…",
+    "saveReport": "Guardar reporte"
+  },
   "featureGrid": {
     "pricesOfYourCity": "Precios de tu ciudad",
     "referencePricesAndTransportBy": "Precios de referencia y transporte por ciudad, en pesos colombianos.",

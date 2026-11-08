@@ -338,6 +338,16 @@
     "youHaveNoProjectsYet": "You have no projects yet. Create the first one.",
     "noProjectsMatchTheseFilters": "No projects match these filters."
   },
+  "progressReportForm": {
+    "progress": "Progress (%)",
+    "totalProgressOfTheTask": "Total progress of the task, from 0 to 100",
+    "dateOptional": "Date (optional)",
+    "todayIfItIsEmpty": "Today if it is empty",
+    "notesOptional": "Notes (optional)",
+    "reportedByTheSiteManager": "Reported by the site manager,",
+    "saving": "Saving…",
+    "saveReport": "Save report"
+  },
   "featureGrid": {
     "pricesOfYourCity": "Prices of your city",
     "referencePricesAndTransportBy": "Reference prices and transport by city, in Colombian pesos.",

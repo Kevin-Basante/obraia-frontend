@@ -5,6 +5,7 @@ import { SubmitButton } from '../SubmitButton.jsx'
 import { useFormSubmit } from '../../hooks/useFormSubmit.js'
 import { EMPTY_PROGRESS_FORM, toProgressRequest, todayIso, validateProgress } from '../../utils/progressForm.js'
 import './WorkItemForm.css'
+import { t } from '../../i18n/i18n.js'
 
 /**
  * Form to report how far a task went. The checkbox of the site manager
@@ -44,35 +45,42 @@ export function ProgressReportForm({ siteManager, onSave }) {
       <FormAlert>{error && !error.fields && error.message}</FormAlert>
       <div className="work-item-form__row">
         <FormField
-          label="Progress (%)"
+          label={t('progressReportForm.progress')}
           inputMode="decimal"
           placeholder="40"
           value={form.completionPercentage}
           onChange={update('completionPercentage')}
           error={fieldErrors.completionPercentage}
-          hint="Total progress of the task, from 0 to 100"
+          hint={t('progressReportForm.totalProgressOfTheTask')}
         />
         <FormField
-          label="Date (optional)"
+          label={t('progressReportForm.dateOptional')}
           type="date"
           max={today}
           value={form.reportDate}
           onChange={update('reportDate')}
           error={fieldErrors.reportDate}
-          hint="Today if it is empty"
+          hint={t('progressReportForm.todayIfItIsEmpty')}
         />
       </div>
-      <FormField label="Notes (optional)" value={form.notes} onChange={update('notes')} error={fieldErrors.notes} />
+      <FormField
+        label={t('progressReportForm.notesOptional')}
+        value={form.notes}
+        onChange={update('notes')}
+        error={fieldErrors.notes}
+      />
       {siteManager && (
         <label className="checkbox-field">
           <input type="checkbox" checked={form.fromSiteManager} onChange={update('fromSiteManager')} />
-          <span>Reported by the site manager, {siteManager.fullName}</span>
+          <span>
+            {t('progressReportForm.reportedByTheSiteManager')} {siteManager.fullName}
+          </span>
         </label>
       )}
       <FormAlert>{fieldErrors.fromSiteManager}</FormAlert>
       <div className="button-row">
-        <SubmitButton pending={pending} pendingText="Saving…">
-          Save report
+        <SubmitButton pending={pending} pendingText={t('progressReportForm.saving')}>
+          {t('progressReportForm.saveReport')}
         </SubmitButton>
       </div>
     </form>
