@@ -416,6 +416,13 @@
       "system_admin": "Administrator"
     }
   },
+  "budgetText": {
+    "materials": "Materials for the measured elements ({items} items)",
+    "waste": "Extra material for breakage and cuts",
+    "transport": "Transport of the materials to the site in {city}",
+    "labor": "Crew for {days} working days at {rate} a day",
+    "tax": "VAT on labor and transport (material prices include it)"
+  },
   "riskDetail": {
     "no_budget": "There is no approved budget yet",
     "budget_spent": "{spent}% of the approved budget is spent",

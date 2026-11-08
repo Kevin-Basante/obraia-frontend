@@ -416,6 +416,13 @@
       "system_admin": "Administrador"
     }
   },
+  "budgetText": {
+    "materials": "Materiales para los elementos medidos ({items} materiales)",
+    "waste": "Material extra por roturas y cortes",
+    "transport": "Transporte de los materiales a la obra en {city}",
+    "labor": "Cuadrilla por {days} días hábiles a {rate} por día",
+    "tax": "IVA sobre mano de obra y transporte (los precios de los materiales ya lo incluyen)"
+  },
   "riskDetail": {
     "no_budget": "Todavía no hay un presupuesto aprobado",
     "budget_spent": "Se gastó el {spent}% del presupuesto aprobado",
