@@ -1,3 +1,4 @@
+import { t } from '../i18n/i18n.js'
 // Same rules as the backend for a project, checked before sending the form.
 
 const AREA_PATTERN = /^\d{1,4}(\.\d{1,2})?$/
@@ -23,17 +24,17 @@ export function parseArea(text) {
 export function validateProject(form) {
   const errors = {}
   const name = form.name.trim()
-  if (name.length < 3 || name.length > 150) errors.name = 'Use 3 to 150 characters'
-  if (!form.projectTypeId) errors.projectTypeId = 'Choose the project type'
-  if (!form.locationId) errors.locationId = 'Choose the city'
-  if (form.address.trim().length > 255) errors.address = 'Use at most 255 characters'
+  if (name.length < 3 || name.length > 150) errors.name = t('projectForm.use3To150Characters')
+  if (!form.projectTypeId) errors.projectTypeId = t('projectForm.chooseTheProjectType')
+  if (!form.locationId) errors.locationId = t('projectForm.chooseTheCity')
+  if (form.address.trim().length > 255) errors.address = t('projectForm.useAtMost255Characters')
   const area = parseArea(form.builtAreaM2)
   if (area === null || area < 1 || area > 2000) {
-    errors.builtAreaM2 = 'Enter an area from 1 to 2000 m², with up to 2 decimals'
+    errors.builtAreaM2 = t('projectForm.enterAnAreaFrom1')
   }
-  if (form.floors !== '1' && form.floors !== '2') errors.floors = 'Choose 1 or 2 floors'
+  if (form.floors !== '1' && form.floors !== '2') errors.floors = t('projectForm.choose1Or2Floors')
   if (form.plannedStartDate && form.plannedEndDate && form.plannedEndDate < form.plannedStartDate) {
-    errors.plannedEndDate = 'The end date cannot be before the start date'
+    errors.plannedEndDate = t('projectForm.theEndDateCannotBe')
   }
   return errors
 }
