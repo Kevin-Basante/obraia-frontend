@@ -1048,6 +1048,9 @@
     "late": "Atrasada",
     "noDates": "Sin fechas"
   },
+  "guestOnly": {
+    "checkingYourSession": "Revisando tu sesión…"
+  },
   "checkEmailPage": {
     "checkYourEmail": "Revisa tu correo",
     "weSentYouALink": "Te enviamos un enlace para confirmar tu dirección. Ábrelo para activar tu cuenta.",

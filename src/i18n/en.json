@@ -1048,6 +1048,9 @@
     "late": "Late",
     "noDates": "No dates"
   },
+  "guestOnly": {
+    "checkingYourSession": "Checking your session…"
+  },
   "checkEmailPage": {
     "checkYourEmail": "Check your email",
     "weSentYouALink": "We sent you a link to confirm your address. Open it to activate your account.",
