@@ -276,6 +276,12 @@
     "everythingAHouseNeedsIn": "Todo lo que una casa necesita, en un solo lugar",
     "familiesAndSmallBuildersPlan": "Familias y pequeños constructores planean casas de hasta dos pisos sin hojas de cálculo ni suposiciones."
   },
+  "formulaTable": {
+    "per": "· por",
+    "material": "Material",
+    "quantity": "Cantidad",
+    "waste": "Desperdicio"
+  },
   "validation": {
     "atLeast8CharactersWith": "Mínimo 8 caracteres, con una letra y un número.",
     "enterYourEmail": "Escribe tu correo",

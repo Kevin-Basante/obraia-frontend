@@ -276,6 +276,12 @@
     "everythingAHouseNeedsIn": "Everything a house needs, in one place",
     "familiesAndSmallBuildersPlan": "Families and small builders plan houses of up to two floors without spreadsheets or guesses."
   },
+  "formulaTable": {
+    "per": "· per",
+    "material": "Material",
+    "quantity": "Quantity",
+    "waste": "Waste"
+  },
   "validation": {
     "atLeast8CharactersWith": "At least 8 characters, with one letter and one number.",
     "enterYourEmail": "Enter your email",
