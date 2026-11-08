@@ -350,6 +350,15 @@
     "everyProjectGetsThisPlan": "Cada obra recibe este plan con duraciones según su tamaño. Sigues cada fase con tareas, fechas y reportes de avance.",
     "phase": "Fase"
   },
+  "accountDeletionImpact": {
+    "beforeYouDeleteYourAccount": "Antes de eliminar tu cuenta",
+    "youWillNotBeAble": "Ya no podrás iniciar sesión con esta cuenta.",
+    "youHaveNotCreatedAny": "No has creado ninguna obra.",
+    "ownProjects": "Las obras que creaste también se eliminan: {names}.",
+    "shared": "Los demás miembros pierden el acceso a {names}.",
+    "link": "Te enviaremos un correo con un enlace que sirve durante {minutes} minutos. No se borra nada hasta que lo abras.",
+    "purge": "Después de confirmar, tus datos se borran para siempre el {date}."
+  },
   "workStatus": {
     "start": "Iniciar",
     "resume": "Reanudar",

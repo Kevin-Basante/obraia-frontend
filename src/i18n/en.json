@@ -350,6 +350,15 @@
     "everyProjectGetsThisPlan": "Every project gets this plan with durations by size. You follow each phase with tasks, dates and progress reports.",
     "phase": "Phase"
   },
+  "accountDeletionImpact": {
+    "beforeYouDeleteYourAccount": "Before you delete your account",
+    "youWillNotBeAble": "You will not be able to sign in with this account again.",
+    "youHaveNotCreatedAny": "You have not created any project.",
+    "ownProjects": "The projects you created are deleted too: {names}.",
+    "shared": "Other members lose access to {names}.",
+    "link": "We will email you a link that works for {minutes} minutes. Nothing is deleted until you open it.",
+    "purge": "After you confirm, your data is removed for good on {date}."
+  },
   "workStatus": {
     "start": "Start",
     "resume": "Resume",
