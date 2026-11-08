@@ -204,6 +204,23 @@
     "youHaveNoProjectsYet": "You have no projects yet. Create the first one.",
     "noProjectsMatchTheseFilters": "No projects match these filters."
   },
+  "featureGrid": {
+    "pricesOfYourCity": "Prices of your city",
+    "referencePricesAndTransportBy": "Reference prices and transport by city, in Colombian pesos.",
+    "aiAndYourEye": "AI and your eye",
+    "theAiMeasuresYouCheck": "The AI measures, you check: every difference is shown side by side.",
+    "budgetVersions": "Budget versions",
+    "compareDraftsAndApproveThe": "Compare drafts and approve the one you will build with.",
+    "workInPhases": "Work in phases",
+    "aPlanPerProjectType": "A plan per project type, with tasks, dates and progress reports.",
+    "earlyWarnings": "Early warnings",
+    "notificationsWhenSpendingPassesThe": "Notifications when spending passes the budget or the risk goes up.",
+    "builtAsATeam": "Built as a team",
+    "inviteThePeopleWhoManage": "Invite the people who manage the project and assign a site manager.",
+    "madeForSmallBuilds": "Made for small builds",
+    "everythingAHouseNeedsIn": "Everything a house needs, in one place",
+    "familiesAndSmallBuildersPlan": "Families and small builders plan houses of up to two floors without spreadsheets or guesses."
+  },
   "validation": {
     "atLeast8CharactersWith": "At least 8 characters, with one letter and one number.",
     "enterYourEmail": "Enter your email",

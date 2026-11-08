@@ -204,6 +204,23 @@
     "youHaveNoProjectsYet": "Todavía no tienes obras. Crea la primera.",
     "noProjectsMatchTheseFilters": "Ninguna obra coincide con estos filtros."
   },
+  "featureGrid": {
+    "pricesOfYourCity": "Precios de tu ciudad",
+    "referencePricesAndTransportBy": "Precios de referencia y transporte por ciudad, en pesos colombianos.",
+    "aiAndYourEye": "La IA y tu ojo",
+    "theAiMeasuresYouCheck": "La IA mide y tú revisas: cada diferencia se muestra lado a lado.",
+    "budgetVersions": "Versiones del presupuesto",
+    "compareDraftsAndApproveThe": "Compara borradores y aprueba con el que vas a construir.",
+    "workInPhases": "Trabajo por fases",
+    "aPlanPerProjectType": "Un plan por tipo de obra, con tareas, fechas y reportes de avance.",
+    "earlyWarnings": "Alertas a tiempo",
+    "notificationsWhenSpendingPassesThe": "Notificaciones cuando el gasto pasa el presupuesto o sube el riesgo.",
+    "builtAsATeam": "Hecho en equipo",
+    "inviteThePeopleWhoManage": "Invita a quienes manejan la obra y asigna un maestro de obra.",
+    "madeForSmallBuilds": "Hecho para obras pequeñas",
+    "everythingAHouseNeedsIn": "Todo lo que una casa necesita, en un solo lugar",
+    "familiesAndSmallBuildersPlan": "Familias y pequeños constructores planean casas de hasta dos pisos sin hojas de cálculo ni suposiciones."
+  },
   "validation": {
     "atLeast8CharactersWith": "Mínimo 8 caracteres, con una letra y un número.",
     "enterYourEmail": "Escribe tu correo",
