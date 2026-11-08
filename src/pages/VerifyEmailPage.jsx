@@ -4,6 +4,7 @@ import { AuthCard } from '../components/AuthCard.jsx'
 import { FormAlert } from '../components/FormAlert.jsx'
 import { LoadingState } from '../components/LoadingState.jsx'
 import { verifyEmail } from '../services/authService.js'
+import { t } from '../i18n/i18n.js'
 
 // A token works only once. React can run the effect twice in development,
 // so both runs share the same request instead of the second one failing.
@@ -31,13 +32,14 @@ export function VerifyEmailPage() {
     }
   }, [token])
 
-  if (result.status === 'loading') return <LoadingState title="Verifying your email…" message="One moment." />
+  if (result.status === 'loading')
+    return <LoadingState title={t('verifyEmailPage.verifyingYourEmail')} message={t('verifyEmailPage.oneMoment')} />
 
   if (result.status === 'success') {
     return (
-      <AuthCard title="Email verified" description="Your account is active. You can sign in now.">
+      <AuthCard title={t('verifyEmailPage.emailVerified')} description={t('verifyEmailPage.yourAccountIsActiveYou')}>
         <Link to="/login" className="button-link">
-          Sign in
+          {t('verifyEmailPage.signIn')}
         </Link>
       </AuthCard>
     )
@@ -45,15 +47,15 @@ export function VerifyEmailPage() {
 
   return (
     <AuthCard
-      title="We could not verify your email"
+      title={t('verifyEmailPage.weCouldNotVerifyYour')}
       footer={
         <p>
-          <Link to="/check-email">Send me a new link</Link>
+          <Link to="/check-email">{t('verifyEmailPage.sendMeANewLink')}</Link>
         </p>
       }
     >
       <FormAlert>
-        {result.status === 'missing' ? 'The link is incomplete. Open it again from your email.' : result.error.message}
+        {result.status === 'missing' ? t('verifyEmailPage.theLinkIsIncompleteOpen') : result.error.message}
       </FormAlert>
     </AuthCard>
   )

@@ -929,6 +929,16 @@
     "theDateCannotBeIn": "La fecha no puede estar en el futuro",
     "useAtMost1000Characters": "Usa máximo 1000 caracteres"
   },
+  "verifyEmailPage": {
+    "verifyingYourEmail": "Verificando tu correo…",
+    "oneMoment": "Un momento.",
+    "emailVerified": "Correo verificado",
+    "yourAccountIsActiveYou": "Tu cuenta está activa. Ya puedes iniciar sesión.",
+    "signIn": "Iniciar sesión",
+    "weCouldNotVerifyYour": "No pudimos verificar tu correo",
+    "sendMeANewLink": "Enviarme un enlace nuevo",
+    "theLinkIsIncompleteOpen": "El enlace está incompleto. Ábrelo otra vez desde tu correo."
+  },
   "riskChart": {
     "label": "Puntaje de riesgo de las últimas {count} evaluaciones"
   },
