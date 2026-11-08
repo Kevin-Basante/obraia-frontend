@@ -189,6 +189,9 @@
     "measurements": "Medidas",
     "ofMaterials": "{rate} de los materiales"
   },
+  "materialGrid": {
+    "priceOf": "Precio del"
+  },
   "expenseForm": {
     "category": "Categoría",
     "chooseACategory": "Elige una categoría",
