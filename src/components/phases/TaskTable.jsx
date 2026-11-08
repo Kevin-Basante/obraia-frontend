@@ -4,12 +4,13 @@ import { formatDate } from '../../utils/format.js'
 import { formatProgress } from '../../utils/workStatus.js'
 import { WorkStatusButtons } from './WorkStatusButtons.jsx'
 import '../catalog/DataTable.css'
+import { t } from '../../i18n/i18n.js'
 
 function plannedDates(task) {
   if (!task.plannedStartDate && !task.plannedEndDate) return '—'
   const start = task.plannedStartDate ? formatDate(task.plannedStartDate) : '—'
   const end = task.plannedEndDate ? formatDate(task.plannedEndDate) : '—'
-  return `${start} to ${end}`
+  return t('common.dateRange', { start, end })
 }
 
 /**
@@ -22,30 +23,30 @@ export function TaskTable({ projectId, tasks, onStatus, onEdit, onDelete, busy }
     <table className="data-table">
       <thead>
         <tr>
-          <th>Task</th>
-          <th>Status</th>
-          <th>Planned dates</th>
-          <th className="data-table__number">Progress</th>
+          <th>{t('taskTable.task')}</th>
+          <th>{t('taskTable.status')}</th>
+          <th>{t('taskTable.plannedDates')}</th>
+          <th className="data-table__number">{t('taskTable.progress')}</th>
           <th>
-            <span className="visually-hidden">Actions</span>
+            <span className="visually-hidden">{t('taskTable.actions')}</span>
           </th>
         </tr>
       </thead>
       <tbody>
         {tasks.map((task) => (
           <tr key={task.id}>
-            <td data-label="Task">
+            <td data-label={t('taskTable.task')}>
               <Link to={`/projects/${projectId}/tasks/${task.id}`}>{task.name}</Link>
             </td>
-            <td data-label="Status">
+            <td data-label={t('taskTable.status')}>
               <StatusBadge status={task.status} />
-              {task.late && <span className="late-tag">Late</span>}
+              {task.late && <span className="late-tag">{t('taskTable.late')}</span>}
             </td>
-            <td data-label="Planned dates">{plannedDates(task)}</td>
-            <td data-label="Progress" className="data-table__number">
+            <td data-label={t('taskTable.plannedDates')}>{plannedDates(task)}</td>
+            <td data-label={t('taskTable.progress')} className="data-table__number">
               {formatProgress(task.progressPct)}
             </td>
-            <td data-label="Actions">
+            <td data-label={t('taskTable.actions')}>
               {onStatus && (
                 <div className="button-row">
                   <WorkStatusButtons item={task} onChange={(code) => onStatus(task, code)} busy={busy} />
@@ -56,7 +57,7 @@ export function TaskTable({ projectId, tasks, onStatus, onEdit, onDelete, busy }
                       disabled={busy}
                       onClick={() => onEdit(task)}
                     >
-                      Edit
+                      {t('taskTable.edit')}
                     </button>
                   )}
                   {onDelete && (
@@ -66,7 +67,7 @@ export function TaskTable({ projectId, tasks, onStatus, onEdit, onDelete, busy }
                       disabled={busy}
                       onClick={() => onDelete(task)}
                     >
-                      Delete
+                      {t('taskTable.delete')}
                     </button>
                   )}
                 </div>

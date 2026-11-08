@@ -405,6 +405,16 @@
     "moreThan120M": "más de 120 m²",
     "projectSize": "Tamaño de la obra"
   },
+  "taskTable": {
+    "task": "Tarea",
+    "status": "Estado",
+    "plannedDates": "Fechas planeadas",
+    "progress": "Avance",
+    "actions": "Acciones",
+    "late": "Atrasada",
+    "edit": "Editar",
+    "delete": "Borrar"
+  },
   "projectForm": {
     "n1Floor": "1 piso",
     "n2Floors": "2 pisos",

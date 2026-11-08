@@ -405,6 +405,16 @@
     "moreThan120M": "more than 120 m²",
     "projectSize": "Project size"
   },
+  "taskTable": {
+    "task": "Task",
+    "status": "Status",
+    "plannedDates": "Planned dates",
+    "progress": "Progress",
+    "actions": "Actions",
+    "late": "Late",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
   "projectForm": {
     "n1Floor": "1 floor",
     "n2Floors": "2 floors",
