@@ -422,6 +422,16 @@
     "workOnTheProject": "Work on the project",
     "uploadThePlansRecordThe": "Upload the plans, record the measurements of each element, follow the phases and tasks of the work, quote its cost and register what is spent."
   },
+  "forgotPasswordPage": {
+    "forgotYourPassword": "Forgot your password?",
+    "enterYourEmailAndWe": "Enter your email and we will send you a link to choose a new one.",
+    "rememberedIt": "Remembered it?",
+    "signIn": "Sign in",
+    "ifAnAccountUsesThat": "If an account uses that email, the link is on its way. It expires in 30 minutes.",
+    "email": "Email",
+    "sending": "Sending…",
+    "sendTheLink": "Send the link"
+  },
   "formulaTable": {
     "per": "· per",
     "material": "Material",

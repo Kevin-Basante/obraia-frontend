@@ -422,6 +422,16 @@
     "workOnTheProject": "Trabajar en la obra",
     "uploadThePlansRecordThe": "Sube los planos, registra las medidas de cada elemento, sigue las fases y tareas de la obra, cotiza su costo y registra lo que se gasta."
   },
+  "forgotPasswordPage": {
+    "forgotYourPassword": "¿Olvidaste tu contraseña?",
+    "enterYourEmailAndWe": "Escribe tu correo y te enviaremos un enlace para elegir una nueva.",
+    "rememberedIt": "¿La recordaste?",
+    "signIn": "Iniciar sesión",
+    "ifAnAccountUsesThat": "Si alguna cuenta usa ese correo, el enlace va en camino. Vence en 30 minutos.",
+    "email": "Correo",
+    "sending": "Enviando…",
+    "sendTheLink": "Enviar el enlace"
+  },
   "formulaTable": {
     "per": "· por",
     "material": "Material",

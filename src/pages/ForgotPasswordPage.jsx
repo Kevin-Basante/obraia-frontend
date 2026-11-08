@@ -7,6 +7,7 @@ import { SubmitButton } from '../components/SubmitButton.jsx'
 import { useFormSubmit } from '../hooks/useFormSubmit.js'
 import { forgotPassword } from '../services/authService.js'
 import { validateEmail } from '../utils/validation.js'
+import { t } from '../i18n/i18n.js'
 
 /** Requests the email with the link to choose a new password. */
 export function ForgotPasswordPage() {
@@ -28,29 +29,27 @@ export function ForgotPasswordPage() {
 
   return (
     <AuthCard
-      title="Forgot your password?"
-      description="Enter your email and we will send you a link to choose a new one."
+      title={t('forgotPasswordPage.forgotYourPassword')}
+      description={t('forgotPasswordPage.enterYourEmailAndWe')}
       footer={
         <p>
-          Remembered it? <Link to="/login">Sign in</Link>
+          {t('forgotPasswordPage.rememberedIt')} <Link to="/login">{t('forgotPasswordPage.signIn')}</Link>
         </p>
       }
     >
       <form className="auth-form" onSubmit={handleSubmit} noValidate>
         <FormAlert>{error?.message}</FormAlert>
-        {sent && !error && (
-          <FormAlert type="success">If an account uses that email, the link is on its way. It expires in 30 minutes.</FormAlert>
-        )}
+        {sent && !error && <FormAlert type="success">{t('forgotPasswordPage.ifAnAccountUsesThat')}</FormAlert>}
         <FormField
-          label="Email"
+          label={t('forgotPasswordPage.email')}
           type="email"
           autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           error={fieldErrors.email}
         />
-        <SubmitButton pending={pending} pendingText="Sending…">
-          Send the link
+        <SubmitButton pending={pending} pendingText={t('forgotPasswordPage.sending')}>
+          {t('forgotPasswordPage.sendTheLink')}
         </SubmitButton>
       </form>
     </AuthCard>
