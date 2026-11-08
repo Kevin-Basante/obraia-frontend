@@ -785,6 +785,16 @@
     "late": "Atrasada",
     "noDates": "Sin fechas"
   },
+  "checkEmailPage": {
+    "checkYourEmail": "Revisa tu correo",
+    "weSentYouALink": "Te enviamos un enlace para confirmar tu dirección. Ábrelo para activar tu cuenta.",
+    "alreadyConfirmed": "¿Ya la confirmaste?",
+    "signIn": "Iniciar sesión",
+    "ifTheAccountExistsAnd": "Si la cuenta existe y aún no está verificada, va en camino un enlace nuevo.",
+    "email": "Correo",
+    "sending": "Enviando…",
+    "resendTheEmail": "Reenviar el correo"
+  },
   "workItemForm": {
     "phase": "Fase",
     "chooseAPhase": "Elige una fase",

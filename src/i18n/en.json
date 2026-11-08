@@ -785,6 +785,16 @@
     "late": "Late",
     "noDates": "No dates"
   },
+  "checkEmailPage": {
+    "checkYourEmail": "Check your email",
+    "weSentYouALink": "We sent you a link to confirm your address. Open it to activate your account.",
+    "alreadyConfirmed": "Already confirmed?",
+    "signIn": "Sign in",
+    "ifTheAccountExistsAnd": "If the account exists and is not verified yet, a new link is on its way.",
+    "email": "Email",
+    "sending": "Sending…",
+    "resendTheEmail": "Resend the email"
+  },
   "workItemForm": {
     "phase": "Phase",
     "chooseAPhase": "Choose a phase",

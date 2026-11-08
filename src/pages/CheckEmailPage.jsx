@@ -7,6 +7,7 @@ import { SubmitButton } from '../components/SubmitButton.jsx'
 import { useFormSubmit } from '../hooks/useFormSubmit.js'
 import { resendVerification } from '../services/authService.js'
 import { validateEmail } from '../utils/validation.js'
+import { t } from '../i18n/i18n.js'
 
 /** Asks the user to open the verification link and lets them request it again. */
 export function CheckEmailPage() {
@@ -30,29 +31,27 @@ export function CheckEmailPage() {
 
   return (
     <AuthCard
-      title="Check your email"
-      description="We sent you a link to confirm your address. Open it to activate your account."
+      title={t('checkEmailPage.checkYourEmail')}
+      description={t('checkEmailPage.weSentYouALink')}
       footer={
         <p>
-          Already confirmed? <Link to="/login">Sign in</Link>
+          {t('checkEmailPage.alreadyConfirmed')} <Link to="/login">{t('checkEmailPage.signIn')}</Link>
         </p>
       }
     >
       <form className="auth-form" onSubmit={handleSubmit} noValidate>
         <FormAlert>{error?.message}</FormAlert>
-        {sent && !error && (
-          <FormAlert type="success">If the account exists and is not verified yet, a new link is on its way.</FormAlert>
-        )}
+        {sent && !error && <FormAlert type="success">{t('checkEmailPage.ifTheAccountExistsAnd')}</FormAlert>}
         <FormField
-          label="Email"
+          label={t('checkEmailPage.email')}
           type="email"
           autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           error={fieldErrors.email}
         />
-        <SubmitButton pending={pending} pendingText="Sending…">
-          Resend the email
+        <SubmitButton pending={pending} pendingText={t('checkEmailPage.sending')}>
+          {t('checkEmailPage.resendTheEmail')}
         </SubmitButton>
       </form>
     </AuthCard>
