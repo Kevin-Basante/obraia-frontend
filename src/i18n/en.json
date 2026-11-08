@@ -417,6 +417,12 @@
     "loadingCities": "Loading cities…",
     "noCitiesMatchTheseFilters": "No cities match these filters."
   },
+  "blueprintViewer": {
+    "loadingTheBlueprint": "Loading the blueprint…",
+    "download": "Download",
+    "openInANewTab": "Open in a new tab",
+    "named": "Blueprint {name}"
+  },
   "blueprintUploadForm": {
     "uploading": "Uploading…",
     "upload": "Upload",

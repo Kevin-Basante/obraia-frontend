@@ -5,6 +5,7 @@ import { useApiData } from '../../hooks/useApiData.js'
 import { getBlueprintFile } from '../../services/blueprintService.js'
 import { isImage } from '../../utils/blueprintFile.js'
 import './BlueprintViewer.css'
+import { t } from '../../i18n/i18n.js'
 
 /**
  * Shows a blueprint inside the page. The file needs the session token, so
@@ -25,21 +26,21 @@ export function BlueprintViewer({ projectId, blueprint }) {
   }, [url])
 
   if (file.status === 'error') return <ErrorState error={file.error} onRetry={file.retry} />
-  if (!url) return <LoadingState title="Loading the blueprint…" message={null} />
+  if (!url) return <LoadingState title={t('blueprintViewer.loadingTheBlueprint')} message={null} />
 
   return (
     <section className="card blueprint-viewer">
       {isImage(blueprint) ? (
-        <img src={url} alt={`Blueprint ${blueprint.originalFilename}`} />
+        <img src={url} alt={t('blueprintViewer.named', { name: blueprint.originalFilename })} />
       ) : (
-        <iframe src={url} title={`Blueprint ${blueprint.originalFilename}`} />
+        <iframe src={url} title={t('blueprintViewer.named', { name: blueprint.originalFilename })} />
       )}
       <div className="button-row">
         <a href={url} download={blueprint.originalFilename} className="button-link button-secondary">
-          Download
+          {t('blueprintViewer.download')}
         </a>
         <a href={url} target="_blank" rel="noreferrer">
-          Open in a new tab
+          {t('blueprintViewer.openInANewTab')}
         </a>
       </div>
     </section>

@@ -417,6 +417,12 @@
     "loadingCities": "Cargando ciudades…",
     "noCitiesMatchTheseFilters": "Ninguna ciudad coincide con estos filtros."
   },
+  "blueprintViewer": {
+    "loadingTheBlueprint": "Cargando el plano…",
+    "download": "Descargar",
+    "openInANewTab": "Abrir en otra pestaña",
+    "named": "Plano {name}"
+  },
   "blueprintUploadForm": {
     "uploading": "Subiendo…",
     "upload": "Subir",
