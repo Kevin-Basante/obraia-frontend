@@ -182,6 +182,13 @@
     "delete": "Borrar",
     "reading": "Leyendo…"
   },
+  "quotationFacts": {
+    "city": "Ciudad",
+    "transport": "Transporte",
+    "workingDays": "Días de trabajo",
+    "measurements": "Medidas",
+    "ofMaterials": "{rate} de los materiales"
+  },
   "expenseForm": {
     "category": "Categoría",
     "chooseACategory": "Elige una categoría",
