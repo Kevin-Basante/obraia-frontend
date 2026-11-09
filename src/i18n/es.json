@@ -729,6 +729,39 @@
     "weCouldNotLoadThe": "No pudimos cargar el resumen:",
     "loadingTheSummary": "Cargando el resumen…"
   },
+  "reportPanel": {
+    "title": "Descargar el análisis",
+    "description": "Informes en PDF de esta obra, en el idioma de la página. Cuando la IA está disponible, agrega un resumen corto con recomendaciones.",
+    "preparing": "Preparando el PDF… Si la IA estaba dormida, puede tardar hasta un minuto.",
+    "fileName": {
+      "public": "informe-publico",
+      "full": "informe-completo"
+    },
+    "public": {
+      "title": "Informe público",
+      "text": "Avance, fases y próximas tareas, sin dinero ni riesgo. Cualquier miembro puede descargarlo o compartirlo con un enlace.",
+      "download": "Descargar PDF público"
+    },
+    "share": {
+      "button": "Copiar enlace para compartir",
+      "creating": "Creando el enlace…",
+      "copied": "El enlace se copió. Quien lo tenga puede descargar el informe público.",
+      "label": "Enlace para compartir",
+      "expires": "El enlace funciona hasta el {date}"
+    },
+    "full": {
+      "title": "Informe completo",
+      "text": "El informe público más el presupuesto, los gastos y el riesgo. El creador de la obra aprueba quién lo descarga.",
+      "download": "Descargar PDF completo",
+      "ask": "Pedírselo al creador",
+      "asking": "Enviando la solicitud…",
+      "owner": "Tú creaste la obra, así que puedes descargarlo cuando quieras.",
+      "approved": "El creador lo aprobó: puedes descargarlo hasta el {date}",
+      "pending": "Lo pediste el {date}; el creador recibió un correo para aprobarlo.",
+      "expired": "Tu última aprobación o solicitud venció. Puedes pedirlo otra vez.",
+      "none": "Para descargarlo, pídeselo al creador de la obra. Lo aprueba desde un correo."
+    }
+  },
   "upcomingTasks": {
     "nextTasks": "Próximas tareas",
     "seeAll": "Ver todas",

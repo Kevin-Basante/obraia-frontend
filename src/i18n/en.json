@@ -729,6 +729,39 @@
     "weCouldNotLoadThe": "We could not load the summary:",
     "loadingTheSummary": "Loading the summary…"
   },
+  "reportPanel": {
+    "title": "Download the analysis",
+    "description": "PDF reports of this project, in the language of the page. The AI adds a short summary with recommendations when it is available.",
+    "preparing": "Preparing the PDF… If the AI was asleep, it can take up to a minute.",
+    "fileName": {
+      "public": "public-report",
+      "full": "full-report"
+    },
+    "public": {
+      "title": "Public report",
+      "text": "Progress, phases and next tasks, without money or risk. Any member can download it or share it with a link.",
+      "download": "Download public PDF"
+    },
+    "share": {
+      "button": "Copy share link",
+      "creating": "Creating the link…",
+      "copied": "The link was copied. Anyone who has it can download the public report.",
+      "label": "Share link",
+      "expires": "The link works until {date}"
+    },
+    "full": {
+      "title": "Full report",
+      "text": "The public report plus the budget, the expenses and the risk. The creator of the project approves who downloads it.",
+      "download": "Download full PDF",
+      "ask": "Ask the creator for it",
+      "asking": "Sending the request…",
+      "owner": "You created the project, so you can download it whenever you want.",
+      "approved": "The creator approved it: you can download it until {date}",
+      "pending": "You asked for it on {date}; the creator got an email to approve it.",
+      "expired": "Your last approval or request expired. You can ask again.",
+      "none": "To download it, ask the creator of the project. They approve it from an email."
+    }
+  },
   "upcomingTasks": {
     "nextTasks": "Next tasks",
     "seeAll": "See all",
