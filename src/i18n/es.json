@@ -655,6 +655,14 @@
     "incompleteLink": "El enlace está incompleto. Ábrelo de nuevo desde el correo.",
     "ignore": "Si no quieres compartir esta información, cierra esta página: no se compartirá nada."
   },
+  "sharedReportPage": {
+    "title": "Informe de la obra",
+    "description": "Te compartieron el informe público de una obra: avance, fases y próximas tareas.",
+    "download": "Descargar el PDF",
+    "preparing": "Preparando el PDF…",
+    "incompleteLink": "El enlace está incompleto. Pídelo de nuevo.",
+    "note": "El informe público no incluye presupuestos, gastos ni riesgo."
+  },
   "budgetDetailPage": {
     "loadingTheBudgetVersion": "Cargando la versión del presupuesto…",
     "budget": "Presupuesto",

@@ -655,6 +655,14 @@
     "incompleteLink": "The link is incomplete. Open it again from the email.",
     "ignore": "If you do not want to share this information, close this page: nothing will be shared."
   },
+  "sharedReportPage": {
+    "title": "Project report",
+    "description": "Someone shared the public report of a project with you: progress, phases and next tasks.",
+    "download": "Download the PDF",
+    "preparing": "Preparing the PDF…",
+    "incompleteLink": "The link is incomplete. Ask for it again.",
+    "note": "The public report does not include budgets, expenses or risk."
+  },
   "budgetDetailPage": {
     "loadingTheBudgetVersion": "Loading the budget version…",
     "budget": "Budget",
