@@ -1274,7 +1274,9 @@
     "account_deleted": "Tu cuenta fue eliminada. Tus datos se borrarán para siempre el {purgeDate}.",
     "project_deletion_sent": "Te enviamos un correo para confirmar la eliminación de {project}",
     "project_deleted": "La obra {project} fue eliminada. Sus datos se borrarán para siempre el {purgeDate}.",
-    "withLink": "{message}. Abre el enlace de ese correo para terminar."
+    "withLink": "{message}. Abre el enlace de ese correo para terminar.",
+    "report_request_sent": "Le pedimos a {owner} que apruebe el informe completo de {project}",
+    "report_request_approved": "{requester} puede descargar el informe completo de {project} durante las próximas {hours} horas."
   },
   "errors": {
     "NETWORK_ERROR": "No se pudo conectar con el servidor",

@@ -1274,7 +1274,9 @@
     "account_deleted": "Your account was deleted. Your data will be removed for good on {purgeDate}.",
     "project_deletion_sent": "We sent you an email to confirm the deletion of {project}",
     "project_deleted": "The project {project} was deleted. Its data will be removed for good on {purgeDate}.",
-    "withLink": "{message}. Open the link in that email to finish."
+    "withLink": "{message}. Open the link in that email to finish.",
+    "report_request_sent": "We asked {owner} to approve the full report of {project}",
+    "report_request_approved": "{requester} can download the full report of {project} for the next {hours} hours."
   },
   "errors": {
     "NETWORK_ERROR": "Could not connect to the server",
