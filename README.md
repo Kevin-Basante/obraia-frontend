@@ -148,6 +148,15 @@ Una ruta desconocida muestra "Page not found". Un invitado que abre una página 
 - Las cifras las calcula el backend; la página solo las muestra. Al cambiar el estado de la obra o evaluar el riesgo, el dashboard se vuelve a cargar.
 - La cuadrícula es de 12 columnas; por debajo de 1100 px cada tarjeta ocupa todo el ancho.
 
+## Informes PDF
+
+En el dashboard de cada obra, la tarjeta "Descargar el análisis" ("Download the analysis" en inglés) ofrece dos informes. El PDF sale en el idioma de la página.
+
+- **Informe público:** avance, fases y próximas tareas, sin dinero ni riesgo. Cualquier miembro lo descarga y puede crear un enlace para compartirlo con alguien sin cuenta (`/shared-report`); el enlace vence.
+- **Informe completo:** agrega presupuesto, gastos y riesgo. El creador de la obra lo descarga de inmediato. Otro miembro lo pide; el creador recibe un correo, lo aprueba en `/approve-report` y el miembro puede descargarlo durante 24 horas.
+- La IA escribe un resumen corto con recomendaciones al inicio del PDF. Si la IA no responde, el informe sale sin resumen.
+- Al abrir el dashboard de una obra o sus planos, la página despierta la IA en silencio (`GET /api/ai/wake`, como máximo cada 5 minutos), para que el primer análisis no tarde tanto.
+
 ## Catálogo
 
 - Lee los catálogos públicos del backend (`/api/catalogs/...`), así que funciona con sesión, como invitado o sin sesión.
