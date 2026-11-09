@@ -645,6 +645,16 @@
     "myProjects": "Mis obras",
     "theLinkIsIncompleteOpen": "El enlace está incompleto. Ábrelo otra vez desde tu correo."
   },
+  "approveReportPage": {
+    "title": "Aprobar el informe completo",
+    "description": "Un miembro de tu obra pidió descargar el informe completo, con el presupuesto, los gastos y el riesgo.",
+    "approve": "Aprobar la descarga",
+    "approving": "Aprobando…",
+    "approved": "Descarga aprobada",
+    "goToMyProjects": "Ir a mis obras",
+    "incompleteLink": "El enlace está incompleto. Ábrelo de nuevo desde el correo.",
+    "ignore": "Si no quieres compartir esta información, cierra esta página: no se compartirá nada."
+  },
   "budgetDetailPage": {
     "loadingTheBudgetVersion": "Cargando la versión del presupuesto…",
     "budget": "Presupuesto",

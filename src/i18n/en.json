@@ -645,6 +645,16 @@
     "myProjects": "My projects",
     "theLinkIsIncompleteOpen": "The link is incomplete. Open it again from your email."
   },
+  "approveReportPage": {
+    "title": "Approve the full report",
+    "description": "A member of your project asked to download the full report, with the budget, the expenses and the risk.",
+    "approve": "Approve the download",
+    "approving": "Approving…",
+    "approved": "Download approved",
+    "goToMyProjects": "Go to my projects",
+    "incompleteLink": "The link is incomplete. Open it again from the email.",
+    "ignore": "If you do not want to share this information, close this page: nothing will be shared."
+  },
   "budgetDetailPage": {
     "loadingTheBudgetVersion": "Loading the budget version…",
     "budget": "Budget",
