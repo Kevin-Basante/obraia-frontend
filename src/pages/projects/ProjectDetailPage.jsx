@@ -11,6 +11,7 @@ import { UpcomingTasks } from '../../components/dashboard/UpcomingTasks.jsx'
 import { MembersPanel } from '../../components/projects/MembersPanel.jsx'
 import { ProjectSummary } from '../../components/projects/ProjectSummary.jsx'
 import { ProjectWorkLinks } from '../../components/projects/ProjectWorkLinks.jsx'
+import { ReportPanel } from '../../components/reports/ReportPanel.jsx'
 import { SiteManagerPanel } from '../../components/projects/SiteManagerPanel.jsx'
 import { StatusActions } from '../../components/projects/StatusActions.jsx'
 import { RiskPanel } from '../../components/risk/RiskPanel.jsx'
@@ -26,8 +27,8 @@ import { t } from '../../i18n/i18n.js'
 
 /**
  * Dashboard of one project: status and data on top, the key numbers, the
- * links to its work, the phases and next tasks, the money, the risk and the
- * people, all on one screen.
+ * PDF reports, the links to its work, the phases and next tasks, the money,
+ * the risk and the people, all on one screen.
  */
 export function ProjectDetailPage() {
   const { id } = useParams()
@@ -88,6 +89,9 @@ export function ProjectDetailPage() {
             <p className="muted">{t('projectDetailPage.loadingTheSummary')}</p>
           )}
           {summary && <ProjectKpis overview={summary} />}
+        </div>
+        <div className="project-dashboard__full">
+          <ReportPanel projectId={data.id} projectName={data.name} />
         </div>
         <div className="project-dashboard__full">
           <ProjectWorkLinks projectId={data.id} />
