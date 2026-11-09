@@ -1,0 +1,46 @@
+/* Two options side by side on wide screens: the public report and the full one. */
+.report-panel__header h2 {
+  margin-bottom: 4px;
+}
+
+.report-panel__options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.report-panel__option {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+.report-panel__option h3 {
+  margin: 0;
+}
+
+.report-panel__option .button-row {
+  margin-top: auto;
+}
+
+.report-panel__status {
+  margin: 0;
+  font-weight: 600;
+}
+
+.report-panel__link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+}
+
+.report-panel__link input {
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
