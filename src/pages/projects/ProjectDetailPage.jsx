@@ -14,6 +14,7 @@ import { ProjectWorkLinks } from '../../components/projects/ProjectWorkLinks.jsx
 import { SiteManagerPanel } from '../../components/projects/SiteManagerPanel.jsx'
 import { StatusActions } from '../../components/projects/StatusActions.jsx'
 import { RiskPanel } from '../../components/risk/RiskPanel.jsx'
+import { useAiWakeUp } from '../../hooks/useAiWakeUp.js'
 import { useApiData } from '../../hooks/useApiData.js'
 import { useAuth } from '../../hooks/useAuth.js'
 import { getProjectOverview } from '../../services/dashboardService.js'
@@ -31,6 +32,8 @@ import { t } from '../../i18n/i18n.js'
 export function ProjectDetailPage() {
   const { id } = useParams()
   const { user } = useAuth()
+  // The PDF reports ask the AI for a summary, so it starts waking up now.
+  useAiWakeUp()
   const project = useApiData((signal) => getProject(id, { signal }), [id])
   const overview = useApiData((signal) => getProjectOverview(id, { signal }), [id])
   const { retry: retryProject } = project
