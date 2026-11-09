@@ -7,6 +7,7 @@ import { PageHeader } from '../../components/PageHeader.jsx'
 import { AnalysisResult } from '../../components/blueprints/AnalysisResult.jsx'
 import { BlueprintList } from '../../components/blueprints/BlueprintList.jsx'
 import { BlueprintUploadForm } from '../../components/blueprints/BlueprintUploadForm.jsx'
+import { useAiWakeUp } from '../../hooks/useAiWakeUp.js'
 import { useApiData } from '../../hooks/useApiData.js'
 import { useFormSubmit } from '../../hooks/useFormSubmit.js'
 import { analyzeBlueprint, deleteBlueprint, listBlueprints, uploadBlueprint } from '../../services/blueprintService.js'
@@ -20,6 +21,8 @@ import { t } from '../../i18n/i18n.js'
 /** Blueprints of a project: upload photos or PDFs, open them, read them with the AI and delete them. */
 export function BlueprintsPage() {
   const { id } = useParams()
+  // The AI starts waking up while the user picks a file, so the first analysis is faster.
+  useAiWakeUp()
   const project = useApiData((signal) => getProject(id, { signal }), [id])
   const blueprints = useApiData((signal) => listBlueprints(id, { signal }), [id])
   const { retry } = blueprints
