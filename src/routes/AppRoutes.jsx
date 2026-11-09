@@ -5,6 +5,7 @@ import { AccountPage } from '../pages/AccountPage.jsx'
 import { CatalogLayout } from '../layouts/CatalogLayout.jsx'
 import { CheckEmailPage } from '../pages/CheckEmailPage.jsx'
 import { ConfirmAccountDeletionPage } from '../pages/ConfirmAccountDeletionPage.jsx'
+import { ApproveReportPage } from '../pages/ApproveReportPage.jsx'
 import { ConfirmDeletionPage } from '../pages/ConfirmDeletionPage.jsx'
 import { DashboardPage } from '../pages/DashboardPage.jsx'
 import { DeleteAccountPage } from '../pages/DeleteAccountPage.jsx'
@@ -15,6 +16,7 @@ import { NotFoundPage } from '../pages/NotFoundPage.jsx'
 import { NotificationsPage } from '../pages/NotificationsPage.jsx'
 import { RegisterPage } from '../pages/RegisterPage.jsx'
 import { ResetPasswordPage } from '../pages/ResetPasswordPage.jsx'
+import { SharedReportPage } from '../pages/SharedReportPage.jsx'
 import { SiteManagersPage } from '../pages/SiteManagersPage.jsx'
 import { VerifyEmailPage } from '../pages/VerifyEmailPage.jsx'
 import { CitiesPage } from '../pages/catalog/CitiesPage.jsx'
@@ -62,6 +64,8 @@ export function AppRoutes() {
         <Route path="reset-password" element={<ResetPasswordPage />} />
         <Route path="confirm-deletion" element={<ConfirmDeletionPage />} />
         <Route path="confirm-account-deletion" element={<ConfirmAccountDeletionPage />} />
+        <Route path="approve-report" element={<ApproveReportPage />} />
+        <Route path="shared-report" element={<SharedReportPage />} />
 
         {/* Public: guests and signed-out visitors can browse the catalog. */}
         <Route path="catalog" element={<CatalogLayout />}>
