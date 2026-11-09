@@ -105,6 +105,8 @@ Esta variable solo guarda la URL pública del backend. Las claves (base de datos
 | `/projects/:id/budgets/:budgetId` | Una versión del presupuesto con sus capas de costo y el botón para aprobarla | Con cuenta (miembros) |
 | `/projects/:id/materials` | Materiales a comprar según la última versión guardada | Con cuenta (miembros)   |
 | `/projects/:id/expenses` | Gastos de la obra: registrar, borrar y comparar con el presupuesto aprobado | Con cuenta (miembros) |
+| `/approve-report`  | El creador aprueba que un miembro descargue el informe completo, con el enlace del correo (`?token=`) | Todos |
+| `/shared-report`   | Descarga el informe público con un enlace compartido (`?token=`), sin cuenta | Todos |
 | `/notifications`   | Mis notificaciones: abrirlas y marcarlas como leídas           | Con cuenta              |
 | `/site-managers`   | Mis maestros de obra: agregar, editar y borrar                 | Con cuenta              |
 | `/account`         | Mi cuenta: editar el perfil, cambiar la contraseña y el enlace para eliminarla | Con cuenta |
