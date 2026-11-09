@@ -19,7 +19,6 @@ function parseArea(text) {
   return text.trim() && area > 0 ? area : null
 }
 
-/** One project type: its standard phases by size and the materials per building element. */
 /** "96 m² is a small project.", with the size in bold. */
 function sizeNote(area, size) {
   const [before, after] = t('projectTypeDetailPage.sizeNote', { area }).split('{size}')
@@ -32,6 +31,7 @@ function sizeNote(area, size) {
   )
 }
 
+/** One project type: its standard phases by size and the materials per building element. */
 export function ProjectTypeDetailPage() {
   const { id } = useParams()
   const [size, setSize] = useState('small')
