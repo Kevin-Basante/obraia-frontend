@@ -265,7 +265,7 @@ Recorrido de la demostración, de principio a fin:
 ```
 public/                Archivos estáticos (ícono)
 src/
-├── components/        Componentes visuales, cada uno con su CSS (por sección en account/, art/, blueprints/, budgets/, catalog/, dashboard/, expenses/, landing/, measurements/, notifications/, phases/, projects/, risk/, siteManagers/, language/ y theme/)
+├── components/        Componentes visuales, cada uno con su CSS (por sección en account/, art/, blueprints/, budgets/, catalog/, dashboard/, expenses/, landing/, measurements/, notifications/, phases/, projects/, reports/, risk/, siteManagers/, language/ y theme/)
 ├── config/            Configuración (URL del backend)
 ├── context/           Estado de la sesión y del idioma compartido por toda la app
 ├── hooks/             Lógica reutilizable: sesión, formularios, carga de datos, tema claro u oscuro e idioma
