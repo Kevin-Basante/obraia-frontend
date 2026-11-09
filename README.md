@@ -306,7 +306,7 @@ Después de desplegar, la URL de Vercel debe agregarse a `FRONTEND_URL` en Rende
 
 | Integrante    | Responsabilidad                                   |
 | ------------- | ------------------------------------------------- |
-| Kevin Basante | Backend (`obraia-backend`), servicio de IA (`obraia-ia`), diseño visual del frontend y las mejoras pedidas por el docente (pantalla completa y dashboard) |
+| Kevin Basante | Backend (`obraia-backend`), servicio de IA (`obraia-ia`), diseño visual del frontend y las mejoras pedidas por el docente (pantalla completa, dashboard, idioma e informes PDF) |
 | Arley Riascos | Frontend (`obraia-frontend`)                      |
 
 ## Convenciones
