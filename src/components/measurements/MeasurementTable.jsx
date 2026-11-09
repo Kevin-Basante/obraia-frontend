@@ -22,7 +22,7 @@ export function MeasurementTable({ measurements, onEdit, onDelete, busy, showBlu
         <tr>
           <th>{t('measurementTable.element')}</th>
           <th>{t('measurementTable.floor')}</th>
-          <th>Dimensions (m)</th>
+          <th>{t('measurementTable.dimensionsM')}</th>
           <th className="data-table__number">{t('measurementTable.quantity')}</th>
           <th className="data-table__number">{t('measurementTable.amount')}</th>
           <th>{t('measurementTable.source')}</th>
