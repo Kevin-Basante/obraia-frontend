@@ -13,7 +13,7 @@ const PLAN = {
 describe('PhaseTimeline', () => {
   it('shows the total and each phase with its days', () => {
     const text = renderText(<PhaseTimeline plan={PLAN} />)
-    expect(text).toContain('45 days in total (about 1.5 months)')
+    expect(text).toContain('45 days in total (about 1,5 months)')
     expect(text).toContain('Cimentación')
     expect(text).toContain('30 days')
   })

@@ -1,5 +1,6 @@
 import { LineArt } from '../art/LineArt.jsx'
 import { phaseArt } from '../../utils/artFor.js'
+import { formatQuantity } from '../../utils/format.js'
 import './PhaseTimeline.css'
 import { t } from '../../i18n/i18n.js'
 
@@ -9,7 +10,8 @@ import { t } from '../../i18n/i18n.js'
  */
 export function PhaseTimeline({ plan, updating }) {
   const longest = Math.max(...plan.phases.map((phase) => phase.estimatedDurationDays))
-  const months = (plan.totalDurationDays / 30).toFixed(1)
+  // Numbers keep the Colombian format in both languages: "4,4".
+  const months = formatQuantity((plan.totalDurationDays / 30).toFixed(1))
 
   return (
     <div className={`phase-timeline${updating ? ' phase-timeline--updating' : ''}`}>
