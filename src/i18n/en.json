@@ -1348,7 +1348,13 @@
     "INVALID_RISK_TRIGGER": "A value of the request is not valid",
     "INVALID_SIZE_CATEGORY": "A value of the request is not valid",
     "INVALID_WORK_STATUS": "A value of the request is not valid",
-    "ANALYZER_BUSY": "The AI is busy right now. Try again in a moment"
+    "ANALYZER_BUSY": "The AI is busy right now. Try again in a moment",
+    "REPORT_NOT_APPROVED": "The creator of the project has to approve your download of the full report",
+    "REPORT_ALREADY_ALLOWED": "You can already download the full report",
+    "PROJECT_OWNER_NOT_FOUND": "The creator of the project no longer has an account",
+    "INVALID_REPORT_TOKEN": "The approval link is invalid, was already used or has expired",
+    "INVALID_SHARE_TOKEN": "The shared link is invalid or has expired",
+    "INVALID_REPORT_TYPE": "The report type must be public or full"
   },
   "phaseTimeline": {
     "days": {

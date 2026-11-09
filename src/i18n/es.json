@@ -1348,7 +1348,13 @@
     "INVALID_RISK_TRIGGER": "Un valor de la solicitud no es válido",
     "INVALID_SIZE_CATEGORY": "Un valor de la solicitud no es válido",
     "INVALID_WORK_STATUS": "Un valor de la solicitud no es válido",
-    "ANALYZER_BUSY": "La IA está ocupada en este momento. Inténtalo en un momento"
+    "ANALYZER_BUSY": "La IA está ocupada en este momento. Inténtalo en un momento",
+    "REPORT_NOT_APPROVED": "El creador de la obra debe aprobar tu descarga del informe completo",
+    "REPORT_ALREADY_ALLOWED": "Ya puedes descargar el informe completo",
+    "PROJECT_OWNER_NOT_FOUND": "El creador de la obra ya no tiene cuenta",
+    "INVALID_REPORT_TOKEN": "El enlace de aprobación no es válido, ya se usó o venció",
+    "INVALID_SHARE_TOKEN": "El enlace compartido no es válido o venció",
+    "INVALID_REPORT_TYPE": "El tipo de informe debe ser público o completo"
   },
   "phaseTimeline": {
     "days": {
