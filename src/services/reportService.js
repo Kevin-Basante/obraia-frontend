@@ -39,7 +39,20 @@ export function downloadSharedReport(token, lang) {
   return apiRequest('/api/reports/shared', { method: 'POST', body: { token, lang }, responseType: 'blob' })
 }
 
-/** Wakes the AI service in the background; the answer says whether it is configured. */
+/**
+ * Wakes the AI service in the background. The answer says whether it is
+ * configured and gives the URL the browser visits to wake it.
+ */
 export function wakeAi(options) {
   return authorizedRequest('/api/ai/wake', options)
+}
+
+/**
+ * Visits the health check of the AI service from the browser. The free
+ * hosting only wakes the service for calls from outside it, so the backend
+ * cannot wake it alone. The answer comes from another site and cannot be
+ * read, but it is not needed.
+ */
+export function visitAi(url) {
+  return fetch(url, { mode: 'no-cors', cache: 'no-store', credentials: 'omit' })
 }
