@@ -155,7 +155,7 @@ En el dashboard de cada obra, la tarjeta "Descargar el análisis" ("Download the
 - **Informe público:** avance, fases y próximas tareas, sin dinero ni riesgo. Cualquier miembro lo descarga y puede crear un enlace para compartirlo con alguien sin cuenta (`/shared-report`); el enlace vence.
 - **Informe completo:** agrega presupuesto, gastos y riesgo. El creador de la obra lo descarga de inmediato. Otro miembro lo pide; el creador recibe un correo, lo aprueba en `/approve-report` y el miembro puede descargarlo durante 24 horas.
 - La IA escribe un resumen corto con recomendaciones al inicio del PDF. Si la IA no responde, el informe sale sin resumen.
-- Al abrir el dashboard de una obra o sus planos, la página despierta la IA en silencio (`GET /api/ai/wake`, como máximo cada 5 minutos), para que el primer análisis no tarde tanto.
+- **Despertar la IA:** el servicio de IA se duerme cuando nadie lo usa y la primera lectura tardaría cerca de un minuto. Por eso, en cuanto una persona con cuenta inicia sesión, el sitio despierta la IA en silencio (`GET /api/ai/wake`) y la mantiene despierta con un aviso cada 5 minutos mientras la pestaña está visible y la persona sigue usando el sitio. Si pasan 20 minutos sin clics, teclas ni desplazamiento, deja de avisar, para no gastar las horas gratis del hosting. Lo hace `useAiWakeUp` en `AppLayout`, con las reglas de `utils/aiWake.js`.
 
 ## Catálogo
 
