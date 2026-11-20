@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { wakeAi } from '../services/reportService.js'
+import { visitAi, wakeAi } from '../services/reportService.js'
 import { isAiWakeDue, shouldKeepAiAwake } from '../utils/aiWake.js'
 import { useAuth } from './useAuth.js'
 
@@ -12,8 +12,10 @@ let lastWake = 0
  * The free hosting puts it to sleep after a while without calls, and the
  * first analysis or summary would wait about a minute or fail. The first
  * wake-up goes out as soon as the person signs in; then one every few
- * minutes while the tab is visible and the person keeps using it. Nothing
- * is shown on screen.
+ * minutes while the tab is visible and the person keeps using it. The
+ * backend answers with the URL of the AI service and the browser visits it,
+ * because the hosting only wakes the service for calls from outside it.
+ * Nothing is shown on screen.
  */
 export function useAiWakeUp() {
   const { status } = useAuth()
@@ -27,10 +29,12 @@ export function useAiWakeUp() {
       const visible = document.visibilityState === 'visible'
       if (!shouldKeepAiAwake({ status, visible, now, lastActivity }) || !isAiWakeDue(now, lastWake)) return
       lastWake = now
-      wakeAi().catch(() => {
-        // The next check tries again instead of waiting a few minutes.
-        lastWake = 0
-      })
+      wakeAi()
+        .then((answer) => (answer?.url ? visitAi(answer.url) : undefined))
+        .catch(() => {
+          // The next check tries again instead of waiting a few minutes.
+          lastWake = 0
+        })
     }
     const onActivity = () => {
       lastActivity = Date.now()
