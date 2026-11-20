@@ -6,6 +6,7 @@ import {
   getFullReportAccess,
   requestFullReport,
   shareReport,
+  visitAi,
   wakeAi,
 } from './reportService.js'
 
@@ -65,5 +66,13 @@ describe('report services', () => {
     await wakeAi()
 
     expect(sentRequest().path).toBe('/api/ai/wake')
+  })
+
+  it('visits the AI from the browser without reading the answer or sending cookies', async () => {
+    await visitAi('https://obraia-ia.test/health')
+
+    const [url, init] = fetchMock.mock.calls[0]
+    expect(url).toBe('https://obraia-ia.test/health')
+    expect(init).toEqual({ mode: 'no-cors', cache: 'no-store', credentials: 'omit' })
   })
 })
