@@ -301,6 +301,7 @@ Después de desplegar, la URL de Vercel debe agregarse a `FRONTEND_URL` en Rende
 | 1.3.0   | Botón de idioma español o inglés: todos los textos, fechas y frases del backend en los dos idiomas |
 | 1.3.1   | Correcciones de idioma: encabezado de la tabla de medidas, meses con coma decimal y riesgo viejo traducido |
 | 1.4.0   | Informes PDF público y completo con resumen de la IA, enlace para compartir, aprobación por correo y despertar de la IA |
+| 1.4.1   | La IA se despierta al iniciar sesión y se mantiene despierta mientras se usa el sitio, no solo al abrir el dashboard de una obra o sus planos |
 
 ## Equipo y responsabilidades
 
