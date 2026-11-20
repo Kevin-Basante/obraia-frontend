@@ -1391,6 +1391,7 @@
     "AI_SERVICE_BUSY": "La IA está ocupada en este momento. Inténtalo en un momento",
     "AI_SERVICE_DISABLED": "El servicio de IA no está configurado",
     "AI_SERVICE_FAILED": "No se pudo llegar al servicio de IA o no respondió a tiempo",
+    "AI_SERVICE_WAKING": "La IA se está despertando. Espera un minuto e inténtalo otra vez",
     "INVALID_BUDGET_ITEM_TYPE": "Un valor de la solicitud no es válido",
     "INVALID_BUDGET_STATUS": "Un valor de la solicitud no es válido",
     "INVALID_ELEMENT_TYPE": "Un valor de la solicitud no es válido",

@@ -1391,6 +1391,7 @@
     "AI_SERVICE_BUSY": "The AI is busy right now. Try again in a moment",
     "AI_SERVICE_DISABLED": "The AI service is not configured",
     "AI_SERVICE_FAILED": "The AI service could not be reached or did not answer in time",
+    "AI_SERVICE_WAKING": "The AI is waking up. Wait a minute and try again",
     "INVALID_BUDGET_ITEM_TYPE": "A value of the request is not valid",
     "INVALID_BUDGET_STATUS": "A value of the request is not valid",
     "INVALID_ELEMENT_TYPE": "A value of the request is not valid",
