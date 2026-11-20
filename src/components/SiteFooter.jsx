@@ -11,7 +11,6 @@ export function SiteFooter() {
         <span>ObraIA</span>
       </div>
       <p>{t('footer.tagline')}</p>
-      <p className="site-footer__team">{t('footer.team')}</p>
     </footer>
   )
 }
