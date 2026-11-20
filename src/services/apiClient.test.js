@@ -62,6 +62,17 @@ describe('apiRequest', () => {
     await expect(apiGet('/api/projects')).rejects.toThrow('Something new')
   })
 
+  it('asks to wait a minute while the AI wakes up', async () => {
+    const waking = { error: { code: 'AI_SERVICE_WAKING', message: 'The AI service answered 429' } }
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(jsonResponse(503, waking)))
+
+    await expect(apiPost('/api/projects/1/blueprints/2/analyze')).rejects.toMatchObject({
+      status: 503,
+      code: 'AI_SERVICE_WAKING',
+      message: 'The AI is waking up. Wait a minute and try again',
+    })
+  })
+
   it('reports a network failure with its own code', async () => {
     vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new TypeError('Failed to fetch')))
 
